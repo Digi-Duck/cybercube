@@ -204,11 +204,11 @@
                 height.value = ''
                 weight.value = ''
             } else if (h < 0 || w < 0) {
-                alert('請輸入正確的數字!!!')
+                alert('請輸入"正確的"數字!!!')
                 height.value = ''
                 weight.value = ''
             } else if (h > 350 || w > 1000) {
-                alert('請輸入正確的數字!!!')
+                alert('請輸入"正確的"數字!!!')
                 height.value = ''
                 weight.value = ''
             } else if (h.trim().length == 0 || w.trim().length == 0) {
@@ -216,7 +216,7 @@
                 height.value = ''
                 weight.value = ''
             }
-            else {
+            else { //計算
                 let bmi = (w / ((h / 100) ** 2)).toFixed()
                 let shape = ''
                 let advice = ''
@@ -225,7 +225,7 @@
                 //標準
                 if (bmi < 18.5) {
                     shape = '體重過輕'
-                    advice = '多吃一點'
+                    advice = '多吃一點啊'
                 } else if (bmi >= 18.5 && bmi < 24) {
                     shape = '體重正常'
                     advice = '保持正常'
@@ -237,7 +237,7 @@
                     advice = '多多做運動'
                 } else if (bmi >= 30 && bmi < 35) {
                     shape = '中度肥胖'
-                    advice = '快點去運動 現在'
+                    advice = '現在快點去運動'
                 } else if (bmi >= 35) {
                     shape = '重度肥胖'
                     advice = '建議就醫 :) '
