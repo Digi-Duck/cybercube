@@ -421,8 +421,8 @@ window.addEventListener("keydown", function (k) {
                     if (Cb == 2 & MyCards != "") {
                         Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
                         Lh2.style = "scale:2.5; right: 70%; display: block; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-                        Lh.src = "../Left/LR1.PNG";
-                        Lh2.src = "../Left/LR1.PNG";
+                        Lh.src = "./Left/LR1.PNG";
+                        Lh2.src = "./Left/LR1.PNG";
                         ComboLogic(MyCards);
                         RCt += 1;
                     }
@@ -537,7 +537,7 @@ window.addEventListener("keydown", function (k) {
     //特效Css更動恢復，需要0.3秒
     function CssBack() {
 
-        Lh.src = "../Left/1.PNG";
+        Lh.src = "./Left/1.PNG";
         Lh2.style = "display: none;";
 
         Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
@@ -557,8 +557,8 @@ window.addEventListener("keydown", function (k) {
 
     function CobCssBack() {
 
-        Lh.src = "../Left/LR1.PNG";
-        Lh2.src = "../Left/LR1.PNG";
+        Lh.src = "./Left/LR1.PNG";
+        Lh2.src = "./Left/LR1.PNG";
 
         Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
 
@@ -713,28 +713,28 @@ window.addEventListener("keydown", function (k) {
 
         if (L == '剪刀') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LS1.PNG";
+            Lh.src = "./Left/LS1.PNG";
         }
         else if (L == '石頭') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LR1.PNG";
+            Lh.src = "./Left/LR1.PNG";
         }
         else if (L == '布') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LP1.PNG";
+            Lh.src = "./Left/LP1.PNG";
         }
 
         if (Y == '剪刀') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RS1.PNG";
+            Rh.src = "./Right/RS1.PNG";
         }
         else if (Y == '石頭') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RR1.PNG";
+            Rh.src = "./Right/RR1.PNG";
         }
         else if (Y == '布') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RP1.PNG";
+            Rh.src = "./Right/RP1.PNG";
         }
 
         if (Y == 0) {
