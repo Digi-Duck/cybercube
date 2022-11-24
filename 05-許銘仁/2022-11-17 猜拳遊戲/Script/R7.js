@@ -554,6 +554,7 @@ window.addEventListener("keyup", function (k) {
         console.log("CssBack: " + SB);
         Lh.src = "./Left/1.PNG";
         Lh2.style = "display: none;";
+        Rh.src = "./Right/2.PNG";
 
         Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
 
