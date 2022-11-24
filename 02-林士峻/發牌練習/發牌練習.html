@@ -1,0 +1,83 @@
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+
+    function getCard() {
+        let color = ['黑桃', '愛心', '方塊', '梅花'];
+        let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+        let card = [];
+        for (r = 0; r < 4; r++) {
+            for (i = 0; i < 13; i++) {
+                card.push(color[r] + number[i]);
+            }
+        }
+
+        let people = [[], [], [], []];
+
+        for (let k = 0; k < 4; k++) {
+            for (let i = 0; i <= 12; i++) {
+                let r = Math.floor(Math.random() * card.length);
+
+                var target = card[r]
+                people[k].push(target);
+                card.splice(r, 1);
+
+                // console.log(n);
+            }
+        }
+        console.log(people[0]);
+        console.log(people[1]);
+        console.log(people[2]);
+        console.log(people[3]);
+    }
+    // 失敗版本
+    // let n = ['黑桃1', '黑桃2', '黑桃3', '黑桃4', '黑桃5', '黑桃6', '黑桃7', '黑桃8', '黑桃9', '黑桃10', '黑桃K', '黑桃J', '黑桃Q', '梅花1', '梅花2', '梅花3', '梅花4', '梅花5', '梅花6', '梅花7', '梅花8', '梅花9', '梅花10', '梅花J', '梅花Q', '梅花K', '紅心1', '紅心2', '紅心3', '紅心4', '紅心5', '紅心6', '紅心7', '紅心8', '紅心9', '紅心10', '紅心J', '紅心Q', '紅心K', '方塊1', '方塊2', '方塊3', '方塊4', '方塊5', '方塊6', '方塊7', '方塊8', '方塊9', '方塊10', '方塊J', '方塊Q', '方塊K'];
+    // n.splice(7, 1);
+
+    // console.log(n);
+    // let r = Math.floor(Math.random() * n.length);
+
+    // y.push(n[r]);
+    // n.splice(n[r], 1);
+
+    // let r = Math.floor(Math.random() * n.length);
+
+
+    // o.push(n[r]);
+    // n.splice(n[r], 1);
+
+
+    // let r = Math.floor(Math.random() * n.length);
+
+
+    // z.push(n[r]);
+    // n.splice(n[r], 1);
+
+
+
+
+
+    // console.log(c);
+    // console.log(y);
+    // console.log(o);
+    // console.log(z);
+
+
+
+
+    getCard()
+
+
+
+        // let number = ["A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"];
+        // let color = ["黑桃", "紅心", "方塊", "梅花"];
+
+
+</script>
+
+</html>
