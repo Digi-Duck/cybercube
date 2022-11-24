@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="/全端/Java/剪刀石頭布.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        document.getElementById("user") = user;
+        document.getElementsByClassName("scissors") = 剪刀;
+        document.getElementsByClassName("stone") = 石頭;
+        document.getElementsByClassName("paper") = 布;
+        function computer() {
+            var computer = Math.random();
+            if (computer < 0.33) {
+                computer = "剪刀"
+            }
+            else if (computer <= 0.66) {
+                computer = "石頭";
+            }
+            else if (computer <= 1) {
+                computer = "布";
+            }
+
+            function VS(computer, user) {
+                if (computer == user) {
+                    document.write("對手：" + computer + "平手！");
+                } else if (computer == "石頭") {
+                    if (user == "剪刀") {
+                        document.write("對手：" + computer + "你輸了")
+                    }
+                    else if (user == "布") {
+                        document.write("對手：" + computer + "你贏了")
+                    }
+                } else if (computer == "剪刀") {
+                    if (user == "布") {
+                        document.write("對手：" + computer + "你輸了")
+                    }
+                    else if (user == "石頭") {
+                        document.write("對手：" + computer + "你贏了")
+                    }
+                } else if (computer == "布") {
+                    if (user == "剪刀") {
+                        document.write("對手：" + computer + "你贏了")
+                    }
+                    else if (user == "石頭") {
+                        document.write("對手：" + computer + "你輸了")
+                    }
+                }
+            };
+            document.write("對手:"+computer)
+        }
+        // document.write("對手：" + computer(user,computer));
+    </script>
+
+
+    <div id="opponent">
+
+    </div>
+    <div id="user">
+        <p>
+        <div class="heand">出拳：</div>
+        </p>
+
+        <div class="scissors">
+            <img src="/全端/Java/image/scissior.jpg" alt="" width="150px">
+            <button type="button" onclick="computer()">剪刀</button>
+        </div>
+
+        <div class="stone">
+            <img src="/全端/Java/image/rock.jpg" alt="" width="150px">
+            <button type="button" onclick="computer()">石頭</button>
+        </div>
+
+        <div class="paper">
+            <img src="/全端/Java/image/paper.jpg" alt="" width="150px">
+            <button type="button" onclick="computer()">布</button>
+        </div>
+    </div>
+</body>
+
+</html>
