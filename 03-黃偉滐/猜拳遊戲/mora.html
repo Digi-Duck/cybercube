@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="yourhppic" src="/picture/5hp.png" height="50px" width="250px">
+    </div>
+    <div>
+        <img id="mora" src="/picture/mora.gif " height="300px" width="300px">
+    </div>
+    <div>
+        <img id="myhppic" src="/picture/5hp.png" height="50px" width="250px">
+    </div>
+    <div>
+        <img id="scissors" src="/picture/scissors.png"  onclick="rand();a();scissors();match();hp();">
+        <img id="rock" src="/picture/rock.png" onclick="rand();a();rock();match();hp();">
+        <img id="paper" src="/picture/paper.png" onclick="rand();a();paper();match();hp();">
+    </div>
+</body>
+
+<script type="text/javascript">
+    var r=0;
+    var m,y;
+    var myhp=5;
+    var yourhp=5;
+    let morapic=["picture/scissors.png","picture/rock.png","picture/paper.png"];
+    let hppic=["picture/0hp.png","picture/1hp.png","picture/2hp.png","picture/3hp.png","picture/4hp.png","picture/5hp.png"]
+    function rand(){
+        r=Math.floor(Math.random()*3);
+    }
+    function a(){
+        document.getElementById("mora").src=morapic[r];
+    }
+    function scissors(){
+        m=0;
+    }
+    function rock(){
+        m=1;
+    }
+    function paper(){
+        m=2;
+    }
+
+    function match(){
+        if(m==0){
+            if(r==0){
+                console.log("平手");
+
+            }
+            else if(r==1){
+                console.log("輸了");
+                myhp--;
+            }
+            else if(r==2){
+                console.log("贏了");
+                yourhp--;
+            }
+        }
+        else if(m==1){
+            if(r==0){
+                console.log("贏了");
+                yourhp--;
+            }
+            else if(r==1){
+                console.log("平手");
+            }
+            else if(r==2){
+                console.log("輸了");
+                myhp--;
+            }
+        }
+        else if(m==2){
+            if(r==0){
+                console.log("輸了");
+                myhp--;
+            }
+            else if(r==1){
+                console.log("贏了");
+                yourhp--;
+            }
+            else if(r==2){
+                console.log("平手");
+            }
+        }
+        console.log("我方"+myhp);
+        console.log("對方"+yourhp);
+    }
+    function hp(){
+        if(myhp>=0){
+            if(myhp==0){
+            console.log("輸了!");
+            }
+            else{
+                document.getElementById("myhppic").src=hppic[myhp];
+            }
+        }
+        else{
+            myhp=0;
+        }
+        if(yourhp>=0){
+            if(yourhp==0){
+                yourhp=0;
+                console.log("贏了!");
+            }
+            else{
+                document.getElementById("yourhppic").src=hppic[yourhp];
+            }    
+        }
+        else{
+            yourhp=0;
+        }
+    }
+</script>
+
+</html>
