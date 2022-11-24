@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: blanchedalmond;
+            position: relative;
+        }
+
+        .input-area{
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            margin: auto;
+
+            border-radius: 30px;
+            border: 2px solid black;
+            
+            background-color: cadetblue;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            margin: 70px;
+        }
+        .form-element{
+            width: 80%;
+            display: flex;
+            font-size: 32px;
+            line-height: 50px;
+            margin-bottom: 40px;
+        }
+        .form-element label{
+            width: 35%;
+            height: 50px;
+        }
+        .form-element input{
+            width: 65%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 32px;
+        }
+        .form-element button{
+            height: 50px;
+            font-size: 32px;
+            margin: auto;
+        }
+
+        .output-area{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            background-color: orange;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            border: 2px solid black;
+            font-size: 32px;
+            line-height: 50px;
+            justify-content: space-evenly;
+            transition: 3s;
+            opacity: 1;
+        }
+
+        .close-btn{
+            width: 30px;
+            height: 30px;
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .close-btn:hover{
+            color: blue;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="input-area">
+        <h1>BMI計算器與身體建議</h1>
+        <div class="form-element">
+            <label for="heigh">身高(cm)</label>
+            <input type="text" id="heigh">
+        </div>
+        <div class="form-element">
+            <label for="weight">體重(kg)</label>
+            <input type="text" id="weight">
+        </div>
+        <div class="form-element">
+            <button type="button">計算!</button>
+            <button type="reset">清除重填</button>
+        </div>
+    </div>
+
+    <div class="output-area">
+        <div class="close-btn">Ｘ</div>
+        <p class="bmi">您的BIM為: 27.5</p>
+        <p class="shape">您的身體狀態為: 過胖</p>
+        <p class="advice">給您的建議: 多走動避免運動不足!!</p>
+    </div>
+
+    <script>
+        //  誰?
+        const heigh = document.querySelector('#heigh')
+        const weight = document.querySelector('#weight')
+        const startbtn = document.querySelector('')
+        const output_bmi = document.querySelector('')
+        const output_shape = document.querySelector('')
+        const output_advice = document.querySelector('')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //甚麼時候? 要做甚麼?
+    </script>
+</body>
+
+</html>
