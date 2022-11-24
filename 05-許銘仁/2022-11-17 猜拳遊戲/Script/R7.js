@@ -255,7 +255,7 @@ window.addEventListener("keydown", function (k) {
 
         //第一次開時固定套用B7背景圖
         if (Fct == 0){
-            body.style = "height: 100%;background-image: url('../Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
+            body.style = "height: 100%;background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
         }
         
 
@@ -290,7 +290,7 @@ window.addEventListener("keydown", function (k) {
             CH = 100;
             ECH = 100;
             Cb = 0;
-            body.style = "background-image: url('../Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat;";
+            body.style = "background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat;";
         }
 
 
@@ -517,7 +517,7 @@ window.addEventListener("keydown", function (k) {
     //平手對決時手臂傾斜+震動
     function shakeShadowTie() {
 
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('../Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
         Lh.style = "scale:2.5; left: 35% ; filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shakeTieLh 900ms ease-in-out; animation-iteration-count: infinite;";
 
@@ -527,7 +527,7 @@ window.addEventListener("keydown", function (k) {
     //震動特效
     function shakeShadow() {
 
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('../Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
         Lh.style = "left: 30%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
@@ -547,7 +547,7 @@ window.addEventListener("keydown", function (k) {
         Rh.style = "right: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
 
         //初始化body的Css
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('../Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
 
         MyInfo.style = "animation: none";
         EmInfo.style = "animation: none";
