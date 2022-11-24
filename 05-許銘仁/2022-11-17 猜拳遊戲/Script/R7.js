@@ -70,13 +70,20 @@ window.addEventListener("load", function () {
     TextArea.style = "width: 100%; height: 50%; opacity: 1; transition:all 1s 0.5s; background-color: rgb(0, 0, 0, 0.5);"
 })
 
-window.addEventListener("keydown", function (k) {
+window.addEventListener("keyup", function (k) {
 
     if (ScreenIndexNow == true) {
 
         Lh.style = "display: none;";
         Lh2.style = "display: none;";
         Rh.style = "display: none;";
+
+        //跳過序章
+        if (Fct == 0 && k.key === 'Escape') {
+            ScreenIndexNow = false;
+            ScreenFightNow = true;
+            StartScreen02()
+        }
 
         //ScreenIndex判斷第幾幕，按下Space開始執行
         if (k.key === ' ' & ScreenIndex < 9) {
@@ -255,10 +262,10 @@ window.addEventListener("keydown", function (k) {
         Rh.style = "z-index: 1; display: block;  animation: Rhandmove 0.8s infinite alternate linear 0.3s;transition:all 1s";
 
 
-        if (Fct == 0){
+        if (Fct == 0) {
             body.style = "height: 100%; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
         }
-        
+
 
 
         var S = document.querySelector(".Scissors");
@@ -277,7 +284,7 @@ window.addEventListener("keydown", function (k) {
             StopScreen01();
             Lh2.style = "display: none;";
             SB = getRandomBG(8);
-            console.log("r: "+SB);
+            console.log("r: " + SB);
             document.querySelector(".CurHp").innerText = 100;
             document.querySelector(".EmCurHp").innerText = 100;
             MyInfo.style = "animation: none";
@@ -338,11 +345,13 @@ window.addEventListener("keydown", function (k) {
                         EmCards = Cards[getRandom()];
 
                         S.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            S.style = "scale: 1";
-                            Ct += 1;
-                        })
-
+                        
+                        if (Fct == 0) {
+                            window.addEventListener("keyup", function () {
+                                S.style = "scale: 1";
+                            })
+                        }
+                        Ct += 1;
                     }
 
                     else if (k.key === 's') {
@@ -352,11 +361,13 @@ window.addEventListener("keydown", function (k) {
                         EmCards = Cards[getRandom()];
 
                         R.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            R.style = "scale: 1";
-                            Ct += 1;
-                        })
 
+                        if (Fct == 0) {
+                            window.addEventListener("keyup", function () {
+                                R.style = "scale: 1";
+                            })
+                        }
+                        Ct += 1;
                     }
 
                     else if (k.key === 'd') {
@@ -366,10 +377,13 @@ window.addEventListener("keydown", function (k) {
                         EmCards = Cards[getRandom()];
 
                         P.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            P.style = "scale: 1";
-                            Ct += 1;
-                        })
+
+                        if (Fct == 0) {
+                            window.addEventListener("keyup", function () {
+                                P.style = "scale: 1";
+                            })
+                        }
+                        Ct += 1;
                     }
 
 
@@ -517,7 +531,7 @@ window.addEventListener("keydown", function (k) {
 
     //平手對決時手臂傾斜+震動
     function shakeShadowTie() {
-        console.log("shakeShadowTie: "+SB);
+        console.log("shakeShadowTie: " + SB);
         body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
         Lh.style = "scale:2.5; left: 35% ; filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shakeTieLh 900ms ease-in-out; animation-iteration-count: infinite;";
@@ -537,7 +551,7 @@ window.addEventListener("keydown", function (k) {
 
     //特效Css更動恢復，需要0.3秒
     function CssBack() {
-        console.log("CssBack: "+SB);
+        console.log("CssBack: " + SB);
         Lh.src = "./Left/1.PNG";
         Lh2.style = "display: none;";
 
