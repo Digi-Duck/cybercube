@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜拳遊戲</title>
+    <style>
+        body {
+            background-color: #000000;
+            width: 600px;
+            height: 600px;
+        }
+
+        #header img {
+            width: 30%;
+            height: 30%;
+        }
+
+        #ring img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #top {
+            display: flex;
+        }
+
+        #top img {
+            width: 30%;
+            height: 30%;
+        }
+
+        #enemy{
+            width: 30%;
+        }
+        #enemy img {
+            width: 100%;
+            height: 100%;
+            margin-left: 20px;
+        }
+
+        #main{
+            height: auto;
+            display: flex;
+        }
+
+        #hero {
+            display: flex;
+            width: 30%;
+        }
+
+        #hero img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .gameBtn {
+            width: 110px;
+            height: 40px;
+            margin-top: 80px;
+            margin-left: 20px;
+            border: none;
+            background-color: #191919;
+            color: azure;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .gameBtn:hover {
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #3b3b3b;
+        }
+
+        #resultText{
+            width: 400px;
+            height: 150px;
+            color: #977f40;
+            font-size: 24px;
+            text-align: left;
+            margin-top: 10%;
+            margin-left: 20px;
+            background-color: #202020;
+        }
+     
+		#blood1{
+			width: 400px;
+			height: 15px;
+			background: #444343;
+			overflow: hidden;
+			margin-top: 50px;
+            border-radius: 10px;
+		}
+		
+		#progress1{
+			width: 400px;
+			height: 20px;
+			margin-top: px;
+			background: #bb0a0a;
+		}
+		#blood2{
+			width: 400px;
+			height: 15px;
+			background: #444343;
+			overflow: hidden;
+			margin-top: 50px;
+            border-radius: 10px;
+		}
+		
+		#progress2{
+			width: 400px;
+			height: 20px;
+			margin-top: px;
+			background: #bb0a0a;
+		}
+    </style>
+    <script src="game.js"></script>
+</head>
+
+<body>
+    <div>
+        <div id="header">
+            <img src="./title.jpg" alt="">
+        </div>
+        <div id="top">
+            <div id="blood1">
+                <div id="progress1"></div>
+            </div>
+            <div id="enemy"><img src="./gollum.jpg" alt=""></div>
+        </div>
+        <p></p>
+        <div id="ring">
+            <img src="./ring.jpg" alt="" id="ring">
+        </div>
+
+        <div id="main">
+            <div id="hero"><img src="./frodo.png" alt=""></div>
+            <div id="main_right">
+                <div id="blood2"><div id="progress2"></div>
+                </div>
+                <div id="gameBtns">
+                    <input type="button" name="rock" value="Rock ✊" class="gameBtn" id="rock" onclick="rock();">
+                    <input type="button" name="paper" value="Paper 🖐" class="gameBtn" id="paper" onclick="paper();">
+                    <input type="button" name="scissors" value="Scissors ✌️" class="gameBtn" id="scissors" onclick="scissors();">
+                </div>
+                <div id="resultText">You have to win this game if you want to get the ring...</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
