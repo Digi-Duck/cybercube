@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI計算機</title>
+    <style>
+        /* html{
+            display: none;
+        } */
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            position: relative;
+        }
+        form{
+            width: 100%;
+            
+        }
+
+        .input-area{
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            margin: auto;
+            border-radius: 30px;
+            border: 2px solid black;
+            background-color: rgb(243, 217, 161);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        h1{
+            margin: 50px;
+            font-size: 45px;
+        }
+        .form-element{
+            width: 80%;
+            display: flex;
+            margin: auto;
+            font-size: 32px;
+            line-height: 50px;
+            margin-bottom: 40px;
+        }
+        .form-element label{
+            width: 35%;
+            height: 50px;
+            margin: auto;
+        }
+        .form-element input{
+            width: 65%;
+            height: 50px;
+        }
+        .form-element button{
+            height: 50px;
+            width: 40%;
+            font-size: 32px;
+            margin: auto;
+        }
+        .output-area{
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            background-color: aquamarine;
+            margin: auto;
+            border-radius: 30px;
+            border: 2px solid black;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            transform: translate(-0%,-89%);
+            font-size: 32px;
+            line-height: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: opacity 3s ease 0s;
+            z-index: 1;
+        }
+        .close-btn{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 0px;
+            right: 5px;
+        }
+        .close-btn>img{
+            width: 100%;
+        }
+        .shape1{
+            display: none;
+        }
+        .advice1{
+            display: none;
+        }
+        .shape2{
+            display: none;
+        }
+        .advice2{
+            display: none;
+        }
+        .shape3{
+            display: none;
+        }
+        .advice3{
+            display: none;
+        }
+        .shape4{
+            display: none;
+        }
+        .advice4{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-area">
+        <h1>BMI計算器與身體建議</h1>
+        <form id="form" oninput="result.value=parseInt(weight.value)/(parseInt(height.value)/100)/(parseInt(height.value)/100)">
+            <div class="form-element">
+                <label for="heigh">身高(cm)</label>
+                <input type="number" id="heigh" min="0" max="250">
+            </div>
+            <div class="form-element">
+                <label for="weight">體重(kg)</label>
+                <input type="number" id="weight" min="0" max="1000">
+            </div>
+            <div class="form-element">
+                <button type="button" id="startbtn">計算！</button>
+                <button type="reset" id="reset">重新輸入</button>
+            </div>
+            <div class="output-area">
+                <div class="close-btn">
+                    <img src="../bmi/4955.png" alt="" id="ximg">
+                </div>
+                <div>您的BMI為:
+                    <output class="output-result" name="result" id="result">0</output>
+                </div>
+                <div class="shape1" id="output_shape1">您的身體狀況為：過輕</div>
+                <div class="advice1" id="output_advice1">建議：多吃一點</div>
+                <div class="shape2" id="output_shape2">您的身體狀況為：正常</div>
+                <div class="advice2" id="output_advice2">建議：很棒!!繼續維持</div>
+                <div class="shape3" id="output_shape3">您的身體狀況為：過重</div>
+                <div class="advice3" id="output_advice3">建議：注意體重</div>
+                <div class="shape4" id="output_shape4">您的身體狀況為：肥胖</div>
+                <div class="advice4" id="output_advice4">建議：醫生，這個還有救嗎?</div>
+            </div>
+        </form>
+    </div>
+
+    <!-- <script>
+        var weight = document.getElementById("weight");
+        var heigh = document.getElementById("height");
+        var startbtn = document.getElementById("startbtn");
+        
+        function FsubmitBtn(value){
+            var str ="";
+            var submitValue = weight.value;
+            str = submitValue;
+            alert(str);
+        }
+        startbtn.addEventListener("click",FsubmitBtn);
+    </script> -->
+    <script>
+        //誰? 什麼時候? 要做甚麼?
+        // document.getElementById(用在ID上)
+        // document.querySelector()(用css選擇器抓東西)
+        //const 常數，不能被修改
+        //不用input用button，因為input沒有結尾標籤，除了自由度，CSS的自由度差別
+        const height = document.querySelector('#heigh')
+        const weight = document.querySelector('#weight')
+        const startbtn = document.querySelector('#startbtn')
+        const output_bmi = document.querySelector('#output_bmi')
+        const output_shape1 = document.querySelector('#output_shape1')
+        const output_advice1 = document.querySelector('#output_advice1')
+        const output_shape2 = document.querySelector('#output_shape2')
+        const output_advice2 = document.querySelector('#output_advice2')
+        const output_shape3 = document.querySelector('#output_shape3')
+        const output_advice3 = document.querySelector('#output_advice3')
+        const output_shape4 = document.querySelector('#output_shape4')
+        const output_advice4 = document.querySelector('#output_advice4')
+        const output_area = document.querySelector('.output-area')
+        const closebtn = document.querySelector('#ximg')
+        const result = document.querySelector('#result')
+
+
+        startbtn.addEventListener('click', 
+        function(){
+            // alert(result.value);
+            var a = 18.5;
+            var b = 24;
+            var c = 27;
+            if(output_area.style.display != 'block'){
+                // output_area.style.display = 'block';
+                
+                output_area.style = "display:block;";
+                //為甚麼不放在計時器裡就無法執行
+                // output_area.style.opacity = "1";
+                // setTimeout(function(){
+                //     output_area.style = "opacity:1;transition: opacity 3s ease 0s;";
+                // },0)
+            }
+            // if(output_result.value>20){
+            //     shape.style = "display:block;";
+            // }
+            if(result.value<a){
+                output_shape1.style = "display:block;";
+                output_advice1.style = "display:block;";
+            }
+            if((a<=result.value)&&(result.value<b)){
+                output_shape2.style = "display:block;";
+                output_advice2.style = "display:block;";
+            }
+            if((b<=result.value)&&(result.value<c)){
+                output_shape3.style = "display:block;";
+                output_advice3.style = "display:block;";
+            }
+            if(result.value>c){
+                output_shape4.style = "display:block;";
+                output_advice4.style = "display:block;";
+            }
+        });
+        closebtn.addEventListener('click', function(){
+            if(output_area.style.display != 'none')
+            {   
+                output_area.style.opacity = "0.1";
+                setTimeout(function(){
+                    output_area.style.display = 'none';
+                    output_shape1.style.display = 'none';
+                    output_advice1.style.display = 'none';
+                    output_shape2.style.display = 'none';
+                    output_advice2.style.display = 'none';
+                    output_shape3.style.display = 'none';
+                    output_advice3.style.display = 'none';
+                    output_shape4.style.display = 'none';
+                    output_advice4.style.display = 'none';
+                },3000)
+            }
+        });
+        
+        
+    </script>
+</body>
+</html>
