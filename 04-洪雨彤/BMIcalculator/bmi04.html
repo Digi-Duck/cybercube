@@ -198,7 +198,7 @@
 
             let h = height.value
             let w = weight.value
-
+            //isNAN
             if (isNaN(h) || isNaN(w)) {
                 alert('請輸入數字!!!!!!')
                 height.value = ''
@@ -242,19 +242,19 @@
                     shape = '重度肥胖'
                     advice = '建議就醫 :) '
                 }
-
+                //output
                 bmitext.innerHTML = '您的BMI為: ' + bmi
                 shapetext.innerHTML = '您的身體健康為: ' + shape
                 advicetext.innerHTML = '給您的建議: ' + advice
                 output.style = "z-index: 1;opacity: 1;transition: opacity 2s ease;"
             }
         }
+        //close-btn
         document.querySelector(".close-btn").addEventListener('click', function () {
             output.style = "opacity: 0; transition: 2s ease;";
-
-
             setTimeout("output.style = 'z-index: -1;'", 400);
         })
+        //reset
         reset.addEventListener('click', function () {
             document.querySelector("#height").value = "";
             document.querySelector("#weight").value = "";
