@@ -11,6 +11,7 @@ var m = document.querySelector("main");
 var h = document.querySelector("header");
 var f = document.querySelector("footer");
 var CV = document.querySelector(".ChangeScreenV1");
+var SB = getRandomBG(8);
 
 
 var Cards = ['剪刀', '石頭', '布'];
@@ -253,9 +254,9 @@ window.addEventListener("keydown", function (k) {
 
         Rh.style = "z-index: 1; display: block;  animation: Rhandmove 0.8s infinite alternate linear 0.3s;transition:all 1s";
 
-        //第一次開時固定套用B7背景圖
+
         if (Fct == 0){
-            body.style = "height: 100%;background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
+            body.style = "height: 100%; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
         }
         
 
@@ -275,8 +276,8 @@ window.addEventListener("keydown", function (k) {
         if (k.key === 'r') {
             StopScreen01();
             Lh2.style = "display: none;";
-            var SB = getRandomBG(8);
-            console.log(SB);
+            SB = getRandomBG(8);
+            console.log("r: "+SB);
             document.querySelector(".CurHp").innerText = 100;
             document.querySelector(".EmCurHp").innerText = 100;
             MyInfo.style = "animation: none";
@@ -516,8 +517,8 @@ window.addEventListener("keydown", function (k) {
 
     //平手對決時手臂傾斜+震動
     function shakeShadowTie() {
-
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+        console.log("shakeShadowTie: "+SB);
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
         Lh.style = "scale:2.5; left: 35% ; filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shakeTieLh 900ms ease-in-out; animation-iteration-count: infinite;";
 
@@ -536,7 +537,7 @@ window.addEventListener("keydown", function (k) {
 
     //特效Css更動恢復，需要0.3秒
     function CssBack() {
-
+        console.log("CssBack: "+SB);
         Lh.src = "./Left/1.PNG";
         Lh2.style = "display: none;";
 
@@ -547,7 +548,7 @@ window.addEventListener("keydown", function (k) {
         Rh.style = "right: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
 
         //初始化body的Css
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
 
         MyInfo.style = "animation: none";
         EmInfo.style = "animation: none";
