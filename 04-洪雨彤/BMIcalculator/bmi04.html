@@ -28,17 +28,14 @@
             font-size: 25px;
             line-height: 50px;
             justify-content: space-evenly;
-
             width: 100%;
             height: 100%;
             max-width: 600px;
             max-height: 500px;
             margin: 20% auto auto auto;
             padding-bottom: 50px;
-
             border-radius: 30px;
             border: 2px dotted black;
-
             background-color: rgb(187, 228, 245);
             display: flex;
             flex-direction: column;
@@ -255,10 +252,10 @@
         document.querySelector(".close-btn").addEventListener('click', function () {
             output.style = "opacity: 0; transition: 2s ease;";
 
-            
+
             setTimeout("output.style = 'z-index: -1;'", 400);
         })
-        reset.addEventListener('click', function(){
+        reset.addEventListener('click', function () {
             document.querySelector("#height").value = "";
             document.querySelector("#weight").value = "";
         })
