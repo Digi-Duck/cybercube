@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myBtn">發牌</ㄖ>
+    <script>
+        
+        document.getElementById("myBtn").addEventListener("click", function () {
+
+            //隨機數為0~x
+            function getRandom(x) {
+                return Math.floor(Math.random() * x);
+            };
+
+            //這段請無視
+            // let Num = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+
+            //先跑玩家數
+            for (i = 0; i < 4; i++) {
+
+                //宣告二維陣列，第一維的索引值是用來"指定卡片的花色"、第二維陣列索引"指定該花色的數字是多少" ex:card[0][2]是"黑桃3"
+                let card = [['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'], ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'], ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'], ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']];
+
+                //先測試Js可以跑二維陣列
+                // console.log(card[1][2]);
+
+                //宣告花色陣列，對應上方card的索引
+                let color = ['黑桃', '方塊', '梅花', '菱形']
+
+                let player = ['A', 'B', 'C', 'D'];
+
+                //宣告一陣列，存放抽出來的卡片
+                let cords = []
+
+                //印出玩家
+                console.log(player[i] + "玩家:");
+
+                //再跑花色和卡片
+                for (j = 1; j <= 13; j++) {
+
+                    //c為花色，共有4種，隨機抽出一個
+                    let c = getRandom(3);
+
+                    //隨機抽出數字，最大值由"抽到的花色所剩下的牌數"決定
+                    let n = getRandom(card[c].length);
+
+                    //在cords卡片匣裡新增"花色"+"數字"
+                    cords.push(color[c] + card[c][n]);
+
+                    //將本次抽到的數字從花色堆裡刪除掉(確保下次不會抽到)
+                    // console.log("本次抽到的數字是:"+n);
+                    card[c].splice(n, 1);
+                }
+
+                //印出抽到的卡片
+                // console.log(cords);
+
+                //將抽到的卡片"陣列"結合成"單一字串"
+                var StrCords = "";
+                for (j = 0; j <= 12; j++) {
+                    
+                    if(j<12){
+                        StrCords += cords[j] + ",";
+                    }
+                    else{
+                        StrCords += cords[j];
+                    }
+                }
+
+                //用同一行的方式印出每位玩家抽到的13張卡片
+                console.log(StrCords);
+            }
+        });
+    </script>
+</body>
+
+</html>

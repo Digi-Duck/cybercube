@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: blanchedalmond;
+            position: relative;
+        }
+
+        .input-area {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            margin: auto;
+
+            border-radius: 30px;
+            border: 2px solid black;
+
+            background-color: cadetblue;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 70px;
+        }
+
+        .form-element {
+            width: 80%;
+            display: flex;
+            font-size: 32px;
+            line-height: 50px;
+            margin-bottom: 40px;
+        }
+
+        .form-element label {
+            margin-left: -5%;
+            width: 35%;
+            height: 50px;
+            text-align: center;
+        }
+
+
+        .form-element input {
+            width: 65%;
+            height: 50px;
+            font-size: 24px;
+        }
+
+        .form-element button {
+            width: 30%;
+            height: 50px;
+            font-size: 26px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        .form-element button:hover {
+            background-color: cornflowerblue;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .form-element button:active {
+            scale: 0.9;
+        }
+
+        .output-area {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            max-height: 500px;
+            margin: auto;
+            opacity: 0;
+            display: flex;
+            top: 50%;
+            left: 50%;
+            background-color: orange;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            border: 2px solid black;
+            font-size: 32px;
+            line-height: 50px;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            z-index: -1;
+        }
+
+        .close-btn {
+            width: 40px;
+            height: 40px;
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            line-height: 40px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-size: cover;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .close-btn:active {
+            scale: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="input-area">
+        <h1>BMI計算機與身體建議</h1>
+        <div class="form-element">
+            <label for="height">身高:</label>
+            <input type="text" id="height" placeholder='請輸入"cm"'>
+        </div>
+        <div class="form-element">
+            <label for="weight">體重:</label>
+            <input type="text" id="weight" placeholder='請輸入"kg"'>
+        </div>
+        <div class="form-element">
+            <button type="button" id="startbtn">計算!</button>
+            <button type="reset" id="reset">清除重填</button>
+        </div>
+    </div>
+
+    <div class="output-area">
+        <div class="close-btn">X</div>
+        <p class="bmi"></p>
+        <p class="shape"></p>
+        <p class="advice"></p>
+    </div>
+
+    <script>
+
+        const heigh = document.querySelector("#height")
+        const weight = document.querySelector("#weight")
+        const startbtn = document.querySelector("#startbtn")
+        const reset = document.querySelector("#reset")
+
+        const output_bmi = document.querySelector(".bmi")
+        const output_shape = document.querySelector(".shape")
+        const output_advice = document.querySelector(".advice")
+
+        //設定.output-area淡出效果
+        document.querySelector(".close-btn").addEventListener('click', function () {
+            document.querySelector(".output-area").style = "opacity: 0; transition: 0.5s ease;";
+
+            //需要設定document.querySelector來讓.output-area"不是只是隱藏"
+            setTimeout("document.querySelector('.output-area').style = 'z-index: -1;'", 500);
+        })
+
+        //設定BMI計算
+        function BMI() {
+                let h = document.querySelector("#height").value;
+                let w = document.querySelector("#weight").value;
+                if (h != "" & w != "" & h > 0 & w > 0){
+                    return (w/((h/100)**2)).toFixed(1);
+                }
+                else{
+                    return "*";
+                }
+            }
+
+
+        //註冊"計算!"按鈕事件
+        startbtn.addEventListener('click', function () {
+
+            document.querySelector(".output-area").style = "z-index: 1;opacity: 1; transition: opacity 0.5s ease;";
+            
+            let bmi = BMI();
+            
+            //bmi值必須合理且運算結果不等於0.0
+            if ((!(isNaN(bmi))) & bmi != 0.0){
+
+                output_bmi.innerText = "您的BMI為: " + bmi;
+            
+                if(bmi< 18.5){
+                    output_shape.innerText = "您的身體狀態為: 過輕" 
+                    output_advice.innerText = "薯條加大:)"
+                }
+                else if(bmi< 24 & bmi>= 18.5){
+                    output_shape.innerText = "您的身體狀態為: 正常範圍" 
+                    output_advice.innerText = "人生苦短，為何要拒絕美食呢?"
+                }
+                else if(bmi< 27 & bmi>= 24){
+                    output_shape.innerText = "您的身體狀態為: 過重" 
+                    output_advice.innerText = "人生苦短，為何要拒絕美食呢?"
+                }
+                else if(bmi< 30 & bmi>= 27){
+                    output_shape.innerText = "您的身體狀態為: 輕度肥胖" 
+                    output_advice.innerText = "人生苦短，為何要拒絕美食呢?"
+                }
+                else if(bmi< 35 & bmi>= 30){
+                    output_shape.innerText = "您的身體狀態為: 中度肥胖" 
+                    output_advice.innerText = "人生苦短，為何要拒絕美食呢?"
+                }
+                else if(bmi >= 35){
+                    output_shape.innerText = "您的身體狀態為: 重度肥胖" 
+                    output_advice.innerText = "人生苦短，為何要拒絕美食呢?"
+                }
+            }
+            else{
+                output_bmi.innerHTML = "資料輸入有誤"
+                output_bmi.style = "color: red; font-weight: bolder"
+                output_shape.innerText = "請重新輸入，謝謝!" 
+                output_advice.innerText = ":)"
+            }
+        })
+
+        // 註冊"重置"按鈕事件
+        reset.addEventListener('click', function(){
+            document.querySelector("#height").value = "";
+            document.querySelector("#weight").value = "";
+        })
+
+
+    </script>
+</body>
+
+</html>
