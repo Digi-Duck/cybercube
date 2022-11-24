@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            background: rgb(238, 153, 219);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: rgb(8, 231, 94);
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <h1>輸入身高體重</h1>
+        <p>身高 <input type="number" id="height"> :公分</p>
+        <p>體重 <input type="number" id="weight"> :公斤</p>
+
+
+        <input type="submit" value="計算" onclick="BMIcalculate()">
+        <p>BMI 計算的結果為：<em id="BMI"></em></p>
+
+        <p>判斷為：<em id="ans"></em></p>
+
+        <script src="JS/test.js"></script>
+    </body>
+</body>
+
+</html>

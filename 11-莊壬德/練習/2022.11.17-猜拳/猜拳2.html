@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+       function play(value){
+        let rand=Math.floor(Math.random() * 3) + 1;
+        if(value==1){
+            if(rand==1){
+                document.querySelector("#result").innerHTML="您出的是剪刀<br>電腦出的是剪刀<br>結果為平手"
+            }
+            else if(rand==2){document.querySelector("#result").innerHTML="您出的是剪刀<br>電腦出的是石頭<br>結果為負"}
+            else{document.querySelector("#result").innerHTML="您出的是剪刀<br>電腦出的是布<br>結果為勝"}
+        }
+        else if(value==2){
+            if(rand==1){
+                document.querySelector("#result").innerHTML="您出的是石頭<br>電腦出的是剪刀<br>結果為勝"
+            }
+            else if(rand==2){document.querySelector("#result").innerHTML="您出的是石頭<br>電腦出的是石頭<br>結果為平手"}
+            else{document.querySelector("#result").innerHTML="您出的是石頭<br>電腦出的是布<br>結果為負"}
+        }
+        else if(value==3){
+            if(rand==1){
+                document.querySelector("#result").innerHTML="您出的是布<br>電腦出的是剪刀<br>結果為負"
+            }
+            else if(rand==2){document.querySelector("#result").innerHTML="您出的是布<br>電腦出的是石頭<br>結果為勝"}
+            else{document.querySelector("#result").innerHTML="您出的是布<br>電腦出的是布<br>結果為平手"}
+        }
+        
+       }
+    </script>
+</head>
+<body>
+    猜拳遊戲:
+    <div>
+        
+        <button id="scissors" onclick="play(1)">剪刀</button>
+        <button id="stone" onclick="play(2)">石頭</button>
+        <button id="paper" onclick="play(3)">布</button><br>
+    </div>
+    <div id="result"></div>
+</body>
+</html>

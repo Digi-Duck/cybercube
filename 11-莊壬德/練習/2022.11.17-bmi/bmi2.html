@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bmi2.css">
+
+</head>
+
+<body>
+    
+    <div id="main">
+        <div id="dataIn">
+            <p>
+                <label for="">身高:</label>
+                <input type="text" id="height" size="15"><br>
+                <label for="">體重:</label>
+                <input type="text" id="weight" size="15">
+            </p>
+            <p>
+                <button type="button" id="start" onclick="count()">送出</button>
+                <button type="reset">重新輸入</button>
+            </p>
+        </div>
+        <div id="dataOut">
+            BMI:<br>
+            <p id="bmi"></p>
+
+            身體狀態:<br>
+            <p id="bodyCondition"></p>
+
+            建議:<br>
+            <p id="suggest"></p>
+        </div>
+
+        <script>
+            //誰?
+            
+            // const startbtn = document.querySelector('#start');
+            // const outputBMI = document.querySelector('#bmi');
+            // const bodyCondition = document.querySelector('#bodyCondition');
+            // const suggest = document.querySelector('#suggest');
+
+            function count() {
+                var height = document.querySelector('#height').value;
+                var weight = document.querySelector('#weight').value;
+                var outputBMI = weight / (height * height) * 10000;
+                document.querySelector('#bmi').innerHTML = outputBMI;
+                if (outputBMI < 18.5) {
+                    document.querySelector('#bodyCondition').innerHTML = "體重過輕";
+                    document.querySelector('#suggest').innerHTML = "請調整飲食及生活習慣";
+                }
+                else if (18.5 <= outputBMI < 24) {
+                    document.querySelector('#bodyCondition').innerHTML = "正常範圍";
+                    document.querySelector('#suggest').innerHTML = "";
+                }
+                else if (24 <= outputBMI < 27) {
+                    document.querySelector('#bodyCondition').innerHTML = "過重";
+                    document.querySelector('#suggest').innerHTML = "請調整飲食及生活習慣";
+                }
+                else if (27 <= outputBMI < 30) {
+                    document.querySelector('#bodyCondition').innerHTML = "輕度肥胖";
+                    document.querySelector('#suggest').innerHTML = "請調整飲食及生活習慣";
+                }
+                else if (30 <= outputBMI < 35) {
+                    document.querySelector('#bodyCondition').innerHTML = "中度肥胖";
+                    document.querySelector('#suggest').innerHTML = "請調整飲食及生活習慣";
+                }
+                else {
+                    document.querySelector('#bodyCondition').innerHTML = "重度肥胖";
+                    document.querySelector('#suggest').innerHTML = "請調整飲食及生活習慣";
+                }
+            }
+        //    startbtn.onclick=count();
+        </script>
+
+
+    </div>
+</body>
+
+</html>
