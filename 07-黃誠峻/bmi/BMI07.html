@@ -9,8 +9,9 @@
     <style>
         /* 測試 */
         body {
-            width: 50%;
-            height: 50vh;
+            /* 這會產生爆版的問題 很可怕的，理論上寬度要正常 */
+
+            margin: 0px;
             background-color: papayawhip;
 
         }
@@ -35,8 +36,8 @@
 
         #all {
             position: relative;
-            top: 30%;
-            left: 65%;
+            margin: auto;
+
             width: 500px;
             height: 500px;
             background-color: aqua;
@@ -80,6 +81,7 @@
 
         //防呆機制
         var height = document.querySelector("#height").value;
+
         var weight = document.querySelector("#weight").value;
         var trueHeight = height / 100;
         if (isNaN(trueHeight) || (trueHeight == 0)) {
@@ -187,6 +189,8 @@
     }
 
 </script>
+<!-- script標籤要放的位置基本上要放在body上面
+但為什麼沒有報告錯誤呢，但為什麼沒有這樣做的時候卻沒有問題是因為，資料抓取不到的問題 -->
 
 <body>
     <div id="all">
@@ -213,6 +217,7 @@
             line-height: 1;
             text-align: center;
             color:white;
+            cursor: pointer;
           ">x</div>
 
 
@@ -230,7 +235,7 @@
 
 
 
-
+<!-- 本次練習已經修正，body: margin:0 第一大框架all設定為margin:auto就可以做到滿版的效果了，此外未來需要更改的習慣有，if else的位置 css的空格此外如果再html內，就會需要:盡量不要使用大小寫來做區分，這是因為在html與css中他們是不能區分大小寫的喔! -->
     </div>
     </div>
 </body>
