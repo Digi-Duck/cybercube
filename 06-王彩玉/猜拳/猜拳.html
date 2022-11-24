@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <title>一拳超人</title>
+    <style>
+        /* font-family: 'Rubik Glitch', cursive; */
+        body{
+            margin: 0px;
+        }
+        .all{
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+        .gameall{
+            height: 100%;
+            width: 100%;
+            background-image: url("./bg2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .startscreen{
+            width: 100%;
+            height: 100%;
+            background-image: url("./bg3.webp");
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .starbg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .starbtn{
+            width: 30%;
+            height: 45%;
+            position: absolute;
+            top: 27.5%;
+            left: 35%;
+            z-index: 3;
+            transition: transform 1s ease 0s;
+        }
+        .gamestart{
+            width: 100%;
+            height: 80%;
+            background-color: rgb(235, 75, 1);
+            font-family: 'Rubik Glitch', cursive;
+            font-size: 600%;
+            border-radius: 120pt;
+            color: black;
+            transition: filter 1s,color 1s;
+            border: none;
+            
+        }
+        .gamestart:hover{
+            width: 99%;
+            height: 79%;
+            border: 15px dotted greenyellow;
+            filter: drop-shadow(0px 0px 2rem orangered);
+            cursor: pointer;
+        }
+        .gamestart:active{
+            width: 99%;
+            height: 79%;
+            color: #FFF;
+            font-size: 800%;
+            filter: drop-shadow(0px 0px 2rem black);
+            border: 18px dotted gold;
+        }
+        .endscreen{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 2s;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .endtext{
+            width: 80%;
+            height: 20vh;
+            position: absolute;
+            bottom: 0%;
+            left: 10%;
+            font-size: 8vh;
+            font-weight: bolder;
+            line-height: 20vh;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.8s,color 1s;
+        }
+        .text{
+            margin: auto;
+            width: 100%;
+            height: 20vh;
+            font-size: 6vh;
+            font-weight: bold;
+            /* background-color: #f4f791; */
+            line-height: 20vh;
+            text-align: center;
+            z-index: 1;
+        }
+        .screen{
+            width: 100%;
+            height: 65vh;
+            /* background-color: rgb(111, 128, 128); */
+            background-size: cover;
+            background-position: 20% 72%;
+            position: relative;
+        }
+        .handimg{
+            height: 100%;
+            width: 15%;
+        }
+        .game img {
+            height: 93%;
+            width: 90%;
+            cursor: pointer;
+        }
+        .game{
+            padding-left: 10%;
+            width: 90%;
+            height: 15vh;
+            position: relative;
+        }
+        .hand{
+            width:60%;
+            height: 100%;
+            float: left;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .start{
+            height: 100%;
+            width: 7%;
+            float: right;
+            position: absolute;
+            right: 2%;
+        }
+        .btn:hover{
+            filter: drop-shadow(0 0 1rem rgb(199, 52, 52));
+        }
+        .btn:active{
+
+            filter: drop-shadow(0 0 1.2rem rgb(0, 38, 206));
+        }
+        .enemy{
+            width: 30%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            float: left;
+            opacity: 1;
+            transition: opacity 3s ease 0s;
+        }
+        .me{
+            width: 30%;
+            height: 100%;
+            position: relative;
+            top: 0;
+            right: 0;
+            float: right;
+            opacity: 1;
+            transition: opacity 3s ease 0s;
+        }
+        .enemyimg{
+            height: 90%;
+            position: absolute;
+            left: 0px;
+            top: 6%;
+            z-index: 1;
+        }
+        .meimg{
+            height:90%;
+            position: absolute;
+            top: 2%;
+            right: 0%;
+        }
+        .screen img{
+            width: 100%;
+            height: 93%;
+        }
+        .enemyhpbox{
+            width: 100%;
+            height: 5vh;
+            border: 1px double black;
+            position: absolute;
+            bottom: 5%;
+            left: 2%;
+            transform: skewx(20deg);
+        }
+        .mehpbox{
+            width: 100%;
+            height: 5vh;
+            border: 1px double black;
+            position: absolute;
+            bottom: 0;
+            right: 2%;
+            transform: skewx(20deg) rotate(0.5turn);
+        }
+        .enemyhp{
+            width: 100%;
+            height: 100%;
+            background-color: #9b0500;
+            transition: width 0.5s ease-in-out 0s, background-color 1s ease-in-out 0.2s;
+            border-bottom: 2px solid black;
+        }
+        .mehp{
+            width: 100%;
+            height: 100%;
+            background-color: #009b3b;
+            transition: width 0.5s ease-in-out 0s, background-color 1s ease-in-out 0.2s;
+            border-bottom: 2px solid black;
+        }
+        .name{
+            font-size: 400%;
+            font-family: 'Rubik Glitch', cursive;
+            text-align: center;
+            text-shadow: 0 0 10px darkorange;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="gameall">
+            <div class="screen">
+                <div class="enemy">
+                    <div class="enemyimg">
+                        <div class="name">enemy</div>
+                        <img src="./enemy.png" alt="">
+                    </div>
+                    <div class="enemyhpbox">
+                        <div class="enemyhp"></div>
+                    </div>
+                </div>
+                <div class="me">
+                    <div class="meimg">
+                        <div class="name">you</div>
+                        <img src="./me.png" alt="">
+                    </div>
+                    <div class="mehpbox">
+                        <div class="mehp"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text"></div>
+            <div class="game">
+                <div class="hand">
+                    <div class="handimg"><img src="./s.png" alt="" class="s btn"></div>
+                    <div class="handimg"><img src="./r.png" alt="" class="r btn"></div>
+                    <div class="handimg"><img src="./b.png" alt="" class="b btn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="startscreen">
+            <div class="starbg"></div>
+        </div>
+        <div class="starbtn">
+            <button type="button" class="gamestart">Start</button>
+        </div>
+        <div class="endscreen">
+            <div class="endtext">滑鼠點擊任意地方繼續</div>
+        </div>
+    </div>
+    <script>
+        let head;//玩家出拳
+        let enemy = ['剪刀', '石頭', '布'];//對手可能出拳
+        let eny;//對手出拳的隨機數
+        let text = document.querySelector('.text'); //文字框
+        let end; //遊戲輸出文字
+        const gamestart = document.querySelector('.gamestart'); //遊戲開始區域
+        const startscreen = document.querySelector('.startscreen'); //開始畫面
+        const endscreen = document.querySelector('.endscreen'); //結束畫面
+        const enemyblock = document.querySelector('.enemy'); //敵方區域
+        const meblock = document.querySelector('.me'); //玩家區域
+        const enemyhp = document.querySelector('.enemyhp');//敵人血量條
+        const mehp = document.querySelector('.mehp');//血量條
+        const starbtn = document.querySelector('.starbtn'); //開始按鈕
+        const endtext = document.querySelector('.endtext'); //結束框文字
+        let enemywidth = 100;//敵人HP長度
+        let mewidth = 100;//自己HP長度
+        let shaketop = 0;//搖晃的位置高
+        let shakeleft = 0;//搖晃左邊
+        let shakeright = 0;//搖晃右邊
+
+        let starstop = setInterval(starbtnlight,1000); //開始按鈕呼吸
+        //開始
+        gamestart.addEventListener('click',function(){
+        startscreen.style.zIndex = '-1';
+        meblock.style.opacity ='1';
+        enemyblock.style.opacity ='1';
+        enemyhp.style.width = '100%';
+        mehp.style.width = '100%';
+        starbtn.style.transform = 'scale(30%) translate(490%, 320%)'; //star按鈕移位
+        //設為初始
+        enemywidth = 100;
+        mewidth = 100;
+        text.innerHTML = "遊戲開始！請選擇出拳！";
+        enemyhp.style.backgroundColor = '#9b0500';
+        mehp.style.backgroundColor = '#009b3b';})
+
+        //結束畫面
+        function gameend(){
+            endscreen.style.opacity = '1';
+            meblock.style.transition = 'none';
+            enemyblock.style.transition = 'none';
+            meblock.style.opacity ='0';
+            enemyblock.style.opacity ='0';
+            enemywidth = 100;
+            mewidth = 100;
+            text.innerHTML = "";
+            starbtn.style.display = 'none';
+            enemyhp.style.backgroundColor = '#9b0500';
+            mehp.style.backgroundColor = '#009b3b';
+            let stop = setInterval(endtextlight,1000);
+        }
+        //點擊結束視窗
+        function endtouch(){
+            endscreen.addEventListener('click',function(){
+                startscreen.style.zIndex = '1';
+                endscreen.style.zIndex = '-1';
+                endscreen.style.opacity = '0';
+                meblock.style.transition = 'opacity 3s ease 0s';
+                enemyblock.style.transition = 'opacity 3s ease 0s';
+                starbtn.style.transform = 'none';
+                starbtn.style.display = 'block';
+                clearInterval(stop);
+            })
+        }
+        function o0(){ //結束文字框透明度顏色
+                endtext.style.opacity = '0';
+                endtext.style.color = '#fff';
+            }
+        function o1(){
+                endtext.style.opacity = '1';
+                endtext.style.color = '#000';
+            }
+        function endtextlight(){ //重複變換
+            setTimeout(o0,1000);
+            setTimeout(o1,2000);
+        }
+        function s0(){ //開始按鈕呼吸
+            // gamestart.style.opacity = '0.9';
+            gamestart.style.filter = 'drop-shadow(0 0 15pt blue)';
+            gamestart.style.color = '#fff';
+            }
+        function s1(){
+            // gamestart.style.opacity = '1';
+            gamestart.style.filter = 'drop-shadow(0 0 15pt red)';
+            gamestart.style.color = 'black';
+            }
+        function starbtnlight(){ //重複變換
+            setTimeout(s0,1000);
+            setTimeout(s1,2000);
+        }
+        function hp()   //血量歸零
+        {
+            if(enemywidth == 0)
+            {
+                text.innerHTML = "凱旋而歸！你贏了！";
+                // gameend();
+                // win();
+                enemyblock.style.opacity = '0';
+                endscreen.style.backgroundImage = 'url("./win.png")';
+                endscreen.style.zIndex = '2';
+                setTimeout(gameend,3000);
+                endtouch();
+            }
+            if(mewidth == 0)
+            {
+                text.innerHTML = "雖敗猶榮！為了部落！！！";
+                meblock.style.opacity = '0';
+                endscreen.style.backgroundImage = 'url("./lose.png")';
+                endscreen.style.zIndex = '2';
+                setTimeout(gameend,3000);
+                endtouch();
+            }
+        }
+        function enemyhpcolor() //敵方血量條變色
+        {
+            if(enemywidth <= 60)
+            {
+                enemyhp.style.backgroundColor = 'orange';
+            }
+            if(enemywidth<=40)
+            {
+                enemyhp.style.backgroundColor = 'yellow';
+            }
+            if(enemywidth<=20)
+            {
+                enemyhp.style.backgroundColor = '#FF5151';
+            }
+            if(enemywidth<=10)
+            {
+                enemyhp.style.backgroundColor = '#FFD2D2';
+            }
+        }
+        function mehpcolor() //玩家血量條變色
+        {
+            if(mewidth <= 60)
+            {
+                mehp.style.backgroundColor = '#EAC100';
+            }
+            if(mewidth<=40)
+            {
+                mehp.style.backgroundColor = '#FF0000';
+            }
+            if(mewidth<=20)
+            {
+                mehp.style.backgroundColor = '#FF7575';
+            }
+            if(mewidth<=10)
+            {
+                mehp.style.backgroundColor = '#FFD2D2';
+            }
+        }
+        function x(){ //敵人震動
+            shaketop += 2;
+            shakeleft-= 2;
+                enemyblock.style.top = shaketop +'%';
+                enemyblock.style.left = shakeleft +'%';
+        }
+        function x0(){ //震動回位
+            shaketop = 0;
+            shakeleft = 0;
+                enemyblock.style.top = shaketop +'%';
+                enemyblock.style.left = shakeleft +'%';
+        }
+        function y(){ //玩家震動
+            shaketop += 2;
+            shakeright -= 2;
+                meblock.style.top = shaketop +'%';
+                meblock.style.right = shakeright +'%';
+        }
+        function y0(){ //震動回位
+            shaketop = 0;
+            shakeright = 0;
+                meblock.style.top = shaketop +'%';
+                meblock.style.right = shakeright +'%';
+        }
+        function shakeenemy(){ //連續震動
+            let sx = setInterval(x,50);
+            let sx0 = setInterval(x0,100);
+            setTimeout(function(){
+                clearInterval(sx,sx0);
+            },1000);
+        }
+        function shakeme(){ //連續震動
+            let sy = setInterval(y,50);
+            let sy0 = setInterval(y0,100);
+            setTimeout(function(){
+                clearInterval(sy,sy0);
+            },1000);
+        }
+        function run() //亂數讓對手隨機出拳
+        {
+            return Math.floor(Math.random() * 3);
+        }
+        let s = document.querySelector('.s') //玩家出剪刀
+        s.onclick = function choose_s() 
+        {
+            head = "剪刀";
+            eny = run();
+            if (enemy[eny] == '剪刀') {
+                end = '平手';
+            } else if (enemy[eny] == '石頭') {
+                end = '你損失20%血量';
+                mewidth = mewidth - 20;//一次扣20%
+                mehp.style.width = mewidth + '%';
+                shakeme();
+            } else {
+                end = '對手損失20%血量';
+                enemywidth = enemywidth - 20;//一次扣20%
+                enemyhp.style.width = enemywidth + '%';
+                shakeenemy();
+            }
+            text.innerHTML = ('你出『' + head +'』，對方出『' + enemy[eny] + '』，' +end + '！！！');
+            hp();
+            enemyhpcolor();
+            mehpcolor();
+            }
+        let r = document.querySelector('.r')  //玩家出石頭
+        r.onclick = function choose_r() 
+        {
+            head = "石頭";
+            eny = run();
+            if (enemy[eny] == '石頭') {
+                end = '平手';
+            } else if (enemy[eny] == '布') {
+                end = '你損失20%血量';
+                mewidth = mewidth - 20;//一次扣20%
+                mehp.style.width = mewidth + '%';
+                shakeme();
+            } else {
+                end = '對手損失20%血量';
+                enemywidth = enemywidth - 20;//一次扣20%
+                enemyhp.style.width = enemywidth + '%';
+                shakeenemy();
+            }
+            text.innerHTML = ('你出『' + head +'』，對方出『' + enemy[eny] + '』，' +end + '！！！');
+            hp();
+            enemyhpcolor();
+            mehpcolor();
+            }
+        let b = document.querySelector('.b') //玩家出布
+        b.onclick = function choose_b() 
+        {
+            head = "布";
+            eny = run();
+            if (enemy[eny] == '布') {
+                end = '平手';
+            } else if (enemy[eny] == '剪刀') {
+                end = '你損失20%血量';
+                mewidth = mewidth - 20;//一次扣20%
+                mehp.style.width = mewidth + '%';
+                shakeme();
+            } else {
+                end = '對手損失20%血量';
+                enemywidth = enemywidth - 20;//一次扣20%
+                enemyhp.style.width = enemywidth + '%';
+                shakeenemy();
+            }
+            text.innerHTML = ('你出『' + head +'』，對方出『' + enemy[eny] + '』，' +end + '！！！');
+            hp();
+            enemyhpcolor();
+            mehpcolor();
+        }
+    </script>
+</body>
+</html>

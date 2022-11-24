@@ -1,0 +1,17 @@
+#main {
+    margin-top: 5px;
+    width: 35%;
+    border: 1px black solid;
+    border-radius: 50px;
+    margin: auto;
+    background-color: #ff5e00;
+    
+    color: aliceblue;
+}
+#dataIn{
+    margin-top: 5px;
+    text-align: center;
+}
+#dataOut{
+    margin-left: 55px;
+}

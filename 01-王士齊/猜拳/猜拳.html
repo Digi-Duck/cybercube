@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: blanchedalmond;
+        }
+        #start{
+            width: 100vw;
+            height: 100vh;
+            background-color: brown;
+            z-index: 1;
+            
+        }
+
+        #container {
+            width: 700px;
+            height: 400px;
+            margin: auto;
+            background-color: aquamarine;
+            border-radius: 30px;
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #choice {
+            flex-direction: row;
+        }
+        #playerChoice{
+            float: left;
+        }
+        #computerChoice{
+            float: right;
+        }
+        #poit {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        #choice img {
+            width: 250px;
+            height: 150px;
+        }
+
+        .buttons {
+            display: flex;
+            text-align: center;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>俗投剪刀布</h2>
+
+<!-- <div id="start">
+    <h1>俗投剪刀布</h1>
+<button class="startbtn">點我開始</button>
+</div> -->
+
+
+    <div id="container">
+
+        <div id="game-container">
+            <div id="points">
+                <div for="playerPoints">玩家分數：</div>
+                <div class="playerPoints"></div>
+                <div for="computerPoints">電腦分數：</div>
+                <div class="computerPoints"></div>
+            </div>
+            <div id="choice">
+                <div id="playerChoice">
+                    <p>You</p>
+                    <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/5398224566/0" alt="" id="playerChoiceImg">
+                    <h3 id="playerChoiceTxt"></h3>
+                </div>
+                <div id="computerChoice">
+                    <p>Com</p>
+                    <img src="https://www.cio.com.tw/wp-content/uploads/1200-AdobeStock_178319041.jpg" alt="" id="computerChoiceImg">
+                    <h3 id="computerChoiceTxt"></h3>
+                </div>
+            </div>
+            <div id="buttons">
+                <button class="btn">俗投</button>
+                <button class="btn">布</button>
+                <button class="btn">剪刀</button>
+            </div>
+            <button class="reset">重來</button>
+        </div>
+
+    </div>
+    <script>
+        // VARIABLES
+        const choices = [
+            {
+                id: 0,
+                name: "俗投",
+                image: "https://memeprod.sgp1.digitaloceanspaces.com/user-resource/29a462715d4353cd264b9a8cf2cf6fd6.png"
+            },
+            {
+                id: 1,
+                name: "布",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDrYfwKWwCbongpC9ViHC8x2bjMv1lkQ0Lv5sxeFhLp_anosKv8gUq15WghBH2kWTUEh0&usqp=CAU"
+            },
+            {
+                id: 2,
+                name: "剪刀",
+                image: "https://cdn2.ettoday.net/images/3836/3836497.jpg"
+            }]
+
+//宣告變數
+        let playerPoints = document.querySelector(".playerPoints")
+        let computerPoints = document.querySelector(".computerPoints")
+        let playerChoiceImg = document.querySelector("#playerChoiceImg")
+        let playerChoiceTxt = document.querySelector("#playerChoiceTxt")
+        let computerChoiceImg = document.querySelector("#computerChoiceImg")
+        let computerChoiceTxt = document.querySelector("#computerChoiceTxt")
+        let start=document.querySelector('#start');
+        let startbtn = document.querySelector('.startbtn');
+        let buttons = document.querySelectorAll(".btn")
+        let reset1 = document.querySelectorAll(".reset")
+        let points = [10, 10]
+        let randomNumber;
+
+            
+    
+//         let curr_opacity = 1;
+
+// function fadeOut(){
+    
+//     if (curr_opacity>0){
+//         for(a=1;a<=10;a++){
+//         setTimeout(function(){
+//             curr_opacity=curr_opacity-0.1;
+//             start.style.opacity=curr_opacity;
+//             fadeOut;
+//         },100*a)}
+//     }
+// };
+// startbtn.addEventListener('click',fadeOut);
+
+
+
+        // EVENT LISTENERS
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                if (button.textContent === "俗投") {
+                    playerChoiceImg.src = choices[0].image;
+                    playerChoiceTxt.textContent = choices[0].name;
+                } else if (button.textContent === "布") {
+                    playerChoiceImg.src = choices[1].image;
+                    playerChoiceTxt.textContent = choices[1].name;
+                } else if (button.textContent === "剪刀") {
+                    playerChoiceImg.src = choices[2].image;
+                    playerChoiceTxt.textContent = choices[2].name;
+                }
+                getComputerChoice();
+                console.log(points);
+            })
+        })
+
+
+        // FUNCTIONS
+        function getComputerChoice() {
+
+            randomNumber = Math.floor(Math.random() * 3);
+            computerChoiceImg.src = choices[randomNumber].image;
+            computerChoiceTxt.textContent = choices[randomNumber].name;
+            gameRules();
+            playerPoints.textContent = points[0];
+            computerPoints.textContent = points[1];
+            whoWon();
+        }
+
+        function gameRules() {
+            if (playerChoiceTxt.textContent === choices[0].name && computerChoiceTxt.textContent === choices[1].name) {
+                points[0]--;
+            } else if (playerChoiceTxt.textContent === choices[1].name && computerChoiceTxt.textContent === choices[2].name) {
+                points[0]--;
+            } else if (playerChoiceTxt.textContent === choices[2].name && computerChoiceTxt.textContent === choices[0].name) {
+                points[0]--;
+            } else if (playerChoiceTxt.textContent === computerChoiceTxt.textContent) {
+                console.log("draw");
+            } else {
+                points[1]--;
+            }
+        }
+
+        function whoWon() {
+            if (points[0] === 0) {
+                alert("菜")
+                points = [0, 0];
+            } else if (points[1] === 0) {
+                alert("還行吧");
+                points = [0, 0];
+            }
+        }
+    </script>
+</body>
+
+</html>
