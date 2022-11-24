@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜拳遊戲</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: black;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* align-items: flex-end;
+            justify-content:center; */
+        }
+
+        .scale {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 30px;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transform: scale(1.1);
+            border-color: #ffc600;
+            box-shadow: 0 0 1rem #ffc600;
+        }
+
+        .enemyCube {
+            align-self: flex-start;
+            /* width: 800px; */
+            height: 800px;
+            margin: 0 auto;
+        }
+
+        #scrpng {
+            left: 40%;
+            position: absolute;
+            display: none;
+        }
+
+        #pappng {
+            left: 40%;
+            position: absolute;
+            display: none;
+        }
+
+        #stopng {
+            left: 40%;
+            position: absolute;
+            display: none;
+        }
+
+        #img1 {
+            display: inline;
+        }
+
+        .imgg {
+            /* display: inline-block;
+            position: relative; */
+            width: 50px;
+            /* height: 50px; */
+            display: inline;
+        }
+
+        .test {
+            height: 500px
+        }
+
+        .test p {
+            text-align: center;
+            color: white;
+            /* justify-content: center; */
+        }
+
+        .return {
+            height: 200px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        /* .return p {} */
+
+        #hi1196 {
+            right: 0;
+            align-self: flex-end;
+
+        }
+
+        .gamecube {
+            margin-bottom: 50px;
+            margin: 0 auto;
+            /* filter: brightness(200%); */
+        }
+
+        .game {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 30px;
+            padding: 20px;
+            background-color: black;
+            color: white;
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            /* position: absolute; */
+        }
+
+        h3 {
+            color: white;
+        }
+
+        /* #scissor::before{
+content:'hey';
+position: absolute;
+/* filter: blur(3px); */
+        /* mix-blend-mode:difference;
+}
+#stone::before{
+content:'石頭';
+position: absolute;
+filter: blur(3px);
+mix-blend-mode:difference;
+}
+#paper::before{
+content:'布';
+position: absolute;
+filter: blur(2);
+mix-blend-mode:difference;
+} */
+        /* .gameCubeA{
+    width:500px;
+    height:150px;
+    /* top:100px; */
+        /* position:absolute;
+    background:linear-gradient(117.28362916154583deg, rgba(97, 116, 180,1) 7.354166666666668%,rgba(229, 151, 64,1) 93.1875%);
+     filter: blur(2); 
+   mix-blend-mode:multiply;
+ }
+.gamecube .gameCubeB{
+    position: absolute;
+     background:radial-gradient(circle,white ,black 35%) center / 25% 25%;  
+     top:50%;
+     left: 12%;
+     right:30%;
+     bottom:25%;
+     animation:move 2s linear 0s infinite;
+     mix-blend-mode:color-dodge;
+     filter: none;
+}
+@keyframes move{
+    to{
+        transform: translate(30%,80%);
+    }
+} */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>敵人血量:</h3>
+        <img src="./血量.jpg" id="img5" class="imgg">
+        <img src="血量.jpg" id="img4" class="imgg">
+        <img src="血量.jpg" id="img3" class="imgg">
+        <img src="血量.jpg" id="img2" class="imgg">
+        <img src="血量.jpg" id="img1" class="imgg">
+    </div>
+    <div class="enemyCube">
+        <h1>敵人: </h1>
+        <img src="./剪刀.png" id="scrpng">
+        <img src="./石頭.png" id="stopng">
+        <img src="./布.png" id="pappng">
+
+    </div>
+    <div class="test">
+        <p id="testtext"></p>
+    </div>
+    <div class="return">
+
+        <button onclick="restart()" class="game" id="hi1196" data-key="96">
+            ↻
+        </button>
+    </div>
+    <div>
+        <h3>我方血量:</h3>
+        <img src="./血量.jpg" id="img10" class="imgg">
+        <img src="血量.jpg" id="img9" class="imgg">
+        <img src="血量.jpg" id="img8" class="imgg">
+        <img src="血量.jpg" id="img7" class="imgg">
+        <img src="血量.jpg" id="img6" class="imgg">
+    </div>
+    <div class="gamecube">
+
+        <div class="gameCubeB"></div>
+        <span class="gameCubeA"></span>
+        <button onclick="game1(),blood()" value="0" class="game 11" id="1197" data-key="97">剪刀(1)</button>
+        <button onclick="game2(),blood()" value="1" class="game  11" id="1198" data-key="98">石頭(2)</button>
+        <button onclick="game3(),blood()" value="2" class="game 11" id="1199" data-key="99">布(3)</button>
+    </div>
+    <script>
+        const scissor = document.getElementById('1197');
+        const scissor2 = scissor.value;
+        const stone = document.getElementById('1198');
+        const stone2 = stone.value;
+        const paper = document.getElementById('1199');
+        const paper2 = paper.value;
+        const returnbtn = document.getElementById('1196');
+        const p = document.getElementById('testtext');
+        // let e = '11';
+        // let KeyCode = [96, 97, 98, 99];
+        // let keyboard = e + KeyCode[i];
+        // console.log(keyboard)
+        //    const enemys=document.querySelector('scrpng');
+        //    const enemyst=document.querySelector('stopng');
+        //    const enemyp=document.querySelector('pappng');
+        // const img1 = document.getElementById('img1');
+        // const img2 = document.getElementById('img2');
+        // const img3 = document.getElementById('img3');
+        // let img4 = document.getElementById('img4');
+        // let img5 = document.getElementById('img5');
+        // let img9 = document.getElementById('img9');
+        // let img10 = document.getElementById('img10');
+        let n = 0;
+        let z = 0;
+
+        // const one = document.getElementsByClassName('11');
+
+
+        // alert('歡迎來到人生三選一猜拳');
+        function game1() {
+
+            let enemy = Math.floor(Math.random() * 3);
+            console.log(enemy)
+
+            if (scissor2 == 0 && enemy == 0) {
+                scrpng.style.display = "block";
+                stopng.style.display = "none";
+                pappng.style.display = "none";
+                // alert("平手!再來一次");
+            }
+            else if (scissor2 == 0 && enemy == 1) {
+                scrpng.style.display = "none";
+                stopng.style.display = "block";
+                pappng.style.display = "none";
+                // alert("你輸了QQ");
+                p.innerHTML = "哈哈你輸了";
+
+                z += 1;
+            }
+            else if (scissor2 == 0 && enemy == 2) {
+                scrpng.style.display = "none";
+                stopng.style.display = "none";
+                pappng.style.display = "block";
+                // alert("你贏了:>");
+                n += 1;
+                // console.log(n);
+                // if (n == 1) {
+                //     img1.style.display = "none";
+
+                // }
+                // else if (n == 2) {
+                //     img2.style.display = "none";
+                // }
+                // else if (n == 3) {
+                //     img3.style.display = "none";
+                // }
+                // else if (n == 4) {
+                //     img4.style.display = "none";
+                // }
+                // else if (n == 5) {
+                //     img5.style.display = "none";
+                // }
+                // img1.style.display = "none";
+            }
+
+
+        }
+        // n += 1;
+        console.log(p)
+
+
+
+        function game2() {
+
+
+            let enemy = Math.floor(Math.random() * 3);
+            // console.log(enemy)
+            if (stone2 == 1 && enemy == 0) {
+                scrpng.style.display = "block";
+                stopng.style.display = "none";
+                pappng.style.display = "none";
+                // alert("你贏了:>");
+                n += 1;
+                console.log(n);
+
+            }
+            else if (stone2 == 1 && enemy == 1) {
+                stopng.style.display = "block";
+                scrpng.style.display = "none";
+                stopng.style.display = "block";
+                pappng.style.display = "none";
+                // alert("平手!再來一次");
+            }
+            else if (stone2 == 1 && enemy == 2) {
+                pappng.style.display = "block";
+                scrpng.style.display = "none";
+                stopng.style.display = "none";
+                pappng.style.display = "block";
+                // alert("你輸了QQ");
+                p.innerHTML = "哈哈你輸了";
+
+                z += 1;
+            }
+
+        }
+        // console.log(n)
+
+
+
+        function game3() {
+
+
+            let enemy = Math.floor(Math.random() * 3);
+            // console.log(enemy)
+            if (paper2 == 2 && enemy == 0) {
+                scrpng.style.display = "block";
+                stopng.style.display = "none";
+                pappng.style.display = "none";
+                // alert("你輸了QQ");
+                p.innerHTML = "哈哈你輸了";
+
+                z += 1;
+            }
+            else if (paper2 == 2 && enemy == 1) {
+                stopng.style.display = "block";
+                scrpng.style.display = "none";
+                stopng.style.display = "block";
+                pappng.style.display = "none";
+                // alert("你贏了:>");
+                n += 1;
+                // console.log(n);
+
+            }
+            else if (paper2 == 2 && enemy == 2) {
+                pappng.style.display = "block";
+                scrpng.style.display = "none";
+                stopng.style.display = "none";
+                pappng.style.display = "block";
+                // alert("平手!再來一次");
+            }
+
+        }
+        // console.log(n)
+
+        function game4(e) {
+            let keyboard = e.keyCode;
+            console.log(keyboard);
+            let enemy = Math.floor(Math.random() * 3);
+
+            if (keyboard == 97) {
+                if (scissor2 == 0 && enemy == 0) {
+                    scrpng.style.display = "block";
+                    stopng.style.display = "none";
+                    pappng.style.display = "none";
+                    // alert("平手!再來一次");
+                }
+                else if (scissor2 == 0 && enemy == 1) {
+                    scrpng.style.display = "none";
+                    stopng.style.display = "block";
+                    pappng.style.display = "none";
+                    // alert("你輸了QQ");
+                    p.innerHTML = "哈哈你輸了";
+
+                    z += 1;
+                }
+                else if (scissor2 == 0 && enemy == 2) {
+                    scrpng.style.display = "none";
+                    stopng.style.display = "none";
+                    pappng.style.display = "block";
+                    // alert("你贏了:>");
+                    n += 1;
+
+                }
+            }
+        }
+        function game5(e) {
+            let keyboard = e.keyCode;
+            console.log(keyboard);
+            let enemy = Math.floor(Math.random() * 3);
+
+            if (keyboard === 98) {
+                if (stone2 == 1 && enemy == 0) {
+                    scrpng.style.display = "block";
+                    stopng.style.display = "none";
+                    pappng.style.display = "none";
+                    // alert("你贏了:>");
+                    n += 1;
+                    console.log(n);
+                    // if (n == 1) {
+                    //     img1.style.display = "none";
+
+                    // }
+                    // else if (n == 2) {
+                    //     img2.style.display = "none";
+                    // }
+                    // else if (n == 3) {
+                    //     img3.style.display = "none";
+                    // }
+                    // else if (n == 4) {
+                    //     img4.style.display = "none";
+                    // }
+                    // else if (n == 5) {
+                    //     img5.style.display = "none";
+                    // }
+                }
+                else if (stone2 == 1 && enemy == 1) {
+                    stopng.style.display = "block";
+                    scrpng.style.display = "none";
+                    stopng.style.display = "block";
+                    pappng.style.display = "none";
+                    // alert("平手!再來一次");
+                }
+                else if (stone2 == 1 && enemy == 2) {
+                    pappng.style.display = "block";
+                    scrpng.style.display = "none";
+                    stopng.style.display = "none";
+                    pappng.style.display = "block";
+                    // alert("你輸了QQ");
+                    p.innerHTML = "哈哈你輸了";
+
+                    z += 1;
+                }
+            }
+        }
+        function game6(e) {
+            let keyboard = e.keyCode;
+            console.log(keyboard);
+            let enemy = Math.floor(Math.random() * 3);
+
+            if (keyboard === 99) {
+                if (paper2 == 2 && enemy == 0) {
+                    scrpng.style.display = "block";
+                    stopng.style.display = "none";
+                    pappng.style.display = "none";
+                    // alert("你輸了QQ");
+                    p.innerHTML = "哈哈你輸了";
+                    z += 1;
+                }
+                else if (paper2 == 2 && enemy == 1) {
+                    stopng.style.display = "block";
+                    scrpng.style.display = "none";
+                    stopng.style.display = "block";
+                    pappng.style.display = "none";
+                    // alert("你贏了:>");
+                    n += 1;
+                    // console.log(n);
+
+                }
+                else if (paper2 == 2 && enemy == 2) {
+                    pappng.style.display = "block";
+                    scrpng.style.display = "none";
+                    stopng.style.display = "none";
+                    pappng.style.display = "block";
+                    // alert("平手!再來一次");
+                }
+            }
+        }
+        function blood() {
+            console.log(n)
+
+            if (n == 1) {
+                img1.style.display = "none";
+
+            }
+            else if (n == 2) {
+                img2.style.display = "none";
+            }
+            else if (n == 3) {
+                img3.style.display = "none";
+                img4.src = "殘血.jpg";
+                img5.src = "殘血.jpg";
+            }
+            else if (n == 4) {
+                img4.style.display = "none";
+            }
+            else if (n == 5) {
+                img5.style.display = "none";
+                p.innerHTML = "哈哈你輸了";
+            }
+
+            if (z == 1) {
+                img6.style.display = "none";
+            }
+            else if (z == 2) {
+                img7.style.display = "none";
+            }
+            else if (z == 3) {
+                img8.style.display = "none";
+                img9.src = "殘血.jpg";
+                img10.src = "殘血.jpg";
+            }
+            else if (z == 4) {
+                img9.style.display = "none";
+            }
+            else if (z == 5) {
+                img10.style.display = "none";
+
+            }
+        }
+
+        function restart() {
+            n = 0;
+            z = 0;
+
+            img1.style.display = "inline";
+            img2.style.display = "inline";
+            img3.style.display = "inline";
+            img4.style.display = "inline";
+            img5.style.display = "inline";
+            img6.style.display = "inline";
+            img7.style.display = "inline";
+            img8.style.display = "inline";
+            img9.style.display = "inline";
+            img10.style.display = "inline";
+            img4.src = "血量.jpg";
+            img5.src = "血量.jpg";
+            img9.src = "血量.jpg";
+            img10.src = "血量.jpg";
+
+        }
+        // const button = document.querySelector('div');
+        // console.log(button);
+
+        function scale(e) {
+            let keyboard = e.keyCode;
+            if (keyboard === 97 || keyboard === 98 || keyboard === 99 || keyboard === 96) {
+                document.getElementById('11' + keyboard).setAttribute('class', 'scale')
+            }
+            console.log(keyboard)
+
+            //土法煉鋼選擇會造成按一鍵 三鍵同時亮起
+            // const button1 = document.querySelector('#scissor');
+            // const button2 = document.querySelector('#stone');
+            // const button3 = document.querySelector('#paper');
+
+
+
+            // button1.classList.add('scale');
+            // button2.classList.add('scale');
+            // button3.classList.add('scale');
+
+        }
+        function stop(e) {
+            let keyboard = e.keyCode;
+            if (keyboard === 97 || keyboard === 98 || keyboard === 99 || keyboard === 96) {
+                document.getElementById('11' + keyboard).setAttribute('class', 'game')
+            }
+        }
+
+        // function remove(e) {
+        //     n = 0;
+        //     z = 0;
+        //     let keyboard = e.keyCode;
+
+        //     if (keyboard === 96) {
+        //         img1.style.display = "inline";
+        //         img2.style.display = "inline";
+        //         img3.style.display = "inline";
+        //         img4.style.display = "inline";
+        //         img5.style.display = "inline";
+        //         img6.style.display = "inline";
+        //         img7.style.display = "inline";
+        //         img8.style.display = "inline";
+        //         img9.style.display = "inline";
+        //         img10.style.display = "inline";
+        //         img4.src = "血量.jpg";
+        //         img5.src = "血量.jpg";
+        //         img9.src = "血量.jpg";
+        //         img10.src = "血量.jpg";
+        //     }
+        // }
+        window.addEventListener("keydown", scale)
+        // window.addEventListener("keydown", remove)
+        window.addEventListener("keydown", game4)
+        window.addEventListener("keydown", game5)
+        window.addEventListener("keydown", game6)
+        window.addEventListener("keydown", blood)
+        window.addEventListener("keyup", stop)
+
+
+
+
+    </script>
+</body>
+
+</html>
