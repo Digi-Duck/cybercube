@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi計算(ok版本)</title>
+    <style>
+        * {
+            max-width: 100vw;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: bisque;
+        }
+
+        .field{
+            display: flex;
+        }
+
+        .calculator {
+            width: 500px;
+            height: 500px;
+            max-width: 500px;
+            max-height: 500px;
+            margin: auto;
+
+            border-radius: 30px;
+            border: 3px solid black;
+
+            background-color: cadetblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 40px;
+        }
+        .bmi_calcu{
+            width: 100%;
+            font-style:normal;
+            line-height: 50px;
+            margin-bottom: 40px;
+            color: aliceblue;
+            font-size: 20px;
+            font-weight: bold;            
+            text-align: center;
+        }
+        .bmi_calcu label{
+            width: 25%;
+            
+        }
+
+        .bmi_calcu input {
+            width: 28%;
+            height: 50px;
+            border-radius: 30px;
+            text-align: center;
+            border: 2px solid black;
+            
+
+        }
+        .btn_block{
+            display: flex;
+        }
+       
+        .btn_block button {
+            width: 30%;
+            height: 50px;
+            font-size: 20px;
+            margin: auto;
+            border-radius: 30px;
+            border: 2px solid black;
+           
+            
+            
+        }
+        .btn_block button:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 102, 0);
+            border: 3px solid white;
+            box-shadow: 0 0px 15px 10px rgba(255, 102, 0, 0.24);
+        }
+        .caculateBMI{
+            align-items: center;
+        }
+        .reset{
+            align-self: auto;
+        }
+
+        .result{
+            width: 80%;
+            border-radius: 30px;
+            height:30%;
+            opacity:0;
+            background-color: rgb(255, 85, 142);
+            text-align: center;
+            color: aliceblue;
+            border: 2px solid black;box-shadow: 0 0px 15px 10px rgba(255, 85, 142, 0.24);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="fields">
+            <h1>BMI 計算機</h1>
+
+            <div class="bmi_calcu">
+                <label for="bodyHeight">&nbsp;身高(cm)</label>
+                <input type="number" class="bodyHeight" min="0">  
+
+                <label for="bodyWeight">&nbsp;體重(kg)</label>
+                <input type="number" class="bodyWeight" min="0">
+            </div>
+            <div class="btn_block">
+
+                <button
+                class="caculateBMI">計算</button>
+                <button
+                class="reset">重新整理</button>
+                
+            </div>
+
+
+        </div>
+    
+<br>
+<br><br>
+    <div class="result abc">
+        <h2 class="result_txt">你的BMI：</h2>
+
+        <p id="bmiText"></p>
+        <p id="resultText">0</p>
+
+    </div>
+   
+
+
+    </div>
+
+    <script>
+        //BMI = 體重(公斤) / (身高(公尺) x 身高(公尺)) 
+        // 計算功能寫在外面，另外的功能應另外寫出來。
+
+        // 宣告 DOM
+        let bmiText = document.querySelector('#bmiText');
+        bmiText.style.display = "none";
+        //事件點擊按鈕 
+        let btn = document.querySelector('.caculateBMI');
+        let reset = document.querySelector('.reset');
+        let result=document.querySelector('.result');
+        //計算BMI
+
+        function bmi(weight, height) {
+            let w = parseInt(weight);
+            let h = parseInt(height) / 100;//因為公分要轉公尺所以除以100
+            let bmi = (w / (h * h)).toFixed(2);//toFixed讓小數點4捨5入只有2位
+            return bmi;
+
+        }
+
+
+        // 取出輸入值寫入畫面
+        function calculateBMI() {
+            let bodyWeight = document.querySelector('.bodyWeight').value;
+            let bodyHeight = document.querySelector('.bodyHeight').value;
+            let resultText = document.querySelector('#resultText');
+            let bmiText = document.querySelector('#bmiText');
+            
+//淡入淡出
+
+
+
+let curr_opacity = 0;
+
+function fadeOut(){
+    
+    if (curr_opacity>0){
+        for(a=1;a<=10;a++){
+        setTimeout(function(){
+            curr_opacity=curr_opacity-0.1;
+            result.style.opacity=curr_opacity;
+            fadeOut
+        },100*a)}
+    }
+};
+
+function fadeIn(){
+    
+    if (( bodyHeight != ""&& bodyWeight != "") && curr_opacity<1){
+        for(a=1;a<=10;a++){
+        setTimeout(function(){
+            curr_opacity=curr_opacity+0.1;
+            result.style.opacity=curr_opacity;
+            fadeIn;
+        },100*a)}
+    }
+
+};
+btn.addEventListener('click',fadeIn);
+reset.addEventListener('click',fadeOut);
+
+
+
+
+
+
+
+            //  印出值來
+
+         
+
+            if ((bodyWeight != "") && (bodyHeight != "")) {
+
+                bmiText.style.display = "block";
+                resultText.innerHTML = bmi(bodyWeight, bodyHeight);
+                bmiText.innerHTML = checkBMI(bmi(bodyWeight, bodyHeight));
+
+            } else {
+                bmiText.style.display = "none";
+                alert("請輸入身高體重！")
+                return
+
+            }
+           
+        }
+        //  bmi 範圍
+        function checkBMI(bmi) {
+
+            if (bmi < 18.5) {
+                return "太輕了"
+            } else if (bmi >= 18.5 && bmi < 24) {
+                return "體重正常 "
+            } else if (bmi >= 24 && bmi < 27) {
+                return "過重 "
+            } else if (bmi >= 27 && bmi < 30) {
+                return "輕度肥胖 "
+            } else if (bmi >= 30 && bmi < 35) {
+                return "中度肥胖 "
+            } else if (bmi >= 35) {
+                return "重度肥胖 "
+            }
+
+
+        }
+        //清空值
+        function undo(e) {
+            document.querySelector('.bodyWeight').value = ' ';
+            document.querySelector('.bodyHeight').value = ' ';
+            bmiText.style.display = "none";
+            resultText.innerHTML = 0;
+            return
+        }
+
+        //事件監聽
+        btn.addEventListener('click', calculateBMI);
+        reset.addEventListener('click', undo);
+
+    </script>
+</body>
+
+</html>
