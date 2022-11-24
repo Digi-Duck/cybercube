@@ -208,7 +208,7 @@ window.addEventListener("keydown", function (k) {
                 setTimeout("CV.style= 'display:none;'", 9600);
                 setTimeout("CV.muted", 9600);
                 CV.style = "width: 100%; height: 110vh; object-fit: cover;";
-                CV.src = "../Videos/Start000.mp4";
+                CV.src = "./Videos/Start000.mp4";
                 CV.play();
                 vct = 1;
             }
@@ -403,7 +403,7 @@ window.addEventListener("keydown", function (k) {
                         BigScreen.style = "display: block;position: fixed; ; opacity: 1;";
                         CV.style = "display: block;position: fixed; z-index: 99 ; opacity: 1; width: 100%; height: 110vh; object-fit: cover;";
                         CV.muted = false;
-                        CV.src = "../Videos/Combo02.mp4";
+                        CV.src = "./Videos/Combo02.mp4";
                         CV.play();
 
                         setTimeout(ClearWaring, 900);
