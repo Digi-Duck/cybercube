@@ -13,14 +13,13 @@
             box-sizing: border-box;
         }
 
-        /* 導入畫面 按game start會以淡出方式消失 但先隱藏不用管他 */
         .fadeIn {
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-image: url("/img/fadein.png");
+            background-image: url("./img/fadein.png");
             background-position: center;
             background-size: cover;
             visibility: hidden;
@@ -50,7 +49,7 @@
         .block {
             width: 100%;
             height: 80%;
-            background-image: url("/img/background.jpg");
+            background-image: url("./img/background.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
@@ -121,7 +120,7 @@
         .result02 {
             width: 50%;
             height: 100%;
-            background-image: url(/img/對話框.png);
+            background-image: url(./img/對話框.png);
             background-repeat: repeat-x;
             background-size: contain;
             float: left;
@@ -134,7 +133,7 @@
         .btn-B {
             width: 50%;
             height: 100%;
-            background-image: url("img/對話框.png");
+            background-image: url("./img/對話框.png");
             background-size: contain;
             background-repeat: repeat-x;
             display: flex;
@@ -172,7 +171,7 @@
     <div class="block">
         <div class="blockA">
             <div class="playerA">
-                <img src="/img/dog3.png" alt="" class="imgA">
+                <img src="./img/dog3.png" alt="" class="imgA">
             </div>
             <div class="bloodA">
                 <div id="HPa"></div>
@@ -183,7 +182,7 @@
                 <div id="HPb"></div>
             </div>
             <div class="playerB">
-                <img src="/img/cat5.png" alt="" class="imgB">
+                <img src="./img/cat5.png" alt="" class="imgB">
             </div>
         </div>
     </div>
@@ -191,11 +190,11 @@
         <div class="result01 result02">
         </div>
         <div class="btn-B">
-            <button type="button" class="btn" onclick="compare()"><img src="/img/布.jpg" style="width: 170px;"
+            <button type="button" class="btn" onclick="compare()"><img src="./img/布.jpg" style="width: 170px;"
                     class="p-img"></button>
-            <button type="button" class="btn" onclick="compare()"> <img src="/img/剪刀.jpg" style="width: 170px;"
+            <button type="button" class="btn" onclick="compare()"> <img src="./img/剪刀.jpg" style="width: 170px;"
                     class="sci-img"></button>
-            <button type="button" class="btn" onclick="compare()"><img src="/img/石頭.jpg" style="width: 170px;"
+            <button type="button" class="btn" onclick="compare()"><img src="./img/石頭.jpg" style="width: 170px;"
                     class="s-img"></button>
         </div>
     </div>
