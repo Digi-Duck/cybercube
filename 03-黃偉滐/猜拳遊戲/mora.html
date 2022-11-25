@@ -8,18 +8,18 @@
 </head>
 <body>
     <div>
-        <img id="yourhppic" src="/picture/5hp.png" height="50px" width="250px">
+        <img id="yourhppic" src="./picture/5hp.png" height="50px" width="250px">
     </div>
     <div>
-        <img id="mora" src="/picture/mora.gif " height="300px" width="300px">
+        <img id="mora" src="./picture/mora.gif" height="300px" width="300px">
     </div>
     <div>
-        <img id="myhppic" src="/picture/5hp.png" height="50px" width="250px">
+        <img id="myhppic" src="./picture/5hp.png" height="50px" width="250px">
     </div>
     <div>
-        <img id="scissors" src="/picture/scissors.png"  onclick="rand();a();scissors();match();hp();">
-        <img id="rock" src="/picture/rock.png" onclick="rand();a();rock();match();hp();">
-        <img id="paper" src="/picture/paper.png" onclick="rand();a();paper();match();hp();">
+        <img id="scissors" src="./picture/scissors.png"  onclick="rand();a();scissors();match();hp();">
+        <img id="rock" src="./picture/rock.png" onclick="rand();a();rock();match();hp();">
+        <img id="paper" src="./picture/paper.png" onclick="rand();a();paper();match();hp();">
     </div>
 </body>
 
@@ -28,8 +28,8 @@
     var m,y;
     var myhp=5;
     var yourhp=5;
-    let morapic=["picture/scissors.png","picture/rock.png","picture/paper.png"];
-    let hppic=["picture/0hp.png","picture/1hp.png","picture/2hp.png","picture/3hp.png","picture/4hp.png","picture/5hp.png"]
+    let morapic=["./picture/scissors.png","./picture/rock.png","./picture/paper.png"];
+    let hppic=["./picture/0hp.png","./picture/1hp.png","./picture/2hp.png","./picture/3hp.png","./picture/4hp.png","./picture/5hp.png"]
     function rand(){
         r=Math.floor(Math.random()*3);
     }
