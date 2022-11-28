@@ -96,6 +96,7 @@
             padding-left: 10px;
             padding-top: 2px;
             line-height: 50px;
+            opacity: 0;
             visibility: hidden;
         }
 
@@ -187,7 +188,7 @@
         startbtn.onclick = function () {
             let value_h = heigh.value;
             let value_w = weight.value;
-            let outputarea = "";
+            outputarea.classList.add('show');
 
             if (value_h === "" || value_w === "") {
                 alert("請輸入完整內容!")
@@ -237,12 +238,8 @@
         // } else {
         //     outputarea.style.display = "none"
         // }
-        startbtn.addEventListener('click', () => {
-            outputarea.classList.toggle('show');
-            outputarea.classList.remove('hidden');
-        });
         closebtn.addEventListener('click', () => {
-            outputarea.classList.toggle('hidden');
+            outputarea.classList.remove('show');
         });
 
     </script>
