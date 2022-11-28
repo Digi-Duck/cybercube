@@ -4,4 +4,5 @@
 // <!-- (4)根據分數題目會越來越難(增加方塊/減少色差) -->
 // <!-- (5)時間結束秀出分數及評語 -->
 // <!-- (6)要能重玩 -->
-document.querySelector("")
+const total= document.querySelector("#game")
+console.log();
