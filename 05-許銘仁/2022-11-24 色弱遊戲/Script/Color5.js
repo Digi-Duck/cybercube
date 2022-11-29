@@ -177,6 +177,8 @@ function CreatSpan(lv, ClockVideo) {
                             span.style.filter = "brightness(1.4)";
                             ScoreName.innerHTML = "超Happy的超能先生";
 
+                            ScoreName.style.color = "blue";
+
                             if(BgmNum != "01"){
                                 BGM.src = "./Music/01.mp3";
                                 BGM.play();
@@ -187,12 +189,16 @@ function CreatSpan(lv, ClockVideo) {
                             if(score >= 7){
                                 Img.style.backgroundImage = "url('./Images/02.jpg')"
                                 BGM.play();
+
+                                ScoreName.style.color = "yellow";
                             }
                         }
                         else if (score <= 21 && score > 14) {
                             span.style.filter = "brightness(1.35)";
                             Img.style.backgroundImage = "url('./Images/03.jpg')"
                             ScoreName.innerHTML = "壓力山大的超能先生";
+
+                            ScoreName.style.color = "orange";
 
                             if(BgmNum != "02"){
                                 BGM.src = "./Music/02.mp3";
@@ -207,6 +213,8 @@ function CreatSpan(lv, ClockVideo) {
                             Img.style.backgroundImage = "url('./Images/04.jpg')"
                             ScoreName.innerHTML = "即將黑化的超能先生";
 
+                            ScoreName.style.color = "black";
+
                             if(BgmNum != "03"){
                                 BGM.src = "./Music/03.mp3";
                                 BGM.play();
@@ -219,7 +227,7 @@ function CreatSpan(lv, ClockVideo) {
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                             Img.style.backgroundImage = "url('./Images/05.jpg')"
 
-                            ScoreName.innerHTML = "Kill me.";
+                            ScoreName.innerHTML = "扭曲變形的超能先生";
                             ScoreName.style.color = "red";
 
                             if(BgmNum != "04"){
