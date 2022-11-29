@@ -13,6 +13,7 @@
     margin: 0px;
     font-size: 36px;
     font-family: "標楷體", Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 #all {
@@ -28,22 +29,46 @@
     height: 10vh;
     /* background-color:rgb(255, 100, 10); */
 }
+#bloodMain{
+    width: 60%;
+    height: 28px;
+    background: rgba(10,10,10,0);
+    overflow: hidden;
+    margin: 0 auto;
+}
+#bloodProgress{
+    width: 100%;
+    height: 28px;
+    margin-top: 1px;
+    background: rgb(234, 197, 8);
+}
 
 #main {
 
     width: 100%;
-    height: calc(75vh - 50px);
+    height: calc(80vh - 50px);
     /* background-color: brown; */
     margin: 0px;
     padding-top: 50px;
+    position: relative;
+    
+}
 
-
+#score{
+    width:300px ;
+    height:55px ;
+    position: absolute;
+    left:20%;
+    top:-4%;
 }
 
 #game {
+    
     background-color: white;
     border-radius: 20px;
     border-color: antiquewhite;
+
+    justify-content: center;
 
     padding: 10px;
     margin: auto;
@@ -56,8 +81,11 @@
 }
 
 .gameColor {
+    font-size: 124px;
+    text-align: center;
+    line-height:2 ;
     border: white solid;
-    background-color:#830000;
+    background-color: rgb(27, 34, 34,0.1);
     width: calc(100% / 2 - 6px);
     height: calc(100% / 2 - 6px);
 }
@@ -67,23 +95,41 @@
     justify-content: center;
 }
 
-#start {
-    background-color: darkmagenta;
-    border-radius: 20px;
+.restart {
+    width: 100px;
+    background: #4fdf8f;
+    border: dashed;
     text-align: center;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 30px;
+}
 
-    margin-left: 45px;
+#start {
+
+    background-color: darkmagenta;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 1;
+    font-size: 24px;
+    border-radius: 20px;
+    
     margin-top: 20px;
     width: 100px;
     height: 30px;
     cursor: pointer;
+ 
 }
 
 #chater {
+    display: none;
     background-color: darkmagenta;
-    border-radius: 20px;
     text-align: center;
-    margin-left: 45px;
+    color: whitesmoke;
+    line-height: 1;
+    font-size: 24px;
+    border-radius: 20px;
+    
     margin-top: 20px;
     width: 100px;
     height: 30px;
@@ -93,7 +139,7 @@
 
 #footer {
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     background-color: rgb(27, 34, 34);
 }
 
