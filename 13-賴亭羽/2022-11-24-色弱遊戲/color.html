@@ -134,7 +134,7 @@
     <div class="end">
         <p class="result">Score:<span class="score"></span></p>
         <p class="result">Level:<span class="level"></span></p>
-        <p class="result">Level:<span class="time-count"></span></p>
+        <p class="result">Time:<span class="time-count"></span></p>
         <button class="restart-btn">Restart</button>
     </div>
     <script>
@@ -149,6 +149,7 @@
         let amount = 2;
         let score = 0;
         let level = 1;
+        //不同顏色方塊位置
         let correctCol;
         let correctRow;
         //製造方塊
@@ -161,7 +162,7 @@
             for (let i = 1; i < num; i++) {
                 for (let j = 1; j < num; j++) {
                     if (i == correctRow && j == correctCol) {
-                        board.innerHTML += `<button class="all-btn" id=" correct-btn">我要生氣囉</button>`
+                        board.innerHTML += `<button class="all-btn" id=" correct-btn"></button>`
                     } else {
                         btn;
                         board.innerHTML += `<button class="all-btn"></button>`
@@ -170,7 +171,9 @@
             }
             let correctBtn = document.querySelector("#correct-btn");
             let allBtn = document.querySelector(".all-btn");
+            //方塊固定寬高
             boxLength = 700 / amount;
+            //隨機生成顏色
             R = Math.floor(Math.random() * 255);
             G = Math.floor(Math.random() * 255);
             B = Math.floor(Math.random() * 255);
@@ -183,6 +186,8 @@
             // let color=['#f00','#000','yellow'];
             // let math=Math.floor(Math.random() * color.length);
             // console.log(math);
+            
+            //將所有方塊放入顏色及寬高
             Array.from(allBtn).forEach(function(allBtn){
                     allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
                 // allBtn.style.backgroundColor=color[math];
