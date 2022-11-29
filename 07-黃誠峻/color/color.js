@@ -7,12 +7,15 @@
 const game= document.querySelector("#game")
 
 var change=[2,4,5,5,5,6,10,10,12,20]
+var mainColor=[50,40,40,40,30,30,20]
 let y=-1
 function color(){
     console.log("第"+y);
     y=y+1;
     //選定一個隨機顏色
-    changeColor=Math.floor(Math.random()*999998)+203241;
+   red=Math.floor(Math.random()*255);
+   blue=Math.floor(Math.random()*255);
+   green=Math.floor(Math.random()*255);
     //產生多少格子
     position=Math.floor(Math.random() * (change[y]*change[y]));
     // console.log(position)
@@ -31,12 +34,12 @@ function color(){
 //    console.log(boxloop.length);
    for(let j=0;j<=boxloop.length-1;j++){
   //改變特定格子顏色
-    boxloop[position].style.background="#"+(changeColor-21349)
+    boxloop[position].style.background="rgb("+(red+mainColor[y])+","+(green+mainColor[y])+","+(blue+mainColor[y])+")";
    
     // console.log( j)
-   boxloop[j].style.height="calc(100%/"+change[y] +" - 3px)";
-   boxloop[j].style.width="calc(100%/"+change[y] +" - 3px)";
-   boxloop[j].style.background="#"+changeColor;
+   boxloop[j].style.height="calc(100%/"+change[y] +" - 6px)";
+   boxloop[j].style.width="calc(100%/"+change[y] +" - 6px)";
+   boxloop[j].style.background="rgb("+red+","+green+","+blue+")";
    } boxloop[position].addEventListener('click', function () {
     color();
   });
