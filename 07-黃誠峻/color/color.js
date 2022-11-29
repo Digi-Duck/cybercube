@@ -71,7 +71,7 @@ function start() {
         if (count == 0) {
             clearInterval(timerId);
             // boxloop[position].removeEventListener()
-            boxloop[position].style.outline="dashed 1rem  red"
+            boxloop[position].style.outline="dashed 3px red"
             setTimeout(lose, 700);
         };
     }
