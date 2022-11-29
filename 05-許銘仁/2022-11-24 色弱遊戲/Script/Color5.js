@@ -222,7 +222,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
 
-                        else if (score <= 35 && score > 28) {
+                        else if (score <= 33 && score > 28) {
                             span.style.filter = "brightness(1.2)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                             Img.style.backgroundImage = "url('./Images/05.jpg')"
@@ -237,7 +237,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
 
-                        else if (score <= 42 && score > 35){
+                        else if (score <= 38 && score > 33){
                             span.style.filter = "brightness(1.1)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
                             Img.style.backgroundImage = "url('./Images/06.jpg')"
