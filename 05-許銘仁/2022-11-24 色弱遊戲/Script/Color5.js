@@ -214,7 +214,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
 
-                        else if (score <= 40 && score > 28) {
+                        else if (score <= 36 && score > 28) {
                             span.style.filter = "brightness(1.2)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                             Img.style.backgroundImage = "url('./Images/05.jpg')"
@@ -230,7 +230,17 @@ function CreatSpan(lv, ClockVideo) {
                         }
 
                         else{
+                            span.style.filter = "brightness(1.1)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                            Img.style.backgroundImage = "url('./Images/06.jpg')"
+                            ScoreName.innerHTML = "Kill me.";
+                            ScoreName.style.color = "red";
+
+                            if(BgmNum != "05"){
+                                BGM.src = "./Music/05.mp3";
+                                BGM.play();
+                                BgmNum = "05";
+                            }
                         }
 
 
