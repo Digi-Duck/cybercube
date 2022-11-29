@@ -211,7 +211,7 @@ function CreatSpan(lv, ClockVideo) {
                             span.style.filter = "brightness(1.25)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
                             Img.style.backgroundImage = "url('./Images/04.jpg')"
-                            ScoreName.innerHTML = "即將黑化的超能先生";
+                            ScoreName.innerHTML = "已經黑化的超能先生";
 
                             ScoreName.style.color = "black";
 
@@ -222,7 +222,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
 
-                        else if (score <= 36 && score > 28) {
+                        else if (score <= 35 && score > 28) {
                             span.style.filter = "brightness(1.2)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                             Img.style.backgroundImage = "url('./Images/05.jpg')"
@@ -237,7 +237,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
 
-                        else{
+                        else if (score <= 42 && score > 35){
                             span.style.filter = "brightness(1.1)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
                             Img.style.backgroundImage = "url('./Images/06.jpg')"
@@ -248,6 +248,20 @@ function CreatSpan(lv, ClockVideo) {
                                 BGM.src = "./Music/05.mp3";
                                 BGM.play();
                                 BgmNum = "05";
+                            }
+                        }
+
+                        else{
+                            span.style.filter = "brightness(1.1)";
+                            container.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
+                            Img.style.backgroundImage = "url('./Images/07.jpg')"
+                            ScoreName.innerHTML = "DEEP-DARK-FANTASY";
+                            ScoreName.style.color = "red";
+
+                            if(BgmNum != "06"){
+                                BGM.src = "./Music/06.mp3";
+                                BGM.play();
+                                BgmNum = "06";
                             }
                         }
 
