@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="color.css">
 </head>
 
-<body onload="color()">
+<body >
     <div id="all">
         <div id="header">
             <h2 style="text-align:center">color game</h2>
         </div>
         <div id="main">
-            <div id="game" >
+            <div id="game">
                 <div class="gameColor"></div>
                 <div class="gameColor"></div>
                 <div class="gameColor"></div>
                 <div class="gameColor"></div>
             </div>
-            <div id="start">start</div>
+            <div id="button">
+                <div id="start" onclick="color()">start</div>
+                <div id="chater" onclick="chater()">chater</div>
+            </div>
         </div>
         <div id="footer"></div>
     </div>
