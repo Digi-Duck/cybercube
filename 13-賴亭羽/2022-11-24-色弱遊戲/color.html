@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色弱遊戲</title>
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+
+            background-color: rgb(3, 53, 100);
+
+            position: relative;
+        }
+
+        .start-btn {
+            width: 200px;
+            height: 100px;
+
+            border-radius: 50px;
+            border: 5px solid #fff;
+
+            color: aliceblue;
+            font-size: 30px;
+
+            background-color: brown;
+
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 100px);
+        }
+
+        h1 {
+            text-align: center;
+
+            color: #fff;
+        }
+
+        .grade-board {
+            color: rgb(229, 215, 52);
+            font-size: 30px;
+            line-height: 2em;
+
+            padding-top: 30px;
+
+            width: 700px;
+            height: 200px;
+
+            position: absolute;
+            left: calc(50% - 350px);
+        }
+
+        .board {
+            width: 700px;
+            height: 700px;
+
+            background-color: #fff;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: 250px;
+            left: calc(50% - 350px);
+        }
+
+        .all-btn {
+
+        }
+
+        .end {
+            width: 45%;
+            height: 45%;
+
+            border-radius: 20px;
+            padding: 25px;
+
+            background-color: rgb(248, 241, 138);
+
+            position: absolute;
+            top: 25%;
+            left: 30%;
+
+            font-size: 25px;
+
+            display: none;
+        }
+
+        .start.hidden {
+            display: none;
+        }
+
+        .restart-btn {
+            width: 200px;
+            height: 100px;
+
+            border-radius: 50px;
+            border: 5px solid #000;
+
+            color: black;
+            font-size: 30px;
+
+            background-color: rgb(253, 225, 68);
+
+            position: absolute;
+            top: 90%;
+            left: calc(50% - 100px);
+        }
+
+        .end.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grade-board">
+        <h1>色弱遊戲</h1>
+        <p>Score:<span class="score"></span></p>
+        <p>Level:<span class="level"></span></p>
+    </div>
+    <div class="board">
+    </div>
+    <div class="start">
+        <button class="start-btn">Game start!</button>
+    </div>
+    <div class="end">
+        <p class="result">Score:<span class="score"></span></p>
+        <p class="result">Level:<span class="level"></span></p>
+        <p class="result">Time:<span class="time-count"></span></p>
+        <button class="restart-btn">Restart</button>
+    </div>
+    <script>
+        const startBtn = document.querySelector(".start-btn");
+        const restart = document.querySelector(".restart-btn");
+        const scoreNum = document.querySelector(".score");
+        const levelNum = document.querySelector(".level");
+        const board = document.querySelector(".board");
+        const startBoard = document.querySelector(".start");
+
+        //分數 方塊數量 等級初始值
+        let amount = 2;
+        let score = 0;
+        let level = 1;
+        //不同顏色方塊位置
+        let correctCol;
+        let correctRow;
+        //製造方塊
+        function creatBoxs(num) {
+            // board.innerHTML = "";
+            correctRow = Math.floor(Math.random() * num) + 1;
+            correctCol = Math.floor(Math.random() * num) + 1;
+            // let btn=document.createElement("button");
+            // btn.className="all-btn";
+            for (let i = 1; i < num; i++) {
+                for (let j = 1; j < num; j++) {
+                    if (i == correctRow && j == correctCol) {
+                        board.innerHTML += `<button class="all-btn" id=" correct-btn"></button>`
+                    } else {
+                        btn;
+                        board.innerHTML += `<button class="all-btn"></button>`
+                    }
+                }
+            }
+            let correctBtn = document.querySelector("#correct-btn");
+            let allBtn = document.querySelector(".all-btn");
+            //方塊固定寬高
+            boxLength = 700 / amount;
+            //隨機生成顏色
+            R = Math.floor(Math.random() * 255);
+            G = Math.floor(Math.random() * 255);
+            B = Math.floor(Math.random() * 255);
+            console.log(R,G,B)
+
+            // Array.from(allBtn).forEach(function (allBtn) {
+            //     allBtn.style.width = `${boxLength}px`;
+            //     allBtn.style.length = `${boxLength}px`;
+
+            // let color=['#f00','#000','yellow'];
+            // let math=Math.floor(Math.random() * color.length);
+            // console.log(math);
+            
+            //將所有方塊放入顏色及寬高
+            Array.from(allBtn).forEach(function(allBtn){
+                    allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
+                // allBtn.style.backgroundColor=color[math];
+            allBtn.style.width = `${boxLength}px`;
+            allBtn.style.length = `${boxLength}px`;});
+        }
+        //按下開始鈕
+        startBtn.onclick = function () {
+            startBoard.classList.add("hidden");
+            amount=2;
+            level=1;
+            Score=0;
+            board.innerHTML="";
+            creatBoxs(amount);
+        }
+
+        console.log(board);
+
+    </script>
+</body>
+
+</html>

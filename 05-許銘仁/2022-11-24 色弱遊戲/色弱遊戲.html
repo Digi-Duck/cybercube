@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色弱遊戲</title>
+    <link rel="stylesheet" href="./Style/Color.css">
+</head>
+
+<body>
+    <video src="./Videos/BgVideo1.mp4" muted loop></video>
+    <div class="container">
+        <header>
+            <div class="Screen01">
+                <p>色弱測試</p>
+            </div>
+            <div class="Screen02">
+                <div class="Img"></div>
+                <div class="Score">得分: 1</div>
+                
+                <div>
+                    <p class="Time"></p>
+                </div>
+                <div><button class="PauseBtn">Pause</button></div>
+            </div>
+        </header>
+    
+        <main>
+            <div class="Screen01">
+                <div>
+                    <p>The Color!</p>
+                </div>
+                <div>
+                    <p>找出所有色塊裡顏色不同的那一個!</p>
+                </div>
+            </div>
+            <div class="Screen02">
+                <div class="Bgcolor"></div>
+            </div>
+        </main>
+    
+        <footer>
+            <div class="Screen01"><button class="StartBtn">PLAY</button></div>
+        </footer>
+    
+        <!-- 暫停鈕 -->
+        <span class="ScreenPause">
+            <h2 class="EndText"></h2>
+            <h1 class="ScoreName"></h1><button class="BackGame">Back</button>
+        </span>
+    </div>
+
+    <audio src=""></audio>
+    <script src="./Script/Color5.js"></script>
+</body>
+
+</html>
