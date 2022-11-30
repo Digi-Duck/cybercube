@@ -12,8 +12,9 @@
 <body>
     <div class="grade-board">
         <h1>色弱遊戲</h1>
-        <p>Score:<span class="score"></span></p>
-        <p>Level:<span class="level"></span></p>
+        <p>Score: <span class="score"></span></p>
+        <p>Level: <span class="level"></span></p>
+        <p>Time: <span class="time-count"></span></p>
     </div>
     <div class="board">
     </div>
@@ -23,77 +24,9 @@
     <div class="end">
         <p class="result">Score:<span class="score"></span></p>
         <p class="result">Level:<span class="level"></span></p>
-        <p class="result">Time:<span class="time-count"></span></p>
         <button class="restart-btn">Restart</button>
     </div>
-    <script>
-        const startBtn = document.querySelector(".start-btn");
-        const restart = document.querySelector(".restart-btn");
-        const scoreNum = document.querySelector(".score");
-        const levelNum = document.querySelector(".level");
-        const board = document.querySelector(".board");
-        const startBoard = document.querySelector(".start");
-
-        //分數 方塊數量 等級初始值
-        let amount = 2;
-        let score = 0;
-        let level = 1;
-        //不同顏色方塊位置
-        let correctCol;
-        let correctRow;
-        //製造方塊
-        function creatBoxs(num) {
-            // board.innerHTML = "";
-            correctRow = Math.floor(Math.random() * num) + 1;
-            correctCol = Math.floor(Math.random() * num) + 1;
-
-            for (let i = 1; i < num + 1; i++) {
-                for (let j = 1; j < num + 1; j++) {
-                    if (i == correctRow && j == correctCol) {
-                        //特定變色方塊
-                        let ansDiv = document.createElement("div");
-                        ansDiv.setAttribute("class", "all-btn correct-btn")
-                        board.appendChild(ansDiv);
-                        // board.innerHTML += `<button class="all-btn" id=" correct-btn"></button>`
-                    } else {
-                        let allDiv = document.createElement("div");
-                        allDiv.setAttribute("class", "all-btn");
-                        board.appendChild(allDiv);
-                        // board.innerHTML += `<button class="all-btn"></button>`
-                    }
-                }
-            }
-            let correctBtn = document.querySelector("#correct-btn");
-            let allBtn = document.querySelector(".all-btn");
-            //方塊固定寬高
-            boxLength = 700 / amount;
-            //隨機生成顏色
-            R = Math.floor(Math.random() * 255);
-            G = Math.floor(Math.random() * 255);
-            B = Math.floor(Math.random() * 255);
-            //console.log(R, G, B)
-            //將所有方塊放入顏色及寬高
-            console.log(allBtn.length);
-            allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
-            allBtn.style.width = `${boxLength}px`;
-            allBtn.style.height = `${boxLength}px`;
-            //for (x = 0; x < allBtn.length; x++) {
-            //     allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
-            //    allBtn.style.width = `${boxLength}px`;
-            //    allBtn.style.height = `${boxLength}px`;
-            // }
-            console.log(allBtn)
-        }
-        //按下開始鈕
-        startBtn.onclick = function () {
-            startBoard.classList.add("hidden");
-            amount = 2;
-            level = 1;
-            Score = 0;
-            // board.innerHTML = "";
-            creatBoxs(amount);
-        }
-    </script>
+    <script src="./js/color.js"></script>
 </body>
 
 </html>
