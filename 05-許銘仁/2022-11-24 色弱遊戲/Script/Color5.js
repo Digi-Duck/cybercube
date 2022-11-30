@@ -174,7 +174,7 @@ function CreatSpan(lv, ClockVideo) {
                         span.style.backgroundColor = "rgb(" + RandColor[0] + "," + RandColor[1] + "," + RandColor[2] + ")";
 
                         if (score <= 14) {
-                            span.style.filter = "brightness(1.4)";
+                            span.style.filter = "brightness(1.45)";
                             ScoreName.innerHTML = "超Happy的超能先生";
 
                             ScoreName.style.color = "blue";
@@ -194,7 +194,7 @@ function CreatSpan(lv, ClockVideo) {
                             }
                         }
                         else if (score <= 21 && score > 14) {
-                            span.style.filter = "brightness(1.35)";
+                            span.style.filter = "brightness(1.4)";
                             Img.style.backgroundImage = "url('./Images/03.jpg')"
                             ScoreName.innerHTML = "壓力山大的超能先生";
 
@@ -208,7 +208,7 @@ function CreatSpan(lv, ClockVideo) {
 
                         }
                         else if (score <= 28 && score > 21) {
-                            span.style.filter = "brightness(1.25)";
+                            span.style.filter = "brightness(1.3)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
                             Img.style.backgroundImage = "url('./Images/04.jpg')"
                             ScoreName.innerHTML = "已經黑化的超能先生";
@@ -223,7 +223,7 @@ function CreatSpan(lv, ClockVideo) {
                         }
 
                         else if (score <= 33 && score > 28) {
-                            span.style.filter = "brightness(1.2)";
+                            span.style.filter = "brightness(1.25)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                             Img.style.backgroundImage = "url('./Images/05.jpg')"
 
@@ -238,7 +238,7 @@ function CreatSpan(lv, ClockVideo) {
                         }
 
                         else if (score <= 38 && score > 33){
-                            span.style.filter = "brightness(1.1)";
+                            span.style.filter = "brightness(1.2)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
                             Img.style.backgroundImage = "url('./Images/06.jpg')"
                             ScoreName.innerHTML = "Kill me.";
@@ -252,7 +252,7 @@ function CreatSpan(lv, ClockVideo) {
                         }
 
                         else{
-                            span.style.filter = "brightness(1.1)";
+                            span.style.filter = "brightness(1.15)";
                             container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
                             Img.style.backgroundImage = "url('./Images/07.jpg')"
                             ScoreName.innerHTML = "DEEP ♂ DARK ♂ FANTASY";
