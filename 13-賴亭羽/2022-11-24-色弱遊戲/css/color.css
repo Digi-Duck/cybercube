@@ -12,6 +12,29 @@ body {
     position: relative;
 }
 
+img{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.result{
+    width: 500px;
+    height: 500px;
+
+    background-color: rgb(229, 215, 52);
+
+    border-radius: 20px;
+
+    position: absolute;
+    top: 350px;
+    left: calc(50% - 250px);
+}
+
+.result.hidden{
+    display: none;
+}
+
 .start-btn {
     width: 200px;
     height: 100px;
@@ -25,7 +48,7 @@ body {
     background-color: brown;
 
     position: absolute;
-    top: 50%;
+    top: 77%;
     left: calc(50% - 100px);
 }
 
@@ -62,8 +85,6 @@ h1 {
     position: absolute;
     top: 250px;
     left: calc(50% - 350px);
-    
-
 }
 
 .all-btn {
@@ -91,27 +112,6 @@ h1 {
     display: none;
 }
 
-.start.hidden {
+.start-btn.hidden {
     display: none;
-}
-
-.restart-btn {
-    width: 200px;
-    height: 100px;
-
-    border-radius: 50px;
-    border: 5px solid #000;
-
-    color: black;
-    font-size: 30px;
-
-    background-color: rgb(253, 225, 68);
-
-    position: absolute;
-    top: 90%;
-    left: calc(50% - 100px);
-}
-
-.end.show {
-    display: block;
 }

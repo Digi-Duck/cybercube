@@ -1,21 +1,40 @@
 const startBtn = document.querySelector(".start-btn");
-const restart = document.querySelector(".restart-btn");
 const scoreNum = document.querySelector(".score");
 const levelNum = document.querySelector(".level");
 const board = document.querySelector(".board");
-const startBoard = document.querySelector(".start");
+const result = document.querySelector(".result");
 const timeNum = document.querySelector(".time-count")
 //分數 方塊數量 等級初始值
 let amount = 2;
 let score = 0;
 let level = 1;
-//不同顏色方塊位置
+//特定變色方塊位置
 let correctCol;
 let correctRow;
 //計時變數
 let countdown;
 let timeout;
-
+//點擊異色方塊觸發機制
+function clickcorrectBtn(){
+    level+=1;
+    score+=amount;
+    if(level<10){
+        levelNum.innerHTML="0"+level;
+    }else{
+        levelNum.innerHTML=level;
+    }
+    if(score<10){
+        scoreNum.innerHTML="0"+score;
+    }else{
+        scoreNum.innerHTML=score;
+    }
+    if(amount<20){
+        amount++;
+    }
+    board.innerHTML="";
+    creatBoxs(amount);
+}
+//製造方塊
 function creatBoxs(num) {
     // board.innerHTML = "";
     correctRow = Math.floor(Math.random() * num) + 1;
@@ -37,7 +56,7 @@ function creatBoxs(num) {
             }
         }
     }
-    let correctBtn = document.querySelector("#correct-btn");
+    let correctBtn = document.querySelector(".correct-btn");
     let allBtn = document.querySelectorAll(".all-btn");
     //方塊固定寬高
     boxLength = 700 / amount;
@@ -45,49 +64,65 @@ function creatBoxs(num) {
     R = Math.floor(Math.random() * 255);
     G = Math.floor(Math.random() * 255);
     B = Math.floor(Math.random() * 255);
-    //console.log(R, G, B)
     //將所有方塊放入顏色及寬高
     console.log(allBtn.length);
-    // allBtn.forEach(function (c) {
-    //     allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
-    //     allBtn.style.width = `${boxLength}px`;
-    //     allBtn.style.height = `${boxLength}px`;
-    //     console.log(R,G,B)
-    // });
-
     for (x = 0; x < allBtn.length; x++) {
         allBtn[x].style.backgroundColor = `rgb(${R},${G},${B})`;
         allBtn[x].style.width = `${boxLength}px`;
         allBtn[x].style.height = `${boxLength}px`;
     }
-    console.log(allBtn)
+    //依等級去劃分難度
+    if(level<=1){
+        correctBtn.style.backgroundColor=`rgb(${R - 50},${G -50 },${B - 50})`;
+    }else if(level<5){
+        correctBtn.style.backgroundColor=`rgb(${R - 40},${G -40 },${B - 40})`
+    }else if(level<10){
+        correctBtn.style.backgroundColor=`rgb(${R - 30},${G -30 },${B - 30})`
+    }else if(level<15){
+        correctBtn.style.backgroundColor=`rgb(${R - 20},${G -20 },${B - 20})`
+    }else if(level<20){
+        correctBtn.style.backgroundColor=`rgb(${R - 10},${G -10 },${B - 10})`}
+    //增加異色方塊觸發事件
+    correctBtn.addEventListener("click",clickcorrectBtn);
 }
+
 //按下開始鈕
 startBtn.onclick = function () {
-    startBoard.classList.add("hidden");
+    result.classList.add("hidden");
+    startBtn.classList.add("hidden");
     amount = 2;
     level = 1;
     levelNum.innerHTML = level
     Score = 0;
     scoreNum.innerHTML = Score + "分"
-    // board.innerHTML = "";
-    Sec = 10;//
-
+    board.innerHTML = "";
+    let Sec = 10;//
     //倒數計時
     function countdown() {
-        Sec--;
+        Sec = Sec - 1;
         timeNum.innerHTML = Sec + "秒";
         if (Sec <= 20) {
             timeNum.style.color = "orange"
         } else if (Sec <= 10) {
             timeNum.style.color = "#f00"
-        } else if (Sec == 0) {
+        } 
+        if (Sec == 0) {
             //結算
             clearTimeout(timeCountdown);
+            if(level<=1){
+                alert(`時間到！您已通過: ${level-1} 關，總共得到: ${score} 分！`);
+            }else if(level<5){
+                alert(`時間到！您已通過: ${level-1} 關，總共得到: ${score} 分！`);
+            }else if(level<10){
+                alert(`時間到！您已通過: ${level-1} 關，總共得到: ${score} 分！`);
+            }else if(level<15){
+                alert(`時間到！您已通過: ${level-1} 關，總共得到: ${score} 分！`);
+            }else if(level<20){
+                alert(`時間到！您已通過: ${level-1} 關，總共得到: ${score} 分！`);}
+                startBtn.classList.remove("hidden");
         }
     }
     let timeCountdown = setInterval(countdown, 1000)
 
     creatBoxs(amount);
-
 }
