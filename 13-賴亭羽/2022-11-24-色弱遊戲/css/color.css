@@ -18,6 +18,38 @@ img{
     left: 100px;
 }
 
+.text{
+    width: 300px;
+
+    font-size: 30px;
+    letter-spacing: 1px;
+
+    color: brown;
+
+    position:absolute;
+    top: 62%;
+    left: calc(50% - 150px);
+
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 4s steps(8) infinite;
+}
+
+@keyframes type{
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+    }
+    90%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
 .result{
     width: 500px;
     height: 500px;
@@ -48,7 +80,7 @@ img{
     background-color: brown;
 
     position: absolute;
-    top: 77%;
+    top: 83%;
     left: calc(50% - 100px);
 }
 
