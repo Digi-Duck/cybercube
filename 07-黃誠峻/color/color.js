@@ -9,11 +9,11 @@ var change = [2, 4, 5, 5, 5, 6, 10, 10, 12, 2, 1]
 var mainColor = [50, 45, 40, 40, 35, 30, 25, 20, 20, 50, 0]
 let y = -1
 let level = 0
-let score= document.querySelector("#score")
+let score = document.querySelector("#score")
 
 function create() {
-    
- 
+
+
 
     for (i = 0; i < change[y] * change[y]; i++) {
         console.log("檢查" + change[y])
@@ -32,7 +32,7 @@ function restart() {
     y = -1;
     level = 0;
     start();
-    
+
 
 }
 
@@ -40,22 +40,22 @@ function restart() {
 
 
 function start() {
-    clearInterval(timerId); 
-    document.getElementById("bloodProgress").style.width=100+"%";
-   
+    clearInterval(timerId);
+    document.getElementById("bloodProgress").style.width = 100 + "%";
+
     game.setAttribute("id", "game")
     document.getElementById("start").style.visibility = "hidden"
     document.getElementById("chater").style.visibility = "visible"
 
 
-    let pro=100;
-    let bar=setInterval(function(){
-        pro-=0.14;
-        if(pro<=0){
+    let pro = 100;
+    let bar = setInterval(function () {
+        pro -= 0.14;
+        if (pro <= 0) {
             clearInterval(bar);
         }
-        bloodProgress.style.width=pro+"%";
-    },10);
+        bloodProgress.style.width = pro + "%";
+    }, 10);
 
 
     var count = 7;
@@ -70,7 +70,7 @@ function start() {
         if (count == 0) {
             clearInterval(timerId);
             // boxloop[position].removeEventListener()
-            boxloop[position].style.outline="dashed 3px red"
+            boxloop[position].style.outline = "dashed 3px red"
             setTimeout(lose, 700);
         };
     }
@@ -80,7 +80,7 @@ function start() {
         if (level % 3 == 0) {
             y = y + 1;
         }
-        score.innerHTML="分數："+level;
+        score.innerHTML = "分數：" + level;
         //選定一個隨機顏色
         red = Math.floor(Math.random() * 205);
         blue = Math.floor(Math.random() * 205);
@@ -98,20 +98,20 @@ function start() {
         for (j = 0; j <= boxloop.length - 1; j++) {
             //改變特定格子顏色
             //這是測試用的
-            
+
             // boxloop[position].style.background ="blue";
             //"rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";
-            console.log("找不到的那一格"+boxloop)
-            console.log("找不到的那一的"+y)
-            console.log("陣列長度"+boxloop.length)
-            console.log("position"+position)
+            console.log("找不到的那一格" + boxloop)
+            console.log("找不到的那一的" + y)
+            console.log("陣列長度" + boxloop.length)
+            console.log("position" + position)
 
 
 
             boxloop[j].style.height = "calc(100%/" + change[y] + " - 6px)";
             boxloop[j].style.width = "calc(100%/" + change[y] + " - 6px)";
             boxloop[j].style.background = "rgb(" + red + "," + green + "," + blue + ")";
-        }boxloop[position].style.background ="rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";; 
+        } boxloop[position].style.background = "rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";;
         boxloop[position].addEventListener('click', function () {
             //重新開始coloro函式並讓計時器歸零
             start(); clearInterval(timerId); clearInterval(bar);
@@ -129,7 +129,7 @@ function start() {
 
     //全破情況
     else if (y == 9) {
-        pro=0;
+        pro = 0;
         game.innerHTML = "";
         game.innerHTML = "<div class=title>LEVEL:7<br>恭喜您，成功過關了<br>以下是我們給您的建議</div><div class='content'>請善待身旁有色弱的朋友，對於完全沒有色弱的您，我想讓您知道!<br><br>在台灣每100個人就有約5個人有色弱，所以這並不是很罕見的疾病，<br>請善待身旁有色弱的朋友<br>謝謝您</div></div><br></div><br><br><div class='restart'onclick=restart()>再玩一次</div>";
         game.setAttribute("id", "endGame")
@@ -139,7 +139,7 @@ function start() {
     }
     //時間到輸掉
     function lose() {
-        document.getElementById("bloodProgress").style.width=0+"%";
+        document.getElementById("bloodProgress").style.width = 0 + "%";
         game.innerHTML = "";
         game.setAttribute("id", "endGame")
         document.getElementById("start").style.visibility = "hidden"
@@ -193,7 +193,7 @@ function start() {
 
 //測試用
 function chater() {
-   
+
     start();
 
 }
