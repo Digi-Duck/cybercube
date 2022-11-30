@@ -5,7 +5,6 @@
 // <!-- (5)時間結束秀出分數及評語 -->
 // <!-- (6)要能重玩 -->
 const game = document.querySelector("#game")
-
 var change = [2, 4, 5, 5, 5, 6, 10, 10, 12, 2, 1]
 var mainColor = [50, 45, 40, 40, 35, 30, 25, 20, 20, 50, 0]
 let y = -1
@@ -65,7 +64,7 @@ function start() {
     function timer() {
         count--; // 每次執行timer就把count減1。
 
-        console.log(count)
+        // console.log(count)
 
         // 若已計數完畢，則停止計時。
         if (count == 0) {
@@ -98,21 +97,30 @@ function start() {
         //    console.log(boxloop.length);
         for (j = 0; j <= boxloop.length - 1; j++) {
             //改變特定格子顏色
-            boxloop[position].style.background = "rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";
+            //這是測試用的
+            
+            // boxloop[position].style.background ="blue";
+            //"rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";
+            console.log("找不到的那一格"+boxloop)
+            console.log("找不到的那一的"+y)
+            console.log("陣列長度"+boxloop.length)
+            console.log("position"+position)
+
 
 
             boxloop[j].style.height = "calc(100%/" + change[y] + " - 6px)";
             boxloop[j].style.width = "calc(100%/" + change[y] + " - 6px)";
             boxloop[j].style.background = "rgb(" + red + "," + green + "," + blue + ")";
-        } boxloop[position].addEventListener('click', function () {
+        }boxloop[position].style.background ="rgb(" + (red + mainColor[y]) + "," + (green + mainColor[y]) + "," + (blue + mainColor[y]) + ")";; 
+        boxloop[position].addEventListener('click', function () {
             //重新開始coloro函式並讓計時器歸零
             start(); clearInterval(timerId); clearInterval(bar);
         });
 
 
         level++
-        console.log("level:" + level)
-        console.log("y:" + y)
+        // console.log("level:" + level)
+        // console.log("y:" + y)
     }
 
 
