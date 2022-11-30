@@ -253,9 +253,9 @@ function CreatSpan(lv, ClockVideo) {
 
                         else{
                             span.style.filter = "brightness(1.1)";
-                            container.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
+                            container.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
                             Img.style.backgroundImage = "url('./Images/07.jpg')"
-                            ScoreName.innerHTML = "DEEP-DARK-FANTASY";
+                            ScoreName.innerHTML = "DEEP ♂ DARK ♂ FANTASY";
                             ScoreName.style.color = "red";
 
                             if(BgmNum != "06"){
