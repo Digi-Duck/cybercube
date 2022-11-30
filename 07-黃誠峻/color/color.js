@@ -35,19 +35,21 @@ function start() {
     clearInterval(timerId);
     // 倒數讀條
     document.getElementById("bloodProgress").style.width = 100 + "%";
-    //本段原本是想 game.setAttribute("id", "game")
+    // 本段原本是想 
+    game.setAttribute("id", "game")
     // 隱藏開始與測試按鈕
     document.getElementById("start").style.visibility = "hidden";
     document.getElementById("chater").style.visibility = "visible";
     //  這個pro是血量的百分比
     let pro = 100;
-    let bar = setInterval;(function () {
+    let bar = setInterval(function () {
         pro -= 0.14;
         if (pro <= 0) {
             clearInterval(bar);
         }
         bloodProgress.style.width = pro + "%";
     }, 10);
+    console.log( bloodProgress.style.width = pro + "%")
     // 隱藏的計時器
     var count = 7;
     //倒數計時器
