@@ -71,9 +71,7 @@
             left: calc(50% - 350px);
         }
 
-        .all-btn {
-
-        }
+        .all-btn {}
 
         .end {
             width: 45%;
@@ -157,55 +155,62 @@
             // board.innerHTML = "";
             correctRow = Math.floor(Math.random() * num) + 1;
             correctCol = Math.floor(Math.random() * num) + 1;
-            // let btn=document.createElement("button");
-            // btn.className="all-btn";
-            for (let i = 1; i < num; i++) {
-                for (let j = 1; j < num; j++) {
+
+            for (let i = 1; i < num + 1; i++) {
+                for (let j = 1; j < num + 1; j++) {
                     if (i == correctRow && j == correctCol) {
-                        board.innerHTML += `<button class="all-btn" id=" correct-btn"></button>`
+                        let ansDiv = document.createElement("div");
+                        ansDiv.setAttribute("class", "all-btn correct-btn")
+                        board.appendChild(ansDiv);
+                        // board.innerHTML += `<button class="all-btn" id=" correct-btn"></button>`
                     } else {
-                        btn;
-                        board.innerHTML += `<button class="all-btn"></button>`
+                        let allDiv = document.createElement("div");
+                        allDiv.setAttribute("class", "all-btn");
+                        board.appendChild(allDiv);
+                        // board.inne
+                        // board.innerHTML += `<button class="all-btn"></button>`
                     }
                 }
             }
+
             let correctBtn = document.querySelector("#correct-btn");
-            let allBtn = document.querySelector(".all-btn");
+            let allBtn = document.querySelectorAll(".all-btn");
             //方塊固定寬高
             boxLength = 700 / amount;
             //隨機生成顏色
             R = Math.floor(Math.random() * 255);
             G = Math.floor(Math.random() * 255);
             B = Math.floor(Math.random() * 255);
-            console.log(R,G,B)
-
-            // Array.from(allBtn).forEach(function (allBtn) {
-            //     allBtn.style.width = `${boxLength}px`;
-            //     allBtn.style.length = `${boxLength}px`;
+            //console.log(R, G, B)
+            //將所有方塊放入顏色及寬高
+            //console.log(allBtn.length);
+            for (x = 0; x < allBtn.length; x++) {
+                allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
+                allBtn.style.width = `${boxLength}px`;
+                allBtn.style.height = `${boxLength}px`;
+            }
 
             // let color=['#f00','#000','yellow'];
             // let math=Math.floor(Math.random() * color.length);
             // console.log(math);
-            
-            //將所有方塊放入顏色及寬高
-            Array.from(allBtn).forEach(function(allBtn){
-                    allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
-                // allBtn.style.backgroundColor=color[math];
-            allBtn.style.width = `${boxLength}px`;
-            allBtn.style.length = `${boxLength}px`;});
+
+
+            //allBtn.style.backgroundColor = `rgb(${R},${G},${B})`;
+            // allBtn.style.backgroundColor=color[math];
+            //allBtn.style.width = `${boxLength}px`;
+            //allBtn.style.height = `${boxLength}px`;
+
+            console.log(allBtn)
         }
         //按下開始鈕
         startBtn.onclick = function () {
             startBoard.classList.add("hidden");
-            amount=2;
-            level=1;
-            Score=0;
-            board.innerHTML="";
+            amount = 2;
+            level = 1;
+            Score = 0;
+            // board.innerHTML = "";
             creatBoxs(amount);
         }
-
-        console.log(board);
-
     </script>
 </body>
 

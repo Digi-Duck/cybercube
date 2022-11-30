@@ -245,6 +245,7 @@ window.addEventListener("keyup", function (k) {
         StartScreen02();
     }
 
+    //清除所有Screen01的UI
     function StopScreen01() {
         ScreenBlack.style = "display:none";
         BigScreen.style = "display:none";
