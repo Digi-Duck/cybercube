@@ -37,13 +37,15 @@ h1 {
 
 .grade-board {
     color: rgb(229, 215, 52);
-    font-size: 30px;
-    line-height: 2em;
 
-    padding-top: 30px;
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+    line-height: 1.8em;
+
+    padding: 20px;
 
     width: 700px;
-    height: 200px;
+    height: 300px;
 
     position: absolute;
     left: calc(50% - 350px);
@@ -60,10 +62,15 @@ h1 {
     position: absolute;
     top: 250px;
     left: calc(50% - 350px);
+    
+
 }
 
 .all-btn {
-    margin: 0px;
+    float: left;
+
+    border:3px solid #fff;
+    border-radius: 10px;
 }
 
 .end {

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>色弱小遊戲</title>
+    <style>
+        /* font-family: 'Press Start 2P', 'Permanent Marker',  '微軟正黑體' ,cursive; */
+        *{
+            font-family: 'Permanent Marker', '微軟正黑體' ,cursive;
+        }
+        body{
+            margin: 0px;
+        }
+        .all{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+        .startscreen{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: #000;
+            z-index: 1;
+        }
+        .btn-start{
+            width: 15%;
+            height: 25%;
+            border-radius: 50%;
+            position: absolute;
+            top: 37.5%;
+            left: 42.5%;
+            font-size: 50pt;
+            border: 10px double #fff;
+            background-color: rgb(0, 255, 0);
+            animation: check 2s infinite;
+            cursor: pointer;
+            transition: opacity 0.5s linear;
+        }
+        .btn-start:hover{
+            width: 17%;
+            height: 27%;
+            position: absolute;
+            top: 36.5%;
+            left: 41.5%;
+            font-size: 52pt;
+        }
+        .gamescreen{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(20, 36, 24);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .endscreen{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -2;
+            background-color: #000;
+            cursor: pointer;
+        }
+        .endtextbox{
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .texttitle{
+            text-align: center;
+            width: 100%;
+            height: 30%;
+            font-size: 90pt;
+            position: absolute;
+            line-height: 225px;
+            top: 10%;
+            left: 0%;
+            font-family: 'Press Start 2P', 'Permanent Marker',  '微軟正黑體' ,cursive;
+            animation: endfont 5s infinite;
+        }
+        .text{
+            text-align: center;
+            width: 100%;
+            height: 30%;
+            font-size: 90pt;
+            line-height: 225px;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 40%;
+            left: 0%;
+            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
+            animation: shadow 5s infinite;
+        }
+        .prompt{
+            text-align: center;
+            width: 100%;
+            height: 30%;
+            font-size: 90pt;
+            font-weight: bold;
+            line-height: 225px;
+            color: #fff;
+            position: absolute;
+            top: 70%;
+            left: 0%;
+            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
+            animation: endfont 5s infinite;
+        }
+        .bgi{
+            width: 100%;
+            height: 20%;
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            background-image: url("./cat2.gif");
+            background-repeat: round;
+            background-size: contain;
+        }
+        .clickscreen{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            background-color: #fff;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .breathebox{
+            width: 100%;
+            height: 2vh;
+            margin-bottom: 5vh;
+            border-radius: 0px 10px 10px 0px;
+            /*animation-name: breatheboxcolor; 動畫名稱*/
+            /*animation-duration: 60s;動畫時間*/
+            /*animation-timing-function: linear; 動畫運動方式*/
+            /*animation-delay: 0s;延遲*/
+            /*animation-iteration-count: 1;動畫執行次數*/
+            /* animation: breatheboxcolor 60s linear 0s 1; */
+        }
+        .scorebox{
+            width: 50%;
+            height: 10vh;
+            color: #fff;
+            font-size: 40pt;
+            line-height: 10vh;
+            padding-left: 10px;
+            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
+        }
+        .box{
+            width: 580px;
+            height: 580px;
+            background-color: rgb(23, 21, 122);
+            margin: auto;
+            border-radius: 15px;
+            border: 10px double;
+            animation: breathe 5s infinite;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        span{
+            background-color: rgb(146, 145, 145);
+            /* display: block; */
+            display: none;
+            float: left;
+            border: 3px solid rgb(23, 21, 122);
+            border-radius: 20px;
+            box-sizing: border-box;
+            width: calc(100% / 9);
+            height: calc(100% / 9);
+            cursor: pointer;
+        }
+        .timer{
+            width: 10%;
+            height: 15vh;
+            position: absolute;
+            bottom: 0px;
+            right: 30px;
+            color: #fff;
+            font-size: 60pt;
+            line-height: 15vh;
+            text-align: center;
+            font-family: 'Press Start 2P', 'Permanent Marker',  '微軟正黑體' ,cursive;
+        }
+        .level0{
+            width: calc(100% / 2);
+            height: calc(100% / 2);
+        }
+        .level1{
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+        }
+        .level3{
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+        }
+        .level4{
+            width: calc(100% / 4);
+            height: calc(100% / 4);
+        }
+        .level5{
+            width: calc(100% / 5);
+            height: calc(100% / 5);
+        }
+        .level6{
+            width: calc(100% / 6);
+            height: calc(100% / 6);
+        }
+        .level7{
+            width: calc(100% / 7);
+            height: calc(100% / 7);
+        }
+        .level8{
+            width: calc(100% / 8);
+            height: calc(100% / 8);
+        }
+        .level9{
+            width: calc(100% / 9);
+            height: calc(100% / 9);
+        }
+        .level10{
+            width: calc(100% / 10);
+            height: calc(100% / 10);
+        }
+
+        @keyframes breathe{
+            0%{
+                border-color: #FFE74C;
+            }
+            20%{
+                border-color: #FF5964;
+            }
+            40%{
+                border-color: #6BF178;
+            }
+            60%{
+                border-color: #35A7FF;
+            }
+            80%{
+                border-color: #f711ff;
+            }
+            100%{
+                border-color: #FFE74C;
+            }
+            
+        }
+        @keyframes breatheboxcolor{
+            0%{
+                width: 100%;
+                background-color: #1b17fa;
+            }
+            25%{
+                width: 75%;
+                background-color: #20f304;
+            }
+            50%{
+                width: 50%;
+                background-color: #eeea0c;
+            }
+            75%{
+                width: 25%;
+                background-color: #ff0800;
+            }
+            100%{
+                width: 0%;
+                background-color: #00ff39;
+            }
+        }
+        @keyframes check{
+            0%{
+                border-color: #fff;
+            }
+            50%{
+                border-color: #000;
+            }
+            100%{
+                border-color: #fff;
+            }
+        }
+        @keyframes endfont{
+            0%{
+                color: #fff;
+            }
+            50%{
+                color: #000;
+            }
+            100%{
+                color: #fff;
+            }
+        }
+        @keyframes shadow{
+            0%{
+                text-shadow: 0px 0px 1rem red;
+            }
+            50%{
+                text-shadow: 0px 0px 1rem yellow;
+            }
+            100%{
+                text-shadow: 0px 0px 1rem red;
+            }
+        }
+        .bgi2{
+            background-image: url("./wow.gif");
+            background-size: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="startscreen">
+            <button type="button" class="btn-start">Start</button>
+            <div class="bgi bgi2"></div>
+        </div>
+        <div class="gamescreen">
+            <div class="breathebox"></div>
+            <div class="scorebox"></div>
+            <div class="box"></div>
+            <div class="control"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="endscreen">
+            <div class="endtextbox">
+                <div class="texttitle"></div>
+                <div class="text"></div>
+                <div class="prompt"></div>
+            </div>
+            <div class="bgi"></div>
+        </div>
+        <div class="clickscreen"></div>
+    </div>
+    <script>
+        const btn_start = document.querySelector('.btn-start');//開始按鈕
+        const startscreen = document.querySelector('.startscreen');
+        const gamescreen = document.querySelector('.gamescreen');
+        const endscreen = document.querySelector('.endscreen');
+        const box = document.querySelector('.box'); //遊戲框
+        const timer = document.querySelector('.timer');//數字計時器
+        const scorebox = document.querySelector('.scorebox');//分數框
+        const breathebox = document.querySelector('.breathebox');//置頂計時框
+        const texttitle = document.querySelector('.texttitle');//結束遊戲標題
+        const text = document.querySelector('.text');//結束遊戲小字
+        const prompt = document.querySelector('.prompt');//結束畫面提示字
+        const bgi = document.querySelector('.bgi');//結束畫面背景
+        const clickscreen = document.querySelector('.clickscreen');//結束畫面點擊用
+        let second = 60 ; //時間初始值
+        timer.innerHTML = second; //計時器文字
+        let score = 0;//得分
+        scorebox.innerHTML = '得分：' + score; //得分文字
+        texttitle.innerHTML = 'Game over'; //畫面結束標題
+        text.innerHTML = '您的得分是：' + score;//畫面結束內文
+        prompt.innerHTML = '請點擊任意位置繼續';
+        let chose; //2x2存放色差位置至下一關
+        let nu = 0;//控制第二關開始的關卡
+        var num2 =0;//第二關之後色差位置
+        let allbox = [3,4,5,5,6,6,7,7,7,8,8,8,9,10];//關卡等級方塊
+        let type = "";//稱號
+
+        /*創建10x10的方格*/
+        for(x=0;x<100;x++){ 
+            const span = document.createElement('span');
+            box.appendChild(span);
+        }
+
+        /*創建後才能用選擇器選取全部的格子*/
+        const spans = document.querySelectorAll('span');
+
+        /*隨機格子的位置*/
+        function ran(u){
+            var o = Math.floor(Math.random()*u);
+            return o;
+        }
+
+        /*第一關*/
+        function box_2x2(){
+            let r = Math.floor(Math.random()*256);//隨機三原色
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            for(x=0;x<4;x++){
+                spans[x].style.display = 'block';
+                spans[x].className = 'level0'; //控制方塊大小
+                spans[x].style.backgroundColor = 'rgb(' + r +',' + g +',' + b +')'; 
+            }
+            let num = ran(4);
+            spans[num].style.backgroundColor = 'rgb(' + (r-40) +',' + (g-40) +',' + (b-40) +')';
+            spans[num].addEventListener('click',box_3x3);
+            chose = num; //為了將隨機位置傳出function
+        }
+
+        /*第二關之後關卡*/
+        function box_3x3(){
+            spans[chose].removeEventListener('click',box_3x3);//清除2x2的點擊事件
+            spans[num2].removeEventListener('click',box_3x3);//清除3x3的點擊事件
+            score++;//分數++
+            scorebox.innerHTML = '得分：' + score;
+            let r = Math.floor(Math.random()*256);//隨機三原色
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            for(x=0;x<spans.length;x++){  //讓所有方塊都消失
+                spans[x].style.display = 'none';
+            }
+            if(nu<13){  //循環level9之前
+                let boxmath = allbox[nu]*allbox[nu]; //格子數
+                for(x=0;x<boxmath;x++){ 
+                    spans[x].style.display = 'block';
+                    spans[x].className = 'level' + (allbox[nu]);    //控制class
+                    spans[x].style.backgroundColor = 'rgb(' + r +',' + g +',' + b +')'; //隨機色
+                }
+                nu++; //來到下一個level
+                num2 = ran(boxmath); //選擇隨機數
+            }else{
+                boxmath = 100; //最高就是100格
+                for(x=0;x<boxmath;x++){
+                    spans[x].style.display = 'block';
+                    spans[x].className = 'level10';
+                    spans[x].style.backgroundColor = 'rgb(' + r +',' + g +',' + b +')'; 
+                    nu = 13; //讓關卡固定在最後一關
+                }
+                    num2 = ran(boxmath);
+            }
+                let color_x = (12-allbox[nu])*7; //控制色差
+                //Math.abs絕對值
+                spans[num2].style.backgroundColor = 'rgb(' + Math.abs(r - color_x) +',' + Math.abs(g - color_x) +',' + Math.abs(b - color_x) +')'; //色差顏色
+                spans[num2].addEventListener('click',box_3x3); //點擊後繼續跑(無限迴圈)
+                
+        }
+        btn_start.addEventListener('click',starthidden);
+        btn_start.addEventListener('click',box_2x2);
+        /*如果timeout以及cleareverything有()，function會自動執行*/
+        btn_start.addEventListener('click',timeout);
+        
+        btn_start.addEventListener('click',breathe);
+        // btn_start.addEventListener('click',cleareverything);
+        /*倒數計時區*/
+        var stop;//似乎要先給計時器宣告名稱，才能解決定時器疊加問題???
+        function timeout(){ //計時器
+            stop = setInterval(time,1000);
+        }
+        function time(){ //倒數計時
+            if(second != 0){
+                second -= 1;
+                timer.innerHTML = second;
+            }else{
+                breathebox.style.animation ='none';
+                clearInterval(stop);
+                endscreen.style.zIndex = 1;
+                clickscreen.style.zIndex = 2;
+                if(score==0){
+                    type = "黑暗騎士？";
+                }else if(score>=30){
+                    type = "你有舍利子？";
+                }else if(score>=25){
+                    type = "二郎神開眼？";
+                }else if(score>=20){
+                    type = "悟空又調皮了！";
+                }else if(score>=15){
+                    type = "火蜥蜴的眼睛！";
+                }else if(score>=10){
+                    type = "世界色彩斑斕～";
+                }else if(score>=5){
+                    type = "貓的眼睛！";
+                }else{
+                    type = "確定欸？";
+                }
+                text.innerHTML = type +'獲得分數：' + score;
+            }
+        }
+        function breathe(){
+            breathebox.style.animation = 'breatheboxcolor 60s linear 0s 1';/*呼吸動畫*/
+        }
+        function cleareverything(){ //初始化
+            nu = 0;
+            second = 60;
+            timer.innerHTML = second;
+            score = 0;
+            type ="";
+            scorebox.innerHTML = '得分：' + score;
+            for(x=0;x<spans.length;x++){
+                spans[x].style.display = 'none';
+            }
+            endscreen.style.zIndex = -2;
+            clickscreen.style.zIndex = -1;
+            startscreen.style.zIndex = 1;
+            btn_start.style.opacity = 1;
+            
+        }
+        function starthidden(){//隱藏開始畫面
+            btn_start.style.opacity = 0;
+            setTimeout(function(){
+                startscreen.style.zIndex = -1;
+            },500);
+        }
+        clickscreen.addEventListener('click',cleareverything);//點擊結束頁面即初始化
+    </script>
+</body>
+</html>
+<!-- setAttribute() 增加/更改屬性的值 -->
+<!-- className 新增/取代屬性值 會取代掉本來的屬性 -->
+<!--  classList add新增屬性 remove() / toggle() / contains() / length -->
+<!-- 須解決問題：每當重新開始一關的時候需要將所有方塊重新染色：已解決用隨機顏色 -->
+<!-- 發現遊戲那邊變色是RGB固定各+20：將RGB拆開處理後再重組 -->
+<!-- 問題：會點到已經選取過的數字：已解決每一關開始要將本來選定的框框清除監聽 -->
+<!-- 問題：重新整理刷新；已初始化 -->
+<!--監聽事件中，如果timeout以及cleareverything有()，function會自動執行-->
+<!-- 初始化設定計時器有問題：已解決，先宣告變數，再把計時器塞進變數(分兩行) -->
+<!-- 顏色若小於0，CSS自動設定為0，若大於255，自動設定為255，Math.abs()為取絕對值 -->
