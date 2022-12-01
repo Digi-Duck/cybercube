@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #E5AD4F;
+        }
+
+        #status-area {
+            width: 600px;
+            height: 50px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            background-color: #BD5630;
+        }
+
+        .num {
+            color: #f0bbbb;
+            font-size: 16px;
+        }
+
+        #main-area {
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            background-color: antiquewhite;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #setting-area {
+            width: 600px;
+            height: 150px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .setting-btn {
+            width: 150px;
+            height: 50px;
+            background-color: #414e15;
+            font-size: 18px;
+            color: #f3f0e5;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .setting-btn:hover {
+            background-color: #6D8325;
+            color: #c3ddb8;
+            font-weight: bolder;
+        }
+
+        .block {
+            width: 300px;
+            height: 300px;
+            background-color: #8da04f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The Great Color Game</h1>
+    <h2>Find different color！</h2>
+
+    <div id="status-area">
+        <div id="remain-area">
+            <p id="remain-time">Remain time: <b id="remain-sec" class="num">00</b> sec</p>
+        </div>
+        <div id="grade-area">
+            <p id="level">Level: <b id="level-num" class="num">00</b></p>
+        </div>
+    </div>
+    <div id="main-area">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+    <div id="setting-area">
+        <button id="start-btn" class="setting-btn" onclick="start();">Start</button>
+        <button id="replay-btn" class="setting-btn" onclick="replay();">Replay</button>
+    </div>
+    <div id="container">
+    </div>
+
+    <script>
+
+        const mainArea = document.querySelector("#main-area");
+        var oldBlock = document.querySelector(".block");
+        const levelNum = document.querySelector("#level-num");
+
+        //基本狀態變數
+        let level = 1;
+
+        //倒數計時60秒
+        function countDown() {
+            let sec = 60;
+            var remainSec = document.querySelector("#remain-sec");
+            if (sec > 0) {
+                setInterval(function () {
+                    sec--;
+                    if (sec < 0)
+                        sec = 0;
+                    remainSec.innerText = sec;
+                }, 1000);
+            }
+        }
+
+        function createBlocks() {
+
+            mainArea.innerHTML = "";
+
+            //決定方塊的顏色(不要黑白)
+            R = Math.floor(Math.random() * 160) + 50;
+            G = Math.floor(Math.random() * 160) + 50;
+            B = Math.floor(Math.random() * 160) + 50;
+
+
+            //異色之方塊位置
+            let ansRow = "";
+            let ansCol = "";
+
+            //生成方塊
+            //當處於1~3關時，方塊數量為2*2
+            if (level < 4) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 2) + 1;
+                ansCol = Math.floor(Math.random() * 2) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 3; i++) {
+                    for (let j = 1; j < 3; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 35},${G - 35},${B - 35})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "298px";
+                            block.style.height = "298px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.id = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "298px";
+                            block.style.height = "298px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+            //當處於4~6關時，方塊數量為3*3
+            else if (level < 7) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 3) + 1;
+                ansCol = Math.floor(Math.random() * 3) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 4; i++) {
+                    for (let j = 1; j < 4; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 30},${G - 30},${B - 30})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "198px";
+                            block.style.height = "198px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.id = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "198px";
+                            block.style.height = "198px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+            //當處於7~9關時，方塊數量為4*4
+            else if (level < 10) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 4) + 1;
+                ansCol = Math.floor(Math.random() * 4) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 5; i++) {
+                    for (let j = 1; j < 5; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 25},${G - 25},${B - 25})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "148px";
+                            block.style.height = "148px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.id = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "148px";
+                            block.style.height = "148px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+            //當處於10~15關時，方塊數量為5*5
+            else if (level < 16) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 5) + 1;
+                ansCol = Math.floor(Math.random() * 5) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 6; i++) {
+                    for (let j = 1; j < 6; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 20},${G - 20},${B - 20})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "118px";
+                            block.style.height = "118px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.id = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "118px";
+                            block.style.height = "118px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+            //當處於16~25關時，方塊數量為6*6
+            else if (level < 26) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 6) + 1;
+                ansCol = Math.floor(Math.random() * 6) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 7; i++) {
+                    for (let j = 1; j < 7; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 10},${G - 10},${B - 10})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "98px";
+                            block.style.height = "98px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.class = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "98px";
+                            block.style.height = "98px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+
+            //當處於26關之後，方塊數量為8*8
+            else if (level > 25) {
+                //隨機決定異色方塊之位置
+                ansRow = Math.floor(Math.random() * 8) + 1;
+                ansCol = Math.floor(Math.random() * 8) + 1;
+                console.log(ansRow);
+                console.log(ansCol);
+                //產生方塊
+                for (let i = 1; i < 9; i++) {
+                    for (let j = 1; j < 9; j++) {
+                        if (i == ansRow && j == ansCol) {
+                            var block = document.createElement("div");
+                            block.id = "ansBlock";
+                            block.style.background = `rgb(${R - 5},${G - 5},${B - 5})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "73px";
+                            block.style.height = "73px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                        else {
+                            var block = document.createElement("div");
+                            block.class = "otherBlock";
+                            block.style.background = `rgb(${R},${G},${B})`;
+                            block.style.border = "1px solid white";
+                            block.style.width = "73px";
+                            block.style.height = "73px";
+                            mainArea.appendChild(block, oldBlock);
+                        }
+                    }
+                }
+            }
+
+            //不同色方塊綁定點擊
+            var correct = document.querySelector("#ansBlock");
+            correct.addEventListener("click", clickRight);
+        }
+
+        //點擊到正確的不同色方塊
+        function clickRight() {
+            level += 1;
+            levelNum.innerText = level;
+
+            //生成新版面
+            createBlocks();
+        }
+
+        function start() {
+            countDown();
+            createBlocks();
+        }
+
+        function replay() {
+            mainArea.innerHTML="";
+            level = 1;
+            sec=60;
+            start();
+        }
+
+    </script>
+</body>
+
+</html>
