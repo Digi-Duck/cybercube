@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        CSS3三维变形
+* {
+
+margin: 0;
+
+padding: 0;
+
+}
+.all{background-color:#331122;}
+
+.box {
+
+position:relative;
+
+top: 100px;
+
+width:300px;
+
+height: 300px;
+
+margin: 0 auto;
+
+background-color: #ccc;
+
+/*
+
+透视效果
+
+越大透视距离越平面，反之亦然
+
+*/
+
+perspective:800px;
+
+}
+
+.content {
+margin: auto;
+/*3d视图*/
+
+transform-style: preserve-3d;
+
+/*过度动画*/
+
+transition: all 3s linear;
+
+width:200px;
+
+height: 200px;
+
+
+
+}
+
+/*
+
+经过顺时针旋转
+
+*/
+
+.content:hover {
+
+transform: rotateX(180deg) rotateY(180deg);
+position: absolute;
+
+top: 50px;
+
+left: 50px;
+}
+
+/*
+
+方块公共样式
+
+*/
+
+.side {
+
+position: absolute;
+
+height: 200px;
+
+width: 200px;
+
+border: 2px solid #000;
+
+background: rgba(0,0,0,0.3);
+
+color: #fff;
+
+line-height: 200px;
+
+font-size: 30px;
+
+font-weight: bold;
+
+text-align: center;
+
+text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+
+}
+
+/*
+
+前
+
+*/
+
+.side1 {
+
+transform: translateZ(100px);
+
+}
+
+/*
+
+后
+
+*/
+
+.side2 {
+
+transform: rotateX(180deg) translateZ(100px);
+
+}
+
+/*
+
+左
+
+*/
+
+.side3 {
+
+transform: rotateY(-90deg) translateZ(100px);
+
+}
+
+/*
+
+右
+
+*/
+
+.side4 {
+
+transform: rotateY(90deg) translateZ(100px);
+
+}
+
+/*
+
+上
+
+*/
+
+.side5 {
+
+transform: rotateX(90deg) translateZ(100px);
+
+}
+
+/*
+
+下
+
+*/
+
+.side6 {
+
+transform: rotateX(-90deg) translateZ(100px);
+
+}
+    </style>
+</head>
+<body>
+    
+<div class="all">
+    <div class="content">
+        <div class="box side1"></div>
+        <div class="box side2"></div>
+        <div class="box side3"></div>
+        <div class="box side4"></div>
+        <div class="box side5"></div>
+        <div class="box side6"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
