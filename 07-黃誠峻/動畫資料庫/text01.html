@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單轉場動畫</title>
+<STYLe>body{
+    padding-top: 50px;
+  }
+  div{
+    width: 200px;
+    height: 200px;
+    background-color: #F08080;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition-property: background widht;
+    /* 轉場屬性：選定屬性 多個屬性中間插入空格即可 */
+    transition-duration: 1s ;
+    /* 轉場持續時間 */
+    transition-timing-function: ease-in;
+    transition-delay:2s ;
+  }
+  div:hover{
+    width: 500px;
+    background-color: aqua;
+  }</STYLe>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+<!-- 文章參考
+https://ithelp.ithome.com.tw/articles/10240496 -->
