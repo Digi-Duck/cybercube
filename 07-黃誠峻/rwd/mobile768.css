@@ -1,5 +1,5 @@
 
-@media (max-width:768px)  {
+@media(max-width:768px){
     *{
         margin: 0px;
         padding: 0px;
@@ -81,6 +81,7 @@
     main .container div:hover{
         background-size: 150%;
         border: 5px gold solid;
+        background-size:cover
     }
     main .container .x{
         height:calc(50vh - 70px);
