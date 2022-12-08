@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/weather.css">
+    <title>天氣預報</title>
+    
+
+</head>
+<body>
+    <nav>
+        <div class="btn radius" onclick="filter2('all')">全臺</div>
+        <div class="btn radius" onclick="filter2(north)">北部地區</div>
+        <div class="btn radius" onclick="filter2(center)">中部地區</div>
+        <div class="btn radius" onclick="filter2(south)">南部地區</div>
+        <div class="btn radius" onclick="filter2(east)">東部地區</div>
+        <div class="btn radius" onclick="filter2(island)">離島地區</div>
+    </nav>
+    <main>
+        <div class="container">
+
+        </div>
+    </main>
+    <footer>
+        此網站為教育用 This webside is for education only <br>
+        勞動部中彰投分屬-前端UI與JS框架(Vue)工程師培訓班
+    </footer>
+    
+    <script>
+        const content = document.querySelector('.container')
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AA300EC1-31BA-465E-B669-6CA2C320A195')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            console.log(myJson.records.location[11]);
+
+            // 降雨機率 50%以上 下雨
+
+            // 降雨機率 50~31% 陰天
+
+            // 降雨機率 30%以下 太陽
+
+
+            content.innerHTML += `
+                <div class="card radius">
+                    <img src="./img/rain.gif" alt="" class="radius">
+                    <h2>${myJson.records.location[11].locationName}</h2>
+                    <p>溫度: ${myJson.records.location[11].weatherElement[2].time[0].parameter.parameterName}~${myJson.records.location[11].weatherElement[4].time[0].parameter.parameterName}℃</p>
+                    <p>降雨機率: ${myJson.records.location[11].weatherElement[1].time[0].parameter.parameterName}%</p>
+                    <p>舒適度: ${myJson.records.location[11].weatherElement[3].time[0].parameter.parameterName}</p>
+                </div>
+            `
+
+
+        });
+                
+
+        
+       
+
+    </script>
+</body>
+</html>
