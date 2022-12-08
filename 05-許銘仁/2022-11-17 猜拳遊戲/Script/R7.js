@@ -11,8 +11,11 @@ var m = document.querySelector("main");
 var h = document.querySelector("header");
 var f = document.querySelector("footer");
 var CV = document.querySelector(".ChangeScreenV1");
+var SB = getRandomBG(8);
 
-
+var S = document.querySelector(".Scissors");
+var R = document.querySelector(".Rock");
+var P = document.querySelector(".Paper");
 var Cards = ['剪刀', '石頭', '布'];
 var MyCards = "";
 var EmCards = "";
@@ -44,6 +47,7 @@ var Cb = 0;
 var wct = 0;
 var vct = 0;
 var Fct = 0;
+var Cobct = 0;
 
 Lh.style = "display: none;";
 Rh.style = "display: none;";
@@ -64,18 +68,25 @@ function CIurl(x) {
     return CIstyle.backgroundImage.slice(4, -1).replace(/"/g, "");
 }
 
-//開啟後的導覽訊息
+//網頁開啟讀取序章
 window.addEventListener("load", function () {
     TextArea.style = "width: 100%; height: 50%; opacity: 1; transition:all 1s 0.5s; background-color: rgb(0, 0, 0, 0.5);"
 })
 
-window.addEventListener("keydown", function (k) {
+window.addEventListener("keyup", function (k) {
 
     if (ScreenIndexNow == true) {
 
         Lh.style = "display: none;";
         Lh2.style = "display: none;";
         Rh.style = "display: none;";
+
+        //跳過序章
+        if (Fct == 0 && k.key === 'Escape') {
+            ScreenIndexNow = false;
+            ScreenFightNow = true;
+            StartScreen02();
+        }
 
         //ScreenIndex判斷第幾幕，按下Space開始執行
         if (k.key === ' ' & ScreenIndex < 9) {
@@ -96,6 +107,7 @@ window.addEventListener("keydown", function (k) {
             TextArea.style = "display:none";
             ScreenIndexNow = false;
             ScreenFightNow = true;
+            StartScreen02();
         }
 
         console.log("您輸入的是:" + k.key);
@@ -178,17 +190,19 @@ window.addEventListener("keydown", function (k) {
 
             setTimeout("MyPiture.style = 'background-image: url(Images/02.jpg);backgroundSize: 150%; width: 300px; height: 70%; border: 3px solid red; top: -30%; scale: 1.5; opacity: 1; transition:all 0.5s linear;'", 700);
 
+
             TextArea.style = "border: 3px solid red";
             setTimeout("TextArea.innerText='乾吵死了!看我今天還不給你一點教訓!'", 700);
+            ScreenFightNow = true;
         }
 
 
-        else if (k.key === ' ' & ScreenIndex == 9) {
+        else if (k.key === ' ' && ScreenIndex == 9) {
 
             //ScreenBlack結束後將所有用不到的div隱藏
-            Lh.style = "display: none;";
-            Lh2.style = "display: none;";
-            Rh.style = "display: none;";
+            // Lh.style = "display: none;";
+            // Lh2.style = "display: none;";
+            // Rh.style = "display: none;";
             setTimeout("TextArea.style = 'display: none;'", 100);
             setTimeout("IndexPiture.style = 'display:none;'", 100);
             setTimeout("MyPiture.style = 'display:none;'", 100);
@@ -204,7 +218,13 @@ window.addEventListener("keydown", function (k) {
             // ScreenBlack.style = "width:100%; height: 100%; opacity: 1; transform: rotate(7200deg); transition: all 0.5s ease 8.5s";
 
             if (vct == 0) {
+                //播放影片前將前面的頭像UI清除(若有殘留的話)
+                setTimeout(StopScreen01_2, 500);
+                setTimeout(StopScreen01_2, 800);
+                
                 setTimeout(StartScreen02, 9600);
+                setTimeout("ScreenIndexNow = 'false';", 9600);
+
                 setTimeout("CV.style= 'display:none;'", 9600);
                 setTimeout("CV.muted", 9600);
                 CV.style = "width: 100%; height: 110vh; object-fit: cover;";
@@ -225,14 +245,22 @@ window.addEventListener("keydown", function (k) {
         StartScreen02();
     }
 
+    //清除所有Screen01的UI
     function StopScreen01() {
         ScreenBlack.style = "display:none";
         BigScreen.style = "display:none";
         CV.muted = true;
         CV.style = "display:none";
-        TextArea.style = "display: none;";
-        IndexPiture.style = "display:none;";
-        MyPiture.style = "display:none;";
+        TextArea.style = "display: none";
+        IndexPiture.style = "display:none";
+        MyPiture.style = "display:none";
+    }
+
+    function StopScreen01_2() {
+        ScreenBlack.style = "display:none";
+        TextArea.style = "display: none";
+        IndexPiture.style = "display:none";
+        MyPiture.style = "display:none";
     }
 
 
@@ -242,7 +270,14 @@ window.addEventListener("keydown", function (k) {
 
         if (Fct == 0) {
             StopScreen01();
+            body.style = "background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat;";
         }
+
+        if (Fct == 1 && Ct <1){
+            body.style = "background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat;";
+        }
+
+        
 
 
         h.style = "opacity: 1;transition:all 1s";
@@ -253,30 +288,22 @@ window.addEventListener("keydown", function (k) {
 
         Rh.style = "z-index: 1; display: block;  animation: Rhandmove 0.8s infinite alternate linear 0.3s;transition:all 1s";
 
-        //第一次開時固定套用B7背景圖
-        if (Fct == 0){
-            body.style = "height: 100%;background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; ";
-        }
-        
 
-
-        var S = document.querySelector(".Scissors");
-        var R = document.querySelector(".Rock");
-        var P = document.querySelector(".Paper");
-
-
-        //復活按鈕
+        //復活按鈕(滑鼠點擊)
         // document.querySelector("#Re").addEventListener('click', function () {
         //     document.querySelector(".CurHp").innerText = 100;
         //     document.querySelector(".EmCurHp").innerText = 100;
         //     bt.style = "opacity: 1; color: rgb(247, 82, 41);transition: 1s;transition:all 0.1s 0.5s; animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
         // })
 
+        //復活按鈕(R)
         if (k.key === 'r') {
             StopScreen01();
+            Lh.src = "./Left/1.PNG";
+            Rh.src = "./right/2.PNG"
             Lh2.style = "display: none;";
-            var SB = getRandomBG(8);
-            console.log(SB);
+            SB = getRandomBG(8);
+            console.log("r: " + SB);
             document.querySelector(".CurHp").innerText = 100;
             document.querySelector(".EmCurHp").innerText = 100;
             MyInfo.style = "animation: none";
@@ -290,11 +317,18 @@ window.addEventListener("keydown", function (k) {
             CH = 100;
             ECH = 100;
             Cb = 0;
+            Cobct = 0;
             body.style = "background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat;";
+            setTimeout(function () { RCT(RCt) }, 1500);
         }
 
+        //進入戰鬥前先進行血量負數歸零(若上一次戰鬥傷害過量擊殺而出現負數的話)
+        StopFight();
 
-        FightStrat();
+        //血量檢查，若不為0才能繼續戰鬥
+        if (StopFight() != 1) {
+            FightStrat();
+        }
 
         function FightStrat() {
 
@@ -309,132 +343,151 @@ window.addEventListener("keydown", function (k) {
                 //每次循環清空按鈕(不清空會讓任何按鈕重複上一個攻擊指令)
                 MyCards = "";
 
-                if (StopFight() == 1) {
-                    break;
-                }
+                //再度清空Screen01的頭像UI(若有殘留的話)
+                StopScreen01_2();
 
-                else {
+                // 提示按下Space開始
+                // if (Fct == 0) {
+                //     setTimeout(function () { RCT2() }, 2300);
+                // }
 
-                    if (Fct == 0) {
-                        setTimeout(function () { RCT2() }, 2300);
-                        Fct = 1;
-                    }
-
+                //首次入場時的回合數更新
+                if (Fct == 0) {
                     setTimeout(function () { RCT(RCt) }, 1500);
+                    Fct = 1;
+                }
+
+                //非連打模式時的回合數更新
+                // if(Cb != 2){
+                //     setTimeout(function () { RCT(RCt) }, 1500);
+                // }
 
 
+                if (Ct == 0 | k.key === 'r') {
+                    bt.style = "opacity: 1; color: rgb(247, 82, 41); transition:all 0.1s 0.5s; animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
+                    bt.innerHTML = "決鬥開始!";
+                }
 
-                    if (Ct == 0 | k.key === 'r') {
-                        bt.style = "opacity: 1; color: rgb(247, 82, 41); transition:all 0.1s 0.5s; animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
-                        bt.innerHTML = "決鬥開始!";
+                //下方猜拳卡片縮小動畫
+                window.addEventListener("keydown", function (h) {
+
+                    if (StopFight() != 1) {
+                        if (h.key === 'a') {
+                            S.style = "scale: 0.8";
+                        }
+                        else if (h.key === 's') {
+                            R.style = "scale: 0.8 ";
+                        }
+                        else if (h.key === 'd') {
+                            P.style = "scale: 0.8 ";
+                        }
                     }
 
+                });
 
-                    if (k.key === 'a') {
-                        bt.style = "color: white; opacity: 1;"
+                if (k.key === 'a') {
+                    bt.style = "color: white; opacity: 1;"
 
-                        MyCards = "剪刀";
-                        EmCards = Cards[getRandom()];
+                    MyCards = "剪刀";
+                    EmCards = Cards[getRandom()];
 
-                        S.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            S.style = "scale: 1";
-                            Ct += 1;
-                        })
+                    S.style = "scale: 1";
 
-                    }
+                    Ct += 1;
+                }
 
-                    else if (k.key === 's') {
-                        bt.style = "color: white; opacity: 1;"
+                else if (k.key === 's') {
+                    bt.style = "color: white; opacity: 1;"
 
-                        MyCards = "石頭";
-                        EmCards = Cards[getRandom()];
+                    MyCards = "石頭";
+                    EmCards = Cards[getRandom()];
 
-                        R.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            R.style = "scale: 1";
-                            Ct += 1;
-                        })
+                    R.style = "scale: 1";
 
-                    }
+                    Ct += 1;
+                }
 
-                    else if (k.key === 'd') {
-                        bt.style = "color: white; opacity: 1;"
+                else if (k.key === 'd') {
+                    bt.style = "color: white; opacity: 1;"
 
-                        MyCards = "布";
-                        EmCards = Cards[getRandom()];
+                    MyCards = "布";
+                    EmCards = Cards[getRandom()];
 
-                        P.style = "scale: 0.8";
-                        window.addEventListener("keyup", function () {
-                            P.style = "scale: 1";
-                            Ct += 1;
-                        })
-                    }
+                    P.style = "scale: 1";
 
+                    Ct += 1;
+                }
 
-                    console.log("第" + (RCt + 1) + "回合!");
+                //關閉連打模式
+                if (Cb == 2 & k.key === 'q') {
+                    StopScreen01();
 
-                    console.log("現在的Cb為" + Cb);
+                    Lh.style = "left: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 3; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
 
-                    //結束連打模式
-                    if (Cb == 2 & k.key === 'q') {
-                        StopScreen01();
-                        Lh2.style = "display: none;";
-                        Lh.style = "left: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 3; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
+                    setTimeout("Lh2.style = 'display: none;'", 300);
+                    Lh2.style = "display: none;";
+                    Lh.src = "./Left/1.PNG";
 
-                        Cb = 0;
-                        wct = 0;
-                        MyInfo.style = "animation: none";
-                        EmInfo.style = "animation: none";
-                    }
+                    Cb = 0;
+                    wct = 0;
+                    Cobct = 0;
+                    MyInfo.style = "animation: none";
+                    EmInfo.style = "animation: none";
+                }
 
-                    //按Q開啟連打模式
-                    else if (Cb == 0 & k.key === 'q') {
-                        Lh2.style = "left: -4%; top: 40%; display: block; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 1; transform:rotateX(-2turn); transition:all 0.1s; animation: Lhandmove 0.4s infinite alternate linear 0.1s;";
+                //主動按Q開啟連打模式
+                else if (Cb == 0 & k.key === 'q') {
+                    bt.innerText = "連擊模式啟動!";
 
-                        MyInfo.style = "filter: drop-shadow(0px 0px 30px yellow); trnsition: all 30s;";
+                    Lh.src = "./Left/LR1.PNG";
+                    Lh2.src = "./Left/LR1.PNG";
 
-                        //震動版
-                        // MyInfo.style = "filter: drop-shadow(0px 0px 30px yellow); trnsition: all 30s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+                    Lh2.style = "left: -4%; top: 40%; display: block; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 1; transform:rotateX(-2turn); transition:all 0.1s; animation: Lhandmove 0.4s infinite alternate linear 0.1s;";
 
-                        setTimeout("BigScreen.style = 'opacity: 0.6;transition: all 5s;'", 5000);
-                        setTimeout("CV.style= 'display:none;'", 9500);
-                        setTimeout("CV.muted", 9500);
-                        BigScreen.style = "display: block;position: fixed; ; opacity: 1;";
-                        CV.style = "display: block;position: fixed; z-index: 99 ; opacity: 1; width: 100%; height: 110vh; object-fit: cover;";
-                        CV.muted = false;
-                        CV.src = "./Videos/Combo02.mp4";
-                        CV.play();
+                    MyInfo.style = "filter: drop-shadow(0px 0px 30px yellow); trnsition: all 30s;";
 
-                        setTimeout(ClearWaring, 900);
-                        end.style = "position: fixed;";
-                        endText.innerHTML = "就是現在!快連打ASD!";
-                        endText.style = "opacity: 1; color: yellow; display: flex; position:fixed; z-index: 99; justify-content: center;";
+                    //震動版
+                    // MyInfo.style = "filter: drop-shadow(0px 0px 30px yellow); trnsition: all 30s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
-                        Cb = 2;
-                        wct = 1;
+                    setTimeout("BigScreen.style = 'opacity: 0.6;transition: all 5s;'", 5000);
+                    setTimeout("CV.style= 'display:none;'", 9500);
+                    setTimeout("CV.muted", 9500);
+                    BigScreen.style = "display: block;position: fixed; ; opacity: 1;";
+                    CV.style = "display: block;position: fixed; z-index: 99 ; opacity: 1; width: 100%; height: 110vh; object-fit: cover;";
+                    CV.muted = false;
+                    CV.src = "./Videos/Combo02.mp4";
+                    CV.play();
 
-                    }
+                    setTimeout(ClearWaring, 900);
+                    end.style = "position: fixed;";
+                    endText.innerHTML = "就是現在!快連打ASD!";
+                    endText.style = "opacity: 1; color: yellow; display: flex; position:fixed; z-index: 99; justify-content: center;";
 
-
-                    //連打模式啟動
-                    if (Cb == 2 & MyCards != "") {
-                        Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-                        Lh2.style = "scale:2.5; right: 70%; display: block; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-                        Lh.src = "../Left/LR1.PNG";
-                        Lh2.src = "../Left/LR1.PNG";
-                        ComboLogic(MyCards);
-                        RCt += 1;
-                    }
-
-                    //進入對戰邏輯判斷
-                    else if (Cb == 0 & MyCards != "") {
-                        Lh2.style = "display: none;";
-                        FightLogic(MyCards, EmCards);
-                        RCt += 1;
-                    }
+                    Cb = 2;
+                    wct = 1;
 
                 }
+
+
+                //連打模式啟動時
+                if (Cb == 2 & MyCards != "") {
+
+                    Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
+                    Lh2.style = "scale:2.5; right: 70%; display: block; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
+                    ComboLogic(MyCards);
+                    Cobct += 1;
+                    RCT();
+                }
+
+                //進入猜拳勝負邏輯判斷
+                else if (Cb == 0 & MyCards != "") {
+                    Lh2.style = "display: none;";
+                    FightLogic(MyCards, EmCards);
+                    setTimeout(function () { RCT(RCt) }, 1500);
+                    RCt += 1;
+                }
+
+
                 break;
             }
 
@@ -448,16 +501,25 @@ window.addEventListener("keydown", function (k) {
     }
 
     function RCT(r) {
-        bt.innerText = "第" + (RCt + 1) + "回合!";
-    }
-    function RCT2(r) {
-        bt.innerText = "按下Space開始!";
+        if (Cb == 2 && Cobct != 0) {
+
+            bt.innerText = "第" + (Cobct) + "連擊!!";
+            bt.style = "opacity: 1; color: rgb(247, 82, 41);transition:all 0s; animation: shake 300ms infinity ease-in-out; animation-iteration-count: 3s; ";
+        }
+        else {
+            bt.style = "opacity: 1; color: orange";
+            bt.innerText = "第" + (RCt + 1) + "回合!";
+        }
+
     }
 
-    //陣亡函式
+    // function RCT2() {
+    //     bt.style = "opacity: 1; color: rgb(247, 82, 41);transition:all 0s; animation: shake 300ms infinity ease-in-out; animation-iteration-count: 3s; ";
+    //     bt.innerText = "按下Space開始!";
+    // }
+
+    //陣亡檢查函式
     function StopFight() {
-
-
 
         if (document.querySelector(".CurHp").innerText <= 50) {
             document.querySelector(".Lh").style = "filter: drop - shadow(0px 0px 30px rgb(255, 13, 13));";
@@ -491,14 +553,16 @@ window.addEventListener("keydown", function (k) {
             }
         }
 
-        //陣亡與否回傳值
+        //陣亡與否回傳值，返回1表示有一方陣亡
         if (document.querySelector(".CurHp").innerText <= 0) {
             document.querySelector(".CurHp").innerText = 0;
             CurHpImg.style.width = "0%";
             end.style = "position: fixed;";
             endText.innerHTML = "YOU LOSE";
             endText.style = "opacity: 1; color: red; display: flex; position:fixed; z-index: 99; justify-content: center;";
-
+            S.style = "scale: 1";
+            R.style = "scale: 1";
+            P.style = "scale: 1";
             return 1;
         }
 
@@ -508,6 +572,9 @@ window.addEventListener("keydown", function (k) {
             end.style = "position: fixed;";
             endText.innerHTML = "YOU WIN";
             endText.style = "color: yellow; display: flex; position:fixed; z-index: 99; justify-content: center;";
+            S.style = "scale: 1";
+            R.style = "scale: 1";
+            P.style = "scale: 1";
 
             return 1;
         }
@@ -516,38 +583,66 @@ window.addEventListener("keydown", function (k) {
 
     //平手對決時手臂傾斜+震動
     function shakeShadowTie() {
+        console.log("shakeShadowTie: " + SB);
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+        Lh.style = "scale:2.5; left: 35% ; filter: drop-shadow(0px 0px 30px rgb(74, 241, 68)); z-index: 2;transition:all 0.3s; animation: shakeTieLh 900ms ease-in-out; animation-iteration-count: infinite;";
 
-        Lh.style = "scale:2.5; left: 35% ; filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shakeTieLh 900ms ease-in-out; animation-iteration-count: infinite;";
-
-        Rh.style = "scale:2.5; right: 35%; filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); transition:all 0.3s; animation: shakeTieRh 900ms ease-in-out; animation-iteration-count: infinite;";
+        Rh.style = "scale:2.5; right: 35%; filter: drop-shadow(0px 0px 30px rgb(74, 241, 68)); transition:all 0.3s; animation: shakeTieRh 900ms ease-in-out; animation-iteration-count: infinite;";
     }
 
     //震動特效
-    function shakeShadow() {
+    // function shakeShadow() {
 
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+    //     body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B7.gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
-        Lh.style = "left: 30%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+    //     Lh.style = "left: 30%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); z-index: 2;transition:all 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
-        Rh.style = "right: 30%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); transition:all 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
-    }
+    //     Rh.style = "right: 30%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(255, 252, 92)); transition:all 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+    // }
 
-    //特效Css更動恢復，需要0.3秒
+    ////縮回時手"不會"回復初始手勢
     function CssBack() {
+        console.log("CssBack: " + SB);
 
-        Lh.src = "../Left/1.PNG";
+        if (Cb != 0) {
+            Lh.src = "./Left/LR1.PNG";
+            Lh2.src = "./Left/LR1.PNG";
+        }
+
         Lh2.style = "display: none;";
 
         Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
 
-        Lh.style = "left: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 3; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
+        Lh.style = "left: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
 
         Rh.style = "right: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
 
         //初始化body的Css
-        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif')background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
+
+        MyInfo.style = "animation: none";
+        EmInfo.style = "animation: none";
+
+
+    }
+
+    //縮回時手會回復初始手勢
+    function CssBack2() {
+
+        Lh.src = "./Left/1.PNG";
+        Rh.src = "./Right/2.PNG";
+
+        Lh2.style = "display: none;";
+
+        Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
+
+        Lh.style = "left: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
+
+        Rh.style = "right: 0px; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25, 0)); z-index: 2; transform:rotateX(-2turn); transition:all 0.3s; animation: Lhandmove 0.8s infinite alternate linear 0.3s;";
+
+        //初始化body的Css
+        body.style = "width: 100%; height: 100%; position: relative; background-image: url('./Images/B" + SB + ".gif');background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;";
 
         MyInfo.style = "animation: none";
         EmInfo.style = "animation: none";
@@ -556,9 +651,6 @@ window.addEventListener("keydown", function (k) {
     }
 
     function CobCssBack() {
-
-        Lh.src = "../Left/LR1.PNG";
-        Lh2.src = "../Left/LR1.PNG";
 
         Bt.style = "background-color: rgb(0, 0, 0, 0); border-radius: 50%; transition:all 0.5s ease";
 
@@ -573,7 +665,7 @@ window.addEventListener("keydown", function (k) {
     //平手時播放，總共耗費2.3秒
     function Tie() {
 
-        setTimeout(CssBack, 1500);
+        setTimeout(CssBack2, 1500);
         setTimeout(shakeShadowTie, 300);
 
         Lh.style = "transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); z-index: 3; transition:all 0.3s;";
@@ -587,7 +679,7 @@ window.addEventListener("keydown", function (k) {
         if (w == 'l') {
             console.log(w);
             function c() {
-                Lh.style = "scale: 2; left: 70%; z-index: 3; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));transform:rotate(7200deg); transition: all 1s;";
+                Lh.style = "scale: 2; left: 65%; z-index: 3; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));transform:rotate(7200deg); transition: all 1s;";
             }
             setTimeout(c, 200);
 
@@ -596,7 +688,7 @@ window.addEventListener("keydown", function (k) {
         else {
             console.log(w);
             function c() {
-                Rh.style = "scale: 2; right: 70%; z-index: 4; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));transform: rotate(7200deg); transition: all 1s;";
+                Rh.style = "scale: 2; right: 65%; z-index: 4; filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));transform: rotate(7200deg); transition: all 1s;";
             }
             setTimeout(c, 200);
 
@@ -640,19 +732,19 @@ window.addEventListener("keydown", function (k) {
             if (w == 'l') {
 
                 if (m == 0) {
+                    
+                    setTimeout(CssBack2, 500);
 
-                    setTimeout(CssBack, 500);
-
-                    Lh.style = "scale: 1.1; left: 65%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));  z-index: 2; transition:all 0.1s 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+                    Lh.style = "scale: 1.1; left: 65%; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25));  z-index: 3; transition:all 0.1s 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
                     EmInfo.style = "filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
                 }
 
                 else if (m == 1) {
 
-                    setTimeout(CssBack, 1300);
+                    setTimeout(CssBack2, 1300);
 
-                    Lh.style = "left: 70%; z-index: 2; transition:all 0.2s;";
+                    Lh.style = "left: 65%; z-index: 3; transition:all 0.2s;";
 
                     EmInfo.style = "filter: drop-shadow(0px 0px 20px rgb(236, 39, 25)); animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
 
@@ -660,7 +752,8 @@ window.addEventListener("keydown", function (k) {
                 }
 
                 else if (m == 2) {
-                    setTimeout(CssBack, 700);
+                    
+                    setTimeout(CssBack2, 700);
 
                     Lh.style = "scale: 1.5; left: 60%; z-index: 3; transform: rotate(360deg) translateX(-400px); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); transition: all 0.5s;";
 
@@ -672,19 +765,19 @@ window.addEventListener("keydown", function (k) {
             else if (w == 'r') {
 
                 if (m == 0) {
+                    
+                    setTimeout(CssBack2, 500);
 
-                    setTimeout(CssBack, 500);
-
-                    Rh.style = "scale: 1.1; right: 70%; z-index: 3; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); transition:all 0.1s 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
+                    Rh.style = "scale: 1.1; right: 65%; z-index: 3; transform:rotateX(2turn); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); transition:all 0.1s 0.3s; animation: shake 300ms ease-in-out; animation-iteration-count: infinite;";
 
                     MyInfo.style = "filter: drop-shadow(0px 0px 20px rgb(236, 39, 25)); animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
                 }
 
                 else if (m == 1) {
 
-                    setTimeout(CssBack, 1300);
+                    setTimeout(CssBack2, 1300);
 
-                    Rh.style = "right: 70%; z-index: 2; transition: all 0.2s;";
+                    Rh.style = "right: 65%; z-index: 3; transition: all 0.2s;";
 
                     MyInfo.style = "filter: drop-shadow(0px 0px 20px rgb(236, 39, 25)); animation: shake 300ms ease-in-out; animation-iteration-count: 3;";
 
@@ -692,7 +785,7 @@ window.addEventListener("keydown", function (k) {
                 }
 
                 else if (m == 2) {
-                    setTimeout(CssBack, 700);
+                    setTimeout(CssBack2, 700);
 
                     Rh.style = "scale: 1.5; right: 60%; z-index: 3; transform: rotate(360deg) translateX(-400px); filter: drop-shadow(0px 0px 30px rgb(236, 39, 25)); transition: all 0.5s;";
 
@@ -713,28 +806,28 @@ window.addEventListener("keydown", function (k) {
 
         if (L == '剪刀') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LS1.PNG";
+            Lh.src = "./Left/LS1.PNG";
         }
         else if (L == '石頭') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LR1.PNG";
+            Lh.src = "./Left/LR1.PNG";
         }
         else if (L == '布') {
             Lh.style = "scale:2.5; right: 70%; transform:rotateX(2turn); z-index: 3; transition:all 0.1s";
-            Lh.src = "../Left/LP1.PNG";
+            Lh.src = "./Left/LP1.PNG";
         }
 
         if (Y == '剪刀') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RS1.PNG";
+            Rh.src = "./Right/RS1.PNG";
         }
         else if (Y == '石頭') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RR1.PNG";
+            Rh.src = "./Right/RR1.PNG";
         }
         else if (Y == '布') {
             Rh.style = "scale:2.5; left: 70%; transform:rotateX(2turn); z-index: 2; transition:all 0.1s";
-            Rh.src = "../Right/RP1.PNG";
+            Rh.src = "./Right/RP1.PNG";
         }
 
         if (Y == 0) {
@@ -748,7 +841,7 @@ window.addEventListener("keydown", function (k) {
 
         var atk = 0;
 
-        if (Number(document.querySelector(".EmCurHp").innerText) > 40) {
+        if (Number(document.querySelector(".EmCurHp").innerText) > 38) {
             atk = 1;
         }
         else {
@@ -787,8 +880,6 @@ window.addEventListener("keydown", function (k) {
                 document.querySelector(".CurHp").innerText = Number(document.querySelector(".CurHp").innerText) - tatk;
                 document.querySelector(".EmCurHp").innerText = Number(document.querySelector(".EmCurHp").innerText) - tatk;
 
-
-                // CurHpImg.style = "background-color: red";
 
                 CH = CH - tatk;
                 ECH = ECH - tatk;

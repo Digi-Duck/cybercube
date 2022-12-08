@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .boxa {
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            display:flex;
+            /* 加上dispaly:flex後他會去擠鴨子曾(如果放不下的時候)，他就不會去擠壓外部無限延伸了 */
+           
+          
+           
+         
+           
+ 
+            
+        }
+        .boxb {
+            width: 250px;
+            height: 150px;
+            background-color: aqua;
+            margin-right: 10%;
+            margin-top: 10%;
+            
+         
+            /* margin: 和padding永遠都是參考父層的寬度喔 以此題為例就是 margin-top就是50;
+            
+            此外為什麼margin設定為50卻會把整個A(父層)一起往下面帶，這是因為父曾沒有給寬高這等於，當子層要去抓資料時，不停地疊加，這會導致無限迴圈，因此當我們使用margin去擠壓外部的時候，他將會自動抓起整個瀏覽器的寬度。
+            */
+            
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="boxa">
+        <div class="boxb"></div>
+    </div>
+</body>
+
+</html>

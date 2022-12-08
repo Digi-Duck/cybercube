@@ -31,6 +31,7 @@ const P1 = document.querySelector("#P")
 function startGame() {
     GAMESTART.style.visibility = "hidden"
     ATTACK1.style.visibility = "visible"
+    // 
     ACTIVE1.style.visibility = "visible"
     GOOD1.style.visibility = "visible"
     ESCAPE1.style.visibility = "visible"
@@ -51,6 +52,7 @@ function first() {
     //當血量等於101時，將不會再跳回去戰鬥持續進行中畫面
     if (PROGRES1.clientWidth >= 101 && PROGRES.clientWidth >= 101) {
         //3.1秒後跳出戰鬥持續進行中
+        // 放的位置應該要調整一下
         setTimeout('content.innerHTML = "戰鬥持續進行中！！"', 3100)
     }
 }
@@ -112,8 +114,8 @@ function yu1() {//自身扣血
         //此處為每2毫秒扣2滴血
         blood = blood - 2;
 
-        if (blood <= flash)
-            clearInterval(bar)
+        if (blood <= flash){
+            clearInterval(bar)}
         //回傳新的血量clientWidth只能看大小不能更改數值喔
         PROGRESS1.style.width = blood + "px"
     }, 1);
@@ -130,6 +132,7 @@ function yu() { //電腦扣血
     PROGRES.style.width = immediate + "px"
 
     if (immediate <= 0) {
+        CONTENT.innerHTML="";
         //卡比終結動畫
         endGame1(2)
     }

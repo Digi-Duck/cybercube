@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色弱遊戲</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 100%;
+            height: 70px;
+            background-color: rgb(238, 187, 19);
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        nav span, nav button{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100px;
+            height: 40px;
+            border: 2px solid black;
+            background-color: beige;
+
+        }
+        body{
+            padding-top: 100px;
+        }
+        main{
+            width: 600px;
+            background-color: antiquewhite;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        main div{
+            /* width: 280px; */
+            /* height: 280px; */
+            margin: 10px;
+            cursor: pointer;
+        }
+        main div.ans{
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button id="start">遊戲開始</button>
+        <span id="score">分數:</span>
+        <span id="timeleft">剩餘時間:</span>
+    </nav>
+    <main></main>
+
+    <script>
+        const main = document.querySelector('main')
+        const start_btn = document.querySelector('#start')
+        const score = document.querySelector('#score')
+        const timeleft = document.querySelector('#timeleft')
+        var point
+        let level = 0
+        let number = [4, 9, 16, 25, 36]
+        let a = 0
+        var wh = [280, 180, 130, 100, 80]
+
+        function startGame(params){
+            var ans = Math.floor(Math.random()*number[level])
+            start_btn.style = "display:none;";
+
+            main.innerHTML = ''
+
+            var r = Math.floor(Math.random()*256)
+            var g = Math.floor(Math.random()*256)
+            var b = Math.floor(Math.random()*256)
+
+            for(let index = 0; index < number[level]; index++){
+                if(index == ans){
+                    main.innerHTML += '<div class="ans" style="background-color: rgb(' +r+ ',' +g+ ',' +b+ '); width:'+wh[level]+'px; height:'+wh[level]+'px;"></div>'
+                }else{
+                    main.innerHTML += '<div style="background-color:rgb(' +r+ ',' +g+ ',' +b+ '); width:'+wh[level]+'px; height:'+wh[level]+'px;"></div>'
+                }
+            }
+            const blocks = document.querySelectorAll('main div')
+            for(let index = 0; index < number[level]; index++){
+                if(index == ans){
+                    blocks[index].onclick = function(){
+                        console.log('正確');
+                        point++;
+                        score.innerHTML = '分數:' + point
+                        startGame()
+                    }
+                }else{
+                    blocks[index].onclick = function(){
+                        console.log('不正確');
+                    }
+                }
+            }
+            a++;
+            if(level < 4){
+                if(a == 10){
+                    level++;
+                    a = 0;
+                }
+            }
+        }
+        start_btn.onclick = function(){
+            var time = 60;
+            point = 0;
+            timeleft.innerHTML = '剩餘時間' + time
+            score.innerHTML = '分數:' + point
+
+            var timer = setInterval(function(){
+                time--;
+                timeleft.innerHTML = '剩餘時間:' + time
+                if(time == 0){
+                    if(point <= 10){
+                        alert('遊戲結束，分數為:'+point+'\n用猜的可能都比你高分，太慘了') 
+                        }else if(point <= 30){
+                            alert('遊戲結束，分數為:'+point+'\n可能有色盲，請注意')
+                        }else{
+                            alert('遊戲結束，分數為:'+point+'\n眼睛正常，很棒') 
+                    }
+                    clearInterval(timer)
+                    main.innerHTML = ''
+                    start_btn.style = "display:flex;";
+                    level = 0;
+                }
+            }, 1000)
+
+            startGame()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 開頭初始頁面 按下start按扭 漸漸淡出= */
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .fadeIn {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("./img/fadein.png");
+            background-position: center;
+            background-size: cover;
+            visibility: hidden;
+        }
+
+        /* game start按鈕 */
+        .inbtn {
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            top: 60%;
+            left: calc(50% - 150px);
+            font-size: 45px;
+            background-color: red;
+            color: snow;
+            border: 5px white solid;
+            border-radius: 80px;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* 我想讓他吃body高度 */
+        .block {
+            width: 100%;
+            height: 80%;
+            background-image: url("./img/background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .blockA {
+            width: 50%;
+            height: 100%;
+            float: left;
+            /* position: relative; */
+        }
+
+        .blockB {
+            width: 50%;
+            height: 100%;
+            float: right;
+            /* position: relative; */
+        }
+
+        /* 放置貓狗圖片的區域 */
+        .playerA,
+        .playerB {
+            width: 100%;
+            height: 80%;
+        }
+
+        /* 狗的血條 */
+        .bloodA {
+            width: 505px;
+            height: 4%;
+            border: 2px solid white;
+            position: absolute;
+            top: 600px;
+            left: 280px;
+        }
+
+        #HPa {
+            width: 505px;
+            height: 100%;
+            background-color: red;
+        }
+
+        #HPb {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        /* 貓的血條 */
+        .bloodB {
+            width: 30%;
+            height: 4%;
+            border: 2px solid white;
+            position: absolute;
+            right: 320px;
+            top: 450px;
+        }
+
+        /* 圈住 .result &.btn-B的區域 */
+        .blockbtn {
+            height: 20%;
+            width: 100%;
+            background-color: black;
+        }
+
+        /* 這邊會顯示出勝利或失敗的結果 */
+        .result01,
+        .result02 {
+            width: 50%;
+            height: 100%;
+            background-image: url(./img/對話框.png);
+            background-repeat: repeat-x;
+            background-size: contain;
+            float: left;
+            color: aliceblue;
+            font-size: 35px;
+            padding: 25px;
+        }
+
+        /* 放置剪刀石頭布按鈕的區域 */
+        .btn-B {
+            width: 50%;
+            height: 100%;
+            background-image: url("./img/對話框.png");
+            background-size: contain;
+            background-repeat: repeat-x;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        /* 剪刀石頭布的圖片 */
+        .p-img,
+        .sci-img,
+        .s-img {
+            width: 180px;
+            height: 180px;
+        }
+
+        /* 狗圖片 */
+        .imgA {
+            position: absolute;
+            top: 350px;
+            left: 350px;
+            width: 300px;
+        }
+
+        /* 貓貓圖片 */
+        .imgB {
+            position: absolute;
+            top: 250px;
+            right: 400px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <div class="blockA">
+            <div class="playerA">
+                <img src="./img/dog3.png" alt="" class="imgA">
+            </div>
+            <div class="bloodA">
+                <div id="HPa"></div>
+            </div>
+        </div>
+        <div class="blockB">
+            <div class="bloodB">
+                <div id="HPb"></div>
+            </div>
+            <div class="playerB">
+                <img src="./img/cat5.png" alt="" class="imgB">
+            </div>
+        </div>
+    </div>
+    <div class="blockbtn">
+        <div class="result01 result02">
+        </div>
+        <div class="btn-B">
+            <button type="button" class="btn" onclick="compare()"><img src="./img/布.jpg" style="width: 170px;"
+                    class="p-img"></button>
+            <button type="button" class="btn" onclick="compare()"> <img src="./img/剪刀.jpg" style="width: 170px;"
+                    class="sci-img"></button>
+            <button type="button" class="btn" onclick="compare()"><img src="./img/石頭.jpg" style="width: 170px;"
+                    class="s-img"></button>
+        </div>
+    </div>
+    <div class="fadeIn" style="opacity: 1;">
+        <button type="button" class="inbtn" onclick="c()">Game Start!</button>
+    </div>
+    <script>
+        // x 是我的選擇 x=0 是石頭 1是剪刀 2是布
+        function compare() {
+            let computer = Math.floor(Math.random() * 3);
+            let x = 0;
+            let result01 = "";
+            // let result02 = "";
+            if (x == computer) {
+                console.log("平手");
+                result01 = "平手，成功防禦!";
+                document.querySelector(".result01").innerHTML = result01;
+                //平手
+            } else if ((x == 0 && computer == 1) || (x == 1 && computer == 2) || (x == 2 && computer == 0)) {
+                console.log("B勝利")
+                result01 = "你贏了! 成功攻擊小白狗!";
+                document.querySelector(".result01").innerHTML = result01;
+                blood1();
+            } else if ((x == 0 && computer == 2) || (x == 1 && computer == 0) || (x == 2 && computer == 1)) {
+                console.log("A勝利")
+                result01 = "你輸了! 彩虹貓貓被攻擊!";
+                blood2();
+                document.querySelector(".result01").innerHTML = result01;
+                // document.querySelector(".result02").innerHTML = result02;
+            }
+        }
+        function blood1() {
+            console.log(document.getElementById("HPa").clientWidth)
+            pro01 = document.getElementById("HPa").clientWidth;
+            let y = pro01 - 101
+            bar = setInterval(function () {
+                console.log(document.getElementById("HPa").clientWidth)
+                pro01 -= 2;
+                if (pro01 <= y) {
+                    clearInterval(bar);
+                }
+                HPa.style.width = pro01 + "px";
+            }, 10);
+        }
+        function blood2() {
+            console.log(document.getElementById("HPa").clientWidth);
+            pro02 = document.querySelector("#HPb").clientWidth;
+            let y = pro02 - 101
+            bar = setInterval(function () {
+                pro02 -= 2;
+                if (pro02 <= y) {
+                    clearInterval(bar);
+                }
+                HPb.style.width = pro02 + "px";
+            }, 10);
+        }
+        function c() {
+            var fadeIn = document.querySelector('.fadeIn');
+            var opacity = 1;
+            var clock = setInterval(function () {
+                opacity = opacity - 0.1;
+                if (opacity >= 0) {
+                    fadeIn.style.opacity = opacity;
+                } else {
+                    clearInterval(clock);
+                }
+            }, 80);
+        }
+
+    </script>
+</body>
+
+</html>

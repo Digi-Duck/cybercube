@@ -312,11 +312,11 @@ main {
     bottom: 7%;
 }
 
-#NextBtn {
+.NextBtn {
     width: 100%;
     height: 100%;
     font-size: 100%;
-    color: aliceblue;
+    color: rgb(235, 202, 57);
     border-width: 150%;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 15px;
