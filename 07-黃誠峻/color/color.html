@@ -6,23 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>顏色</title>
-    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="./color.css">
 </head>
 
-<body >
+<body>
     <div id="all">
         <div id="header">
-            <h2 style="text-align:center">color game</h2>
+            
+            <div id="bloodMain">
+                <div id="bloodProgress"></div>
+            </div>
         </div>
         <div id="main">
+            <div id="score">分數：</div>
             <div id="game">
-                <div class="gameColor"></div>
-                <div class="gameColor"></div>
-                <div class="gameColor"></div>
-                <div class="gameColor"></div>
+                <div class="gameColor">色</div>
+                <div class="gameColor">弱</div>
+                <div class="gameColor">挑</div>
+                <div class="gameColor">戰</div>
             </div>
             <div id="button">
-                <div id="start" onclick="color()">start</div>
+                <div id="start" onclick="start()">start</div>
+                <!--測試用按鈕 -->
                 <div id="chater" onclick="chater()">chater</div>
             </div>
         </div>
@@ -31,7 +36,7 @@
 
 
 
-    <script src="color.js"></script>
+    <script src="./color.js"></script>
 </body>
 
 </html>
