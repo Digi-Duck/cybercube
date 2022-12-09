@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+
+<body>
+    <div class="all-card">
+    </div>
+
+    <script>
+
+        //生產卡片
+        const content = document.querySelector('.all-card')
+
+        //取得天氣API資料
+        fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AA300EC1-31BA-465E-B669-6CA2C320A195")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson);
+
+                //將資料套在卡片模板上，並輸出在網頁上
+                for (let i = 0; i < 22; i++) {
+                    content.innerHTML += `
+                <div class="card">
+                    <div class="card-location">${myJson.records.location[i].locationName}</div>
+                    <div class="card-info">
+                        <img src="./" alt="">
+                     <p class="card-text">${myJson.records.location[i].weatherElement[2].time[0].parameter.parameterName}~${myJson.records.location[i].weatherElement[4].time[0].parameter.parameterName}℃</p>
+                        <p class="card-text">${myJson.records.location[i].weatherElement[0].time[0].parameter.parameterName}</p>
+                        <p class="card-text">${myJson.records.location[i].weatherElement[3].time[0].parameter.parameterName}</p>
+                        <p class="card-text">降雨機率 ${myJson.records.location[i].weatherElement[1].time[0].parameter.parameterName}%</p>
+                    </div>
+                </div>
+                `}
+                    });
+
+            /*
+            50%以上  下雨
+            31-50%  陰天
+            30%以下  晴天
+            */
+
+    </script>
+</body>
+
+</html>
