@@ -83,39 +83,16 @@
 
 
             </dv>
-            <div id="taiwan"></div>
+            <div id="taiwan">
+                <img src="./images/text.jpg" alt="">
+            </div>
         </main>
         <footer>
             <!-- <dv class="copy">Copyright © 2007-2022</dv> -->
         </footer>
     </div>
-    <script>
-        const content =document.querySelector(".card")
-        console.log(content);
- 
-       
-
-        // 將json變成物件了
-        fetch( "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AA300EC1-31BA-465E-B669-6CA2C320A195")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(myJson );
-    console.log(myJson.records.location[11].weatherElement[0]);
-    var taichun=myJson.records.location[11].locationName;
-    content.innerHTML=`<div class="rain"><img src="./images/rain.svg" alt=""></div><div class="city">${taichun}</div><div class="normal">最高溫度~:</div><div class="normal">降雨機率:</div><div class="normal">天氣:</div><div class="normal">舒適度:</div></div>`
-
-
-});
-
-        // 取得天氣api資料
-
-       
-
-
-        
-        // 將資料套在卡片模板上並且輸出
+    <script src="./sunday.js">
+  
     </script>
 </body>
 
