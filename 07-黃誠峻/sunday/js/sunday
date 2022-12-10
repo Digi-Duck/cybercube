@@ -1,5 +1,10 @@
+// 事件監聽，製作各個區域;
+
+
+
+
 const content =document.querySelector(".card")
-console.log(content);//先取得卡片資料
+// console.log(content);//先取得卡片資料
 
 
 
