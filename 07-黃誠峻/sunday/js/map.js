@@ -177,6 +177,7 @@ weather: "Rainy"
 },
 ]
 
+document.data
 var s=document.querySelector("#taipei")
 console.log(s)
 // // dataset 用來取得放在上面並且開頭是data的
@@ -184,3 +185,5 @@ console.log(s.dataset.name)
 s.addEventListener("click",function(){
 // console.log("台北")
 })
+
+
