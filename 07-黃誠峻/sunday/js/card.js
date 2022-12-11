@@ -6,6 +6,9 @@ var cleanArea=[];
 s.addEventListener("click",function(){
 // //console.log("台北")
 })
+// 台灣出現控制
+const mainleft=document.querySelector(".mainleft")
+const mainright=document.querySelector(".mainright")
 // 產生事件監聽器
 const allArea = document.querySelector("#allArea")
 const northArea = document.querySelector("#northArea")
@@ -16,75 +19,121 @@ const island = document.querySelector("#island")
 const am_am=document.querySelector("#am_am")
 const am_pm=document.querySelector("#am_pm")
 const pm_am=document.querySelector("#pm_am")
+const time=document.querySelector("#time")
 
-var j=1;
+var k=1;
 
 am_am.addEventListener("click",function(){
+time.innerHTML=`<b>預報時間為：本日00:00~本日06:00</b>`
 allCards0.style="display:"
 allCards1.style="display:none"
 allCards2.style="display:none"
-return j=0
+
+return k=0
 })
 am_pm.addEventListener("click",function(){
+    time.innerHTML=`<b>預報時間為：本日06:00~本日18:00</b>`
 allCards0.style="display:none"
 allCards1.style="display:"
 allCards2.style="display:none"
-return j=1
+
+return k=1
 })
 pm_am.addEventListener("click",function(){
+    time.innerHTML=`<b>預報時間為：本日18:00~隔日06:00</b>`
 allCards0.style="display:none"
 allCards1.style="display:none"
 allCards2.style="display:"
-return j=2
+return k=2
 })
 
 allArea.addEventListener("click",function(){
+    mainleft.style="display:none";
+    mainright.style="widht:100%"
     for(i=0;i<=21;i++){
-        
-     document.querySelector(`#cleanArea${j}${i}`).style.display=""
+
+     document.querySelector(`#cleanArea0${i}`).style.display=""
+     document.querySelector(`#cleanArea1${i}`).style.display=""
+     document.querySelector(`#cleanArea2${i}`).style.display=""
     // document.querySelector(`#cleanArea${i}`)
     }
     })
 northArea.addEventListener("click",function(){
+    mainleft.style="display:block";
+    mainright.style="widht:50%"
     for(i=0;i<=21;i++){
         if(i<=5){
-            document.querySelector(`#cleanArea${j}${i}`).style.display=""
+            document.querySelector(`#cleanArea0${i}`).style.display=""
+            document.querySelector(`#cleanArea1${i}`).style.display=""
+            document.querySelector(`#cleanArea2${i}`).style.display=""
         }
-        else{document.querySelector(`#cleanArea${j}${i}`).style.display="none"}
+        else{
+            document.querySelector(`#cleanArea0${i}`).style.display="none"
+            document.querySelector(`#cleanArea1${i}`).style.display="none"
+            document.querySelector(`#cleanArea2${i}`).style.display="none"
+        }
     // document.querySelector(`#cleanArea${i}`)
     }
     })
 centerArea.addEventListener("click",function(){
+    mainleft.style="display:block";
+    mainright.style="widht:50%"
     for(i=0;i<=21;i++){
         if(i>=6&&i<=9){
-            document.querySelector(`#cleanArea${j}${i}`).style.display=""
+            document.querySelector(`#cleanArea0${i}`).style.display=""
+            document.querySelector(`#cleanArea1${i}`).style.display=""
+            document.querySelector(`#cleanArea2${i}`).style.display=""
         }
-        else{document.querySelector(`#cleanArea${j}${i}`).style.display="none"}
-    }
+        else{
+            document.querySelector(`#cleanArea0${i}`).style.display="none"
+            document.querySelector(`#cleanArea1${i}`).style.display="none"
+            document.querySelector(`#cleanArea2${i}`).style.display="none"
+        }    }
 })
 southArea.addEventListener("click",function(){
+    mainleft.style="display:block";
+    mainright.style="widht:50%"
     for(i=0;i<=21;i++){
         if(i>=10&&i<=15){
-            document.querySelector(`#cleanArea${j}${i}`).style.display=""
+            document.querySelector(`#cleanArea0${i}`).style.display=""
+            document.querySelector(`#cleanArea1${i}`).style.display=""
+            document.querySelector(`#cleanArea2${i}`).style.display=""
         }
-        else{document.querySelector(`#cleanArea${j}${i}`).style.display="none"}
-    }
+        else{
+            document.querySelector(`#cleanArea0${i}`).style.display="none"
+            document.querySelector(`#cleanArea1${i}`).style.display="none"
+            document.querySelector(`#cleanArea2${i}`).style.display="none"
+        }  }
     })
 eastArea.addEventListener("click",function(){
+    mainleft.style="display:block";
+    mainright.style="widht:50%"
     for(i=0;i<=21;i++){
         if(i>=16&&i<=18){
-            document.querySelector(`#cleanArea${j}${i}`).style.display=""
+            document.querySelector(`#cleanArea0${i}`).style.display=""
+            document.querySelector(`#cleanArea1${i}`).style.display=""
+            document.querySelector(`#cleanArea2${i}`).style.display=""
         }
-        else{document.querySelector(`#cleanArea${j}${i}`).style.display="none"}
-    }
+        else{
+            document.querySelector(`#cleanArea0${i}`).style.display="none"
+            document.querySelector(`#cleanArea1${i}`).style.display="none"
+            document.querySelector(`#cleanArea2${i}`).style.display="none"
+        }    }
     })
 island.addEventListener("click",function(){
+    mainleft.style="display:block";
+    mainright.style="widht:50%"
     for(i=0;i<=21;i++){
         if(i>=19&&i<=21){
-            document.querySelector(`#cleanArea${j}${i}`).style.display=""
+            document.querySelector(`#cleanArea0${i}`).style.display=""
+            document.querySelector(`#cleanArea1${i}`).style.display=""
+            document.querySelector(`#cleanArea2${i}`).style.display=""
         }
-        else{document.querySelector(`#cleanArea${j}${i}`).style.display="none"}
-    }
+        else{
+            document.querySelector(`#cleanArea0${i}`).style.display="none"
+            document.querySelector(`#cleanArea1${i}`).style.display="none"
+            document.querySelector(`#cleanArea2${i}`).style.display="none"
+        }   }
     })
 
 
@@ -181,6 +230,8 @@ if(j==0){
 }
 else if(j==1){
 allCards1.innerHTML+=`<b><div id="cleanArea${j}${i}" class="card"> <div class="rain"><img src="../images/${img}.svg" alt=""></div><div class="city">${city}</div><div class="normal">溫度:${lowTempture}°~${highTempture}°:</div><div class="normal">${chance}</div><div class="normal">天氣:${weather}</div><div class="normal">${comfort}</div></div></div><b>`
+// allCards1.style="display:none"
+
 }
 
 else if(j==2){
@@ -191,6 +242,6 @@ else if(j==2){
    
 }
      }}
-    }
+     return  k=1;}
 );
 
