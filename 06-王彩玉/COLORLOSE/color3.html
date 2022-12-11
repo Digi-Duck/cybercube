@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./fovicon.ico" type="image/x-icon">
     <title>色弱小遊戲</title>
     <style>
         /* font-family: 'Press Start 2P', 'Permanent Marker',  '微軟正黑體' ,cursive; */
@@ -30,28 +31,45 @@
             top: 0px;
             left: 0px;
             background-color: #000;
-            z-index: 1;
+            z-index: 2;
+        }
+        .starttext{
+            width: 100%;
+            height: 20vh;
+            position: absolute;
+            top: 8%;
+            left: 0%;
+            font-size: 120pt;
+            font-weight: bold;
+            text-align: center;
+            line-height: 20vh;
+            color: whitesmoke;
+            animation: startfont 5s infinite;
+        }
+        .starttextactive{
+            font-size: 140pt;
+            top: calc(10% - 10pt);
         }
         .btn-start{
-            width: 15%;
-            height: 25%;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             position: absolute;
-            top: 37.5%;
-            left: 42.5%;
+            top: calc(50% - 130px);
+            left: calc(50% - 130px);
             font-size: 50pt;
             border: 10px double #fff;
             background-color: rgb(0, 255, 0);
             animation: check 2s infinite;
+            transition: opacity 0.3s linear;
             cursor: pointer;
-            transition: opacity 0.5s linear;
         }
         .btn-start:hover{
-            width: 17%;
-            height: 27%;
+            width: 280px;
+            height: 280px;
             position: absolute;
-            top: 36.5%;
-            left: 41.5%;
+            top: calc(50% - 140px);
+            left: calc(50% - 140px);
             font-size: 52pt;
         }
         .gamescreen{
@@ -61,6 +79,7 @@
             position: absolute;
             top: 0px;
             left: 0px;
+            perspective: 800px;
         }
         .endscreen{
             width: 100%;
@@ -95,14 +114,14 @@
             text-align: center;
             width: 100%;
             height: 30%;
+            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
             font-size: 90pt;
-            line-height: 225px;
             font-weight: bold;
             color: #fff;
+            line-height: 225px;
             position: absolute;
             top: 40%;
             left: 0%;
-            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
             animation: shadow 5s infinite;
         }
         .prompt{
@@ -113,10 +132,10 @@
             font-weight: bold;
             line-height: 225px;
             color: #fff;
+            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
             position: absolute;
             top: 70%;
             left: 0%;
-            font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
             animation: endfont 5s infinite;
         }
         .bgi{
@@ -128,6 +147,18 @@
             background-image: url("./cat2.gif");
             background-repeat: round;
             background-size: contain;
+            filter: drop-shadow(0px 0px 0.8rem rgb(99, 252, 68));
+        }
+        .bgi2{
+            width: 15%;
+            height: 20%;
+            position: absolute;
+            bottom: 2%;
+            right: 0%;
+            background-image: url("./b2.gif");
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: drop-shadow(0px 0px 0.8rem rgb(248, 7, 156));
         }
         .clickscreen{
             width: 100%;
@@ -145,6 +176,10 @@
             height: 2vh;
             margin-bottom: 5vh;
             border-radius: 0px 10px 10px 0px;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            z-index: 1;
             /*animation-name: breatheboxcolor; 動畫名稱*/
             /*animation-duration: 60s;動畫時間*/
             /*animation-timing-function: linear; 動畫運動方式*/
@@ -160,6 +195,10 @@
             line-height: 10vh;
             padding-left: 10px;
             font-family: 'Permanent Marker',  '微軟正黑體' ,cursive;
+            z-index: 1;
+            position: absolute;
+            top: 10%;
+            left: 0%;
         }
         .box{
             width: 580px;
@@ -171,6 +210,11 @@
             animation: breathe 5s infinite;
             box-sizing: border-box;
             padding: 5px;
+            position: absolute;
+            top: 20%;
+            left: calc(50% - 290px);
+            z-index: 1;
+
         }
         span{
             background-color: rgb(146, 145, 145);
@@ -183,18 +227,23 @@
             width: calc(100% / 9);
             height: calc(100% / 9);
             cursor: pointer;
+            position: relative;
+            z-index: 1;
         }
         .timer{
-            width: 10%;
-            height: 15vh;
-            position: absolute;
-            bottom: 0px;
-            right: 30px;
+            width: 17%;
+            height: 20vh;
             color: #fff;
             font-size: 60pt;
-            line-height: 15vh;
+            line-height: 20vh;
             text-align: center;
             font-family: 'Press Start 2P', 'Permanent Marker',  '微軟正黑體' ,cursive;
+            text-shadow: 2px 3px 0.2rem rgb(199, 195, 195);
+            position: absolute;
+            z-index: 1;
+            bottom: 0px;
+            right: 10px;
+            transition: all 10s linear;
         }
         .level0{
             width: calc(100% / 2);
@@ -236,7 +285,60 @@
             width: calc(100% / 10);
             height: calc(100% / 10);
         }
+        .div {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transition: all 5s;
+            transform-style: preserve-3d;
+            animation: mariomove 15s infinite;
+        }
+        .div>div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+            opacity: 0.8;
+            transform-style: preserve-3d;
+        }
+        .xRight{
+            background-color: #fa0;
+            transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translate3d(50px, 0px, -50px);
+        }
 
+        .xLeft{
+            background-color: green;
+            transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) 
+            translate3d(50px, 0px, 50px);
+        }
+
+        .yBottom{
+            background-color: red;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) 
+            translate3d(0px, -50px, -50px);
+        }
+
+        .yTop{
+            background-color: yellow;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) 
+            translate3d(0px, -50px, 50px);
+        }
+
+        .zBefore{
+            background-color: blue;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) 
+            translate3d(0px, 0px, -100px);
+        }
+
+        .zAfter{
+            background-color: purple;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) 
+            translate3d(0px, 0px, 0px);
+        }
         @keyframes breathe{
             0%{
                 border-color: #FFE74C;
@@ -291,6 +393,20 @@
                 border-color: #fff;
             }
         }
+        @keyframes startfont{
+            0%{
+                color: #fff;
+            }
+            50%{
+                color: #000;
+                text-shadow: 0px 0px 0.5rem white;
+            }
+            100%{
+                color: #fff;
+                text-shadow: none;
+            }
+            
+        }
         @keyframes endfont{
             0%{
                 color: #fff;
@@ -313,23 +429,61 @@
                 text-shadow: 0px 0px 1rem red;
             }
         }
-        .bgi2{
-            background-image: url("./wow.gif");
-            background-size: 10%;
+        @keyframes mariomove{
+            0%{
+                bottom: 60px;
+                left: 40px;
+                transform: rotateY(0deg) rotateZ(20deg);
+            }
+            20%{
+                bottom: 50vh;
+                left: 85%;
+                transform: rotateY(360deg) rotateZ(20deg);
+            }
+            40%{
+                bottom: 80vh;
+                left: 5%;
+                transform: rotateY(720deg) rotateZ(20deg);
+            }
+            60%{
+                bottom: 60px;
+                left: 35%;
+                transform: rotateY(480deg) rotateZ(20deg);
+            }
+            80%{
+                bottom: 80vh;
+                left: 85%;
+                transform: rotateY(360deg) rotateZ(20deg);
+            }
+            100%{
+                bottom: 60px;
+                left: 40px;
+                transform: rotateY(0deg) rotateZ(20deg);
+            }
         }
+        
     </style>
 </head>
 <body>
     <div class="all">
         <div class="startscreen">
+            <div class="starttext">色弱遊戲</div>
             <button type="button" class="btn-start">Start</button>
-            <div class="bgi bgi2"></div>
+            <div class="bgi2"></div>
         </div>
         <div class="gamescreen">
             <div class="breathebox"></div>
             <div class="scorebox"></div>
             <div class="box"></div>
             <div class="control"></div>
+            <div class="div">
+                <div class="xRight"></div>
+                <div class="xLeft"></div>
+                <div class="yBottom"></div>
+                <div class="yTop"></div>
+                <div class="zBefore"></div>
+                <div class="zAfter"></div>
+            </div>
             <div class="timer"></div>
         </div>
         <div class="endscreen">
@@ -351,6 +505,7 @@
         const timer = document.querySelector('.timer');//數字計時器
         const scorebox = document.querySelector('.scorebox');//分數框
         const breathebox = document.querySelector('.breathebox');//置頂計時框
+        const starttext = document.querySelector('.starttext');
         const texttitle = document.querySelector('.texttitle');//結束遊戲標題
         const text = document.querySelector('.text');//結束遊戲小字
         const prompt = document.querySelector('.prompt');//結束畫面提示字
@@ -374,10 +529,10 @@
             const span = document.createElement('span');
             box.appendChild(span);
         }
-
+        
         /*創建後才能用選擇器選取全部的格子*/
         const spans = document.querySelectorAll('span');
-
+        
         /*隨機格子的位置*/
         function ran(u){
             var o = Math.floor(Math.random()*u);
@@ -443,9 +598,10 @@
         btn_start.addEventListener('click',timeout);
         
         btn_start.addEventListener('click',breathe);
+        btn_start.addEventListener('click',start_text_active);
         // btn_start.addEventListener('click',cleareverything);
         /*倒數計時區*/
-        var stop;//似乎要先給計時器宣告名稱，才能解決定時器疊加問題???
+        var stop;//似乎要先給計時器宣告名稱，才能解決定時器疊加問題
         function timeout(){ //計時器
             stop = setInterval(time,1000);
         }
@@ -456,8 +612,8 @@
             }else{
                 breathebox.style.animation ='none';
                 clearInterval(stop);
-                endscreen.style.zIndex = 1;
-                clickscreen.style.zIndex = 2;
+                endscreen.style.zIndex = 2;
+                clickscreen.style.zIndex = 3;
                 if(score==0){
                     type = "黑暗騎士？";
                 }else if(score>=30){
@@ -477,6 +633,20 @@
                 }
                 text.innerHTML = type +'獲得分數：' + score;
             }
+            timer.style.transition = 'all 10s linear';
+            if(second>40){
+                timer.style.color = '#fff';
+            }else if(second>30){
+                timer.style.color = 'yellow';
+            }else if(second>20){
+                timer.style.color = 'orange';
+            }else if(second>10){
+                timer.style.color = 'red';
+            }else{
+                timer.style.fontSize = '110pt';
+                timer.style.right = '30px';
+                
+            }
         }
         function breathe(){
             breathebox.style.animation = 'breatheboxcolor 60s linear 0s 1';/*呼吸動畫*/
@@ -493,8 +663,13 @@
             }
             endscreen.style.zIndex = -2;
             clickscreen.style.zIndex = -1;
-            startscreen.style.zIndex = 1;
-            btn_start.style.opacity = 1;
+            startscreen.style.zIndex = 2;
+            btn_start.style.opacity = 2;
+            starttext.classList.remove("starttextactive");
+            timer.style.transition = 'none';
+            timer.style.color = '#fff';
+            timer.style.fontSize = '60pt';
+            timer.style.right = '10px';
             
         }
         function starthidden(){//隱藏開始畫面
@@ -504,16 +679,10 @@
             },500);
         }
         clickscreen.addEventListener('click',cleareverything);//點擊結束頁面即初始化
+
+        function start_text_active(){
+            starttext.classList.add("starttextactive");
+        }
     </script>
 </body>
 </html>
-<!-- setAttribute() 增加/更改屬性的值 -->
-<!-- className 新增/取代屬性值 會取代掉本來的屬性 -->
-<!--  classList add新增屬性 remove() / toggle() / contains() / length -->
-<!-- 須解決問題：每當重新開始一關的時候需要將所有方塊重新染色：已解決用隨機顏色 -->
-<!-- 發現遊戲那邊變色是RGB固定各+20：將RGB拆開處理後再重組 -->
-<!-- 問題：會點到已經選取過的數字：已解決每一關開始要將本來選定的框框清除監聽 -->
-<!-- 問題：重新整理刷新；已初始化 -->
-<!--監聽事件中，如果timeout以及cleareverything有()，function會自動執行-->
-<!-- 初始化設定計時器有問題：已解決，先宣告變數，再把計時器塞進變數(分兩行) -->
-<!-- 顏色若小於0，CSS自動設定為0，若大於255，自動設定為255，Math.abs()為取絕對值 -->

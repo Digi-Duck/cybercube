@@ -17,6 +17,7 @@ let timeout;
 //點擊異色方塊觸發機制
 function clickcorrectBtn(){
     level+=1;
+    score=0;
     score+=amount;
     if(level<10){
         levelNum.innerHTML="0"+level;
@@ -24,7 +25,7 @@ function clickcorrectBtn(){
         levelNum.innerHTML=level;
     }
     if(score<10){
-        scoreNum.innerHTML="0"+score;
+        scoreNum.innerHTML="0"+score+"分";
     }else{
         scoreNum.innerHTML=score;
     }
@@ -92,18 +93,18 @@ startBtn.onclick = function () {
     startBtn.classList.add("hidden");
     amount = 2;
     level = 1;
-    levelNum.innerHTML = level
+    levelNum.innerHTML = "0"+level;
     Score = 0;
-    scoreNum.innerHTML = Score + "分"
+    scoreNum.innerHTML = "0"+Score + "分";
     board.innerHTML = "";
-    let Sec = 10;//
+    let Sec = 60;//
     //倒數計時
     function countdown() {
         Sec = Sec - 1;
         timeNum.innerHTML = Sec + "秒";
-        if (Sec <= 20) {
+        if (Sec <= 10) {
             timeNum.style.color = "orange"
-        } else if (Sec <= 10) {
+        } else if (Sec <= 20) {
             timeNum.style.color = "#f00"
         } 
         if (Sec == 0) {

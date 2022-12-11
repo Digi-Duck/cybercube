@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Serif+TC&family=Raleway:wght@100;200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Serif+TC&family=Raleway:wght@100;200&display=swap');
+
+body{
+    background-image: url(./images/weather-bg.jpg);
+    background-repeat:repeat-y;
+    background-size:auto;
+    font-family:'Noto Serif TC', 'Noto Serif Display',sans-serif;
+}
+
+.all-card{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.card{
+    width: 200px;
+    height: 230px;
+    margin-top: 50px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.card-location{
+    width: 200px;
+    height: 30px;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.card-info{
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255, 0.6);
+    border-radius: 15px;
+}
