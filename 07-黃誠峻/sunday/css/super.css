@@ -24,7 +24,6 @@ main{
   overflow: hidden;
 }
 .mainright{
-
   width:calc(100%  );
   height: calc(100vh - 100px) ;
   display: flex;
@@ -34,11 +33,10 @@ main{
 .mainleft{width: calc(50% - 120px );
   min-width: 622px;
   display: none;
-} */
+} 
 #taiwan{
 width: auto;
 z-index: 1;
-
 } 
 path {
   stroke: rgb(255, 254, 254);
@@ -47,9 +45,8 @@ path {
   cursor: pointer;
 }
 path:hover {
-  fill: #1A5840;
+  /* fill: #1A5840; */
   transform: translate(-5px, -5px);
-  
 }
 
 .title_area {
