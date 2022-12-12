@@ -10,7 +10,7 @@ fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
     // console.log(myJson.records.location[i].weatherElement[0]);}
     for (let i = 0; i < 22; i++) {
       content.innerHTML +=
-      console.log()
+
         `<div class="card">
             <div class="picture"></div>
             <div class="city">${myJson.records.location[i].locationName}</div>
