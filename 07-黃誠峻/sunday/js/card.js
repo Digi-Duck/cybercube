@@ -48,7 +48,7 @@ return k=2
 
 allArea.addEventListener("click",function(){
     mainleft.style="display:none";
-    mainright.style="widht:100%"
+    mainright.style="width:100%"
     for(i=0;i<=21;i++){
 
      document.querySelector(`#cleanArea0${i}`).style.display=""
@@ -59,7 +59,7 @@ allArea.addEventListener("click",function(){
     })
 northArea.addEventListener("click",function(){
     mainleft.style="display:block";
-    mainright.style="widht:50%"
+    mainright.style="width:50%"
     for(i=0;i<=21;i++){
         if(i<=5){
             document.querySelector(`#cleanArea0${i}`).style.display=""
@@ -76,7 +76,7 @@ northArea.addEventListener("click",function(){
     })
 centerArea.addEventListener("click",function(){
     mainleft.style="display:block";
-    mainright.style="widht:50%"
+    mainright.style="width:50%"
     for(i=0;i<=21;i++){
         if(i>=6&&i<=9){
             document.querySelector(`#cleanArea0${i}`).style.display=""
@@ -91,7 +91,7 @@ centerArea.addEventListener("click",function(){
 })
 southArea.addEventListener("click",function(){
     mainleft.style="display:block";
-    mainright.style="widht:50%"
+    mainright.style="width:50%"
     for(i=0;i<=21;i++){
         if(i>=10&&i<=15){
             document.querySelector(`#cleanArea0${i}`).style.display=""
@@ -106,7 +106,7 @@ southArea.addEventListener("click",function(){
     })
 eastArea.addEventListener("click",function(){
     mainleft.style="display:block";
-    mainright.style="widht:50%"
+    mainright.style="width:50%"
     for(i=0;i<=21;i++){
         if(i>=16&&i<=18){
             document.querySelector(`#cleanArea0${i}`).style.display=""
@@ -121,7 +121,7 @@ eastArea.addEventListener("click",function(){
     })
 island.addEventListener("click",function(){
     mainleft.style="display:block";
-    mainright.style="widht:50%"
+    mainright.style="width:50%"
     for(i=0;i<=21;i++){
         if(i>=19&&i<=21){
             document.querySelector(`#cleanArea0${i}`).style.display=""
