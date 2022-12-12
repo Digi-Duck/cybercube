@@ -52,8 +52,7 @@ button{
 .picture{
     width: 180px;
     height: 130px;
-
-    background-image: url('/images/cloudy.png');
+    background-image: url('./images/sun.png');
     background-position: center;
     background-size: 60%;
     background-repeat: no-repeat;
