@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('');
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color:steelblue;
+    padding: 15px;
+
+    display: flex;
+    justify-content:space-around;
+}
+button{
+    width: 150px;
+    height: 50px;
+
+    border-radius: 50px;
+    border: 2px solid #fff;
+
+    margin: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(46, 67, 85);
+}
+.container{
+    width: 100%;
+    height: 100%;
+
+    margin: 40px 0px ;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+.card{
+    width: 200px;
+    height: 260px;
+
+    background-color:blanchedalmond;
+
+    border-radius: 25px;
+    padding: 0px 10px;
+    margin: 20px 20px;
+}
+
+.picture{
+    width: 180px;
+    height: 130px;
+
+    background-image: url('/images/cloudy.png');
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.city{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: steelblue;
+    padding-bottom: 10px;
+}
+
