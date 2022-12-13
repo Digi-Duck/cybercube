@@ -1,10 +1,3 @@
-//主體
-const Body = document.querySelector("body");
-const Header = document.querySelector("header");
-const Main = document.querySelector("main");
-const Container = document.querySelector(".container");
-const Footer = document.querySelector("footer");
-
 //右邊選單
 const N = document.querySelector(".N");
 const C = document.querySelector(".C");
@@ -13,6 +6,10 @@ const E = document.querySelector(".E");
 const O = document.querySelector(".O");
 
 //其他
+const Header = document.querySelector("header");
+const Main = document.querySelector("main");
+const Container = document.querySelector(".container");
+const Footer = document.querySelector("footer");
 const WeatherCard = document.querySelector(".Card");
 const CardImg = document.querySelector(".media>div");
 const Svg = document.querySelector("svg");
@@ -22,9 +19,10 @@ const Clock = document.querySelector("footer>div:nth-child(3)>p");
 const BGM = document.querySelector("audio");
 const TopText = document.querySelector("header>div:nth-child(2)");
 const Submitbtn = document.querySelector(".Submitbtn");
-const MuteBtn = document.querySelector(".MuteButton");
 const NewColor = "orange"; //黃色 "rgb(248, 217, 76)"
 const ReColor = "green";
+
+
 
 //各縣市區塊
 const NP = document.querySelectorAll(".NP")
@@ -60,40 +58,6 @@ const GuishanIsland = document.querySelector("#GuishanIsland")
 const KinmenCounty = document.querySelector("#KinmenCounty")
 const LienchiangCounty = document.querySelector("#LienchiangCounty")
 
-
-//淡入天氣地圖
-setTimeout(PlaceBack, 2600);
-setTimeout(UIIndex, 2500);
-setTimeout(TaiwanIndex, 1500);
-setTimeout(BGMStrat, 500);
-Main.style.opacity = "1";
-Main.style.transition = "3s";
-
-
-
-function TaiwanIndex(){
-    Svg.style.opacity = "1";
-    Svg.style.transition = "2s";
-}
-function BGMStrat(){
-    BGM.autoplay = "true";
-}
-function UIIndex(){
-    Header.style.opacity = "1";
-    Header.style.transition = "2s";
-    Footer.style.opacity = "1";
-    Footer.style.transition = "2s";
-    Place.style.opacity = "1";
-    Place.style.transition = "2s";
-    Preview.style.opacity = "1";
-    Preview.style.transition = "2s";
-    Previewtext.style.opacity = "1";
-    Previewtext.style.transition = "2s";
-}
-function PlaceBack(){
-    Place.style.transition = "0.5s ease";
-}
-
 //全台縣市陣列
 const Taiwan = [NP, CP, SP, EP, OP];
 
@@ -124,7 +88,7 @@ for (let i = 0; i < 5; i++) {
 
     //預覽區域變色功能
     AllPlace[i].addEventListener('mouseover', function () {
-
+        
         if (AllPlace[i] == N) {
             for (let j = 0; j < Taiwan[0].length; j++) {
                 if (Taiwan[0][j] == P && Pct == 1) {
@@ -272,16 +236,7 @@ for (let i = 0; i < 5; i++) {
 
 //上方搜尋功能
 Submitbtn.addEventListener("click", function () {
-    SubmitPlaceName();
-});
-window.addEventListener("keydown", function (k) {
-    if(k.key == "Enter"){
-        SubmitPlaceName();
-    }
-});
 
-//搜尋功能
-function SubmitPlaceName() {
     let where = document.querySelector("header>div:nth-child(3)>input");
     let wct = 0;
 
@@ -291,7 +246,7 @@ function SubmitPlaceName() {
 
                 console.log(Taiwan[i][j].id);
 
-                where.setAttribute("placeholder", "請輸入縣市...");
+                where.setAttribute("placeholder","請輸入縣市...");
 
                 //區塊恢復原位
                 BackColor(W);
@@ -300,7 +255,6 @@ function SubmitPlaceName() {
 
                 W = Taiwan[i][j];
                 Card(W);
-                MovePlace(W);
                 Move = 1;
                 wct = 1;
             }
@@ -309,9 +263,9 @@ function SubmitPlaceName() {
     //若全部地名核對完仍查無資料則顯示錯誤訊息
     if (wct == 0) {
         where.value = "";
-        where.setAttribute("placeholder", "查無此地，請重新輸入!");
+        where.setAttribute("placeholder","查無此地，請重新輸入!");
     }
-}
+});
 
 //全部縣市註冊滑鼠偵測事件、更新預覽訊息
 for (let i = 0; i < 5; i++) {
@@ -346,43 +300,6 @@ function NewTime() {
     Clock.innerHTML = Time;
 };
 
-//BGM按鈕滑鼠移入移出與點擊時的變化效果
-MuteBtn.addEventListener('mouseover', function () {
-    MuteBtn.style.backgroundColor = "rgba(180, 199, 228, 0.6)";
-    MuteBtn.style.cursor = "pointer";
-})
-MuteBtn.addEventListener('mouseout', function () {
-    MuteBtn.style.backgroundColor = "rgba(180, 199, 228, 0.2)";
-})
-
-MuteBtn.addEventListener('mousedown', function () {
-    MuteBtn.style.backgroundColor = "rgba(180, 199, 228, 0.6)";
-    MuteBtn.style.transition = "scale: 0.7";
-    MuteBtn.style.cursor = "pointer";
-})
-MuteBtn.addEventListener('mouseup', function () {
-    MuteBtn.style.backgroundColor = "rgba(180, 199, 228, 0.6)";
-    MuteBtn.style.transition = "scale: 1";
-    MuteBtn.style.cursor = "pointer";
-})
-
-//點擊BGM按鈕
-function MuteButton() {
-
-    let MBImg = document.querySelector(".MuteImage");
-
-    if (BGM.muted === true) {
-        BGM.muted = false;
-        MBImg.src = "./Images/volume-xmark-muted.svg";
-    }
-
-    else {
-        BGM.muted = true;
-        MBImg.src = "./Images/volume-high-unmuted.svg";
-    }
-
-}
-
 //返回按鈕
 Main.addEventListener("dblclick", function () {
 
@@ -397,7 +314,6 @@ Main.addEventListener("dblclick", function () {
     if (Move == 1) {
 
         Svg.style = SvgRe;
-        Svg.style.opacity = "1";
         Svg.style.transition = "all 0.5s ease";
 
         //區塊恢復原位
@@ -511,17 +427,17 @@ function DataCard(P) {
 
                 if (w.records.location[i].weatherElement[1].time[0].parameter.parameterName >= 51) {
 
-                    CardImg.style.backgroundImage = "url('./Images/rain.gif')";
+                    CardImg.style.backgroundImage = "url('../Images/rain.gif')";
                 }
 
                 else if (w.records.location[i].weatherElement[1].time[0].parameter.parameterName >= 31 && w.records.location[i].weatherElement[1].time[0].parameter.parameterName <= 51) {
 
-                    CardImg.style.backgroundImage = "url('./Images/cloud.gif')"
+                    CardImg.style.backgroundImage = "url('../Images/cloud.png')"
                 }
 
                 else {
 
-                    CardImg.style.backgroundImage = "url('./Images/Sun.gif')";
+                    CardImg.style.backgroundImage = "url('../Images/Sun.gif')";
                 }
 
 
@@ -576,202 +492,87 @@ function BackColor(P) {
 }
 
 
-//位移台灣
-function MovePlace(M) {
-    if (M.id == "NewTaipei") {
-        Svg.style.top = "50%";
-        Svg.style.left = "10%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "Taipei") {
-        Svg.style.top = "80%";
-        Svg.style.left = "0%";
-        Svg.style.transform = "scale(2)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "Keelung") {
-        Svg.style.top = "80%";
-        Svg.style.left = "-5%";
-        Svg.style.transform = "scale(2)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "TaoyuanCity") {
-        Svg.style.top = "60%";
-        Svg.style.left = "10%";
-        Svg.style.transform = "scale(1.5)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "HsinchuCounty") {
-        Svg.style.top = "50%";
-        Svg.style.left = "10%";
-        Svg.style.transform = "scale(1.5)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "HsinchuCity") {
-        Svg.style.top = "70%";
-        Svg.style.left = "15%";
-        Svg.style.transform = "scale(2)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "YilanCounty") {
-        Svg.style.top = "40%";
-        Svg.style.left = "10%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "TaichungCity") {
-        Svg.style.top = "30%";
-        Svg.style.left = "20%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "ChanghuaCounty") {
-        Svg.style.top = "20%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "MiaoliCounty") {
-        Svg.style.top = "40%";
-        Svg.style.left = "20%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "YunlinCounty") {
-        Svg.style.top = "10%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "NantouCounty") {
-        Svg.style.top = "10%";
-        Svg.style.left = "20%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "KaohsiungCity") {
-        Svg.style.top = "-15%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "TainanCity") {
-        Svg.style.top = "-10%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "ChiayiCounty") {
-        Svg.style.top = "0%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "ChiayiCity") {
-        Svg.style.top = "0%";
-        Svg.style.left = "25%";
-        Svg.style.transform = "scale(2)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "PingtungCounty") {
-        Svg.style.top = "-40%";
-        Svg.style.left = "20%";
-        Svg.style.transform = "scale(1.7)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "HualienCounty") {
-        Svg.style.top = "10%";
-        Svg.style.left = "-35%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "TaitungCounty") {
-        Svg.style.top = "-20%";
-        Svg.style.left = "-35%";
-        Svg.style.transform = "scale(1.3)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "PenghuCounty") {
-        Svg.style.top = "10%";
-        Svg.style.left = "40%";
-        Svg.style.transform = "scale(1.7)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "KinmenCounty") {
-        Svg.style.top = "45%";
-        Svg.style.left = "40%";
-        Svg.style.transform = "scale(1.7)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-    else if (M.id == "LienchiangCounty") {
-        Svg.style.top = "80%";
-        Svg.style.left = "50%";
-        Svg.style.transform = "scale(2)";
-        Svg.style.transition = "all 0.5s ease";
-    }
-}
-
-
 //北部區域
 NewTaipei.addEventListener("click", function () {
 
     BackColor(P);
 
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "50%";
+    Svg.style.left = "10%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 Taipei.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "80%";
+    Svg.style.left = "0%";
+    Svg.style.transform = "scale(2)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 Keelung.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "80%";
+    Svg.style.left = "-5%";
+    Svg.style.transform = "scale(2)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 TaoyuanCity.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "60%";
+    Svg.style.left = "10%";
+    Svg.style.transform = "scale(1.5)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 HsinchuCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "50%";
+    Svg.style.left = "10%";
+    Svg.style.transform = "scale(1.5)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 HsinchuCity.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "70%";
+    Svg.style.left = "15%";
+    Svg.style.transform = "scale(2)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 YilanCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "40%";
+    Svg.style.left = "10%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
@@ -780,45 +581,60 @@ YilanCounty.addEventListener("click", function () {
 Taichung.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "30%";
+    Svg.style.left = "20%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 ChanghuaCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "20%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 MiaoliCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "40%";
+    Svg.style.left = "20%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 Yunlin.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "10%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 NantouCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "10%";
+    Svg.style.left = "20%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
@@ -827,45 +643,60 @@ NantouCounty.addEventListener("click", function () {
 KaohsiungCity.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "-15%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 TainanCity.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "-10%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 ChiayiCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "0%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 ChiayiCity.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "0%";
+    Svg.style.left = "25%";
+    Svg.style.transform = "scale(2)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
 PingtungCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "-40%";
+    Svg.style.left = "20%";
+    Svg.style.transform = "scale(1.7)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
@@ -874,9 +705,12 @@ PingtungCounty.addEventListener("click", function () {
 Hualien.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "10%";
+    Svg.style.left = "-35%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 
 });
@@ -884,9 +718,12 @@ Hualien.addEventListener("click", function () {
 Taitung.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "-20%";
+    Svg.style.left = "-35%";
+    Svg.style.transform = "scale(1.3)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 });
 
@@ -894,9 +731,12 @@ Taitung.addEventListener("click", function () {
 PenghuCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "10%";
+    Svg.style.left = "40%";
+    Svg.style.transform = "scale(1.7)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 
 })
@@ -904,9 +744,12 @@ PenghuCounty.addEventListener("click", function () {
 KinmenCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "45%";
+    Svg.style.left = "40%";
+    Svg.style.transform = "scale(1.7)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 
 })
@@ -914,9 +757,12 @@ KinmenCounty.addEventListener("click", function () {
 LienchiangCounty.addEventListener("click", function () {
 
     BackColor(P);
-
     P = Card(this);
-    MovePlace(P);
+
+    Svg.style.top = "80%";
+    Svg.style.left = "50%";
+    Svg.style.transform = "scale(2)";
+    Svg.style.transition = "all 0.5s ease";
     Move = 1;
 
 })
