@@ -14,7 +14,7 @@
 
 <body onload="showtime()">
     <!-- 圖片，要有天氣狀況，縣市名降雨機率舒適溫度 -->
-    <div class="all">
+    <main>
         <nav class="container">
             <div class="time">
                 <button type="button" class=time-first>六小時</button>
@@ -29,7 +29,10 @@
                 <button type="button" class="btn-e">東部</button>
                 <button type="button" class="btn-i">外島</button>
             </div>
-            <div class="showcard"></div>
+            <div class="left_content">
+                <div class="cover"></div>
+                <div class="showcard"></div>
+            </div>
         </nav>
         <section>
             <?xml version="1.0"?>
@@ -95,10 +98,9 @@
             </svg>
             <div class="time_box"></div>
         </section>
-    </div>
-    <script src="./scripts/apicard.js"></script>
+        </div>
+        <script src="./scripts/apicard.js"></script>
 </body>
-
 </html>
 
 <!-- for(let index = 0; index < 10; index++)
