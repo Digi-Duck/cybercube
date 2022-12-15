@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label{
+            border: black 1px solid;
+            padding: 5px;
+            background-color: gainsboro;
+        }
+        #boxa{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin-top: 30px;
+            transition: 1s;
+
+        }
+        #boxb{
+            width: 300px;
+            height: 150px;
+            background-color: red;
+            margin-top: 30px;
+            transition: 1s;
+        }
+        #abc:checked ~ #boxa{
+            background-color: blue;
+        }
+        #abc ~ p{
+            color: greenyellow;
+        }
+        #abc:checked ~ p{
+            
+            color: purple;
+        }
+
+        #abc:checked ~ #boxb{
+            width: 600px;
+            height: 400px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <p>試著使用純HTML + CSS 做出一個可以切換方塊顏色的開關</p>
+    <label for="abc">開關</label>
+    <input type="checkbox" name="abc" id="abc" hidden>
+    
+    <div id="boxa"></div>
+    <p>我的文字也會跟著變色喔</p>
+    <div id="boxb"></div>
+
+    
+</body>
+</html>
