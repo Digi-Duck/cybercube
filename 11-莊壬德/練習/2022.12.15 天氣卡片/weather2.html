@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather2.css">
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        varx=""
+        const content = document.querySelector(".container")
+
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AA300EC1-31BA-465E-B669-6CA2C320A195')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson.records);
+                var place = [];
+                var rain = [];
+                var minTemp = [];
+                var mxTemp = [];
+                var weather = [];
+                var comfort = [];
+                
+               x=place[1] = myJson.records.location[1].locationName;
+
+                for (let i = 0; i < 22; i++) {
+                    place[i] = myJson.records.location[i].locationName;
+                    rain[i] = myJson.records.location[i].weatherElement[1].time[0].parameter.parameterName;
+                    minTemp[i] = myJson.records.location[i].weatherElement[2].time[0].parameter.parameterName;
+                    mxTemp[i] = myJson.records.location[i].weatherElement[4].time[0].parameter.parameterName;
+                    weather[i] = myJson.records.location[i].weatherElement[0].time[0].parameter.parameterName;
+                    comfort[i] = myJson.records.location[i].weatherElement[3].time[0].parameter.parameterName;
+                }
+                
+                for (let x = 0; x < 22; x++) {
+                    if (rain[x] <= 30) {
+                        content.innerHTML += '<div class="card">' + '<img src="images/sunny.png" class="card-img-top img-fluid">' + '<div class="card-body">' + '<h5 class="card-text">' + place[x] + '</h5>' + '<p class="card-text">' + minTemp[x] + '~' + mxTemp[x] + '°C</p>' + '<p class="card-text">' + weather[x] + '</p>' + '<p class="card-text">' + comfort[x] + '</p>' + '</div></div>';
+                    }
+                    else if (rain[x] <= 50) {
+                        content.innerHTML += '<div class="card">' + '<img src="images/cloudy.png" class="card-img-top img-fluid">' + '<div class="card-body">' + '<h5 class="card-text">' + place[x] + '</h5>' + '<p class="card-text">' + minTemp[x] + '~' + mxTemp[x] + '°C</p>' + '<p class="card-text">' + weather[x] + '</p>' + '<p class="card-text">' + comfort[x] + '</p>' + '</div></div>';
+                    }
+                    else {
+                        content.innerHTML += '<div class="card">' + '<img src="images/bigrain.png" class="card-img-top img-fluid">' + '<div class="card-body">' + '<h5 class="card-text">' + place[x] + '</h5>' + '<p class="card-text">' + minTemp[x] + '~' + mxTemp[x] + '°C</p>' + '<p class="card-text">' + weather[x] + '</p>' + '<p class="card-text">' + comfort[x] + '</p>' + '</div></div>';
+                    }
+
+                }
+            });
+
+            
+
+
+
+
+        //取得天氣API資料
+        //將資料套在卡片模板上，並輸出在網頁上
+
+        // 圖片、地區、最高低溫、降雨機率、舒適度
+
+        //降雨機率50%以上 下雨
+        //降雨機率30%~50% 陰天
+        //降雨機率30%以下 晴天
+
+        
+    </script>
+</body>
+
+</html>
