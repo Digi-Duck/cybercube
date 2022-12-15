@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.all{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/bg4.jpg");
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.su{
+    width: 100%;
+    height: 100%;
+    /* background-color: #fff; */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+svg{
+    filter: drop-shadow(-2px -2px 1rem black);
+}
+nav{
+    width: 55%;
+    height: 100%;
+    float: left;
+}
+.choose{
+    width: 100%;
+    height: 5%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.choose button{
+    width: 12%;
+    height: 100%;
+    outline: 2px double darkkhaki;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: wheat;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+.choose button.hover{
+    background-color: rgb(238, 255, 0);
+    color: black;
+    outline: 2px double rgb(187, 255, 0);
+}
+.choose button:hover{
+    background-color: rgb(238, 255, 0);
+    color: black;
+    outline: 2px double rgb(187, 255, 0);
+}
+.time{
+    width: 100%;
+    height: 6%;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.time button{
+    width: 30%;
+    height: 100%;
+    outline: 2px double rgb(221, 120, 5);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: wheat;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+.time button.hover{
+    background-color: rgb(255, 136, 0);
+    color: black;
+    outline: 2px double rgb(255, 81, 0);
+}
+.time button:hover{
+    background-color: rgb(255, 136, 0);
+    color: black;
+    outline: 2px double rgb(255, 81, 0);
+}
+.showcard{
+    width: 100%;
+    height: 87%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+}
+section{
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+.card{
+    width: 16%;
+    height: 21%;
+    background-color: rgba(4, 21, 22, 1);
+    border: 3px solid rgb(40, 240, 173);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 11pt;
+    color: aliceblue;
+    padding: 5px 1px;
+    cursor: pointer;
+    line-height: 21px;
+    transition: transform 1s;
+    position: relative;
+}
+.card-big{
+    width: 30%;
+    height: 45%;
+    margin-top: 1%;
+    background-color: rgba(19, 22, 4, 0.8);
+    border: 3px solid rgb(222, 247, 0);
+    font-size: 20pt;
+    line-height: 40px;
+}
+.card:hover{
+    border: 3px solid rgb(255, 155, 40);
+    color: aqua;
+}
+.card-big:hover{
+    border: 5px solid rgb(255, 155, 40);
+}
+.img{
+    width: 95%;
+    height: 40%;
+    background-color: rgb(84, 120, 189);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.local{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+.temp{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+.winther{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+.rain{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+.sundy{
+    background-image: url("../images/sundybaby.gif");
+    background-position: center 35%;
+}
+.rainy{
+    background-image: url("../images/bigrain.gif");
+    background-position: center 35%;
+}
+.cloudy{
+    background-image: url("../images/cloudy.gif");
+    background-position: center 35%;
+}
+.map{
+    stroke: rgba(0, 255, 255);
+    fill: rgba(1, 24, 19);
+}
+.move{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+/* 真的遇到屬性搶不過來的問題 */
+.move:hover{
+    fill: rgba(143, 110, 0, 0.9) !important;
+    stroke: rgb(248, 141, 1) !important;
+    transform: translateY(-3px);
+}
+.move:active{
+    fill: rgba(255, 0, 0, 0.9);
+    stroke: rgb(124,4,4);
+    transform: translateY(-3px);
+}
+.time_box{
+    width: 100%;
+    height: 40px;
+    color: antiquewhite;
+    text-align: right;
+    padding-right: 15px;
+    position: relative;
+    top: -50px;
+    right: 0px;
+}
