@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('');
+    background-image: url('./images/weather.jpg');
 }
 nav{
     width: 100%;
