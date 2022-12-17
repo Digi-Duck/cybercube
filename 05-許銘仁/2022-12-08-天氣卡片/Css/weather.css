@@ -203,7 +203,7 @@ svg path:hover {
     fill: rgb(248, 217, 76) !important;
 
     /* 將預設值+上5px */
-    transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px) !important;
     transition: all 0.3s ease;
     cursor: pointer;
 }
