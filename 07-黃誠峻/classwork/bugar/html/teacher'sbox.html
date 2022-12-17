@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxa{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        /* 在btn被勾選後的+ boxa
+        +表示後面的那一個~表示全部 */
+        #btn:checked~.boxa{
+            background-color: red;
+        }
+        #btn:checked~p{
+           color: aquamarine;
+        }
+        #btn{
+            display:none;
+        }
+        label{
+            padding: 5px;
+            background-color: aliceblue;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 用labelfm3294
+    checkbox這樣才可以客製化按鈕 -->
+    <label for="btn">可以按我</label>
+    <input type="checkbox" id="btn">
+    <div class="boxa"></div>
+    <p>變色</p>
+</body>
+</html>
