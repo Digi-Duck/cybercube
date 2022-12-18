@@ -15,27 +15,25 @@
 <body onload="showtime()">
     <!-- 圖片，要有天氣狀況，縣市名降雨機率舒適溫度 -->
     <main>
-        <aside class="container">
-            <nav>
-                <div class="time">
-                    <button type="button" class=time-first>六小時</button>
-                    <button type="button" class=time-second>六小時至十八小時</button>
-                    <button type="button" class=time-third>十八小時至三六小時</button>
-                </div>
-                <div class="choose">
-                    <button type="button" class="btn-all">全部</button>
-                    <button type="button" class="btn-n">北部</button>
-                    <button type="button" class="btn-m">中部</button>
-                    <button type="button" class="btn-w">南部</button>
-                    <button type="button" class="btn-e">東部</button>
-                    <button type="button" class="btn-i">外島</button>
-                </div>
-            </nav>
-            <section>
+        <nav class="container">
+            <div class="time">
+                <button type="button" class=time-first>六小時</button>
+                <button type="button" class=time-second>六小時至十八小時</button>
+                <button type="button" class=time-third>十八小時至三六小時</button>
+            </div>
+            <div class="choose">
+                <button type="button" class="btn-all">全部</button>
+                <button type="button" class="btn-n">北部</button>
+                <button type="button" class="btn-m">中部</button>
+                <button type="button" class="btn-w">南部</button>
+                <button type="button" class="btn-e">東部</button>
+                <button type="button" class="btn-i">外島</button>
+            </div>
+            <aside>
                 <div class="cover"></div>
                 <div class="showcard"></div>
-            </section>
-        </aside>
+            </aside>
+        </nav>
         <article>
             <section>
                 <?xml version="1.0"?>
@@ -101,9 +99,9 @@
                 </svg>
             </section>
             <div class="time_box"></div>
-        </article>
+        </section>
     </main>
-    <script src="./scripts/apicard.js"></script>
+        <script src="./scripts/apicard.js"></script>
 </body>
 
 </html>
