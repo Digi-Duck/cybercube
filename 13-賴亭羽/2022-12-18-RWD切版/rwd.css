@@ -1,0 +1,356 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: rgb(199, 209, 236);
+    width: 370px;
+    height: 100vh;
+    padding: 70px 110px 0px 110px;
+    float: left;
+}
+
+nav .container {
+    width: 100%;
+    height: 100%;
+}
+
+nav .logo {
+    width: 150px;
+    height: 150px;
+    /* margin: auto; */
+    background-color: #fff;
+    text-align: center;
+    line-height: 140px;
+}
+
+nav .links {
+    padding-top: 50px;
+}
+
+nav .links .link {
+    display: flex;
+    justify-content: center;
+
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+
+    background-color: #fff;
+    color: rgb(6, 17, 65);
+}
+
+nav .link:hover {
+    background-color: #222e64;
+    color: #fff;
+}
+
+nav .link:active {
+    background-color: #799ac5;
+    color: #fff;
+    border: 1px solid #222e64;
+}
+
+nav .link:visited {
+    color: antiquewhite;
+}
+
+main {
+    width: 1550px;
+    height: 100vh;
+    float: right;
+}
+
+main .container {
+    width: 960px;
+    height: 570px;
+    margin: 255px auto;
+}
+
+main .container div {
+    width: 320px;
+    height: 570px;
+    float: left;
+
+    font-style: 72px;
+    font-size: 48px;
+    text-align: center;
+    line-height: 522px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
+main .container div:hover {
+    color: black;
+    background-size: 500%;
+}
+
+main .container .x {
+    background-image: url(./images/dog.jpg);
+}
+
+main .container .y {
+    background-image: url(./images/fox.jpg);
+}
+
+main .container .z {
+    background-image: url(./images/tiger.jpg);
+}
+
+@media (max-width:1920px) {
+    nav {
+        width: 360px;
+        height: 100vh;
+        padding: 70px 102px;
+        float: left;
+    }
+
+    nav .logo {
+        width: 156px;
+        height: 156px;
+        text-align: center;
+        line-height: 156px;
+    }
+
+    nav .links {
+        padding-top: 50px;
+    }
+
+    nav .links .link {
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        width: 920px;
+        height: 100vh;
+        float: right;
+    }
+
+    main .container {
+        width: 800px;
+        height: 570px;
+        margin: 227px auto;
+    }
+
+    main .container div:hover {
+        background-size: 200%;
+    }
+
+    main .container .x{
+        width: 100%;
+        height: 285px;
+        line-height: 285px;
+
+        margin-bottom: 10px;
+    }
+
+    main .container .y, .z{
+        width: 395px;
+        height: 275px;
+        line-height: 275px;
+    }
+    main .container .z{
+        width: 395px;
+        height: 275px;
+        line-height: 275px;margin-left: 10px;
+    }
+}
+
+@media(max-width:1280px){
+    nav{
+        width: 100%;
+        height: 100px;
+        padding: 10px 30px;
+        float: unset;
+    }
+
+    nav .logo{
+        width: 80px;
+        height: 80px;
+
+        line-height: 80px;
+
+        float: left;
+    }
+
+    nav .links{
+        display: flex;
+        flex-direction:row;
+        justify-content: flex-end;
+
+        padding: 25px 0px;
+    }
+
+    nav .links .link{
+        display: unset;
+
+        margin: 0px 0px 0px 25px;
+    }
+
+    main{
+        width: 100%;
+        height: 924px;
+        float: unset;
+    }
+
+    main .container{
+        margin: 55px 30px 70px 30px;
+        width: 708px; 
+        height: 798px;
+    }
+
+    main .container .x{
+        width: 100%;
+        height: 400px;
+        line-height: 400px;
+
+        margin-bottom: 8px;
+    }
+
+    main .container .y{
+        width: 350px;
+        height: 390px;
+        line-height: 390px;
+    }
+
+    main .container .z {
+        width: 350px;
+        height: 390px;
+        line-height: 390px;
+
+        margin-left: 8px;
+    }
+
+}
+
+@media(max-width:768px){
+    nav{
+        height: 80px;
+
+        padding: 14px 17px;
+    }
+
+    nav .container{
+        position: relative;
+    }
+
+    nav .logo{
+        width: 56px;
+        height: 56px;
+
+        position: absolute;
+        top: calc(50% - 28px);
+        left: calc(50% - 28px);
+
+        line-height: 56px;
+
+        float: unset;
+    }
+
+    nav .links{
+        display: block;
+        width: 42px;
+        height: 52px;
+        background-color: #799ac5;
+    }
+
+    nav .links:hover{
+        width: 150px;
+        height: 200px;
+        padding: 20px;
+    }
+
+    nav .links .link{
+        /* opacity:0; 是變成透明，dispaly:none; 是完全不在畫面中呈現，連排版、體積都沒有*/
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+
+    nav .links:hover .link{
+        /* display:block;去蓋過原本的 display:none; */
+        display: block;
+        margin: auto;/*置中*/
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 20px;
+        background-color: #fff;
+
+        color: rgb(6, 17, 65);
+        text-decoration: none;
+    }
+
+    nav .links:hover .link:hover{
+        background-color: #222e64;
+        color: #fff;
+    }
+
+    nav .links:hover .link:active{
+        background-color: #799ac5;
+        color: #fff;
+        border: 1px solid #222e64;
+    }
+
+    nav .links:hover .link:visited{
+        color:antiquewhite;
+    }
+
+
+    main{
+        width: 100%;
+        height: 587px;
+    }
+
+    main .container{
+        width: 100%;
+        height: 100%;
+
+        margin: 0px;
+    }
+
+    main .container div{
+        float: unset;
+    }
+
+    main .container div:hover{
+        background-size: 120%;
+    }
+
+    main .container .x{
+        width: 100%;
+        height: 196px;
+        line-height: 196px;
+
+        margin-bottom: 0px;
+    }
+
+    main .container .y{
+        width: 100%;
+        height: 196px;
+        line-height: 196px;
+    }
+
+    main .container .z {
+        width: 100%;
+        height: 196px;
+        line-height: 196px;
+
+        margin-left: 0px;
+    }
+}
