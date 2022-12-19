@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <title>tattoo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <header>
+      <div class="header-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide menu">
+            
+            <ul class="menu-ul-type">
+              <li><img src="./圖片庫/logo (5)/logo/logo.jpg"></li>
+              <li><a href="#" >關於我們</a></li>
+              <li><a href="#" >幾何刺青</a></li>
+              <li><a href="#" >全黑刺青</a></li>
+              <li><a href="#" >動畫刺青</a></li>
+              <li><a href="#" >曼陀羅刺青</a></li>
+              <li><a href="#" >韓系刺青</a></li>
+            </ul>
+          </div>
+          <div class="swiper-slide content">
+            <div class="menu-button">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./圖片庫/輪播01.jpg" ></img></div>
+                <div class="swiper-slide"><img src="./圖片庫/輪播02.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./圖片庫/輪播03.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./圖片庫/輪播04.png" alt=""></div>
+                <div class="swiper-slide"><img src="./圖片庫/輪播05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./圖片庫/輪播06.jpg" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+        class="swiper mySwiper"
+      >
+        <div
+          class="parallax-bg"
+          style="background-image: url('圖片庫/tattoo.jpg')"
+          data-swiper-parallax="-23%"
+        ></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">日本浮世繪</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p class="parallax-bg-fontsize">
+                在日本的愛好刺青者，有時是出自對刺青名師的崇拜，希望能在身上留下刺青師傅的作品，有些日本人喜好浮世繪等有民族代表性的刺青，甚至是各種明王、佛像。日本人的刺青習慣據說起源於越人。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">泰國刺符</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p class="parallax-bg-fontsize">
+                在泰國除普通刺青外，更有刺符一說，這是屬於泰國佛教的一種專門的刺青手法，他們以一些特定的圖案，由當地僧侶或大師等具有特定資格的專業人士用完全人手手工的方式刺在身上的，用的工具更是有別於現代刺青師常用的紋身機器，據說，根據不同的刺符有不同的作用，其中不缺乏是能夠改變運勢，可保平安，增加人緣或異性緣等等各種的，亦由於這樣，這種刺青形式不但被加上神秘的宗教色彩，在現代，不只是泰國，在馬來西亞或香港等許多地方，亦開始漸漸流行起來。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="title" data-swiper-parallax="-300">韓國微刺青</div>
+            <div class="text" data-swiper-parallax="-100">
+              <p class="parallax-bg-fontsize">
+                從韓國流行起小巧精緻的刺青風格，微刺青即小圖刺青的意思，採用的針具通常較大面積刺青針具更細，在操作上相比大面積刺青，較不需要足夠體力，卻相對需要更穩定的刺青技術，及設計圖稿能力。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </main>
+    <footer>
+      <p class="footer-p-style">CopyRight 2022</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      //main區塊parallex
+      var swiper = new Swiper("main .mySwiper", {
+        speed: 800,
+        parallax: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <script>
+      //header-span區塊banner輪播
+      var swiper = new Swiper(".header-swiper .mySwiper", {
+        speed: 800,
+        slidesPerView: 1,
+        spaceBetween: 300,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 4000,
+        },
+      });
+    </script>
+    <script>
+      const swiperSlider = document.querySelectorAll(
+        ".swiper .swiper-wrapper .swiper-slide"
+      );
+      var menuButton = document.querySelector(".menu-button");
+      console.log(swiperSlider);
+      var openMenu = function () {
+        swiper.slidePrev();
+      };
+      var swiper = new Swiper(".header-swiper", {
+        slidesPerView: "auto",
+        initialSlide: 1,
+        resistanceRatio: 0,
+        slideToClickedSlide: true,
+        on: {
+          slideChangeTransitionStart: function () {
+            var slider = this;
+            if (slider.activeIndex === 0) {
+              menuButton.classList.add("cross");
+              // required because of slideToClickedSlide
+              menuButton.removeEventListener("click", openMenu, true);
+            } else {
+              menuButton.classList.remove("cross");
+            }
+          },
+          slideChangeTransitionEnd: function () {
+            var slider = this;
+            if (slider.activeIndex === 1) {
+              menuButton.addEventListener("click", openMenu, true);
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
