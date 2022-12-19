@@ -1,0 +1,1124 @@
+[
+  [
+    {
+      "content": "\"locationName\":\"嘉義縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 399,
+      "endPos": 2129
+    },
+    {
+      "content": "嘉義縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 415,
+      "endPos": 418
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 972,
+      "endPos": 973
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 992,
+      "endPos": 995
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 1376,
+      "endPos": 1378
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 1775,
+      "endPos": 1778
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 2126,
+      "endPos": 2128
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"新北市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"70\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"90\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"80\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 2403,
+      "endPos": 4138
+    },
+    {
+      "content": "新北市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 2419,
+      "endPos": 2422
+    },
+    {
+      "content": "70",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 2979,
+      "endPos": 2981
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 3000,
+      "endPos": 3003
+    },
+    {
+      "content": "19",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 3386,
+      "endPos": 3388
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 3785,
+      "endPos": 3793
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 4135,
+      "endPos": 4137
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"嘉義市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"27\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 4412,
+      "endPos": 6142
+    },
+    {
+      "content": "嘉義市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 4428,
+      "endPos": 4431
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 4985,
+      "endPos": 4986
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 5005,
+      "endPos": 5008
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 5389,
+      "endPos": 5391
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 5788,
+      "endPos": 5791
+    },
+    {
+      "content": "27",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 6139,
+      "endPos": 6141
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"新竹縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"多雲時陰短暫雨\",\"parameterValue\":\"9\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"40\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 6416,
+      "endPos": 8153
+    },
+    {
+      "content": "新竹縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 6432,
+      "endPos": 6435
+    },
+    {
+      "content": "30",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 6994,
+      "endPos": 6996
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 7015,
+      "endPos": 7018
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 7401,
+      "endPos": 7403
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 7800,
+      "endPos": 7808
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 8150,
+      "endPos": 8152
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"新竹市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"多雲時陰短暫雨\",\"parameterValue\":\"9\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 8427,
+      "endPos": 10164
+    },
+    {
+      "content": "新竹市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 8443,
+      "endPos": 8446
+    },
+    {
+      "content": "30",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 9005,
+      "endPos": 9007
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 9026,
+      "endPos": 9029
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 9412,
+      "endPos": 9414
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 9811,
+      "endPos": 9819
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 10161,
+      "endPos": 10163
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"臺北市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"40\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"70\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"50\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 10438,
+      "endPos": 12173
+    },
+    {
+      "content": "臺北市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 10454,
+      "endPos": 10457
+    },
+    {
+      "content": "40",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 11014,
+      "endPos": 11016
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 11035,
+      "endPos": 11038
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 11421,
+      "endPos": 11423
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 11820,
+      "endPos": 11828
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 12170,
+      "endPos": 12172
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"臺南市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 12447,
+      "endPos": 14180
+    },
+    {
+      "content": "臺南市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 12463,
+      "endPos": 12466
+    },
+    {
+      "content": "10",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 13020,
+      "endPos": 13022
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 13041,
+      "endPos": 13044
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 13427,
+      "endPos": 13429
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 13826,
+      "endPos": 13829
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 14177,
+      "endPos": 14179
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"宜蘭縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"70\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"90\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"80\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"20\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 14454,
+      "endPos": 16189
+    },
+    {
+      "content": "宜蘭縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 14470,
+      "endPos": 14473
+    },
+    {
+      "content": "70",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 15030,
+      "endPos": 15032
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 15051,
+      "endPos": 15054
+    },
+    {
+      "content": "19",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 15437,
+      "endPos": 15439
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 15836,
+      "endPos": 15844
+    },
+    {
+      "content": "20",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 16186,
+      "endPos": 16188
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"苗栗縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"多雲時陰\",\"parameterValue\":\"5\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰時多雲短暫雨\",\"parameterValue\":\"10\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"多雲\",\"parameterValue\":\"4\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 16463,
+      "endPos": 18197
+    },
+    {
+      "content": "苗栗縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 16479,
+      "endPos": 16482
+    },
+    {
+      "content": "20",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 17038,
+      "endPos": 17040
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 17059,
+      "endPos": 17062
+    },
+    {
+      "content": "19",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 17445,
+      "endPos": 17447
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 17844,
+      "endPos": 17852
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 18194,
+      "endPos": 18196
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"雲林縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 18471,
+      "endPos": 20201
+    },
+    {
+      "content": "雲林縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 18487,
+      "endPos": 18490
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 19044,
+      "endPos": 19045
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 19064,
+      "endPos": 19067
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 19448,
+      "endPos": 19450
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 19847,
+      "endPos": 19850
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 20198,
+      "endPos": 20200
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"花蓮縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰天\",\"parameterValue\":\"7\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰時多雲短暫雨\",\"parameterValue\":\"10\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 20475,
+      "endPos": 22201
+    },
+    {
+      "content": "花蓮縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 20491,
+      "endPos": 20494
+    },
+    {
+      "content": "20",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 21051,
+      "endPos": 21053
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 21072,
+      "endPos": 21075
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 21458,
+      "endPos": 21460
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 21857,
+      "endPos": 21860
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 22198,
+      "endPos": 22200
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"臺中市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"多雲\",\"parameterValue\":\"4\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 22475,
+      "endPos": 24203
+    },
+    {
+      "content": "臺中市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 22491,
+      "endPos": 22494
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 23046,
+      "endPos": 23047
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 23066,
+      "endPos": 23069
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 23450,
+      "endPos": 23452
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 23849,
+      "endPos": 23852
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 24200,
+      "endPos": 24202
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"臺東縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"多雲\",\"parameterValue\":\"4\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"多雲時晴\",\"parameterValue\":\"3\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"23\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"27\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 24477,
+      "endPos": 26208
+    },
+    {
+      "content": "臺東縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 24493,
+      "endPos": 24496
+    },
+    {
+      "content": "20",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 25048,
+      "endPos": 25050
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 25069,
+      "endPos": 25072
+    },
+    {
+      "content": "23",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 25455,
+      "endPos": 25457
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 25854,
+      "endPos": 25857
+    },
+    {
+      "content": "27",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 26205,
+      "endPos": 26207
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"桃園市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰短暫雨\",\"parameterValue\":\"11\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"70\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"90\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"80\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 26482,
+      "endPos": 28217
+    },
+    {
+      "content": "桃園市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 26498,
+      "endPos": 26501
+    },
+    {
+      "content": "70",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 27058,
+      "endPos": 27060
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 27079,
+      "endPos": 27082
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 27465,
+      "endPos": 27467
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 27864,
+      "endPos": 27872
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 28214,
+      "endPos": 28216
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"南投縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"26\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 28491,
+      "endPos": 30221
+    },
+    {
+      "content": "南投縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 28507,
+      "endPos": 28510
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 29064,
+      "endPos": 29065
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 29084,
+      "endPos": 29087
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 29468,
+      "endPos": 29470
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 29867,
+      "endPos": 29870
+    },
+    {
+      "content": "26",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 30218,
+      "endPos": 30220
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"高雄市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"24\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"27\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 30495,
+      "endPos": 32228
+    },
+    {
+      "content": "高雄市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 30511,
+      "endPos": 30514
+    },
+    {
+      "content": "10",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 31068,
+      "endPos": 31070
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 31089,
+      "endPos": 31092
+    },
+    {
+      "content": "24",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 31475,
+      "endPos": 31477
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 31874,
+      "endPos": 31877
+    },
+    {
+      "content": "27",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 32225,
+      "endPos": 32227
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"金門縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰天\",\"parameterValue\":\"7\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰天\",\"parameterValue\":\"7\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"22\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 32502,
+      "endPos": 34227
+    },
+    {
+      "content": "金門縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 32518,
+      "endPos": 32521
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 33071,
+      "endPos": 33072
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 33091,
+      "endPos": 33094
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 33475,
+      "endPos": 33477
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 33874,
+      "endPos": 33882
+    },
+    {
+      "content": "22",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 34224,
+      "endPos": 34226
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"屏東縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"多雲時晴\",\"parameterValue\":\"3\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"25\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"28\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 34501,
+      "endPos": 36231
+    },
+    {
+      "content": "屏東縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 34517,
+      "endPos": 34520
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 35074,
+      "endPos": 35075
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 35094,
+      "endPos": 35097
+    },
+    {
+      "content": "25",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 35478,
+      "endPos": 35480
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 35877,
+      "endPos": 35880
+    },
+    {
+      "content": "28",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 36228,
+      "endPos": 36230
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"基隆市\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰有雨\",\"parameterValue\":\"14\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰有雨\",\"parameterValue\":\"14\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰有雨\",\"parameterValue\":\"14\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"70\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"80\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"80\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"17\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 36505,
+      "endPos": 38237
+    },
+    {
+      "content": "基隆市",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 36521,
+      "endPos": 36524
+    },
+    {
+      "content": "70",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 37078,
+      "endPos": 37080
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 37099,
+      "endPos": 37102
+    },
+    {
+      "content": "19",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 37485,
+      "endPos": 37487
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 37884,
+      "endPos": 37892
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 38234,
+      "endPos": 38236
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"澎湖縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"多雲短暫雨\",\"parameterValue\":\"8\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"陰天\",\"parameterValue\":\"7\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰時多雲\",\"parameterValue\":\"6\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"30\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"19\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 38511,
+      "endPos": 40240
+    },
+    {
+      "content": "澎湖縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 38527,
+      "endPos": 38530
+    },
+    {
+      "content": "30",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 39083,
+      "endPos": 39085
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 39104,
+      "endPos": 39107
+    },
+    {
+      "content": "19",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 39488,
+      "endPos": 39490
+    },
+    {
+      "content": "稍有寒意至舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 39887,
+      "endPos": 39895
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 40237,
+      "endPos": 40239
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"彰化縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"多雲\",\"parameterValue\":\"4\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"晴時多雲\",\"parameterValue\":\"2\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"10\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"21\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"18\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"舒適\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意至舒適\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"24\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 40514,
+      "endPos": 42245
+    },
+    {
+      "content": "彰化縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 40530,
+      "endPos": 40533
+    },
+    {
+      "content": "10",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 41085,
+      "endPos": 41087
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 41106,
+      "endPos": 41109
+    },
+    {
+      "content": "21",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 41492,
+      "endPos": 41494
+    },
+    {
+      "content": "舒適\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 41891,
+      "endPos": 41894
+    },
+    {
+      "content": "24",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 42242,
+      "endPos": 42244
+    }
+  ],
+  [
+    {
+      "content": "\"locationName\":\"連江縣\",\"weatherElement\":[{\"elementName\":\"Wx\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"陰時多雲\",\"parameterValue\":\"6\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"多雲\",\"parameterValue\":\"4\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"陰時多雲\",\"parameterValue\":\"6\"}}]},{\"elementName\":\"PoP\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"20\",\"parameterUnit\":\"百分比\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"0\",\"parameterUnit\":\"百分比\"}}]},{\"elementName\":\"MinT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"16\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"14\",\"parameterUnit\":\"C\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"13\",\"parameterUnit\":\"C\"}}]},{\"elementName\":\"CI\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"稍有寒意\"}},{\"startTime\":\"2022-12-10 18:00:00\",\"endTime\":\"2022-12-11 06:00:00\",\"parameter\":{\"parameterName\":\"寒冷至稍有寒意\"}},{\"startTime\":\"2022-12-11 06:00:00\",\"endTime\":\"2022-12-11 18:00:00\",\"parameter\":{\"parameterName\":\"寒冷\"}}]},{\"elementName\":\"MaxT\",\"time\":[{\"startTime\":\"2022-12-10 12:00:00\",\"endTime\":\"2022-12-10 18:00:00\",\"parameter\":{\"parameterName\":\"18\"",
+      "isParticipating": true,
+      "groupNum": 0,
+      "startPos": 42519,
+      "endPos": 44245
+    },
+    {
+      "content": "連江縣",
+      "isParticipating": true,
+      "groupNum": 1,
+      "startPos": 42535,
+      "endPos": 42538
+    },
+    {
+      "content": "0",
+      "isParticipating": true,
+      "groupNum": 2,
+      "startPos": 43090,
+      "endPos": 43091
+    },
+    {
+      "content": "百分比",
+      "isParticipating": true,
+      "groupNum": 3,
+      "startPos": 43110,
+      "endPos": 43113
+    },
+    {
+      "content": "16",
+      "isParticipating": true,
+      "groupNum": 4,
+      "startPos": 43495,
+      "endPos": 43497
+    },
+    {
+      "content": "稍有寒意\"",
+      "isParticipating": true,
+      "groupNum": 5,
+      "startPos": 43894,
+      "endPos": 43899
+    },
+    {
+      "content": "18",
+      "isParticipating": true,
+      "groupNum": 6,
+      "startPos": 44242,
+      "endPos": 44244
+    }
+  ]
+]

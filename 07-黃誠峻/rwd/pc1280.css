@@ -65,16 +65,21 @@ nav .links:hover .link:hover{
 nav .links .link:active{
     color: gainsboro;
 }
+main .container{
+    display:block;
+    background:red;
+    position: sticky;
+}
 
 main .container div{
     width: 600px;
-    
+    height: auto;
     font-size: 72px;
     text-align: center;
-   
     background-size:cover ;
     color: white;
     background-position:center ;
+    margin-left: 0px;
 }
 main .container div:hover{
     background-size: 150%;

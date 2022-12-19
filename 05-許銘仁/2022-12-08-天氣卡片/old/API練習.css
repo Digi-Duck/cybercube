@@ -1,0 +1,187 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+
+}
+
+header{
+    width: 10%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+
+}
+
+header>div{
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding:10%;
+}
+
+.N{
+    width: 100%;
+    height: 8vh;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    text-align: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.N:hover{
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(141, 131, 131, 0.2);
+}
+
+/* .N:hover>.container{
+    display: flex;
+} */
+
+.C{
+    width: 100%;
+    height: 8vh;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    text-align: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.C:hover{
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(141, 131, 131, 0.2);
+}
+
+/* .C:hover>.container{
+    display: flex;
+} */
+
+.S{
+    width: 100%;
+    height: 8vh;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    text-align: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.S:hover{
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(141, 131, 131, 0.2);
+}
+
+/* .S:hover>.container{
+    display: flex;
+} */
+
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./Images/maxresdefault.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    width: 130%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 5vh;
+    left: 100%;
+    padding: 5%;
+}
+
+.container2{
+    width: 130%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 5vh;
+    left: 100%;
+    padding: 5%;
+}
+
+.container3{
+    width: 130%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 5vh;
+    left: 100%;
+    padding: 5%;
+}
+
+.WheaterRow{
+    width: 100%;
+    height: 11vh;
+    display: flex;
+    border-top: 2px solid #8fc4ce;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.WheaterRow>img{
+    width: 50%;
+    height: auto;
+}
+
+.dog{
+    width: 20%;
+    height: auto;
+    position: fixed;
+    left: 80%;
+    bottom: 0%;
+}
+
+.dog:hover{
+    filter: drop-shadow(0px 0px 30px rgb(253, 221, 38));
+    cursor: pointer;
+}

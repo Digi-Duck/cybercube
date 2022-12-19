@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+    <script>
+        // let array= [1,2,3,4,'abc','倪好','helloworld']
+        // let array2 = []
+
+        // array2['name'] = 'John'
+        // array2['age'] = '18'
+        // array2['gender'] = 'male'
+        // array2['height'] = '182'
+        // array2['weight'] = '52'
+
+        // console.log(array[4]);
+        // console.log(array2['gender']);
+
+        // console.log(array.length);
+        // console.log(array2.length);
+
+        // array.forEach(element => {
+        //     console.log(element);
+        // });
+
+        
+
+        var obj = {
+            'name':'John',
+            'age': 18,
+            'height':182,
+            'weight':52,
+            'gender':'man'
+        }
+
+        // console.log(obj.gender);
+
+        // 甚麼是DOM 
+
+        const img = document.querySelector('img')
+
+        img.src = './img/cloud.gif'
+
+        // 甚麼是json
+
+        var data = '[{"id":"datasetDescription","type":"String"},{"id":"locationName","type":"String"},{"id":"parameterName","type":"String"},{"id":"parameterValue","type":"String"},{"id":"parameterUnit","type":"String"},{"id":"startTime","type":"Timestamp"},{"id":"endTime","type":"Timestamp"}]'
+
+        var result = JSON.parse(data)
+
+        console.log(data);
+        console.log(result[2].id);
+
+
+    </script>
+</body>
+</html>

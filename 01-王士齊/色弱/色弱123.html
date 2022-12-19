@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色弱遊戲</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+
+        nav {
+            width: 50%;
+            height: 50px;
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+
+        nav span,nav button {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100px;
+            height: 40px;
+            background-color: beige;
+            
+        }
+
+        body {
+            padding-top: 100px;
+        }
+
+        main {
+            width: 240px;
+            background-color: rgb(245, 206, 206);
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        main div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+        <nav>
+            <button id="start">開始遊戲</button>
+            <span id="scores">分數:</span>
+            <span id="firsttime">剩餘時間:</span>
+        </nav>
+    <main></main>
+</body>
+<script>
+    const main = document.querySelector('main')
+    const start_btn = document.querySelector('#start')
+    const scores = document.querySelector('#scores')
+    const firsttime = document.querySelector('#firsttime')
+    var point
+    var difficulty
+    var opacity = 0.6
+
+//開始
+    function startGame(params) {
+        
+        var ans = Math.floor(Math.random() * (difficulty ** 2))
+        //清空答案
+        main.innerHTML = ''
+
+        //隨機顏色
+        var r = Math.floor(Math.random() * 256)
+        var g = Math.floor(Math.random() * 256)
+        var b = Math.floor(Math.random() * 256)
+
+        //改變背景大小
+        main.style.width = difficulty * 120 +'px'
+        
+        //產生方塊
+        for (let i = 0; i < (difficulty ** 2); i++) {
+            if (i == ans) {
+                main.innerHTML += '<div style = "background-color: rgb(' + r + ',' + g + ',' + b + ');opacity:' + opacity +';"></div> '
+            } else {
+                main.innerHTML += '<div style="background-color:rgb(' + r + ',' + g + ',' + b + ');"></div>'
+            }
+        }
+        //點擊觸發
+        const blocks = document.querySelectorAll('main div')
+        for (let a = 0; a < (difficulty ** 2); a++) {
+            if (a == ans) {
+                blocks[a].onclick = function () {
+                    point++;
+                    scores.innerHTML = '你的分數' + point
+
+                    if (point <= 4) {
+                        difficulty = 2
+                    } else if (point <= 8) {
+                        difficulty = 3
+                        opacity = 0.6
+                    } else if (point <= 12) {
+                        difficulty = 4
+                    } else if (point <= 16) {
+                        difficulty = 5
+                        opacity = 0.8
+                    } else {
+                        difficulty = 6
+                        opacity = 0.9
+                    }
+
+                    //下一關
+                    startGame()
+                }
+            } 
+        }
+    }
+
+
+    start_btn.onclick = function () {
+        var time = 5;
+        point = 0;
+        difficulty = 2;
+        opacity = 0.6;
+        firsttime.innerHTML = '剩餘時間:' + time
+
+        scores.innerHTML = '你的分數' + point
+       
+        //倒數
+        var timer = setInterval(function () {
+            time--;
+            firsttime.innerHTML = '剩餘時間:' + time
+            if (time == 0) {
+                clearInterval(timer)
+                main.innerHTML = ''
+                if(point<=4){
+                alert('時間到，你的分數為' + point + '，你是不是玩到睡著了')
+                }else if(point<=10){
+                    alert('時間到，你的分數為' + point + '，我相信你可以再更好')
+                }else if(point<=18){
+                    alert('時間到，你的分數為' + point + '，看來你對顏色識別中規中矩')
+                }else if(point<=25){
+                    alert('時間到，你的分數為' + point + '，你對顏色敏感度不錯喔')
+                } else {
+                    alert('時間到，你的分數為' + point + '，你是不是每個都給他按')
+                } 
+            }
+        }, 1000)
+        //開始遊戲
+        startGame()
+    }
+
+</script>
+
+</html>

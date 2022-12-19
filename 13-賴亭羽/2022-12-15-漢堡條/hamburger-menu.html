@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 懂得使用CSS偽類+CSS選擇器 */
+        /* 正後方 */
+        input:checked + div{
+            background-color: brown;
+        }
+        /* 後方即可 */
+        input:checked ~ p{
+            color: brown;
+        }
+
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+        }
+
+        label{
+            width: 50px;
+            height: 30px;
+            padding: 2px;
+            border: 1px solid ;
+            background-color: rgb(236, 223, 179);
+        }
+    </style>
+</head>
+<body>
+    <!--  -->
+        <label for="btn">開關</label>
+        <!-- 所有表單都適用直接套用hidden -->
+        <input type="checkbox" id="btn" hidden>
+        <div class="box"></div>
+        <p>哈哈哈</p>
+    
+</body>
+</html>

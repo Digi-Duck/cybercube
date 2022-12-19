@@ -5,17 +5,21 @@
     padding: 0px;
     box-sizing: border-box;
 }
+main{width:100%;height: 100vh;
+display: block;z-index: 1; }
 nav{
     width: 100%;
     height: 80px;
     background-color: rgb(221, 137, 27);
     padding: 14px 17px;
+    z-index: 1;
 }
 nav .container{
     position: relative;
     width: 100%;
     height: 100%;
     background-color: aquamarine;
+    display: block;
 }
 nav .logo{
     width: 56px;
@@ -29,6 +33,8 @@ nav .logo{
     line-height: 56px;
 }
 nav .links{
+    position: sticky;
+    display: block;
     width: 42px;
     height: 52px;
     background-color: royalblue;
@@ -68,7 +74,11 @@ nav .links:hover .link:hover{
 nav .links .link:active{
     color: gainsboro;
 }
-
+main .container{
+    display: block;
+    position: sticky;
+    background-color: red;
+}
 main .container div{
     width: 100%;
     height: 196px;
@@ -86,7 +96,16 @@ main .container div:hover{
 }
 main .container .x{
     background-image: url("https://m.media-amazon.com/images/I/41+w9bF4FBL._AC_SY580_.jpg");
+    width:100%;
+    height: 200px;
+    clear: both;
 }
-main .container .y{background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlIXS3Qy75E2qHMPwdWoac1eDqobNfvUrFjcTlJnOszlPmC-nbUAEysurufCYhttX84Y4&usqp=CAU");}
-main .container .z{background-image: url("https://truth.bahamut.com.tw/s01/202203/a1a031b75933358681540763b2a38565.JPG");}
+main .container .y{background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlIXS3Qy75E2qHMPwdWoac1eDqobNfvUrFjcTlJnOszlPmC-nbUAEysurufCYhttX84Y4&usqp=CAU");
+    width:100%;
+    height: 200px;
+    clear: both;}
+main .container .z{background-image: url("https://truth.bahamut.com.tw/s01/202203/a1a031b75933358681540763b2a38565.JPG");
+    width:100%;
+    height: 200px;
+    clear: both;}
 }
