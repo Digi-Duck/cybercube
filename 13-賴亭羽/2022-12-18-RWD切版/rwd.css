@@ -65,7 +65,11 @@ nav .link:visited {
 main {
     width: 1550px;
     height: 100vh;
-    float: right;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main .container {
@@ -135,7 +139,6 @@ main .container .z {
     main {
         width: 920px;
         height: 100vh;
-        float: right;
     }
 
     main .container {
