@@ -1,0 +1,1295 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    margin: 0px;
+}
+
+.BlackScreen {
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0;
+}
+
+.ImgLarge {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 70%;
+    border: 3px solid;
+    border-radius: 15px;
+    object-fit: contain;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    position: fixed;
+    z-index: 0;
+    opacity: 0;
+    top: 10%;
+}
+
+.VideoLarge {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 70%;
+    border: 3px solid;
+    border-radius: 15px;
+    object-fit: contain;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    position: fixed;
+    z-index: 0;
+    opacity: 0;
+    top: 10%;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+body>div {
+    width: 100%;
+    height: 100%;
+    /* 這裡設定顏色可以讓黑幕轉變時多一層底色 */
+    /* background-color: rgb(231, 33, 221); */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+
+.NavTop {
+    width: 100%;
+    height: 10vh;
+    /* 響應式設定 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    /* 響應式設定結束 */
+    font-size: 150%;
+    color: rgb(82, 240, 240);
+    font-family: 'Silkscreen', OCR A Std, monospace;
+    /* background-image: url(./Images/05.jpg);
+    background-position-x: center;
+    background-position: center;
+    background-repeat: repeat-x; */
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+}
+
+#headerBlack {
+    height: 80%;
+    width: 100%;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    /* border-color: rgb(3, 11, 20, 1); */
+    /* border-color: rgba(255, 255, 255, 0.25); */
+    border-color: #4ea9e6;
+    background-color: rgb(3, 11, 20, 0.9);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    z-index: 2;
+    margin: 1%;
+
+}
+
+#DivLeft {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5%;
+}
+
+#DivLeft div {
+    margin-right: 5%;
+}
+
+#sLeftList {
+    min-width: 50px;
+    width: 50px;
+    height: 40px;
+    border-top-style: solid;
+    border-radius: 15%;
+    background-color: rgba(21, 17, 77, 0.5);
+    background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMjQ4NmZmIiBkPSJNMTQ1LjY1OSw2OC45NDljLTUuMTAxLTUuMjA4LTEzLjM3Mi01LjIwOC0xOC40NzMsMEw5OS40NzksOTcuMjMzIEw3MS43NzIsNjguOTQ5Yy01LjEtNS4yMDgtMTMuMzcxLTUuMjA4LTE4LjQ3MywwYy01LjA5OSw1LjIwOC01LjA5OSwxMy42NDgsMCwxOC44NTdsNDYuMTgsNDcuMTRsNDYuMTgxLTQ3LjE0IEMxNTAuNzU5LDgyLjU5OCwxNTAuNzU5LDc0LjE1NywxNDUuNjU5LDY4Ljk0OXoiLz48L3N2Zz4NCg==);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+#sLeftList:active {
+    scale: 0.7;
+}
+
+#DivLogoCenter {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#LogoCenter {
+    width: auto;
+    height: 100%;
+}
+
+.Logo {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 30px rgba(183, 50, 235, 0.7));
+}
+
+.Logo:active {
+    scale: 0.9;
+    /* filter: drop-shadow(0px 0px 60px rgba(235, 208, 57, 0.9)); */
+    /* filter: drop-shadow(0px 0px 40px rgba(183, 50, 235, 1)); */
+
+}
+
+@keyframes shiny {
+    0% {
+        filter: drop-shadow(0px 10px 60px rgba(107, 220, 255, 1));
+    }
+
+    25% {
+        filter: drop-shadow(0px 10px 60px rgba(255, 0, 0, 1));
+    }
+
+    50% {
+        filter: drop-shadow(0px 10px 60px rgba(255, 0, 242, 1));
+    }
+
+    75% {
+        filter: drop-shadow(0px 10px 60px rgb(251, 255, 22));
+    }
+
+    100% {
+        filter: drop-shadow(0px 10px 60px rgba(107, 220, 255, 1));
+    }
+}
+
+.GuestOption {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;
+    padding: 1.5%;
+}
+
+.GuestOption div {
+    height: auto;
+    width: 20%;
+    margin: 20px;
+}
+
+/* Log in按鈕 */
+.GuestOption div:last-child {
+    height: auto;
+    width: auto;
+    margin: 20px;
+}
+
+#headerBlack div a {
+    width: auto;
+    height: 100%;
+    /* font-size: 100%; */
+    /* color: aliceblue; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width:768px) {
+    .NavTop {
+        width: 100%;
+        height: 5vh;
+    }
+
+    #sLeftList {
+        min-width: 30px;
+        width: 100px;
+        height: 100%;
+    }
+
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    /* background-image: url("../NewImages/bg.gif"); */
+
+}
+
+#content1 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(9, 4, 24);
+    box-shadow: 0px -40px 100px 2px rgba(54, 196, 240, 1);
+    position: relative;
+    z-index: 2;
+}
+
+/* #content1 img{
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    filter: drop-shadow(0px 10px 20px rgba(54, 196, 240, 0.7));
+    opacity: 0.3;
+    z-index: -1;
+} */
+
+video {
+    width: 100%;
+    object-fit: fill;
+}
+
+#TopVideo {
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+}
+
+@media (max-width:1280px) {
+    #content1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+    }
+
+    #TopVideo {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.MuteButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(180, 199, 228, 0.2);
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    right: 1vw;
+    top: 2%;
+}
+
+.MuteButton img {
+    width: 80%;
+    height: 100%;
+    vertical-align: unset !important;
+    margin: auto;
+}
+
+.Switch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.7);
+    opacity: 0.3;
+    position: absolute;
+}
+
+.Switch img {
+    scale: 1.1;
+}
+
+.Switch img:hover {
+    scale: 1.1;
+}
+
+.Switch:hover {
+    background-color: yellow;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.Switch:active {
+    scale: 0.7;
+}
+
+#SwitchLeft {
+    top: 50%;
+    left: 0.5vw;
+}
+
+#SwitchRight {
+    top: 50%;
+    right: 0.5vw;
+}
+
+.Article {
+    width: 300px;
+    height: 70px;
+    border-radius: 15px;
+    border: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(199, 186, 4, 0.7);
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 2vw;
+    bottom: 2%;
+
+    animation: ArticleLight 3s infinite linear;
+}
+
+@keyframes ArticleLight {
+    0% {
+        border-bottom-color: rgb(199, 186, 4, 1);
+    }
+
+    50% {
+        border-bottom-color: rgb(199, 186, 4, 0.1);
+    }
+
+    100% {
+        border-bottom-color: rgb(199, 186, 4, 1);
+    }
+}
+
+.Article p {
+    font-size: 36px;
+    font-weight: bolder;
+    font-family: 'Silkscreen', OCR A Std, monospace;
+
+    background: -webkit-linear-gradient(45deg, rgb(24, 194, 224) 40%, rgb(224, 40, 215) 60%);
+    background: -moz-linear-gradient(45deg, rgb(24, 194, 224) 40%, rgb(224, 40, 215) 60%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    cursor: wait;
+}
+
+/* 4:3螢幕模式 */
+@media (max-width:1280px) {
+    .MuteButton {
+        width: 35px;
+        height: 35px;
+        line-height: 50px;
+        right: 1vw;
+        top: 20%;
+    }
+
+    .Article {
+        width: 200px;
+        height: 70px;
+    }
+
+    .Article p {
+        width: 100%;
+        height: 100%;
+        font-size: 140%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* 平板模式 */
+@media (max-width:768px) {
+    .MuteButton {
+        width: 35px;
+        height: 35px;
+        line-height: 50px;
+        position: absolute;
+        right: 1vw;
+        top: 20%;
+    }
+
+    .Article {
+        width: 150px;
+        height: 40px;
+    }
+
+    .Article p {
+        width: 100%;
+        height: 100%;
+        font-size: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+.MainText01 {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../NewImages/bg.gif");
+    background-repeat: round;
+    opacity: 0.1;
+    /* position: sticky; */
+    bottom: 5vh;
+    z-index: 1;
+}
+
+.MainText01 h1 {
+    color: white;
+    font-size: 0px;
+    line-height: 40px;
+    opacity: 0;
+    text-align: center;
+    filter: drop-shadow(0px 0px 25px rgba(54, 196, 240, 1));
+}
+
+#content2 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(9, 4, 24);
+    box-shadow: 0px 0px 100px -35px rgba(199, 31, 199, 1);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.content2Image {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-image: url("../NewImages/Cyberpunk2.jpg");
+    /* position: relative; */
+    padding: 3%;
+    /* z-index: 2; */
+}
+
+.C2RightImages {
+    width: 40%;
+    height: 60%;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+    border-color: rgba(54, 196, 240, 1);
+    border-width: 5px;
+    border-right-style: solid;
+    animation: BorderLight 3s infinite linear;
+    position: absolute;
+    right: -50%;
+    padding: 1%;
+}
+
+@keyframes BorderLight {
+    0% {
+        border-color: rgba(54, 196, 240, 1);
+    }
+
+    50% {
+        border-color: rgba(54, 196, 240, 0);
+    }
+
+    100% {
+        border-color: rgba(54, 196, 240, 1);
+    }
+}
+
+.C2Display {
+    width: 100%;
+    height: 100%;
+}
+
+.C2Display div {
+    width: 100%;
+    height: 100%;
+    background-image: url("../Products/va11ha11acd.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.Dimg {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    /* max-height: 70%; */
+
+    cursor: zoom-in;
+    position: relative;
+}
+
+.Dvid {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+    cursor: zoom-in;
+}
+
+.C2Display video {
+    width: 100%;
+    height: 100%;
+}
+
+
+.C2LeftText {
+    width: 40%;
+    height: 60%;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+    border-color: rgba(54, 196, 240, 1);
+    border-width: 5px;
+    border-left-style: solid;
+    animation: BorderLight 3s infinite linear;
+    /* float: right; */
+    position: absolute;
+    left: -50%;
+}
+
+.C2TextArea {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10%;
+    padding-top: 0px;
+}
+
+.C2TextArea h1{
+    border-bottom: 1px solid white;
+    margin-bottom: 0px;
+}
+
+.C2Media {
+    width: 45%;
+    height: 15%;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 15px;
+    /* border-color: rgb(245, 242, 50, 0.7);
+    border-width: 5px; */
+    border-bottom-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    right: calc(50% - calc(45% / 2));
+    padding: 0.5%;
+}
+
+.change-media-btn{
+    width: 5%;
+    height: 5%;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: rgb(255, 225, 53);;
+    background-color: rgb(0, 0, 0, 0.5);
+    /* border: 2px solid gray; */
+    border-top-left-radius: 15px;  
+    border-top-right-radius: 15px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20%;
+    right: calc(50% - calc(40% / 2));
+    padding: 0.5%;
+    cursor: pointer;
+}
+
+.change-media-btn:hover{
+    background-color: rgb(0, 0, 0, 0.9);
+}
+
+.change-media-btn:active{
+    transform: scale(0.8);
+}
+
+
+/* 去除左右按鈕的margin-right */
+.C2Switch {
+    width: 10%;
+    height: auto;
+    background-color: rgb(255, 225, 53);
+    border-radius: 50%;
+}
+
+.C2Switch:hover {
+    background-color: rgb(255, 225, 53, 0.8);
+    cursor: pointer;
+}
+
+.C2Switch:active {
+    scale: 0.9;
+}
+
+
+.C2Switch img {
+    scale: 1.2;
+}
+
+.C2Switch img:hover {
+    scale: 1.2;
+}
+
+
+
+.C2sDiv {
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow: hidden;
+}
+
+.C2sImg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(107, 220, 255, 0.2);
+    border-radius: 15px;
+    margin: 1%;
+    overflow: hidden;
+}
+
+.C2sDiv>video{
+    display: none;
+}
+
+
+.C2sDiv .C2sImg:hover {
+    scale: 1.02;
+    border-radius: 15px;
+    outline: 2px solid rgb(255, 225, 53);
+    cursor: pointer;
+}
+
+
+.CI1 {
+    background-image: url("../NewImages/C/01.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.CI1:hover {
+    filter: grayscale(0%);
+}
+
+.CI2 {
+    background-image: url("../NewImages/pixel/PixelGif.gif");
+    /* background-position-x: 45%;
+    background-position-y: 25%; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.CI2:hover {
+    filter: grayscale(0%);
+}
+
+.CI3 {
+    background-image: url("../NewImages/R/01.JPG");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.CI3:hover {
+    filter: grayscale(0%);
+}
+
+.CI4 {
+    background-image: url("../NewImages/C/02.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.CI4:hover {
+    filter: grayscale(0%);
+}
+
+.CI5 {
+    background-image: url("../NewImages/C/04.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+}
+
+.CI5:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes changemedia{
+    0%{
+
+    }
+    50%{
+        transform: translateY(40vh);
+    }
+    100%{
+
+    }
+}
+@keyframes changemediaback{
+    0%{
+
+    }
+    50%{
+        transform: translateY(40vh);
+    }
+    100%{
+
+    }
+}
+
+.MainText02 {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../NewImages/bg.gif");
+    background-repeat: round;
+    opacity: 0.1;
+    /* position: sticky;
+    bottom: 5vh; */
+    z-index: 0;
+}
+
+.MainText02 h1 {
+    color: white;
+    font-size: 0px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    top: 0vh;
+    opacity: 0;
+    filter: drop-shadow(0px 0px 15px rgba(199, 31, 199, 1));
+    /* text-shadow: 0px 0px 45px rgba(199, 31, 199, 1); */
+}
+
+/* 4:3 電腦模式 */
+@media (max-width: 1280px) {
+    .MainText01 {
+        height: 80vh;
+    }
+
+    .MainText02 {
+        height: 80vh;
+    }
+}
+
+/* 平板模式 */
+@media (max-width: 1000px) {
+    .MainText01 {
+        height: 50vh;
+    }
+
+    .MainText02 {
+        height: 50vh;
+    }
+}
+
+/* 手機模式 */
+@media (max-width:500px) {
+    .MainText01 {
+        height: 13vh;
+        font-size: 63%;
+        /* opacity: 1;
+        transition: opacity 1s; */
+    }
+
+    .MainText02 {
+        height: 13vh;
+        font-size: 55%;
+    }
+}
+
+.content3 {
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(9, 4, 24); */
+    /* border: 2px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-style: solid;
+    border-bottom-style: solid; */
+    background-image: url("../NewImages/bg.gif");
+    background-repeat: round;
+    box-shadow: 0px 0px 100px 0px rgb(69, 113, 209);
+    position: relative;
+}
+
+
+.content3>div {
+    width: 100%;
+    height: 100%;
+    /* background-color: #4ea9e6; */
+    /* background-image: url("../Products/pexels-monica-silvestre-713149.jpg"); */
+    /* background-position: center;
+    background-image: url("../NewImages/Pixel01.jpg"); */
+    background-position: 100% center;
+    background-size: 120%;
+}
+
+.content3>div>video {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px) brightness(1);
+    /* filter: brightness(1); */
+    /* filter: blur(5px); */
+}
+
+.content3>div>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    /* top: 5%; */
+    /* left: 2.5%; */
+    padding-top: 3%;
+    z-index: 2;
+}
+
+/* 每張產品卡的大小設定 */
+
+/* 外框最外層 */
+.content3>div>div>div {
+    width: 30%;
+    height: auto;
+    max-height: 100%;
+    padding-bottom: 3%;
+}
+
+/* 外框第二層(swiper-slide) */
+.content3>div>div>div>div {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    /* border: 2px solid rgba(226, 235, 236, 0.5); */
+}
+
+/* 文字說明框 */
+.content3>div>div>div>div>div {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    flex-direction: column;
+
+    color: white;
+}
+
+/* 產品展示 */
+.content3>div>div>div>div video {
+    width: 100%;
+    height: 100%;
+
+    border: 4px solid rgb(67, 39, 194);
+    border-radius: 15px;
+}
+
+.content3>div>div>div>div img {
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid rgba(199, 31, 199, 1); */
+    border: 4px solid rgb(238, 37, 71);
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* 控制項類別名分別是 */
+/* swiper-slide-visible 每一張卡
+swiper-slide-prev 前一張卡
+swiper-slide-active 當前的卡
+swiper-slide-next 下一張卡 */
+
+/* 這裡修改要用!important因為swiper的類別會直接加到行內樣式去 */
+
+.swiper-slide {
+    filter: blur(5px);
+    padding: 5%;
+}
+
+.swiper-slide h1{
+    border-bottom: 2px solid white;
+    padding-bottom: 5%;
+    margin-bottom: 0px;
+}
+
+.swiper-slide p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.swiper-slide a {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.swiper-slide a:hover{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.swiper-slide video {
+    max-width: 70%;
+    /* height: 20%;
+    max-height: 20%; */
+    /* display: none; */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+/* 聚焦的商品，消除模糊與縮小，並加上產品說明文字欄位 */
+.swiper-slide-active {
+    filter: unset;
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.swiper-slide-active img:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+.swiper-slide-active video:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
+/* 只顯示出聚焦的產品的說明文字框(會是2是因為swiper聚焦在active時其實會創造出其他的div) */
+.swiper-slide-active div:nth-child(2) {
+    display: flex !important;
+}
+
+/* 聚焦的前一張縮小 */
+.swiper-slide-prev {
+    transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(50deg) scale(0.5) !important;
+}
+
+/* 聚焦的後一張縮小 */
+.swiper-slide-next {
+    transform: translate3d(0px, 0px, -100px) rotateX(0deg) rotateY(-50deg) scale(0.5) !important;
+}
+
+
+.MainText03 {
+    width: 100%;
+    height: 110vh;
+    background-image: url("../NewImages/bg.gif");
+    background-repeat: round;
+    display: flex;
+    align-items: baseline;
+}
+
+.MainText03 div {
+    width: 100%;
+    height: 20vh;
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* z-index: 10; */
+}
+
+.MainText03 img {
+    width: 10%;
+    height: auto;
+    filter: drop-shadow(-5px 5px 10px rgb(0, 0, 0));
+    /* margin: auto; */
+    cursor: pointer;
+}
+
+.MainText03 img:active{
+    animation: shiny 1s infinite;
+}
+
+
+/* 錨點用 */
+.content4 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#content4 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url("../NewImages/bg.gif");
+    /* top: 10vh; */
+}
+
+.content4 video {
+    height: 100%;
+    border: 2px;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    /* filter: brightness(0%); */
+    z-index: 1;
+}
+
+
+
+@media (max-width:1280px) {
+    #content2 {
+        width: 100%;
+        height: 60vh;
+    }
+
+    .content2Image {
+        width: 100%;
+        height: 60vh;
+    }
+
+    #content4 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content4 video {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media (max-width:728px) {
+    .C2LeftImages {
+        width: 97%;
+    }
+
+    .C2RightText {
+        display: none;
+        width: 97%;
+    }
+
+    .C2Media {
+        width: 70%;
+        height: 13%;
+        border-right-style: solid;
+        border-left-style: none;
+    }
+
+    .content2Image {
+        width: 100%;
+        height: 60vh;
+    }
+
+    #content3 {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .content4 video {
+        width: 100%;
+        height: 100%;
+        /* position: relative; */
+    }
+}
+
+/* 滑入時做出像開關燈短暫閃爍的效果 */
+/* @keyframes SwitchLight{
+    0%{
+        filter: brightness(0%);
+        opacity: "0";
+    }
+    25%{
+        filter: brightness(100%);
+        opacity: "1";
+    }
+    50%{
+        filter: brightness(50%);
+        opacity: "0.5";
+    }
+    100%{
+        filter: brightness(100%);
+        opacity: "1";
+    }
+} */
+
+
+/* .content4 img{
+    transform: scale(0.1) skewX(60deg);
+    position: absolute;
+    top: -5%;
+    right: 35%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.content4 img:hover{
+    filter: drop-shadow(0px 0px 300px rgb(255, 255, 255));
+} */
+
+.messagelist {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+    border: 3px solid;
+    border-radius: 15px;
+    object-fit: contain;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    position: fixed;
+    z-index: 0;
+    opacity: 0;
+    top: 10%;
+}
+
+#CyberDog {
+    /* height: auto;
+    width: 20%; */
+    width: 340px;
+    height: 248px;
+    cursor: grab;
+    margin: 0px;
+    position: fixed;
+    /* position: sticky; */
+    bottom: 0%;
+    left: calc(100% - 280px);
+    filter: drop-shadow(25px 25px 25px rgb(0, 0, 0, 0.7));
+    z-index: 105;
+}
+
+@media (max-width:1280px) {
+    #CyberDog {
+        width: 340px;
+        left: calc(100% - 280px);
+    }
+}
+
+@media (max-width:500px) {
+    #CyberDog {
+        width: 340px;
+        left: calc(100% - 250px);
+    }
+}
+
+#CyberDog:active {
+    filter: drop-shadow(0px 0px 100px rgba(235, 217, 57, 0.9));
+}
+
+
+footer {
+    width: 100%;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(17, 29, 56);
+    padding: 0.5%;
+}
+
+
+/*-----------------------------------------*/
+
+a:link {
+    color: rgb(26, 235, 120);
+}
+
+a:visited {
+    color: rgb(255, 202, 28);
+}
+
+/* 去除超連結底線 */
+a {
+    text-decoration: none;
+}
+
+/* 超連結虛擬元素設定
+滑鼠移動到超連結不顯示底線 */
+a:hover {
+    color: yellow;
+    text-decoration-line: underline;
+    /* transition: all 1s ease 0s; */
+    font-size: 110%;
+}
+
+a:active {
+    font-size: 90%;
+}
+
+/*-----------------------------------------*/
