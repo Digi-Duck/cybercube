@@ -1,0 +1,837 @@
+/* 修改：將使用div清除float改成使用class::after清除 */
+/* 需解決swiper的大小，footer大小，各地區的相對位置 */
+/* 需解決400px以下RWD */
+/* 需解決最小尺寸漢堡條 */
+/* 初始化 */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+.clearfloat::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 標題 */
+header {
+    width: 100%;
+    padding: 10px;
+
+    background-color: black;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+header>nav {
+    width: 100%;
+    height: 100px;
+
+    border-bottom: 1px gray solid;
+}
+
+header>nav>.logo {
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+
+    float: left;
+
+    border-radius: 35px;
+
+    background-color: #fa0;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    cursor: pointer;
+}
+
+header>nav>.menu {
+    width: 50%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+header>nav>input{
+    display: none;
+}
+header>nav>.menu>a {
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: 20pt;
+    color: white;
+    border-radius: 5px;
+    border-bottom: 2px rgb(193, 241, 96) solid;
+}
+header>nav>.menu>a:hover{
+    background-color: rgb(193, 241, 96);
+    color: #113b42;
+    border-radius: 20px 20px 5px 5px
+}
+/* 漢堡條RWD調整 */
+@media screen and (max-width:700px){
+    header{
+        padding: 5px;
+    }
+    header>nav{
+        height: 70px;
+        margin-top: 5px;
+    }
+    header>nav>.logo{
+        width: 60px;
+        height: 60px;
+        margin: 0px;
+    }
+    header>nav>.menu{
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 80px;
+        right: 40px;
+        z-index: 1;
+        background-color: #000;
+        border: 1px gray solid;
+        border-radius: 0px 0px 20px 20px;
+        display: none;
+    }
+    header>nav>.menu>a{
+        width: 80%;
+        height: 20%;
+        border-bottom: 1px double gray;
+        border-radius: 0px;
+        text-align: center;
+        line-height: 50px;
+        font-weight: 600;
+        color: white;
+        user-select: none; /*文字禁止被選取：沒設定的話久按icon後打開列表，超連結會被全選並有藍底*/
+    }
+    header>nav>label{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        z-index: 1;
+        background-image: url("../img/burgerwhite.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    #hamburger:checked + label{
+        background-image: url("../img/xwhite.png");
+    } 
+    #hamburger:checked ~ .menu{
+        display: block;
+        display: none;
+        display: flex;
+        flex-direction: column;
+    } 
+}
+/* 主體 */
+main {
+    width: 100%;
+    /* 這裡如果用relative去往下推的話， */
+    margin-top: 120px;
+    /*是否能不限定高度而用內容去撐：換成子層設定vh，main高度先拿掉：否*/
+    /* 應該是不設定高度，用內容去撐，子層也不設定vh，不然會變成在瀏覽器的vh位置顯示 */
+    background-color: #5EC2B7;
+}
+@media screen and (max-width:700px){
+    main{
+        margin-top: 80px;
+    }
+}
+main>.content {
+    width: 100%;
+    background-color: #fff;
+}
+/* 第一頁 */
+main>.content>article {
+    width: 100%;
+    background-color: #000;
+}
+main>.content>article:nth-child(1){
+    border-bottom: 2px gray solid;/*區域底線*/
+}
+main>.content>article:nth-child(3){
+    border-bottom: 2px gray solid;/*區域底線*/
+}
+main>.content>article>.about-top {
+    width: 100%;
+    background-color: #000000;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+main>.content>article>.about-top>.photo {
+    width: 50%;
+    height: 700px;
+    min-width: 400px;
+    min-height: 400px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 5%;
+    background-image: url("../img/unnamed.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
+    border-radius: 0% 60% 0% 60%;
+}
+
+main>.content>article>.about-top>.interduce {
+    width: 30%;
+    float: left;
+    color: gray;
+    padding: 20px;
+    font-size: 20pt;
+    position: relative;
+    top: 200px;
+    left: 10%;
+}
+main>.content>article>.about-top>.interduce>h1{
+    color: white;
+    margin-bottom: 15px;
+}
+@media screen and (max-width:1600px){
+    main>.content>article>.about-top>.interduce {
+        font-size: 18pt;
+    }
+}
+@media screen and (max-width:1300px){
+    main>.content>article>.about-top>.interduce {
+        font-size: 15pt;
+        top: 240px;
+    }
+}
+@media screen and (max-width:650px){
+    main>.content>article>.about-top>.interduce {
+        font-size: 14pt;
+    }
+}
+@media screen and (max-width:550px){
+    main>.content>article>.about-top>.interduce {
+        font-size: 13pt;
+    }
+}
+
+main>.content>article>.about-bottom {
+    width: 100%;
+    height: 130px;
+    background-color: #000000;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+main>.content>article>.about-bottom>.icon {
+    height: 100px;
+    text-align: left;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 50px;
+    margin: auto;
+}
+main>.content>article>.about-bottom>.icon>img{
+    width: 250px;
+    height: 100px;
+}
+main>.content>article>.about-bottom>.text {
+    width: 50%;
+    height: 130px;  /*在家80% 在學校81%*/
+    background-color: rgb(211, 81, 81);
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 10%;
+    background: black;
+    padding: 30px;
+    color: white;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 70px;
+}
+/* 待研究(剽竊來的) */
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.static-text{
+    white-space: nowrap;
+}
+
+.dynamic-text{
+    position: relative;
+    height: 100%;
+    margin-left: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: orangered;
+}
+.dynamic-text::before{
+        content: '';
+        position: absolute;
+        border-left: solid 2px #001427;
+        width: 100%;
+        height: 100%;
+        bottom: 0px;
+        left: 0px;
+        background: black;
+        animation: typewriter 5s steps(4) infinite, blink 0.5s steps(4) infinite;
+    }
+@keyframes typewriter{
+    40%,60%{
+        left: 280px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+@keyframes blink{
+    from{
+        border-left: solid 3px #001427;
+    }
+    to{
+        border-left: solid 3px transparent;
+    }
+}
+
+.dynamic-text-wrapper{
+    position: relative;
+    top: 0px;
+    animation: moveup 15s steps(3) infinite;
+}
+
+@keyframes moveup {
+    0%{
+        top: 0px;
+    }
+
+    100%{
+        top: -210px; /*在家-210 在學校-215*/
+    }
+}
+@media screen and (max-width:1300px){
+    main>.content>article>.about-bottom{
+        height: 110px;
+    }
+    main>.content>article>.about-bottom>.icon>img{
+        height: 80px;
+        width: 220px;
+    }
+    main>.content>article>.about-bottom>.text {
+        height: 110px;
+        font-size: 50px;
+        line-height: 50px;
+        width: 50%;
+    }
+    /* 待研究(剽竊來的) */
+    .dynamic-text::before{
+        height: 50px;
+        }
+        
+    @keyframes moveup {
+        0%{
+            top: 0px;
+        }
+
+        100%{
+            top: -150px; /*在家-210 在學校-215*/
+        }
+    }
+    @keyframes typewriter{
+        40%,60%{
+            left: 200px;
+        }
+        100%{
+            left: 0px;
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    main>.content>article>.about-bottom>.text {
+        font-size: 40px;
+        line-height: 40px;
+        width: 60%;
+        height: 100px;
+    }
+    /* 待研究(剽竊來的) */
+    .dynamic-text::before{
+        height: 40px;
+        }
+    @keyframes moveup {
+        0%{
+            top: 0px;
+        }
+
+        100%{
+            top: -120px; /*在家-210 在學校-215*/
+        }
+    }
+    @keyframes typewriter{
+        40%,60%{
+            left: 160px;
+        }
+        100%{
+            left: 0px;
+        }
+    }
+}
+/* 上方是還沒研究完的剽竊代碼 */
+@media screen and (max-width:1000px){
+    main>.content>article>.about-top>.interduce {
+        float: none;
+        width: 90%;
+        /* 這邊如果沒有將position初始化的話，會吃到relative的屬性就不會自動往下推 */
+        position: static;
+    }
+    main>.content>article>.about-top>.photo {
+        float: none;
+        height: 50%;
+        width: auto;
+        top: 2vh;
+        left: 0px;
+    }
+    main>.content>article>.about-bottom>.icon{
+        left: 2%;
+    }
+    main>.content>article>.about-bottom>.text{
+        left: 3%;
+    }
+}
+@media screen and (max-width:400px){
+    main>.content>article>.about-top>.photo{
+        min-width: 200px;
+        min-height: 300px;
+    }
+}
+@media screen and (max-width:750px){
+    main>.content>article>.about-bottom>.icon>img{
+        width: 150px;
+        height: 60px;
+    }
+    main>.content>article>.about-bottom>.text {
+        font-size: 30px;
+        line-height: 30px;
+        width: 60%;
+        height: 90px;
+
+    }
+    /* 待研究(剽竊來的) */
+    .dynamic-text::before{
+        height: 30px;
+        bottom: 0px;
+        }
+    @keyframes typewriter{
+        40%,60%{
+            left: 120px;
+        }
+        100%{
+            left: 0px;
+        }
+    }
+    @keyframes moveup {
+        0%{
+            top: 0px;
+        }
+    
+        100%{
+            top: -90px; /*在家-210 在學校-215*/
+        }
+    }
+}
+@media screen and (max-width:550px){
+    main>.content>article>.about-bottom>.icon{
+        top: 10px;
+        height: auto;
+        z-index: 1;
+    }
+    main>.content>article>.about-bottom>.icon>img{
+        width: 80px;
+        height: auto;
+    }
+    main>.content>article>.about-bottom>.text{
+        left: -10px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    /* 待研究(剽竊來的) */
+    .dynamic-text::before{
+        height: 30px;
+        bottom: 0px;
+        }
+    @keyframes typewriter{
+        40%,60%{
+            left: 80px;
+        }
+        100%{
+            left: 0px;
+        }
+    }
+    @keyframes moveup {
+        0%{
+            top: 0px;
+        }
+    
+        100%{
+            top: -90px; /*在家-210 在學校-215*/
+        }
+    }
+}
+/* 尚未完成 750px要換版 */
+/* 第二頁 */
+main>.content>article>.skill {
+    width: 50%;
+    height: 840px;
+    padding: 3%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px gray solid;/*區域底線*/
+}
+
+main>.content>article>.skill>h1 {
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+}
+
+main>.content>article>.skill>.img-html {
+    width: 85%;
+    height: 80px;
+    margin: auto;
+}
+
+main>.content>article>.skill>.img-html>img {
+    width: 80px;
+    float: left;
+}
+
+main>.content>article>.skill>.php>img {
+    margin: 20px 0px;
+}
+
+main>.content>article>.skill>.ai>img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+main>.content>article>.skill>.ps>img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+main>.content>article>.skill>.figma>img {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+main>.content>article>.skill>.img-html>.score {
+    width: 80%;
+    height: 20px;
+    margin: 30px 0px;
+    border-radius: 20px;
+    background-color: #3c656d;
+    float: right;
+}
+
+main>.content>article>.skill>.img-html>.score>div {
+    width: 40%;
+    height: 20px;
+    background-color: #fa0;
+    border-radius: 0px 20px 20px 0px;
+    float: right;
+    transition: all 4s;
+    animation: skill-width 4s infinite;
+}
+
+@keyframes skill-width{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 30%;
+    }
+}
+main>.content>article>.skill>.css>.score>div {
+    width: 40%;
+}
+
+main>.content>article>.skill>.js>.score>div {
+    width: 40%;
+}
+
+main>.content>article>.skill>.php>.score>div {
+    width: 25%;
+}
+main>.content>article>.skill>.ai>.score>div {
+    width: 25%;
+}
+
+main>.content>article>.skill>.ps>.score>div {
+    width: 30%;
+}
+
+main>.content>article>.skill>.figma>.score>div {
+    width: 30%;
+}
+
+/* 未完成 */
+main>.content>article>.experience {
+    color: gray;
+    width: 50%;
+    height: 840px;
+    padding: 3% 5%;
+    text-align: center;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 22pt;
+    /* 因抓不到高度，先設一個置中 */
+    border-bottom: 2px gray solid;/*區域底線*/
+}
+main>.content>article>.experience>h1{
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+main>.content>article>.experience>h2{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
+    font-size: 22pt;
+    border-bottom: 2px double grey;
+}
+@media screen and (max-width:1250px){
+    main>.content>article>.experience>h1{
+        font-size: 22pt;
+    }
+}
+@media screen and (max-width:1225px){
+    main>.content>article>.experience>h1{
+        font-size: 20pt;
+    }
+}
+@media screen and (max-width:1150px){
+    main>.content>article>.skill{
+        float: none;
+        width: 100%;
+    }
+    main>.content>article>.experience{
+        float: none;
+        width: 100%;
+    }
+    main>.content>article>.skill>.img-html{
+        height: 100px;
+        width: 70%;
+    }
+    main>.content>article>.skill>.img-html>img{
+        width: 100px;
+    }
+    main>.content>article>.skill>.php>img{
+        width: 60px;
+        margin: 34px 20px;
+    }
+    main>.content>article>.skill>.ai>img{
+        width: 70px;
+        margin-top: 25px;
+    }
+    main>.content>article>.skill>.ps>img{
+        width: 70px;
+        margin-top: 25px;
+    }
+    main>.content>article>.skill>.figma>img{
+        width: 70px;
+        margin-top: 25px;
+    }
+    main>.content>article>.skill>.img-html>.score{
+        margin: 40px 0px;
+    }
+}
+@media screen and (max-width:800px){
+    main>.content>article>.skill>.img-html{
+        height: 60px;
+        width: 70%;
+    }
+    main>.content>article>.skill>.img-html>.score{
+        margin: 20px 0px;
+    }
+    main>.content>article>.skill>.img-html>img{
+        width: 60px;
+    }
+    main>.content>article>.skill>.php>img{
+        margin: 14px 0px;
+    }
+    main>.content>article>.skill>.ai>img{
+        width: 50px;
+        margin: 5px 0px;
+    }
+    main>.content>article>.skill>.ps>img{
+        width: 50px;
+        margin: 5px 0px;
+    }
+    main>.content>article>.skill>.figma>img{
+        width: 50px;
+        margin: 5px 0px;
+    }
+}
+@media screen and (max-width:500px){
+    main>.content>article>.skill>.img-html>.score{
+        width: 60%;
+    }
+}
+/* 第三頁 */
+main>.content>article:nth-child(3) {
+    width: 100%;
+    padding: 5% 0%;
+}
+
+main>.content>article>.swiper-box {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* border: #2CA6A4 1px double; */
+}
+main>.content>article>.swiper-box h1{
+    color: #fff;
+    font-size: 30pt;
+}
+main>.content>article>.swiper-box>.swiper-1{
+    width: 100%;
+    height: 100%;
+    /* border: #86f1f0 1px double; */
+}
+main>.content>article>.swiper-box>div>.swiper {
+    width: 70%;
+    /* border: #cd83f7 1px double; */
+}
+main>.content>article>.swiper-box>div>.swiper>.swiper-pagination{
+    /* 張數橫條位置 */
+    bottom: 70px;
+    /* border: #b5f02a 1px double; */
+}
+main>.content>article>.swiper-box>div>.swiper>.swiper-pagination>span{
+    background-color: yellow;
+}
+main>.content>article>.swiper-box>div>.swiper>.swiper-wrapper>.swiper-slide>video {
+    display: block;
+    width: 100%;
+    filter: grayscale(1);
+    margin-bottom: 60px;
+    /* border: #f07c1d 1px double; */
+}
+main>.content>article>.swiper-box>div>.swiper>.swiper-wrapper>.swiper-slide-active>video {
+    filter: sepia(0);
+    transition: all 1s;
+}
+main>.content>article>.swiper-box>div>.swiper>.swiper-wrapper>.swiper-slide>h2{
+    color: white;
+    position: relative;
+    bottom: 100px;
+    left: 0px;
+}
+@media screen and (max-width:1400px){
+    main>.content>article>.swiper-box>div>.swiper {
+    width: 70%;
+    height: 90%;
+    margin: 2.5% auto;
+}
+}
+@media screen and (max-width:500px){
+    main>.content>article>.swiper-box>div>.swiper {
+    width: 70%;
+    height: 80%;
+    margin: 2.5% auto;
+    padding-top: 7vh;
+    }
+}
+main>aside {
+    width: 40px;
+    height: 50%;
+    min-height: 350px;
+    border-left: 1px solid white;
+    position: fixed;
+    bottom: 5%;
+    right: 0px;
+}
+
+main>aside>.follow-label {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #c0c0c0;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    position: absolute;
+    top: 25%;
+    right: 0px;
+    font-size: 14pt;
+}
+main>aside>.links{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main>aside>.links>i{
+    /* background: linear-gradient(#e66465, #9198e5); */
+    /* 背景漸層 */
+    background: linear-gradient(#5CDEFC, #05078B);
+    /* 因為color(icon算文字)不能設定漸層，所以要設定為透明之後，用background-clip設為text(文字簍空)才能透出後面的顏色*/
+    color: transparent;
+    background-clip: text;
+    /* 如果沒有用-webkit的話chrome吃不到屬性 */
+    -webkit-background-clip: text;
+    font-size: 20pt;
+    /* 這邊如果照本來fontawesome設定為rem，會因為放大縮小瀏覽器字體就跟著縮小 */
+}
+main>aside>.links>i:hover{
+    background: linear-gradient(#f59898, rgb(180, 168, 250));
+    background-clip: text;
+    -webkit-background-clip: text;
+    cursor: pointer;
+}
+footer {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #000;
+    color: rgb(81, 126, 61);
+    text-align: center;
+}
