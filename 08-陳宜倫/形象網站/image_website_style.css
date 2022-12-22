@@ -16,6 +16,7 @@ body {
     font-family: 'Playfair Display', 'Noto Serif TC', serif;
 }
 
+
 /* nav bar樣式 */
 #nav-bar nav {
     height: 50px;
@@ -42,7 +43,7 @@ body {
 
 
 #nav-bar nav ul li a:hover {
-    border-bottom: 1px solid #000842;
+    border-bottom: 5px solid #e7dd84;
     /* 滑鼠移至時有底線 */
 }
 
@@ -152,6 +153,10 @@ body {
 }
 
 /* 工作經驗區塊 */
+#work-experience {
+    margin-top: 50px;
+}
+
 #work-experience .work-exp {
     height: 300px;
     margin-top: 80px;
@@ -160,47 +165,75 @@ body {
 }
 
 /* 證照區塊 */
-      body {
-        position: relative;
-        height: 80%;
-      }
+body {
+    position: relative;
+    height: 80%;
+    background: #eee;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
 
-      body {
-        background: #eee;
-        font-size: 14px;
-        margin: 0;
-        padding: 0;
-      }
+#certificate {
+    height: 500px;
+    margin-top: 50px;
+    text-align: center;
+}
 
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 30px) / 2) !important;
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        height: calc((100% - 30px) / 2) !important;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        }
+/* 作品集區塊 */
+#portfolio{
+    margin-top: 80px;
+    text-align: center;
+    color: #fff;
+    background-color: #000842;
+}
 
+#portfolio .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  #portfolio .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  #portfolio .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 /* 結束區塊 */
 #end {
     height: 350px;
@@ -217,8 +250,8 @@ body {
     width: 200px;
     height: 80px;
     border: none;
-    background-color: #000842;
-    color: #fff;
+    background-color: #ecdd84;
+    color: #000;
     font-size: larger;
     font-family: 'Playfair Display', 'Noto Serif TC', serif;
     cursor: pointer;
@@ -236,11 +269,10 @@ body {
 
 .end-btn {
     -webkit-tap-highlight-color: transparent;
-    background-color: #000842;
+    background-color: #ecdd84;
     background-image: none;
     color: #d2d8d5;
-    cursor: poend
-    er;
+    cursor: poend er;
     font-size: 100%;
     padding: 0;
     text-transform: uppercase;
@@ -259,8 +291,7 @@ body {
 
 }
 
-.end
--btn [hidden] {
+.end -btn [hidden] {
     display: none;
 }
 
@@ -278,11 +309,11 @@ body {
 .end-btn:before {
     -webkit-animation: move-out 0.3s;
     animation: move-out 0.3s;
-    background: #304352;
+    background: #eeeeee;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #000842, #808080);
+    background: -webkit-linear-gradient(to right, #ecdd84, #eeeeee);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #000842, #808080);
+    background: linear-gradient(to right, #ecdd84, #eeeeee);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     content: "→";
     display: flex;
@@ -340,4 +371,3 @@ body {
         transform: translateX(200%);
     }
 }
-
