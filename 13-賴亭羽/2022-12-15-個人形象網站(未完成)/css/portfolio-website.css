@@ -125,14 +125,16 @@ nav .links .link {
     font-size: 35px;
 }
 
-header {
+#start.container,
+#about.container,
+#skill.container,
+#work.container {
     width: 100%;
-    height: 1080px;
-
-    position: relative;
-    /* background-color: #fff; */
+    height: 100vh;
+    /* 為了nav增加的高度100+我自己想要的間隔100 */
     padding-top: 100px;
 
+    position: relative;
 }
 
 header .img-group {
@@ -227,17 +229,6 @@ header .btn-enter:active {
     box-shadow: inset 21px 21px 42px #2f4257,
         inset -21px -21px 42px #537297;
 
-}
-
-#about.container,
-#skill.container,
-#work.container {
-    width: 100%;
-    height: 1080px;
-    /* 為了nav增加的高度100+我自己想要的間隔100 */
-    padding-top: 200px;
-
-    position: relative;
 }
 
 #about .who {
@@ -540,7 +531,7 @@ header .btn-enter:active {
     width: 500px;
     height: 50px;
 
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     color: #0D1B2A;
 
