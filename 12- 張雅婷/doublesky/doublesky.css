@@ -1,0 +1,30 @@
+
+body{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    background-size: cover;
+    background-image: url("./DBSimage/alley-2.jpg");
+    text-align: center;
+}
+.enter{
+    background-color: rgb(0, 0, 0,0.6);
+    color: darkgray;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+.enter2{
+    background-color: rgb(0, 0, 0,0.6);
+    margin: 0 auto;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+.btn{
+    font-size: 30px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:transparent;
+}
