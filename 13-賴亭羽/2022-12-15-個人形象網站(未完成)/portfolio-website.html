@@ -6,17 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- AOS　animate -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- my css -->
   <link rel="stylesheet" href="./css/portfolio-website.css">
-
-  <style>
-
-  </style>
 </head>
 
 <body>
+  <!--nav要放置在header中 -->
   <nav>
     <div class="container">
       <div class="logo"><a href="">LAI</a></div>
@@ -36,7 +37,6 @@
           </ul>
         </div>
       </div>
-
     </div>
   </nav>
   <header>
@@ -45,8 +45,8 @@
         <div class="img-group"></div>
       </div>
       <p class="hello">Hello World !</p>
-      <p class="name">I m
-        <span class="text-strong">LAI</span>.
+      <p class="name">
+        I m <span class="text-strong">LAI</span>.
       </p>
       <p class="context">簡短一句介紹 簡短一句介紹 簡短一句介紹 簡短一句介紹。</p>
       <a href="#about">
@@ -57,8 +57,10 @@
   </header>
   <main>
     <div id="about" class="container">
+      <!-- 一樣的東西設置同樣的class 一起設定 -->
       <div class="who">WHO AM I</div>
       <div class="line"></div>
+      <!-- 可以直接讓about-me代替mySwiper命名 -->
       <div class="swiper mySwiper about-me">
         <div class="swiper-wrapper">
           <div class="swiper-slide card">
@@ -95,6 +97,7 @@
     <div id="work" class="container">
       <div class="done">WHAT I've DONE</div>
       <div class="line"></div>
+      <!-- 可以直接自訂swiper名字 -->
       <div class="swiper mySwiper02">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -128,13 +131,14 @@
         <div class="swiper-pagination02"></div>
       </div>
     </div>
+  </main>
   <footer>
     <div id="contact" class="container">
       <p class="title">CONTACT ME</p>
-         <ul>
-           <li><img src="./images/phone.png" alt="phone">09-8765-4321</li>
-           <li><img src="./images/email.png" alt="email">tina5761641@gmail.com</li>
-         </ul>
+      <ul>
+        <li><img src="./images/phone.png" alt="phone">09-8765-4321</li>
+        <li><img src="./images/email.png" alt="email">tina5761641@gmail.com</li>
+      </ul>
       <p class="right">© Lai ting-yu All Rights Reserved.</p>
     </div>
   </footer>
@@ -143,9 +147,11 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
+    //AOS animate動畫 js
     AOS.init();
-  </script>
-  <script>
+
+    //修改swiper名字
+    //about-me頁面 swiper
     var swiper = new Swiper(".mySwiper", {
       // freeMode: true,
       // mousewheel: {
@@ -163,7 +169,7 @@
         clickable: true,
       },
     });
-
+    //work 頁面 swiper
     var swiper = new Swiper(".mySwiper02", {
       effect: "coverflow",
       grabCursor: true,
