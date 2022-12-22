@@ -61,13 +61,12 @@ label {
 }
 
 .nav-left {
-  display: "";
   width: 200px;
   height: 100vh;
   position: fixed;
   background-color: #FFC007;
   z-index: 5;
-  transform: opacity;
+  display: none;
 }
 .nav-left .face {
   width: 200px;
