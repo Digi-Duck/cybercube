@@ -8,10 +8,10 @@ document.addEventListener('scroll',function(){
     console.log(appear.style.top)
     
     if(currentPos <(body.offsetHeight/4) ){
-        appear.style.display = "none"; //讓nav bar消失
+        appear.style.display ="none"; //讓nav bar消失
         
     }else{
-        appear.style.display = ""; //讓nav bar出現
+        appear.style.display ="block"; //讓nav bar出現
     }
     lastPos = currentPos;//再記住現在位置，跟未來的位置做比較
   });
