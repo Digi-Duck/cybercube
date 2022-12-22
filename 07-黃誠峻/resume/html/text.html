@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+         /* 人話：我想要讓每一個列表，前面不要有點點 */
+        ul {
+           
+            /* 取消ul預設的內縮及樣式 */
+            margin: 0;
+            padding: 0;
+            
+            /*這個功能是將，圈圈還有框框等等取消的東西*/
+        }
+        /* 人話：我要讓整個下拉式表單都是這個顏色以及字體以及匡線等等 */
+        ul.drop-down-menu {
+            /*定義出以下的資料，這是下拉式表單的核心*/
+            border: #ccc 1px solid;
+            /* 這是匡線的部分 */
+            display: inline-block;
+            /*這其實就是同時能夠達成行列元素以及區塊元素的效果 */
+            /* 這個選項可以讓資料 */
+
+            font-family:  Arial, sans-serif;
+            font-size: 13px;
+            /* 控制位置固定在中間點！ */
+            position: fixed;
+            right: 0;
+            top: 50%;
+            width: 8em;
+            margin-top: -2.5em;
+            list-style: none;
+        }
+        /* 人話：我要讓每一個文字都不要隨便換行不管多長，都不可以而且我還要有表格的感覺 */
+        ul.drop-down-menu li {
+            position: relative;
+            white-space: nowrap;
+            /*絕不換行*/
+            /* 由於上面已經有了，基本的整個匡線了，因此我們只需要右邊的匡線就可以了 */
+            border-right: #ccc 1px solid;
+        }
+        /* 人話：我要讓下拉式選單中，第一層的文字標籤中，最後一個不要有匡線 */
+        ul.drop-down-menu >li:last-child {
+                /* 大於的符號表示只有第一層級的才有，last-child就是表示，只選取最後一個部分 */
+            /* 此處用none是因為外部早就有匡線了，因此取消掉，才不會重複－ */
+            border-right:none;
+            /* border-right: none; */
+            
+        }
+        /* 人話：我要讓這些選項水平排列 */
+        ul.drop-down-menu>li {
+            /* 讓全部的ＬＩ先飄起來 */
+            float: left;
+            /* 只有第一層是靠左對齊*/
+        }
+        /* 這個區塊是定義我們文字的顏色與背景，此處是有質感的關鍵 */
+        ul.drop-down-menu a {
+            background-color: #fff;
+            color: #333;
+            display: block;
+            padding: 0px 30px;
+            /* 上下 左右 */
+            text-decoration: none;
+            /* 取消Ａ標籤的底線 */
+            line-height: 40px;
+            /* 調整整體高度，因為Ａ標籤是屬於行內元素 */
+        }
+        /* 當我碰到在下拉式選單內的我希望他們可以變色 */
+        ul.drop-down-menu a:hover {
+            /* 滑鼠滑入按鈕變色*/
+            background-color: #ef5c28;
+            color: #fff;
+        }
+       
+body{
+    height:100000px
+}
+</style>
+</head>
+<body>
+    <ul class="drop-down-menu">
+        <li><a href="#">首頁</a>    
+        </li>
+        <li><a href="#">自傳</a>       
+        </li>
+        <li><a href="#">作品集</a>           
+        </li>
+        <li><a href="#">致謝</a>      
+        </li>
+        <li><a href="#">聯絡誠峻</a>
+        </li>
+    </ul>
+        
+</body>
+</html>

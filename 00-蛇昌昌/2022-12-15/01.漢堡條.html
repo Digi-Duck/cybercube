@@ -5,57 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         label{
-            border: black 1px solid;
             padding: 5px;
-            background-color: gainsboro;
+            background-color: aliceblue;
+            cursor: pointer;
+            border: 1px solid black;
         }
-        #boxa{
-            width: 300px;
-            height: 300px;
-            background-color: red;
-            margin-top: 30px;
-            transition: 1s;
 
-        }
-        #boxb{
-            width: 300px;
-            height: 150px;
-            background-color: red;
-            margin-top: 30px;
-            transition: 1s;
-        }
-        #abc:checked ~ #boxa{
+        .boxa{
+            width: 200px;
+            height: 200px;
             background-color: blue;
         }
-        #abc ~ p{
-            color: greenyellow;
-        }
-        #abc:checked ~ p{
-            
-            color: purple;
+/* 懂得使用css 偽類 + css 選擇器做出點擊功能 */
+        #btn:checked ~ .boxa{ 
+            background-color: red;
         }
 
-        #abc:checked ~ #boxb{
-            width: 600px;
-            height: 400px;
+        #btn:checked ~ p{ 
+            color: red;
         }
 
     </style>
+
 </head>
 
 
 <body>
-    <p>試著使用純HTML + CSS 做出一個可以切換方塊顏色的開關</p>
-    <label for="abc">開關</label>
-    <input type="checkbox" name="abc" id="abc" hidden>
-    
-    <div id="boxa"></div>
-    <p>我的文字也會跟著變色喔</p>
-    <div id="boxb"></div>
-
+    <!-- 懂得使用label取代真的點擊checkbox, 讓我們可去客製化label的樣式做成按鈕 -->
+    <label for="btn">開關</label>
+    <input type="checkbox" name="" id="btn" hidden>
+    <div class="boxa"></div>
+    <p>我要變色</p>
     
 </body>
 </html>

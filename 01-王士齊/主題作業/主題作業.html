@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="小強潛水.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+        </div>
+        <div class="links">
+            <a href="#">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">服務價目表</a>
+            <a href="#">相簿</a>
+            <a href="#">聯絡資訊</a>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="main">
+        <div class="welcome">
+            <div class="swiper mySwiper mySwiper1">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./圖/e7r10321_orig.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./圖/article-5ae9687eec0d4.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./圖/1e574149b06906c42002b18a59fa8123-1000x1000c00-1-1.jpg" />
+                  </div>
+                </div>
+                <div class="swiper-button-next swiper-button-next1"></div>
+                <div class="swiper-button-prev wiper-button-prev1"></div>
+                <div class="swiper-pagination swiper-pagination1"></div>
+              </div>
+              <div class="welcome-box">
+                <h1>最酷的潛水團隊</h1>
+                <h3>了解大海、認識大海、愛上大海</h3>
+               <div class="plus-line">加line預約潛水</div>
+              </div>
+        </div>
+
+        <div class="text-hot">熱門活動</div>
+        <div class="hot-activity">
+            <div class="picture1">
+                <div class="picture"></div>
+                <a href="">體驗潛水</a>
+
+            </div>
+            <div class="picture2">
+                <div class="picture"></div>
+                <a href="">四天自由潛水考取</a>
+            </div>
+            <div class="picture3">
+                <div class="picture"></div>
+                <a href="">潛水+民宿優惠</a>
+            </div>
+        </div>
+
+        <div class="container">
+            
+            <div class="swiper mySwiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./圖/下2-1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./圖/下2-2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./圖/1e574149b06906c42002b18a59fa8123-1000x1000c00-1-1.jpg" alt=""></div>
+                   
+
+
+                </div>
+                <div class="swiper-button-next swiper-button-next2"></div>
+                <div class="swiper-button-prev swiper-button-prev2"></div>
+                <div class="swiper-pagination swiper-pagination2"></div>
+            </div>
+
+        </div>
+    </div>
+
+        <div class="footer">
+            <div class="icons">
+               <div class="icon-text">
+                    <img src="./圖/location.png" alt="">
+                    <p>地址:屏東縣恆春鄉123號</p>
+               </div>
+               <div class="icon-text">
+                <img src="./圖/telephone.png" alt="">
+                <p>電話:0912345678</p>
+               </div>
+                
+               <div class="icon-text">
+                <img src="./圖/envelope.png" alt="">
+                <p>Email:321abcde@gmail.com</p>
+               </div>
+               
+                <div class="icon-text">
+                    <img src="./圖/line.png" alt="">
+                    <p>LINE:12345678</p>
+                </div>
+              
+
+            </div>
+            <div class="listA">
+                <h4>AIDA自由潛水</h4>
+                <ul>
+                    <li><a href="">AIDA初階</a></li>
+                    <li><a href="">AIDA專業</a></li>
+                    <li><a href="">AIDA進階</a></li>
+                </ul>
+            </div>
+            <div class="listB">
+                <h4>PADI水肺潛水</h4>
+                <ul>
+                    <li><a href="">DSD體驗潛水</a></li>
+                    <li><a href="">OW開放水域潛水</a></li>
+                    <li><a href="">AOW進階探索潛水</a></li>
+                    <li><a href="">EAN高氧潛水</a></li>
+                </ul>
+            </div>
+            <div class="logo"></div>
+        </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js">
+        </script>
+
+        <script>
+            //淡入淡出
+ var swiper = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        effect: "fade",
+        autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+        navigation: {
+          nextEl: ".swiper-button-next1",
+          prevEl: ".swiper-button-prev1",
+        },
+        pagination: {
+          el: ".swiper-pagination1",
+          clickable: true,
+        },
+      });
+
+      //輪播
+            var swiper = new Swiper(".mySwiper2", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination2",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next2",
+                    prevEl: ".swiper-button-prev2",
+                },
+            });
+        </script>
+</body>
+
+</html>

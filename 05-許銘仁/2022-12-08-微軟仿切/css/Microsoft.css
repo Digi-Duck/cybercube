@@ -87,7 +87,7 @@ nav #morelinksbtn:checked+.morelinksbtnimg {
 }
 
 /* 這是手機板的側邊漢堡條選單列 選單內部在Css最尾端*/
-nav #morelinksbtn:checked+.morelinksbtnimg+.NavSelLeft {
+nav #morelinksbtn:checked+.morelinksbtnimg+.nav-sel-left {
     display: flex;
 }
 
@@ -249,16 +249,16 @@ nav .functions>div:nth-child(1)>div {
 
 
 /* 這裡是所有Microsoft的選單設定 */
-#NavSel:checked~.openNavSel {
+#navsel:checked~.open-nav-sel {
     background-color: rgb(128, 128, 128, 0.1);
 }
 
-#NavSel:checked~.openNavSel+.NavSel {
+#navsel:checked~.open-nav-sel+.navsel {
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.openNavSel {
+.open-nav-sel {
     width: auto;
     display: flex;
 
@@ -299,7 +299,7 @@ nav .functions>div:nth-child(1)>div:active {
     outline: 1px dashed black;
 }
 
-#NavSel:checked~.openNavSel::after {
+#navsel:checked~.open-nav-sel::after {
     content: url("../images/icon01111.png");
     padding-top: 6px;
 }
@@ -438,7 +438,7 @@ nav .functions>div:nth-child(4)>a:focus {
 
 
 /* 這裡是Nav右上選單頁 */
-.NavSel {
+.navsel {
     width: 1230px;
     height: auto;
     display: none;
@@ -586,7 +586,7 @@ main>div:nth-child(1) {
     }
 }
 
-@media((min-width: 540px) and (max-width: 859pft-container-softx)) {
+@media((min-width: 540px) and (max-width: 859px)) {
     .card-background .m {
         display: block;
     }
@@ -961,7 +961,7 @@ main>div:nth-child(1) {
     padding: 6px 12px 6px 12px;
 }
 
-.col .spanNew {
+.col .span-new {
     width: auto;
     max-width: 100%;
     color: #fff;
@@ -1026,7 +1026,7 @@ main>div:nth-child(1) {
     position: absolute;
 }
 
-.col .cta2 {
+.col .cta2-inner {
     margin-right: 24px;
 }
 
@@ -2211,7 +2211,7 @@ footer {
         display: none;
     }
 
-    #loginDiv {
+    #login-div {
         display: none;
     }
 
@@ -2510,7 +2510,7 @@ footer {
         display: none;
     }
 
-    #loginDiv {
+    #login-div {
         display: none;
     }
 
@@ -2567,10 +2567,10 @@ footer {
 /* 右上方選單 */
 @media ((min-width: 860px) and (max-width: 1083px)) {
 
-    .NavSel {
+    .navsel {
         width: 820px;
         height: 825px;
-        right: -1%;
+        right: 2%;
         margin: auto;
     }
 
@@ -2590,7 +2590,7 @@ footer {
 /* 右上方選單 */
 @media ((min-width: 1084px) and (max-width: 1226px)) {
 
-    .NavSel {
+    .navsel {
         width: 1027px;
         height: 736px;
         right: -1%;
@@ -2609,9 +2609,9 @@ footer {
 
 /* 右上方選單 */
 @media ((min-width: 1227px) and (max-width: 1400px)) {
-    .NavSel {
-        right: 0%;
-        left: -19%;
+    .navsel {
+        right: -2%;
+        /* left: -19%; */
         /* margin: auto; */
     }
 
@@ -2627,7 +2627,7 @@ footer {
 
 
 /* 手機版面的側邊欄 */
-.NavSelLeft {
+.nav-sel-left {
     width: 102%;
     height: auto;
     background-color: #f2f2f2;
@@ -2640,15 +2640,15 @@ footer {
 }
 
 /* 這堆hover跟focus-within是為了保持NavSelLeft的display不要跳回None */
-.NavSelLeft:hover {
+.nav-sel-left:hover {
     display: flex;
 }
 
-.NavSelLeft:focus-within {
+.nav-sel-left:focus-within {
     display: flex;
 }
 
-.LeftContainer {
+.left-container {
     width: 100%;
     height: 100%;
     border-bottom: 1px solid black;
@@ -2656,7 +2656,7 @@ footer {
     flex-direction: column;
 }
 
-.LeftContainer a {
+.left-container a {
     width: 99.5%;
     /* height: calc(76vh /13); */
     font-size: 15px;
@@ -2671,13 +2671,13 @@ footer {
     cursor: pointer;
 }
 
-.LeftContainer a:focus {
+.left-container a:focus {
     outline: 1px dashed black;
     outline-offset: -1px;
 }
 
 /* button底下包label */
-.LeftContainer button {
+.left-container button {
     width: 100%;
     font-size: 15px;
     border: 0;
@@ -2691,7 +2691,7 @@ footer {
     cursor: pointer;
 }
 
-.LeftContainer label {
+.left-container label {
     width: 100%;
     /* height: calc(76vh /13); */
     font-size: 15px;
@@ -2705,27 +2705,27 @@ footer {
     padding: 14px 15px 15px 15px;
 }
 
-.LeftContainer button label {
+.left-container button label {
     cursor: pointer;
 }
 
-.LeftContainer button label:focus {
+.left-container button label:focus {
     outline: 1px dashed black;
     outline-offset: -2px;
 }
 
-.LeftContainer button:focus {
+.left-container button:focus {
     outline: 1px dashed black;
     outline-offset: -2px;
 }
 
 
-.left-Container-label::after {
+.left-container-label::after {
     content: url("../Images/LeftDown.PNG");
 }
 
 
-input:checked+button>.left-Container-label::after {
+input:checked+button>.left-container-label::after {
     content: url("../Images/LeftUp.PNG");
 }
 
@@ -2735,12 +2735,12 @@ input:checked+button:focus {
 }
 
 /* 只保留button子層label的虛線，且必須是點擊到的button正在被Focus的時候 */
-input:checked+button:focus>.left-Container-label {
+input:checked+button:focus>.left-container-label {
     outline: 1px dashed black;
     outline-offset: -2px;
 }
 
-.LeftContainer ul {
+.left-container ul {
     width: 100%;
     height: auto;
     display: none;
@@ -2749,10 +2749,10 @@ input:checked+button:focus>.left-Container-label {
 }
 
 /* 每個下拉按鈕打開選單設定 */
-input:checked+button>.left-Container-label+ul {
+input:checked+button>.left-container-label+ul {
     display: flex;
 }
 
-.LeftContainer ul li {
+.left-container ul li {
     list-style-type: none;
 }
