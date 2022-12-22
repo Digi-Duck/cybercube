@@ -1,0 +1,184 @@
+<head>
+    <style>
+        html,body{
+  padding:0;
+  margin:0;
+}
+
+h1,
+h2 {
+  position: relative;
+  text-align: center;
+  margin:10px 0;
+}
+
+p {
+  text-align: center;
+}
+
+#scroll-zone{
+  padding-bottom:50px;
+}
+
+
+img.hero-image{
+  width: 100%;
+  display:block;
+  margin:auto;
+  opacity:1;
+}
+
+
+header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  top: 0;
+  position:relative;
+  z-index:999;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-titles{
+  position:absolute;
+  width:100%;
+  top:0px;
+  z-index:998;
+}
+
+.title-container {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  position:relative;
+  padding-top:100px;
+  padding-bottom:80px;
+}
+
+#scene-one{
+  display:flex;
+  justify-content:center;
+  padding:50px 0;
+}
+
+#scene-one img{
+  width:30%;
+}
+
+#scene-two{
+  padding:50px 0;
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap:10px;
+}
+
+#scene-two img{
+  max-width:100%;
+  opacity: 0;
+  transition:opacity .7s ease;
+}
+
+#scene-two img.is-inview{
+  opacity: 1;
+}
+
+.banner{
+  background-color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#FFF;
+}
+
+.banner h1{
+  font-size:60px;
+  opacity:0;
+  transition:opacity .7s ease;
+}
+
+.banner h1.is-inview{
+  opacity: 1;
+}
+    </style>
+</head>
+
+
+<body>
+    <div id="scroll-zone">
+      
+        <header data-scroll data-scroll-sticky data-scroll-target="#scroll-zone">
+            簡單的滾動效果。
+        </header>
+        
+        <img class="hero-image" src="https://it-monk.com/wp-content/uploads/2021/02/1614099723447.png"/>
+        
+        <div class="title-container" data-scroll-container>
+          <header data-scroll data-scroll-sticky data-scroll-target=".title-container" class="header-titles" data-scroll-offset="-60">
+            然後要有點「 微妙」
+        </header>
+          <h1 data-scroll data-scroll-speed="-2">蝦咪!</h1>
+          <h2 data-scroll data-scroll-speed="1">微妙!</h2>
+          <div data-scroll data-scroll-speed="1.5"  data-scroll-direction="horizontal">
+            <h3 data-scroll data-scroll-speed="2">google 關鍵字:微妙 </h3>
+          </div>
+          <div data-scroll data-scroll-speed="1.5">
+            <h3 data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal">《老子．第一五章》</h3>
+            <p>古之善為士者，<strong>微妙</strong>元通，深不可識。</p>
+          </div>   
+          <h1 data-scroll data-scroll-speed="-1"  data-scroll-direction="horizontal">哩西勒</h1>
+          <h1 data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">公三小</h1>
+          <img width=200 src="https://images.unsplash.com/photo-1635231701198-214ad1b687c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3087&q=80"
+               data-scroll data-scroll-speed="3"/>
+        </div>
+        
+        <div id="scene-one">
+           <img data-scroll data-scroll-speed="0.5" data-scroll-direction="horizontal" src="https://it-monk.com/wp-content/uploads/2021/02/d94167abafb9f72206efc4a0b97c1b11.png" />
+          <img src="https://it-monk.com/wp-content/uploads/2021/02/d94167abafb9f72206efc4a0b97c1b11.png" />
+          <img data-scroll data-scroll-speed="-0.5" data-scroll-direction="horizontal" src="https://it-monk.com/wp-content/uploads/2021/02/d94167abafb9f72206efc4a0b97c1b11.png" />
+        </div>
+        <div id="scene-two">
+          <div>
+            <img data-scroll data-scroll-offset="300" data-scroll-direction="horizontal" data-scroll-speed="-1" src="https://it-monk.com/wp-content/uploads/2021/02/1614011985791.png"/>
+          </div>
+          <div>
+            <img data-scroll data-scroll-offset="400" data-scroll-direction="horizontal" data-scroll-speed="1" 
+                 style="margin-top:100px" src="https://it-monk.com/wp-content/uploads/2021/02/1614012051421.png"/>
+          </div>
+          <div>
+            <img data-scroll data-scroll-offset="200" data-scroll-direction="horizontal"  data-scroll-speed="-1" src="https://it-monk.com/wp-content/uploads/2021/02/1614012147941.png"/>
+          </div>
+          <div>
+            <img data-scroll data-scroll-offset="400" data-scroll-direction="horizontal" data-scroll-speed="2" src="https://it-monk.com/wp-content/uploads/2021/02/1614012192438.png"/>
+          </div>
+        </div>
+        
+        <div class="banner">
+          <h1 data-scroll>難道...你說的是...</h1>
+        </div>
+        <img class="hero-image" src="https://it-monk.com/wp-content/uploads/2021/02/1614015294135.png"/> 
+      </div>
+</body>
+
+<script>
+
+    const scroll = new LocomotiveScroll({
+  el: document.querySelector("#scroll-zone"),
+  smooth: true,
+  lerp: 0.01,
+  repeat: true,
+  tablet:{
+    smooth:true,
+    breakpoint:250
+  },
+  smartphone:{
+    smooth:false
+  }
+});
+</script>

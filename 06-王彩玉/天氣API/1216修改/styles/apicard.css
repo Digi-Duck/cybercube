@@ -1,0 +1,214 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/bg4.jpg");
+    background-position: bottom;
+    background-size: cover;
+    overflow: hidden;
+}
+main>nav{
+    width: 55%;
+    height: 100%;
+    float: left;
+}
+main>nav>.time{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 12px;
+}
+main>nav>.time button{
+    width: 30%;
+    height: 100%;
+    outline: 2px double rgb(221, 120, 5);
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: wheat;
+    font-size: 15pt;
+    font-weight: bold;
+    cursor: pointer;
+}
+main>nav>.time button.hover{
+    background-color: rgb(255, 136, 0);
+    color: black;
+    outline: 2px double rgb(255, 81, 0);
+}
+main>nav>.time button:hover{
+    background-color: rgb(255, 136, 0);
+    color: black;
+    outline: 2px double rgb(255, 81, 0);
+}
+main>nav>.choose{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+}
+main>nav>.choose button{
+    width: 12%;
+    height: 100%;
+    outline: 2px double darkkhaki;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: wheat;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+main>nav>.choose button.hover{
+    background-color: rgb(238, 255, 0);
+    color: black;
+    outline: 2px double rgb(187, 255, 0);
+}
+main>nav>.choose button:hover{
+    background-color: rgb(238, 255, 0);
+    color: black;
+    outline: 2px double rgb(187, 255, 0);
+}
+main>nav>aside{
+    width: 100%;
+    height: 85%;
+    color: aliceblue;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+main>nav>aside>.cover{
+    width: 100%;
+    height: 100%;
+    color: aliceblue;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+main>nav>aside>.showcard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+}
+main>nav>aside>.showcard>.card{
+    width: 16%;
+    height: 21%;
+    background-color: rgba(4, 21, 22, 1);
+    border: 3px solid rgb(40, 240, 173);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 11pt;
+    color: aliceblue;
+    padding: 5px 1px;
+    cursor: pointer;
+    line-height: 21px;
+    transition: transform 1s;
+}
+main>nav>aside>.showcard>.card-big{
+    width: 30%;
+    height: 45%;
+    margin-top: 1%;
+    background-color: rgb(1, 33, 54);
+    border: 3px solid rgb(222, 247, 0);
+    font-size: 20pt;
+    line-height: 40px;
+}
+main>nav>aside>.showcard>.card:hover{
+    border: 3px solid rgb(255, 155, 40);
+    color: aqua;
+}
+main>nav>aside>.showcard>.card-big:hover{
+    border: 5px solid rgb(255, 155, 40);
+}
+main>nav>aside>.showcard>.card>.img{
+    width: 95%;
+    height: 40%;
+    background-color: rgb(84, 120, 189);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main>nav>aside>.showcard>.card>.local{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+main>nav>aside>.showcard>.card>.temp{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+main>nav>aside>.showcard>.card>.winther{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+main>nav>aside>.showcard>.card>.rain{
+    width: 90%;
+    height: 11%;
+    margin: auto;
+}
+.sundy{
+    background-image: url("../images/sundybaby.gif");
+    background-position: center 35%;
+}
+.rainy{
+    background-image: url("../images/bigrain.gif");
+    background-position: center 35%;
+}
+.cloudy{
+    background-image: url("../images/cloudy.gif");
+    background-position: center 35%;
+}
+main>article{
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+main>article>section{
+    width: 100%;
+    height: 100%;
+}
+
+main>article>section>.map{
+    stroke: rgb(28, 255, 77);
+    fill: rgba(1, 24, 19);
+    filter: drop-shadow(3px 5px 2rem black);
+}
+.move{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+/* 真的遇到屬性搶不過來的問題 */
+.move:hover{
+    fill: rgb(253, 92, 33) !important;
+    stroke: rgb(248, 141, 1) !important;
+    transform: translateY(-3px) !important;
+}
+main>article>.time_box{
+    width: 100%;
+    height: 40px;
+    color: antiquewhite;
+    font-size: 20pt;
+    text-align: right;
+    padding-right: 15px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}

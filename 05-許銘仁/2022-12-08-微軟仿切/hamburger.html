@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .boxa {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+
+    這個可以客製化出指定樣式的
+    label {
+        padding: 5px;
+        background-color: #616161;
+        border: 1px solid black;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* 懂得使用css 偽類 + css 選擇器做出點擊功能 */
+    #burger:checked ~div {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <!-- 要懂得使用label取代真的點擊input的checkbox，讓我們可去客製化label的樣式做成按鈕 -->
+    <label for="burger">點我變色</label>
+    <!-- 再將很醜的checkbox藏起來 -->
+    <input type="checkbox" id="burger" hidden>
+
+    <div class="boxa"></div>
+
+
+
+
+</body>
+
+</html>

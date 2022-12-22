@@ -1,0 +1,30 @@
+
+
+
+#bugar:checked+.change+.changetext{
+    background-color: blue;
+    color: brown;
+}
+#bugar:checked+.changetext{
+ color: blue;
+ background-color: blue;
+}
+
+#bugar{
+    display: none;
+}
+.changetext{
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+    color: black;
+}
+
+
+/* 
+.change{
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+    color: black;
+} */

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            padding: 5px;
+            background-color: aliceblue;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        .boxa{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        /* 不能寫.boxa .act */
+        /* .boxa.act{
+            background-color: red;
+        } */
+        #btn:checked ~ .boxa{
+            background-color: red;
+        }
+        #btn:checked ~ p{
+            color: red;
+        }
+
+         /* 要懂得使用css偽類 + css選擇器做出點擊功能 */
+        /* input{
+            display: none;
+        } 或是直接在input後面加上hidden*/
+    </style>
+</head>
+<body>
+    <!-- 懂得使用label取代真的點擊checkbox，讓我們可去克制化label的樣式做成按鈕 -->
+
+    <!-- #label與input的特殊關係(label是為了input存在，所以沒有input 就沒有label，有input就一定要有label)
+    #用獨一無二的id去讓label的for做連結
+    #label取代程度比較高，所以用label去取代input -->
+    <label for="btn">開關</label>
+    <!-- 任何表單元素都支援加上hidden(預設幫你加上display:none) -->
+    <!-- hidden是html的功能，可以使用css蓋掉 -->
+        <input type="checkbox" id="btn" hidden>
+    <div class="boxa"></div>
+    <p>我要變色</p>
+</body>
+</html>
+
