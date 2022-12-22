@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="swiper_homework.css">
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled">Disabled</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW01.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW02.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW03.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW04.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW05.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW06.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW07.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW08.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW09.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW10.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW14.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW12.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="swiper_img/FDMTL19AW13.jpg" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section id="contain">
+        <h1>FDMTL</h1>
+        <p>FDMTL由日本設計師 Gaku Tsuyoshi 創辦於2005年，是以東京為本的一家牛仔服裝品牌，堅持手工製作的職人精神，產品強調是Made in Japan。
+            FDMTL以其Boro（日本傳統拼布工藝）織物而聞名。 FDMTL將原始的，仿舊的，撕裂的和染色的牛仔布混合在一起，而其牛仔布均來自日本岡山。
+            在質量和富有表現力的設計之間尋求平衡，該品牌為當代休閒服裝樹立了標準。</p>
+        <p>
+            FDMTL結合傳統美學與現代經典，打造獨特的形象。從面料、手縫針線、到生產製程，一絲不苟的繁複工序與精心設計，這樣精神和工藝下保證你買到的每一件FDMTL的服飾，都不是大型工廠流水線的產物可比擬的。</p>
+    </section>
+    <section id="footer">
+        <p>footer</p>
+        <p>footer</p>
+    </section>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            grabCursor: true,
+            effect: "fade",
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+
+        });
+
+    </script>
+
+</body>
+
+
+</html>
