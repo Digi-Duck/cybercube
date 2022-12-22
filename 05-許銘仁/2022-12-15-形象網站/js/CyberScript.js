@@ -154,7 +154,7 @@ function MuteButton() {
 
     else {
         TopVideo.muted = true;
-        MBImg.src = "../OtherImage/volume-high-unmuted.svg";
+        MBImg.src = "./OtherImage/volume-high-unmuted.svg";
     }
 
 }
@@ -212,7 +212,7 @@ function FocusOnDisplay() {
     //NavTop顯示&隱藏切換、Video播放、暫停(當ImgLarge未開啟的情況下)
     // 在吧檯時將Nav隱藏
     if (ImgLargeOpen == false) {
-        if (window.scrollY > 2000 && window.scrollY <= 2100) {
+        if (window.scrollY >= 2000 && window.scrollY <= 2100) {
             NavTop.style.zIndex = "-1";
             NavTop.style.opacity = "0";
         }
@@ -459,7 +459,7 @@ function FocusOnDisplay() {
         }
 
         //Sales商品區影片播放、暫停
-        if (window.scrollY > 3200 & window.scrollY < 5000) {
+        if (window.scrollY > 3200 & window.scrollY < 4900) {
             SalesVideo.forEach(element => {
                 element.play();
                 element.loop = "true";
@@ -560,6 +560,8 @@ C2sImg.forEach(element => {
             Dvid.style.display = "none";
             Dvid.pause();
             Dimg.style = "background-image: url(" + '"' + Imgurl + '"' + "); background-position: center; background-size: contain; background-repeat: no-repeat;";
+
+            TextAreaDisplay(Imgurl);
         }
         else {
             let Imgurl = this.src;
@@ -638,12 +640,12 @@ function ChangeLargeImg(src) {
             //若傳進來的src為特定圖片，進行影片切換
             if (src.substr(-15, 15) == "va11ha11acd.jpg") {
                 VideoLarge.style.display = "block";
-                src = "http://127.0.0.1:5500/Products/Snapinsta.app_192569298_1116109565542107_5826366802638381514_n.mp4";
+                src = "./Products/Snapinsta.app_192569298_1116109565542107_5826366802638381514_n.mp4";
                 var Large = VideoLarge;
             }
             else if (src.substr(-8, 8) == "room.jpg") {
                 VideoLarge.style.display = "block";
-                src = "http://127.0.0.1:5500/Products/cyberroom.mp4";
+                src = "./Products/cyberroom.mp4";
                 var Large = VideoLarge;
             }
             else {
@@ -716,20 +718,21 @@ Dvid.addEventListener('click', function () {
 
 //說明文字區塊判別函式
 function TextAreaDisplay(src_substr) {
+    console.log(src_substr);
     if (src_substr.substr(-15, 11) == "TearsInRain") {
-        C2TextArea.innerHTML = "<h1>《雨中淚水獨白》</h1><p>經典科幻作品《銀翼殺手》</p><p>「我曾見過你們人類難以置信的東西。戰艦在獵戶座的肩端之外燃燒。我看見了C光束在湯豪澤之門附近的黑暗中閃爍。所有這些時刻都將消逝在時間裡，就像雨中的淚水。死的時候到了。」</p><p>這段獨白被認為「也許是電影史上最動人的死前獨白」。</p><p>原書名:《仿生人會夢見電子羊嗎？》，出自美國的科幻小說作家菲利普·金德里德·狄克之手。</P>";
+        C2TextArea.innerHTML = "<h1>《雨中淚水獨白》</h1><p>► 經典科幻作品《銀翼殺手》</p><p>「我曾見過你們人類難以置信的東西。戰艦在獵戶座的肩端之外燃燒。我看見了C光束在湯豪澤之門附近的黑暗中閃爍。所有這些時刻都將消逝在時間裡，就像雨中的淚水。死的時候到了。」</p><p>這段獨白被認為「也許是電影史上最動人的死前獨白」。</p><p>原書名:《仿生人會夢見電子羊嗎？》，出自美國的科幻小說作家菲利普·金德里德·狄克之手。</P>";
     }
     else if (src_substr.substr(-6, 2) == "EU") {
-        C2TextArea.innerHTML = "<h1>《電馭叛客：邊緣行者》</h1><p>CD Projekt RED《電馭叛客2077》之衍生作品</p><p>2020年6月26日，在網路直播節目《夜城快報》第一期中，公布了由Netflix與TRIGGER參與製作的動畫劇集《電馭叛客：邊緣行者》（Cyberpunk:Edgerunners）。</p><p>由今石洋之擔任監督、大塚雅彥擔任副監督、吉成曜和金子雄人擔任角色設計、若林廣海（日語：若林広海）擔任創意總監、山岡晃擔任配樂。該劇集共有10集，於2022年9月13日上線。</P>";
+        C2TextArea.innerHTML = "<h1>《電馭叛客：邊緣行者》</h1><p>► CD Projekt RED《電馭叛客2077》之衍生作品</p><p>2020年6月26日，在網路直播節目《夜城快報》第一期中，公布了由Netflix與TRIGGER參與製作的動畫劇集《電馭叛客：邊緣行者》（Cyberpunk:Edgerunners）。</p><p>由今石洋之擔任監督、大塚雅彥擔任副監督、吉成曜和金子雄人擔任角色設計、若林廣海（日語：若林広海）擔任創意總監、山岡晃擔任配樂。該劇集共有10集，於2022年9月13日上線。</P>";
     }
     else if (src_substr.substr(-7, 3) == "VHA") {
-        C2TextArea.innerHTML = "<h1><font size='6rem'>《VA-11 Hall-A：賽博龐克酒保行動》</font></h1><p>具備視覺小說與賽博朋克元素的調酒師模擬遊戲</p><p>遊戲流程是調配出客人想要的飲品，同時聆聽這些角色們訴說的故事與經歷。</P><p>遊戲中充滿各種別具特色的客人，這些角色被形容為「平凡的非英雄」。隨著遊戲時間的增加，玩家會開始熟悉並調製出每個客人喜好的飲品種類，與這些角色的關係也變得更加親密，後續劇情發展隨之產生變化。</p><p>本作設定為反烏托邦與賽博龐克背景的世界觀，畫面上受到古早PC-98平台遊戲啟發，畫風上也明顯受到日本動畫的影響，如押井守的動畫電影《攻殼機動隊》。</p>";
+        C2TextArea.innerHTML = "<h1><font size='6rem'>《VA-11 Hall-A：賽博龐克酒保行動》</font></h1><p>► 具備視覺小說與賽博朋克元素的調酒師模擬遊戲</p><p>遊戲流程是調配出客人想要的飲品，同時聆聽這些角色們訴說的故事與經歷。</P><p>遊戲中充滿各種別具特色的客人，這些角色被形容為「平凡的非英雄」。隨著遊戲時間的增加，玩家會開始熟悉並調製出每個客人喜好的飲品種類，與這些角色的關係也變得更加親密，後續劇情發展隨之產生變化。</p><p>本作設定為反烏托邦與賽博龐克背景的世界觀，畫面上受到古早PC-98平台遊戲啟發，畫風上也明顯受到日本動畫的影響，如押井守的動畫電影《攻殼機動隊》。</p>";
     }
     else if (src_substr.substr(-6, 2) == "TM") {
-        C2TextArea.innerHTML = "<h1>《駭客任務系列》</h1><p>經典好萊塢科幻動作電影</p><p>主要包括四部作品。第一部電影《駭客任務》於1999年3月發行；票房大賣後，在2003年先後推出了兩部續集，《駭客任務2：重裝上陣》和《駭客任務3：最後戰役》。2021年推出第四部電影《駭客任務：復活》。</p><p>湯瑪斯·安德森表面上是個朝九晚五的電腦工程師，私下卻是個代碼為尼歐（Neo）的高超駭客。尼歐總覺得自己身處的世界存在難以言喻的不協調感，在他私下追查的結果，知道了這一切都跟被稱作「母體」（The Matrix）的神秘事物有關。</p>";
+        C2TextArea.innerHTML = "<h1>《駭客任務系列》</h1><p>► 經典好萊塢科幻動作電影</p><p>主要包括四部作品。第一部電影《駭客任務》於1999年3月發行；票房大賣後，在2003年先後推出了兩部續集，《駭客任務2：重裝上陣》和《駭客任務3：最後戰役》。2021年推出第四部電影《駭客任務：復活》。</p><p>湯瑪斯·安德森表面上是個朝九晚五的電腦工程師，私下卻是個代碼為尼歐（Neo）的高超駭客。尼歐總覺得自己身處的世界存在難以言喻的不協調感，在他私下追查的結果，知道了這一切都跟被稱作「母體」（The Matrix）的神秘事物有關。</p>";
     }
     else if (src_substr.substr(-9, 5) == "SHELL") {
-        C2TextArea.innerHTML = "<h1>《攻殼機動隊》</h1><p>日本漫畫家士郎正宗連載的漫畫作品</p><p>每一版本的《攻殼機動隊》都因出色的劇情、高質素的動畫和對哲學與社會學等深刻問題的探討而受到了普遍的好評，常被認為是日本動畫和賽博龐克的經典代表作。</p><p>2040年代的虛構日本城市新濱市，經過第三次和第四次世界大戰洗禮的近未來科技已可將人類除大腦外的所有身體器官用生化電子的義體代替，並將人類大腦改裝成與具有互聯網功能的電子腦。上層社會和有經濟條件的中產階級人類紛紛進行義體手術，加裝先進的電子腦，並用性能更高的人造義肢替換原有的身體器官——賽博格（生化人）已然漸漸成為社會常態。 </p>";
+        C2TextArea.innerHTML = "<h1>《攻殼機動隊》</h1><p>► 日本漫畫家士郎正宗連載的漫畫作品</p><p>每一版本的《攻殼機動隊》都因出色的劇情、高質素的動畫和對哲學與社會學等深刻問題的探討而受到了普遍的好評，常被認為是日本動畫和賽博龐克的經典代表作。</p><p>2040年代的虛構日本城市新濱市，經過第三次和第四次世界大戰洗禮的近未來科技已可將人類除大腦外的所有身體器官用生化電子的義體代替，並將人類大腦改裝成與具有互聯網功能的電子腦。上層社會和有經濟條件的中產階級人類紛紛進行義體手術，加裝先進的電子腦，並用性能更高的人造義肢替換原有的身體器官——<a href='https://zh.m.wikipedia.org/zh-tw/%E8%B3%BD%E5%8D%9A%E6%A0%BC' target='_blank'>賽博格（生化人）</a>已然漸漸成為社會常態。 </p>";
     }
     
     else{
@@ -785,7 +788,7 @@ function LargeMediaChange(media) {
         ImgLarge.style.transition = "0.1s linear";
 
         VideoLarge.style.display = "block";
-        src = "http://127.0.0.1:5500/Products/Snapinsta.app_192569298_1116109565542107_5826366802638381514_n.mp4";
+        src = "./Products/Snapinsta.app_192569298_1116109565542107_5826366802638381514_n.mp4";
         var Large = VideoLarge;
 
         let r = getRandom(5);
