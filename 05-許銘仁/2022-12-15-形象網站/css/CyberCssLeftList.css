@@ -3,7 +3,7 @@
     width: 0%;
 
     font-family: 'Silkscreen', OCR A Std, monospace;
-    background-image: url(/Images/PixelGif02.gif);
+    background-image: url("../NewImages/PixelGif02.gif");
     background-position: 30% center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,0 +1,584 @@
+// 主要的顏色
+
+// 排版格式：長寬 排版 顏色框線 字型 使用者體驗
+$primary: #ffffff;
+$secondary: linear-gradient(181.1154931320949deg, rgba(149, 168, 181, 1) 1.6444866920152093%, rgba(61, 72, 78, 1) 92.77249683143219%);
+$point: #FFC007;
+$strong: #00487C;
+$sup: #9d5f00;
+
+
+  body {
+    position: relative;
+  }
+
+  html {
+    // 有滑鼠移動感的滾動
+    scroll-behavior: smooth;
+  }
+
+  #close-btn {
+    display: none;
+
+  }
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #close-btn:checked~.hidden1 {
+    transform: 3s;
+    display: unset;
+
+  }
+
+  .hidden1 {
+    display: none;
+    .close {
+      color: white;
+      background-color: red;
+      width: 8%;
+      height: 8%;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+    }
+    width: 600px;
+    height: 400px;
+    font-size: 24px;
+    position: fixed;
+    text-align: center;
+    left: calc(50% - 300px);
+    top:30%;
+    background:$point ;
+    color: $strong;
+    z-index: 7;
+
+    h5 {
+      position: absolute;
+      left: 45%;
+      top: 80%
+    }
+  }
+  .strong {
+    color: $strong;
+  }
+
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Unbounded', cursive;
+  }
+
+  // nav
+  .nav-left {
+    display: "";
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    background-color: $point;
+    z-index: 5;
+    transform: opacity;
+    // display: none;
+
+    // ul{
+    //   /* 取消ul設的內縮及樣式 */
+    //   margin: 0px;
+    //   padding: 0px;}
+
+    .face {
+      width: 200px;
+      height: 25%;
+      background-image: url(../img/taregt/S__34160684.jpg);
+      background-size: 120%;
+      background-position: top
+    }
+
+    .select-nav {
+      margin-top: 40%;
+
+      div.drop-down-menu {
+        :hover {
+          background-color: $primary;
+          /* 滑鼠滑入按鈕變色*/
+          // background-color: $primary;
+        }
+
+        div {
+          float: left;
+          width: 100%;
+          height: 3em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+          text-align: center;
+          position: relative;
+          white-space: nowrap;
+        }
+
+        a {
+          // background-color: $point;
+          font-size: 30px;
+          color: #333;
+          padding: 0px 30px;
+          /* 上下 左右 */
+          text-decoration: none;
+          /* 取消Ａ標籤的底線 */
+          line-height: 40px;
+          /* 調整整體高度，因為Ａ標籤是屬於行內元素 */
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .nav-right {
+    position: fixed;
+    right: 1%;
+    top: 40%;
+    width: 40px;
+    visibility: hidden;
+    margin-top: -120px;
+    z-index: 4;
+    background-color: $point;
+    border-radius: 20px;
+
+    ul {
+      /* 取消ul設的內縮及樣式 */
+      margin: 0px;
+      padding: 0px;
+    }
+
+    ul.drop-down-menu {
+
+      /*定義出以下的資料，這是下拉式表單的核心*/
+      // border: #ccc 1px solid;
+      /* 這是匡線的部分 */
+      /*這其實就是同時能夠達成行列元素以及區塊元素的效果 */
+      /* 這個選項可以讓資料 */
+      font-size: 13px;
+      /* 控制位置固定在中間點！ */
+    }
+
+    ul.drop-down-menu li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    ul.drop-down-menu>li {
+      float: left;
+      width: 100%;
+      // 下面這個margin決定了整個LI和最底部的距離，感到疑惑的地方是margin不適應該只對同曾有影響，但我不理解的是，為什麼用padding在dropdown內沒有效果卻在這邊，才有效果
+      margin-bottom: 20px;
+      // 這個display造成了點點消失的原因
+      display: flex;
+      justify-content: center;
+
+      // 透過float使其飄起再透過寬度調整達到滿版效果，兩種效果都做到才可以讓原本不會滿版的行內元素變成類似區塊元素
+
+    }
+
+    ul.drop-down-menu a {
+      // background-color: $point;
+      font-size: 24px;
+      color: #333;
+      padding: 0px 30px;
+      /* 上下 左右 */
+      text-decoration: none;
+      /* 取消Ａ標籤的底線 */
+      line-height: 40px;
+      /* 調整整體高度，因為Ａ標籤是屬於行內元素 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+
+    }
+
+    ul.drop-down-menu a:hover {
+      /* 滑鼠滑入按鈕變色*/
+      // background-color: $primary;
+      color: $primary
+    }
+  }
+
+
+  //內文1
+  .content-page1 {
+
+    // visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    .content-left {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 13% 5%;
+      background-color: $primary;
+
+      .small-title {
+        text-align: left;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        text-align: left;
+        font-size: 72px;
+        margin-bottom: 20px;
+      }
+
+      .plug {
+        background-color: $point;
+        // 讓字體大小和框框一樣大目前最佳解法
+        width: fit-content;
+        margin-bottom: 20px;
+        font-size: 24px;
+        border-radius: 2%;
+      }
+      .introduce {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      .start-btn {
+        width: fit-content;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: $point;
+        font-size: 36px;
+        cursor: pointer;
+      }
+    }
+    .content-right-check {
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      :hover.face {
+        transform: scale(1.15, 1.15);
+      }
+
+      .face {
+        width: 75%;
+        height: 70%;
+        background-image: url("../img/taregt/S__34160684.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: border-box;
+        opacity: 1;
+        z-index: 2;
+        transform: scale(1.1);
+        transition: all 1s ease-in-out;
+      }
+    }
+    .content-right {
+      position: relative;
+      width: 50%;
+      height: 100vh;
+      background: $secondary;
+      opacity: 0.4;
+    }
+  }
+  //內文2
+  .left {
+    width: 200px;
+    height: 100vh;
+    background: $secondary;
+    opacity: 0.4;
+  }
+  .copy {
+    width: calc(100% - 200px);
+    height: 100vh;
+    position: absolute;
+    left: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    background: $secondary;
+    opacity: 0.4;
+  }
+
+  .content-page2-check {
+    width: calc(100% - 200px);
+    height: 100vh;
+    // position:absolute;
+    // left:200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    z-index: 4;
+
+
+    .content-page2-check-text {
+      height: 50vh;
+
+      .title {
+        text-align: left;
+        font-size: 72px;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+
+      .small-title {
+        text-align: left;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .introduce {
+        font-size: 20px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .insert-all {
+      width: 100%;
+      height: calc(40vh + 40px);
+      display: flex;
+
+      .insert {
+        background-color: #000000;
+        width: 60%;
+        padding: 20px;
+        display: flex;
+
+        div .turn {
+          display: flex;
+          //可能要改一下
+        }
+        .insert-left {
+          width: 50%;
+          height: 100%;
+          background-color: rgb(0, 0, 0);
+          border-right: dashed 1px #FFC007;
+          font-size: 36px;
+          color: $point;
+
+          .left-top {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: dashed 1px #FFC007;
+            p {
+              font-size: 24px;
+              color: $primary;
+            }
+          }
+          .left-bottom {
+            width: 100%;
+            height: 50%;
+            display: flex;
+
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+              font-size: 24px;
+              color: $primary;
+            }
+          }
+        }
+        .insert-right {
+          width: 50%;
+          height: 100%;
+          font-size: 36px;
+          color: $point;
+
+          .right-top {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: dashed 1px #FFC007;
+
+            p {
+              font-size: 24px;
+              color: $primary;
+            }
+          }
+
+          .right-bottom {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+            p {
+              font-size: 24px;
+              color: $primary;
+            }
+          }
+        }
+      }
+      .insert-text {
+        width: 30%;
+        height: calc(50vh + 40px);
+        margin-left: 30px;
+        ol {
+          margin-left: 50px;
+          margin-top: 20px;
+
+          li {
+            display: list-item;
+          }
+        }
+        .title {
+          text-align: left;
+          font-size: 36px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        .introduce {
+          font-size: 23px;
+          line-height: 40px;
+          margin-bottom: 10px;
+          // 要修理
+        }
+      }
+    }
+  }
+  //第三章
+  .content-page3 {
+    display: flex;
+    padding-top: 10px;
+    position: relative;
+    
+    z-index: 1;
+
+    .design-fell {
+      width: 40%;
+      height: 40%;
+      position: absolute;
+      top: 55%;
+      left: 45%;
+      background: rgba(149, 168, 181, 1);
+      opacity: 0.2;
+    }
+
+    .title {
+      font-size: 48px;
+      text-align: center;
+    }
+
+    .contral {
+      width: 200px;
+      height: 80vh
+    }
+  }
+  footer {
+    width: auto;
+    height: 8vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC007;
+    div {
+      position: relative;
+      left: 85px
+    }
+  }
+  .fa,
+  .fab,
+  .fal,
+  .far,
+  .fas {
+    display: unset;
+  }
+@media(max-width:1280px) {
+  .nav-left {
+    visibility: collapse;
+    .face{
+      height: auto;
+    }
+  }
+  .nav-right {
+    visibility: visible;
+  }
+  .left {
+    display: none;
+    width: 0px
+  }
+  .copy {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    height: 100vh
+  }
+  .content-page1{
+    .content-right{      
+      .face{
+        height:50%
+      }
+    }
+  }
+  .content-page2-check {
+    height: auto;
+    width: 100%
+  }
+  .title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+  } 
+  .contral {
+    min-width: 200px;
+    max-height: 398px;
+  }
+  .insert-all {
+    .insert-text {
+      .fas.title {
+        text-align: left;
+        font-size: 28px;
+      }
+  
+    }
+  }
+  
+  .content-page3 {
+    height: auto;
+    display: unset;
+  .contral{
+    height: auto;
+  }
+  
+    .design-fell {
+      width: 0px;
+    }
+  .swiper{
+    width:100% ;
+    height: auto;
+    .swiper-slide img {
+      width:calc(100% - 100px );
+      height:auto;
+   }}
+  }
+
+}
+
+
+
+@media(max-width:760px) {}
