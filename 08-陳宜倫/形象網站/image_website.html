@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="image_website_style.css">
@@ -35,9 +35,9 @@
             一個熱愛學習的書蟲，入睡前都要確定今天有吸收了不同知識，否則會睡不著！<br>重視多樣化學習，認為若是只學習某種知識時，那麼知識可能會成為一種偏見；<br>也是一個重度思考患者，極度認同托爾斯泰所說：<br>「為了得出對待事物的正確看法，思索一輩子也不夠。」
             </p><br>
             <p>
-                <h2>聯絡資訊</h2>
-                <p>E-mail: gucyu229@gmail.com</p>
-                <p>Phone: 0923 207 221</p>
+            <h2>聯絡資訊</h2>
+            <p>E-mail: gucyu229@gmail.com</p>
+            <p>Phone: 0923 207 221</p>
             </p>
         </div>
     </section>
@@ -47,6 +47,7 @@
     </div>
 
     <section id="work-experience">
+        <h2>Experience</h2>
         <div>
             <div data-aos="fade-up" class="work-exp">
                 <div>
@@ -143,7 +144,7 @@
             <div data-aos="fade-up" class="work-exp">
                 <div>
                     <h3>上海復旦大學- 商學院交換生</h3>
-                    
+
                 </div>
             </div>
 
@@ -180,25 +181,62 @@
     </section>
 
     <section id="certificate">
+        <h2>Certificate</h2>
         <!-- Swiper -->
-    <div class="swiper mySwiper">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">TOEIC 910</div>
+                <div class="swiper-slide">ITCE 國際貿易大會考認證</div>
+                <div class="swiper-slide">ERP 企業資源規劃師</div>
+                <div class="swiper-slide">GS1 條碼師認證</div>
+                <div class="swiper-slide">Google Analytics 個人認證</div>
+                <div class="swiper-slide">TIMS行銷專業能力認證</div>
+                <div class="swiper-slide">勞動部 國際貿易 丙級</div>
+                <div class="swiper-slide">勞動部 會計事務-人工記帳 丙級</div>
+                <div class="swiper-slide">勞動部 會計事務-資訊 丙級</div>
+                <div class="swiper-slide">勞動部 門市服務 丙級</div>
+                <div class="swiper-slide">阿里巴巴 跨境電商培訓認證</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+        <!-- Swiper -->
+    <div class="swiper mySwiper-portfolio">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">*Toeic 910</div>
-          <div class="swiper-slide">*勞動部 國際貿易 丙級</div>
-          <div class="swiper-slide">*ITCE 國際貿易大會考認證</div>
-          <div class="swiper-slide">*勞動部 會計事務-人工記帳 丙級</div>
-          <div class="swiper-slide">*勞動部 會計事務-資訊 丙級</div>
-          <div class="swiper-slide">*ERP 企業資源規劃師</div>
-          <div class="swiper-slide">*GS1 條碼師認證</div>
-          <div class="swiper-slide">*Google Analytics 個人認證</div>
-          <div class="swiper-slide">*TIMS行銷專業能力認證</div>
-          <div class="swiper-slide">*勞動部 門市服務 丙級</div>
-          <div class="swiper-slide">*阿里巴巴 跨境電商培訓認證</div>
+          <div class="swiper-slide">
+            <img src="./img/birkenstock.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/lotte.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/kgi.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/kavalan.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/obank.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/affix.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/regen.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/xuexue.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/reijia-foundation.jpg" />
+          </div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
     </section>
-  
 
     <section id="end">
         <h2>What you want for next...</h2>
@@ -207,9 +245,9 @@
 
     </section>
 
-
+    <!-- for scroll animate -->
     <script>
-        $(function () {
+        (function () {
             $('a[href*=#]').on('click', function (e) {
                 e.preventDefault();
                 $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
@@ -217,26 +255,47 @@
         });
     </script>
 
+    <!-- for aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>AOS.init();</script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-         <!-- Initialize Swiper -->
-         <script>
-            var swiper = new Swiper(".mySwiper", {
-              slidesPerView: 3,
-              grid: {
+    <!-- Initialize Swiper for Certificate -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            grid: {
                 rows: 2,
-              },
-              spaceBetween: 30,
-              pagination: {
+            },
+            spaceBetween: 30,
+            pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-              },
-            });
-          </script>
+            },
+        });
+    </script>
+
+    <!-- Initialize Swiper for Portfolio -->
+    <script>
+        var swiperPort = new Swiper(".mySwiper-portfolio", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script>
 
 </body>
 
