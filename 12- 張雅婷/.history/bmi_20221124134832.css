@@ -1,20 +1,13 @@
 .bmi_input{
-    width: 300px;
-    height: 100px;
-    
+    margin: 30;
     align-items: center;
     background-color: #5fb5d1;
-    padding: 20px;
     color: black;
-    
 }
 
 .bmi_output.act{
     opacity:1;
-    margin: 10px;
-    align-items: center;
 }
 body{
     background-color: darkslategray;
-    display: flex
 }

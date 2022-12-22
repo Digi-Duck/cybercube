@@ -1,12 +1,12 @@
 .bmi_input{
     width: 300px;
     height: 100px;
-    
+    margin: 10px;
     align-items: center;
+    tr
     background-color: #5fb5d1;
     padding: 20px;
     color: black;
-    
 }
 
 .bmi_output.act{
@@ -16,5 +16,4 @@
 }
 body{
     background-color: darkslategray;
-    display: flex
 }

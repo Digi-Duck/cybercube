@@ -4,7 +4,7 @@ body {
     box-sizing: border-box;
 
     position: relative;
-   
+
     background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -52,7 +52,7 @@ nav {
     padding: 0px 20px;
 
     background-color: rgb(114, 157, 181);
- 
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,19 +68,19 @@ nav .logo {
 }
 
 nav .links {
-    width: 50%;
+    width: 60%;
 
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav .links a {
-    width: 100px;
+    width: 150px;
     height: 30px;
     line-height: 30px;
     text-align: center;
-    
+
     color: white;
     border: 5px double rgb(132, 255, 218);
     border-radius: 20px;
@@ -89,10 +89,10 @@ nav .links a {
     text-decoration: none;
     padding: 5px;
 
-    box-shadow: rgb(173, 236, 230) 0px 0px 5px 2px ;
+    box-shadow: rgb(173, 236, 230) 0px 0px 5px 2px;
 }
 
-nav .links a:hover{
+nav .links a:hover {
     color: rgb(76, 207, 227);
     border: 5px double rgb(202, 248, 238);
 
@@ -100,16 +100,19 @@ nav .links a:hover{
 
 .main {
     margin: 0px;
-   
+
     /* background-color: #aaa; */
 }
-.welcome{
+
+.welcome {
     position: relative;
 }
-.welcome img{
-   height: 600px;
+
+.welcome img {
+    height: 600px;
 }
-.welcome .welcome-box{
+
+.welcome .welcome-box {
     width: 500px;
     height: 50px;
     position: absolute;
@@ -118,32 +121,40 @@ nav .links a:hover{
     color: white;
     z-index: 1;
 
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
-.welcome .welcome-box .plus-line{
+
+.welcome .welcome-box .plus-line {
     width: 140px;
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
     padding: 10px;
     background-color: rgb(78, 239, 137);
+    cursor: pointer;
 }
+.welcome .welcome-box .plus-line:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 117, 4);
+}
+
 .container {
-   
     height: 600px;
 
-    padding:5% 10%;
+    padding: 5% 10%;
 }
-.hot-activity{
+
+.hot-activity {
     width: 100%;
-display: flex;
-justify-content: space-around;
-    
+    display: flex;
+    justify-content: space-around;
+
 }
-.text-hot{
+
+.text-hot {
     width: 100%;
     height: 100px;
     text-align: center;
@@ -151,59 +162,90 @@ justify-content: space-around;
     font-size: 30px;
     font-weight: bold;
 }
-.picture1{
-width: 25%;
-position: relative;
+
+.picture1 {
+    width: 25%;
+    position: relative;
 }
-.picture2{
-width: 25%;
-position: relative;
+
+.picture2 {
+    width: 25%;
+    position: relative;
 }
-.picture3{
-width: 25%;
-position: relative;
+
+.picture3 {
+    width: 25%;
+    position: relative;
 }
-.hot-activity .picture{
+
+.hot-activity .picture {
     width: 100%;
     height: 500px;
     background-size: contain;
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
 }
-.picture1 .picture{
+
+.picture1 .picture {
     background-image: url("./圖/體驗潛水.webp");
+    margin: 10px 0px;
 }
-.picture2 .picture{
+
+.picture2 .picture {
     background-image: url("./圖/考取潛水.jpg");
+    margin: 10px 0px;
 }
-.picture3 .picture{
+
+.picture3 .picture {
     background-image: url("./圖/潛水民宿.jpg");
-    
+    margin: 10px 0px;
 }
-.picture1 a{
-  position: absolute;
-  left: calc(50);
-    top:450px;
-    font-size: 30px;
+
+.picture1 a {
+    font-weight: bold;
+    position: absolute;
+    left: calc(50px);
+    top: 450px;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 186, 255);
+    padding: 5px;
+   border-radius: 15px;
 }
-.picture2 a{
-  position: absolute;
-  left: calc(50);
-    top:450px;
-    font-size: 30px;
+.picture1 a:hover{
+    background-color: rgb(0, 255, 170);
 }
-.picture3 a{
-  position: absolute;
-  left: calc(50);
-    top:450px;
-    font-size: 30px;
+.picture2 a {
+    font-weight: bold;
+    position: absolute;
+    left: calc(50px);
+    top: 450px;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 186, 255);
+    padding: 5px;
+    border-radius: 15px;
 }
-.row{
-    width: 100%;
-    margin: 0px;
+.picture2 a:hover{
+    background-color: rgb(0, 255, 170);
 }
-.row img{
-    height: 500px;
+
+.picture3 a {
+    font-weight: bold;
+    position: absolute;
+    left: calc(50px);
+    top: 450px;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 186, 255);
+    padding: 5px;
+    border-radius: 15px;
+}
+.picture3 a:hover{
+    background-color: rgb(0, 255, 170);
 }
 
 .footer {
@@ -217,10 +259,12 @@ position: relative;
     background-color: rgb(114, 157, 181);
     position: relative;
 }
-h4{
+
+h4 {
     font-size: 20px;
 }
-.icons{
+
+.icons {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -239,7 +283,6 @@ h4{
     width: 20%;
     position: absolute;
     right: 30%;
-
 }
 
 .listB {
@@ -262,9 +305,10 @@ h4{
     color: white;
     text-decoration: none;
 }
-.listA a:hover{
-color:rgb(76, 207, 227);
-font-size: 18px;   
+
+.listA a:hover {
+    color: rgb(76, 207, 227);
+    font-size: 18px;
 }
 
 .listB a {
@@ -273,10 +317,12 @@ font-size: 18px;
     color: white;
     text-decoration: none;
 }
-.listB a:hover{
-    color:rgb(76, 207, 227);
+
+.listB a:hover {
+    color: rgb(76, 207, 227);
     font-size: 18px;
 }
+
 .footer .logo {
 
     width: 120px;
@@ -288,5 +334,86 @@ font-size: 18px;
     float: right;
     position: absolute;
     right: 40px;
-    top:calc(50% - 60px);
+    top: calc(50% - 60px);
+}
+
+@media(max-width:1100px) {
+    nav .links {
+        width: 80%;
+    }
+
+    .hot-activity {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .picture1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: unset;
+    }
+
+    .picture2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: unset;
+    }
+
+    .picture3 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: unset;
+    }
+
+    .hot-activity a {
+        font-size: 30px;
+        position: unset;
+    }
+
+    .footer {
+        padding: 30px 0px;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    .icons {
+        display: unset;
+    }
+
+    .listA {
+        position: unset;
+    }
+
+    .listB {
+        position: unset;
+    }
+
+    .listA a {
+        display: unset;
+    }
+
+    .listB a {
+        display: unset;
+    }
+
+    .footer .logo {
+        width: 80px;
+        height: 80px;
+        float: none;
+        position: unset;
+    }
 }
