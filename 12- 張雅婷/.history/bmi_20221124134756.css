@@ -1,0 +1,12 @@
+.bmi_input{
+    
+    background-color: #5fb5d1;
+    color: black;
+}
+
+.bmi_output.act{
+    opacity:1;
+}
+body{
+    background-color: darkslategray;
+}

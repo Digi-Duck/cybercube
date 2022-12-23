@@ -1,0 +1,15 @@
+.bmi_input{
+    margin: 20%;
+    align-items: center;
+    background-color: #5fb5d1;
+    color: black;
+}
+
+.bmi_output.act{
+    opacity:1;
+    margin: 20%;
+    align-items: center;
+}
+body{
+    background-color: darkslategray;
+}

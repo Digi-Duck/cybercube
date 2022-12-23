@@ -74,14 +74,12 @@ $sup: #9d5f00;
 
   // nav
   .nav-left {
-    display: "";
     width: 200px;
     height: 100vh;
     position: fixed;
     background-color: $point;
     z-index: 5;
-    transform: opacity;
-    // display: none;
+    display: none;
 
     // ul{
     //   /* 取消ul設的內縮及樣式 */
