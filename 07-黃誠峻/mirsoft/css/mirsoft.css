@@ -17,7 +17,6 @@ nav {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
 }
 nav .links {
   width: 535px;
@@ -26,7 +25,6 @@ nav .links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: burlywood;
   font-size: 13px;
 }
 nav .links .logo {
@@ -40,5 +38,8 @@ nav .links .logo {
 nav .functions {
   width: 400px;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: brown;
 }/*# sourceMappingURL=mirsoft.css.map */

@@ -17,7 +17,7 @@ nav{
 
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
+
 
     .links{
         width:535px;
@@ -28,7 +28,7 @@ nav{
         justify-content: space-between;
         align-items: center;
 
-        background-color: burlywood;
+
 
         font-size: 13px;
 
@@ -47,6 +47,10 @@ nav{
     .functions{
         width: 400px;
         height: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: brown;
     }
 }
