@@ -68,6 +68,9 @@ nav .functions .function {
   nav .functions .function span {
     display: none;
   }
+  nav .functions .function .icon {
+    margin-left: 0px;
+  }
 }
 nav .functions .function .icon {
   width: 17px;
