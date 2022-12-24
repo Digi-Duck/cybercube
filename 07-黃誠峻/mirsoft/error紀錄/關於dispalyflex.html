@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微軟訪切</title>
+    <!-- font-asome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- bootstreap-Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- my-css -->
+
+<style>
+    * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 2000px;
+}
+
+nav {
+  width: 1600px;
+  height: 56px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+nav .links {
+  width: 535px;
+  height: 100%;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+nav .links .logo {
+  width: 110px;
+  height: 25px;
+  background-image: url(../img/RE1Mu3b.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+nav .functions {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  /* 上面這個取消的話，最外層就不會排列了 */
+  justify-content: space-between;
+  align-items: center;
+  background-color: brown;
+}
+nav .functions .all {
+  width: 145px;
+  height: 48px;
+}
+nav .functions .function {
+    /* display: flex; */
+  /* 上面這個取消的話，最內層就不會排列了 */
+  width: 90px;
+  height: 48px;
+}
+nav .functions .function .icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+nav .functions .function .search {
+  background-image: url(../img/search.svg);
+}
+nav .functions .function .shopping {
+  background-image: url(../img/cart.svg);
+}
+nav .functions .function .login {
+  width: 33px;
+  height: 33px;
+  background-image: url(../img/login.svg);
+}/*# sourceMappingURL=mirsoft.css.map */
+</style>
+</head>
+
+<body>
+    <nav>
+        <div class="links">
+            <div class="logo"></div>
+            <div class="link">Mirsoft 365</div>
+            <div class="link">Office</div>
+            <div class="link">Windows</div>
+            <div class="link">Surface</div>
+            <div class="link">Xbox</div>
+            <div class="link">支援</div>
+        </div>
+        <!-- 錯誤區域，可以看見這一個區塊中，我們已經使用display:flex做到並排了，但是要記得的是display:flex只會對自己的子層作用，對於子層的子層是不會管制的！ -->
+        <div class="functions">
+            <div class="all"> 
+                <span>所有Microsoft</span>
+                <div class="icon"></div>
+            </div>
+            <div class="function"> 
+                <span>搜尋</span>
+                <div class="icon search"></div>
+            </div>
+            <div class="function"> 
+                <span >購物車</span>
+                <div class="icon shopping"></div>
+            </div>
+            <div class="function"> 
+                <span >登入</span>
+                <div class="icon login"></div>
+            </div>
+        </div>
+    </nav>
+    <main></main>
+    <footer></footer>
+</body>
+
+</html>
