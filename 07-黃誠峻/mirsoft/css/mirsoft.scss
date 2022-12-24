@@ -52,5 +52,21 @@ nav{
         justify-content: space-between;
         align-items: center;
         background-color: brown;
+
+        .all{width: 145px;
+        height: 48px;}
+        .function{width: 90px;
+        height: 48px;
+            
+        .icon{
+            width: 20px;
+            height: 20px;
+           
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size: contain;
+        }
+    }
+    
     }
 }

@@ -42,4 +42,19 @@ nav .functions {
   justify-content: space-between;
   align-items: center;
   background-color: brown;
+}
+nav .functions .all {
+  width: 145px;
+  height: 48px;
+}
+nav .functions .function {
+  width: 90px;
+  height: 48px;
+}
+nav .functions .function .icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }/*# sourceMappingURL=mirsoft.css.map */
