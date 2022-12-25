@@ -1,0 +1,597 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    line-height: 1.15;
+    font-family: sans-serif;
+}
+body{
+    font-family: "Segoe UI",SegoeUI, '微軟正黑體',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 2000px;
+    position: relative;/*讓mask可以參考位置與大小*/
+}
+/* .mask點擊空白處功能尚未完成(先刪除了html結構的mask) */
+.container{
+    width: 100%;
+    padding: 0px 5%;
+    height: 54px;
+    margin: auto;
+}
+.container>nav{
+    /* 不是width:1600px而是用max-width，最大寬度1600px寬度100% */
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    margin: auto;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.container>nav>label{
+    display: none;
+    width: 20px;
+    background-image: url("../img/list1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.container>nav>input{
+    display: none;
+}
+.container>nav>.links{
+    /* 不一定要有寬，可以由子層的寬去撐 */
+    width: 565px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container>nav>.links>.logo{
+    width: 110px;
+    height: 25px;
+    margin: 16px 6px 16px 10px;
+    background-image: url("../img/RE1Mu3b.png");
+    background-size: contain; /*不裁切*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container>nav>.links>.link:nth-child(6){
+    display: none;
+}
+.container>nav>.links>.link:nth-child(7){
+    /* 問題：我想選「支援」但是為什麼不是nth-child(6)而是(7)呢？ 似乎是.links下的第七個東西(不管名稱)不過.link:nth-child(1)是選不到logo的*/
+    /* padding-right: 5px; */
+}
+.container>nav>.functions{
+    width: 418px;
+    height: 100%;
+    display: flex;
+    /* 因為最右方已經抓出padding-right:3px對齊，所以就可以從右邊對齊flex-end */
+    justify-content: space-between;
+    align-items: center;
+}
+.container>nav>.functions>.function{
+    height: 48px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.container>nav>.functions>.all{
+    height: 48px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.container>nav>.functions>.function:nth-child(4){
+    margin-right: 8px;
+}
+.container>nav>.functions>.function:nth-child(3){
+    margin-left: 15px;
+}
+.container>nav>.functions>.function>.icon{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 4px;
+}
+
+/* .container>nav>.functions>.all>label>.icon這邊下移到367行 */
+.container>nav>.functions>.function>.search{
+    width: 16px;
+    height: 18px;
+    background-image: url("../img/search1.svg");
+    margin-right: 20px;
+}
+.container>nav>.functions>.function>.shopping{
+    width: 16px;
+    height: 42px;
+    background-image: url("../img/cart1.svg");
+    margin-left: 6px;
+}
+.container>nav>.functions>.function:nth-child(4)>span{
+    margin-right: 2px;
+}
+.container>nav>.functions>.function>.login{
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/user.svg");
+    margin-left: 10px;
+}
+/* 所有 Microsoft清單 */
+.container>nav>.functions>.all>input{
+    display: none;
+}
+.container>nav>.functions>.all>label{
+    height: 54px;
+    padding: 16px 24px 16px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 2; /*搬到第二層讓下方清單的上底線不會顯示出來*/
+}
+.container>nav>.functions>.all>label>.icon{
+    width: 16px;
+    height: 30px;
+
+    position: absolute;
+    top: 8px;
+    right: 6px;
+
+    background-image: url("../img/chevron-down.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+/* 這裡的background-position:bottom是因為要讓icon箭頭對齊文字底線，再用height去調整大小 */
+    margin-left: 1px;
+}
+.container>nav>.functions>.all>.all-menu{
+    border: 1px solid rgba(0,0,0,.05);
+    border-bottom: 2px solid #000;
+    padding: 1px 0px;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 48px;
+    right: -178px;
+    z-index: 1;
+    display: none;
+}
+.container>nav>.functions>.all>input:checked ~ .all-menu{
+    display: block;
+}
+.container>nav>.functions>.all>input:checked ~ label{
+    background-color: #f2f2f2;
+    border: 1px solid rgba(0,0,0,.05);
+    border-bottom: transparent;
+}
+.container>nav>.functions>.all>.all-menu>ul{
+    display: flex;
+    flex-wrap: nowrap; /*擠不下的時候自動換行，到1299才設定成會自動換行*/
+}
+.container>nav>.functions>.all>.all-menu>ul>li{
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+.container>nav>.functions>.all>.all-menu>ul>li>span{
+    font-weight: 600;
+    padding: 18px 0px 18px 24px;
+    display: block;
+}
+.container>nav>.functions>.all>.all-menu>ul>li>ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+.container>nav>.functions>.all>.all-menu>ul>li>ul>li{
+    width: 195px;
+    padding: 12px 0px 12px 24px;
+}
+.container>nav>.functions>.all>.all-menu>ul>li:last-child{
+    /* 最後一行去推出58px奇怪的空間 */
+    padding-right: 58px;
+}
+/* 檢視網站地圖另外用一個ul包住 */
+.container>nav>.functions>.all>.all-menu>ul:nth-child(2){
+    width: 100%;
+    background-color: #E6E6E6;
+}
+.container>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
+    margin: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+    position: relative;
+    top: 2px;
+    left: 8px;
+}
+.container>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>span{
+    font-weight: 400;
+    padding: 9px 0px;
+}
+.container>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>.icon-right{
+    width: 7px;
+    background-image: url("../img/chevro-right.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 8px;
+}
+/* nav RWD設定 */
+@media screen and (max-width:1778px){
+    .container>nav{
+        margin-top: 0px;
+    }
+    .container>nav>.links{
+        width: 521px;
+        padding-left: 0px;
+    }
+    .container>nav>.functions{
+        margin-right: 8px;
+    }
+    .container>nav>.functions>.all{
+        margin-left: 47px;
+    }
+    .container>nav>.functions>.function:nth-child(2){
+        margin-right: 13px;
+    }
+    .container>nav>.functions>.function:nth-child(3){
+        margin-right: 13px;
+        margin-left: 0px;
+    }
+    .container>nav>.functions>.function:nth-child(4){
+        margin-right: 0px;
+    }
+}
+@media screen and (max-width:1399px){
+    .container>nav>.functions{
+        justify-content: flex-end;
+    }
+    .container>nav>.functions>.function>span{
+        display: none;
+    }
+    .container>nav>.functions>.function>.shopping{
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    .container>nav>.functions>.all{
+        margin-left: 0px;
+        margin-right: 13px;
+    }
+    .container>nav>.functions>.all>.all-menu{
+        /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
+        right: -190px;
+    }
+    .container>nav>.functions>.function:nth-child(2){
+        margin-right: 0px;
+    }
+    .container>nav>.functions>.function:nth-child(3){
+        margin-right: 0px;
+    }
+    .container>nav>.functions>.all>.all-menu>ul>li{
+        width: 200px;
+    }
+    .container>nav>.functions>.all>.all-menu>ul>li:last-child{
+        /* 最後一行去推出58px奇怪的空間，改成推30 */
+        /* flex寬度不夠的時候會去擠壓子層，但是我父層並沒有設定寬度，不過卻被padding擠壓到 */
+        width: 230px;
+        padding-right: 30px;
+    }
+    .container>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
+        width: auto;
+        padding-right: 0px;
+    }
+}
+/* 多換一個1229的板，用來換.all-menu */
+@media screen and (max-width:1229px){
+    .container>nav>.functions>.all>.all-menu{
+        width: 1023px;
+    }
+    .container>nav>.functions>.all>.all-menu{
+        /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
+        top: 49px;
+        right: calc(-95px - 35%); /*這個奇怪的數字似乎能讓換版前不要爆版*/
+    }
+    .container>nav>.functions>.all>.all-menu>ul{
+        flex-wrap: wrap; /*擠不下的時候自動換行，用來width1229換版的時候，其他行可以下去第二列*/
+    }
+}
+@media screen and (max-width:1083px){
+    .container{
+        padding: 0px 24px;
+    }
+    .container>nav>.functions{
+        width: auto;
+    }
+}
+/* max-width:995px微軟沒有在這邊換版，但是因為我的nav左邊會往內縮所以在這裡多換一個版。已解決:拿掉nav右邊functions的寬度改用內容去撐 */
+/* 微軟的menu會在1024換一個版，但是因為我的選單會被吃掉所以要提早換版 */
+@media screen and (max-width:1060px){
+    .container>nav>.functions>.all>.all-menu{
+        width: 818px;
+    }
+    .container>nav>.functions>.all>.all-menu{
+        top: 49px;
+        right: calc(-70px - 45%); /*這個奇怪的數字似乎能讓換版前不要爆版*/
+    }
+/* 未調整好 先暫時這樣 */
+}
+@media screen and (max-width:873px){
+    .container>nav{
+        margin-top: 1px;
+    }
+    .container>nav>.links{
+        width: 490px;
+    }
+    .container>nav>.links>.link:nth-child(5){
+        margin-right: 4px;
+    }
+    .container>nav>.links>.link:nth-child(6){
+        display: flex;
+    }
+    .container>nav>.links>.link:nth-child(7){
+        display: none;
+    }
+    .container>nav>.links>.link:nth-child(8){
+        display: none;
+    }
+    .container>nav>.links>.link>span{
+        height: 19.5px;
+    }
+    .container>nav>.links>.link>.more{
+        width: 14px;
+        height: 22px;
+        margin-left: 2px;
+        background-image: url("../img/chevron-down.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+}
+@media screen and (max-width:859px){
+    .container{
+        padding: 0px;
+    }
+    .container>nav{
+        margin-top: 0px;
+    }
+    .container>nav>label{
+        display: block;
+        margin-left: 15px;
+        margin-bottom: 4px;
+    }
+    /* 本來下方點擊事件沒有寫在media裡，這樣會造成我選單打開之後拉寬螢幕選單依然佔滿版，移置media裡後就解決了 */
+    .container>nav>#list:checked ~ .menu {
+        display: block;
+    }
+    .container>nav>#list:checked + label{
+        background-image: url("../img/x2.svg");
+        width: 15px;
+        margin-left: 17px;
+        margin-bottom: 5px;
+    }
+    .container>nav>.links{
+        width: auto;
+    }
+    .container>nav>.links>.logo{
+        width: 108px;
+        height: 23px;
+        position: absolute;
+        left: calc(50% - 65px);
+        top: -4px;
+    }
+    .container>nav>.links>.link{
+        display: none;
+    }
+    /* 因為權重，必須特別再將「更多」單獨再消失一次 */
+    .container>nav>.links>.link:nth-child(6){
+        display: none;
+    }
+    .container>nav>.functions{
+        margin-right: 16px;
+    }
+    .container>nav>.functions>.all{
+        display: none;
+    }
+    .container>nav>.functions>.function:nth-child(2){
+        display: flex;
+        /* 用position讓放大鏡往左靠 */
+        position: absolute;
+        top: 3px;
+        left: 55px;
+    }
+    .container>nav>.functions>.function:nth-child(3){
+        margin-right: 10px;
+    }
+}
+/* nav RWD完成 */
+
+/* 漢堡條下拉選單 */
+.container>nav>.menu{
+    width: 100%;
+    max-width: 100%;
+    padding: 1px 0px;
+    background-color: #f2f2f2;
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 54px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+}
+/* 問題：漢堡清單列開啟之後不會隨著寬度而關閉 */
+/* 解決：將選單開關放進media固定寬度裡，這樣在固定寬度裡才會影響display */
+.container>nav>.menu>section>input{
+    display: none;
+}
+.container>nav>.menu>section{
+    width: 100%;
+}
+/* ul及li不指向是因為要讓下面裡面的清單全部都吃到就不用重新設定 */
+.container>nav>.menu>section>ul{
+    width: calc(100% - 2px);/*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+.container>nav>.menu>section>ul:first-child{
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+.container>nav>.menu>section ul li{
+    width: 100%;
+    margin: 1px;
+    padding: 14px 15px 15px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+/* 最後一個li的border消失改用大條的取代 */
+.container>nav>.menu>section ul li:last-child{
+    border-bottom: none;
+}
+.container>nav>.menu>section>label{
+    font-size: 15px;
+    width: calc(100% - 2px); /*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
+    margin: 1px;
+    padding: 14px 15px 15px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex; /*這邊要注意，label預設是inline，如果沒特別設定成block，會穿透到上面，因為要排版icon所以再改成flex*/
+    justify-content: space-between;
+}
+.container>nav>.menu>section>label>.down-icon{
+    width: 15px;
+    margin-right: 5px;
+    margin-top: 5px;
+    background-image: url("../img/chevron-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+/* 清單 */
+.container>nav>.menu>section>ul{
+    padding-left: 30px;
+    list-style-type: none;/*項目符號清除*/
+    display: none;
+}
+/* 一開始就要顯示的清單預設開啟，並且沒有左方padding */
+.container>nav>.menu>section>ul:nth-child(1){
+    display: block;
+    padding-left: 0px;
+}
+/* 預設最後一個清單(非能開啟的清單)預設開啟 */
+.container>nav>.menu>section>ul:last-child{
+    display: block;
+    padding-left: 0px;
+}
+/* 當點擊input標籤，後面清單會開啟，一定要用+才能選到後方的東西 */
+/* 哈哈哈哈哈！下面這意思是 input後面的label後面的ul */
+.container>nav>.menu>section>input:checked + label + ul{
+    display: block;
+}
+.container>nav>.menu>section>input:checked + label>.down-icon{
+    background-image: url("../img/chevron-up.svg");
+}
+/* 漢堡條清單完成 */
+
+/* 第一大塊輪播 */
+    main>.carousel{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    main>.carousel>.banner>img{
+        display: none;
+        width: 100%;
+    }
+    main>.carousel>.banner>.banner-xl{
+        display: inline;
+    }
+@media screen and (max-width:1400px){
+    main>.carousel>.banner>.banner-xl{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-l{
+        display: inline;
+    }
+}
+@media screen and (max-width:1084px){
+    main>.carousel>.banner>.banner-l{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-m{
+        display: inline;
+    }
+}
+@media screen and (max-width:860px){
+    main>.carousel>.banner>.banner-m{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-s{
+        display: inline;
+    }
+}
+@media screen and (max-width:540px){
+    main>.carousel>.banner>.banner-s{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-xs{
+        display: inline;
+    }
+}
+main>.carousel>.banner-mask{
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+main>.carousel>.banner-mask>.banner-text{
+    padding: 48px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: calc(10% - 48px);
+    transform: translate(0px, -50%);
+}
+main>.carousel>.banner-mask>.banner-text>span{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    color: rgb(149, 12, 23);
+    display: inline-block;
+}
+main>.carousel>.banner-mask>.banner-text>h1{
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+main>.carousel>.banner-mask>.banner-text>div{
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+main>.carousel>.banner-mask>.banner-text>a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 12px;
+    margin: 8px 0px;
+    border: 2px solid black;
+    background-color: #000;
+    text-decoration: none;
+}
