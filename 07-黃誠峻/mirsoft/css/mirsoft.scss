@@ -337,15 +337,10 @@ section{
         justify-content: center;
 
         picture{
-  
-
-         
-
-       
-            source{  
-
-
-            }
+            img {
+                width: 100%;
+                height: auto;
+              }
         }
 
     }

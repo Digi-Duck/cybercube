@@ -254,4 +254,8 @@ section {
 section .bander {
   display: flex;
   justify-content: center;
+}
+section .bander picture img {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=mirsoft.css.map */
