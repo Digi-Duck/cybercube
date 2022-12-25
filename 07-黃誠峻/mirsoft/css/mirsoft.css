@@ -166,6 +166,10 @@ nav .mobile {
   nav .functions .all {
     display: none;
   }
+  nav .functions .search {
+    position: absolute;
+    left: 10%;
+  }
   nav .mobile {
     display: block;
     position: absolute;
@@ -176,6 +180,9 @@ nav .mobile {
   }
   nav .mobile ul {
     list-style: none;
+  }
+  nav .mobile input {
+    display: none;
   }
   nav .mobile label {
     float: left;
@@ -190,7 +197,7 @@ nav .mobile {
   nav .mobile .menu {
     display: none;
     clear: both;
-    background: #fff;
+    background: #f2f2f2;
   }
   nav .mobile .menu li {
     text-align: center;
@@ -201,6 +208,8 @@ nav .mobile {
     line-height: 50px;
     font-size: 18px;
     color: #5d5d5d;
+    text-align: left;
+    text-decoration: none;
   }
   nav .mobile .menu li a:hover {
     background: #5d5d5d;
@@ -237,4 +246,12 @@ nav .mobile {
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+section .bander {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=mirsoft.css.map */

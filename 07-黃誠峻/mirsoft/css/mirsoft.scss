@@ -216,20 +216,26 @@ nav {
                 .all{
                     display: none;
                 }
+                .search{
+                    position: absolute;
+                    left: 10%;
+                }
             }
         // 開啟漢堡條
         .mobile{display: block;
             // 利用絕對位置漂浮特性做到滿版效果
             position: absolute;
-            width: 100%;
+     
+    //    這是要扣除掉NAV的10PX的PADDING
+           width: calc(100%);
             overflow: hidden;
 
             ul{
                 list-style: none;
             }
-            // input {
-            //     display: none;
-            //   }
+            input {
+                display: none;
+              }
               
               /* 漢堡按鈕 */
               label {
@@ -247,7 +253,7 @@ nav {
               .menu {
                 display: none;
                 clear: both;
-                background: #fff;
+                background: #f2f2f2;
                 li {
                   text-align: center;
                   border-bottom: 1px solid #efefef;
@@ -256,6 +262,9 @@ nav {
                     line-height: 50px;
                     font-size: 18px;
                     color: #5d5d5d;
+                    text-align: left;
+                    text-decoration: none;
+
                     &:hover {
                       background: #5d5d5d;
                       color: #fff;
@@ -264,6 +273,7 @@ nav {
                 }
         }
         input:checked ~ .menu {
+    
             display: block;
             // 這個地方決定了全部總共可以有多少個
             max-height: 800px;
@@ -316,5 +326,27 @@ nav {
         background-size: contain;
         background-repeat: no-repeat;
     }
+}
 
+// bander
+section{
+    display: flex;
+    justify-content: center;
+    .bander{
+        display: flex;
+        justify-content: center;
+
+        picture{
+  
+
+         
+
+       
+            source{  
+
+
+            }
+        }
+
+    }
 }
