@@ -48,7 +48,7 @@ nav {
     }
 
     .functions {
-        width: 400px;
+
         height: 100%;
         padding-right: 8px;
 
@@ -79,9 +79,10 @@ nav {
         .function {
             height: 48px;
 
-
             display: flex;
             align-items: center;
+
+            background-color: antiquewhite;
 
             @media(max-width:1400px) {
                 
@@ -89,7 +90,7 @@ nav {
                     display: none;
                 }
                 .icon{
-                    margin-left: 0px;
+                    
                 }
 
             }
@@ -101,6 +102,8 @@ nav {
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
+
+                background-color: aqua;
             }
 
             .search {

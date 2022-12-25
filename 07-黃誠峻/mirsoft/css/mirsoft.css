@@ -37,7 +37,6 @@ nav .links .logo {
   background-repeat: no-repeat;
 }
 nav .functions {
-  width: 400px;
   height: 100%;
   padding-right: 8px;
   display: flex;
@@ -63,13 +62,11 @@ nav .functions .function {
   height: 48px;
   display: flex;
   align-items: center;
+  background-color: antiquewhite;
 }
 @media (max-width: 1400px) {
   nav .functions .function span {
     display: none;
-  }
-  nav .functions .function .icon {
-    margin-left: 0px;
   }
 }
 nav .functions .function .icon {
@@ -79,6 +76,7 @@ nav .functions .function .icon {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-color: aqua;
 }
 nav .functions .function .search {
   margin-right: 30px;
