@@ -18,20 +18,25 @@ nav {
     height: 56px;
     margin: auto;
 
+    padding-left: 34px;
+    padding-right: 34px;
+
     display: flex;
     justify-content: space-between;
-
+    // 關閉漢堡條
+.mobile{
+    display: none;
+}
 
     .links {
         width: 535px;
         height: 100%;
+        margin-right: 73px;
         padding-left: 10px;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-
 
         font-size: 13px;
 
@@ -39,11 +44,30 @@ nav {
         .logo {
             width: 110px;
             height: 25px;
+            
 
             background-image: url(../img/RE1Mu3b.png);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+
+        }
+
+        .more {
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            display: none;
+
+            .icon {
+                background-image: url(../img/down-arrow.svg);
+                width: 20px;
+                height: 35px;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
     }
 
@@ -59,7 +83,7 @@ nav {
         font-size: 13px;
 
         .all {
-            width: 145px;
+            width: 120px;
             height: 48px;
 
             display: flex;
@@ -78,19 +102,30 @@ nav {
 
         .function {
             height: 48px;
+            margin-bottom: 5px;
 
             display: flex;
             align-items: center;
 
-            background-color: antiquewhite;
 
             @media(max-width:1400px) {
-                
+                margin-left: 0px;
+
                 span {
                     display: none;
                 }
-                .icon{
-                    
+
+                .icon.search {
+                    margin-right: 10px;
+
+                }
+
+                .icon.shopping {
+                    margin-right: 10px;
+                }
+
+                .icon.login {
+                    margin-right: 10px;
                 }
 
             }
@@ -103,15 +138,16 @@ nav {
                 background-position: center;
                 background-size: contain;
 
-                background-color: aqua;
             }
 
             .search {
-                margin-right: 30px;
+                height: 30px;
+                margin-right: 50px;
                 background-image: url(../img/search.svg);
             }
 
             .shopping {
+                margin-right: 20px;
                 background-image: url(../img/cart.svg);
             }
 
@@ -122,9 +158,164 @@ nav {
                 background-image: url(../img/login.svg);
 
             }
+        }
 
-
+        .car {
+            margin-left: 2px;
         }
 
     }
+
+    .links {
+        width: 535px;
+        height: 100%;
+        padding-left: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 13px;
+// 其中兩個選項變成更多
+        @media(max-width:880px) {
+            .more {
+                display: block;
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+
+            .support {
+                display: none;
+            }
+
+            .xbox {
+                display: none;
+            }
+        }
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+// 啟動手機版本變形
+@media (max-width:860px) {
+    nav {
+        padding: 10px;
+        // background-color: bisque;
+        // 將功能列調整位置
+        .logo{
+            
+            position: absolute;
+            left: calc(50% - 55px);
+        }
+
+        .functions{
+                .all{
+                    display: none;
+                }
+            }
+        // 開啟漢堡條
+        .mobile{display: block;
+            // 利用絕對位置漂浮特性做到滿版效果
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+
+
+            ul{
+                list-style: none;
+            }
+            // input {
+            //     display: none;
+            //   }
+              
+              /* 漢堡按鈕 */
+              label {
+                float: left;
+                padding-right: 50px;
+                line-height: 50px;
+                cursor: pointer;
+                img {
+                  width: 30px;   
+                  vertical-align: middle;
+                }
+              }
+              
+              /* menu*/
+              .menu {
+                display: none;
+                clear: both;
+                background: #fff;
+                li {
+                  text-align: center;
+                  border-bottom: 1px solid #efefef;
+                  a {
+                    display: block;
+                    line-height: 50px;
+                    font-size: 18px;
+                    color: #5d5d5d;
+                    &:hover {
+                      background: #5d5d5d;
+                      color: #fff;
+                    }
+                  }
+                }
+        }
+        input:checked ~ .menu {
+            display: block;
+            // 這個地方決定了全部總共可以有多少個
+            max-height: 800px;
+          }
+    }
+
+
+
+
+
+
+
+        // 連結關閉
+        .links {
+            .link.mirsoft {
+                display: none;
+            }
+
+            .link.eams {
+                display: none;
+            }
+
+            .link.windows {
+                display: none;
+            }
+
+            .link.surface {
+                display: none;
+            }
+
+            .link.xbox {
+                display: none;
+            }
+
+            .link.more {
+                display: none;
+            }
+        }
+    }
+
+// 右側Logo
+    .links.logo {
+
+        width: 110px;
+        height: 25px;
+
+        display: block;
+        background-image: url(../img/RE1Mu3b.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
 }

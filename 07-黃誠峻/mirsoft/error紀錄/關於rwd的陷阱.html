@@ -1,4 +1,11 @@
-@charset "UTF-8";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
 * {
   margin: 0px;
   padding: 0px;
@@ -22,9 +29,6 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-nav .mobile {
-  display: none;
-}
 nav .links {
   width: 535px;
   height: 100%;
@@ -34,6 +38,21 @@ nav .links {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
+}
+/* 陷阱區域 */
+@media (max-width: 880px) {
+  nav .links .more {
+    display: block;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  nav .links .support {
+    display: none;
+  }
+  nav .links .xbox {
+    display: none;
+  }
 }
 nav .links .logo {
   width: 110px;
@@ -49,6 +68,9 @@ nav .links .more {
   text-align: center;
   display: none;
 }
+
+
+
 nav .links .more .icon {
   background-image: url(../img/down-arrow.svg);
   width: 20px;
@@ -137,7 +159,8 @@ nav .links {
   align-items: center;
   font-size: 13px;
 }
-@media (max-width: 880px) {
+/* 正確區域 */
+/* @media (max-width: 880px) {
   nav .links .more {
     display: block;
     display: flex;
@@ -150,91 +173,48 @@ nav .links {
   nav .links .xbox {
     display: none;
   }
-}
-nav .mobile {
-  display: none;
-}
+} */
 
-@media (max-width: 860px) {
-  nav {
-    padding: 10px;
-  }
-  nav .logo {
-    position: absolute;
-    left: calc(50% - 55px);
-  }
-  nav .functions .all {
-    display: none;
-  }
-  nav .mobile {
-    display: block;
-    position: absolute;
-    overflow: hidden;
-    width: 100%;
-    /* 漢堡按鈕 */
-    /* menu*/
-  }
-  nav .mobile ul {
-    list-style: none;
-  }
-  nav .mobile label {
-    float: left;
-    padding-right: 50px;
-    line-height: 50px;
-    cursor: pointer;
-  }
-  nav .mobile label img {
-    width: 30px;
-    vertical-align: middle;
-  }
-  nav .mobile .menu {
-    display: none;
-    clear: both;
-    background: #fff;
-  }
-  nav .mobile .menu li {
-    text-align: center;
-    border-bottom: 1px solid #efefef;
-  }
-  nav .mobile .menu li a {
-    display: block;
-    line-height: 50px;
-    font-size: 18px;
-    color: #5d5d5d;
-  }
-  nav .mobile .menu li a:hover {
-    background: #5d5d5d;
-    color: #fff;
-  }
-  nav .mobile input:checked ~ .menu {
-    display: block;
-    max-height: 800px;
-  }
-  nav .links .link.mirsoft {
-    display: none;
-  }
-  nav .links .link.eams {
-    display: none;
-  }
-  nav .links .link.windows {
-    display: none;
-  }
-  nav .links .link.surface {
-    display: none;
-  }
-  nav .links .link.xbox {
-    display: none;
-  }
-  nav .links .link.more {
-    display: none;
-  }
-  .links.logo {
-    width: 110px;
-    height: 25px;
-    display: block;
-    background-image: url(../img/RE1Mu3b.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}/*# sourceMappingURL=mirsoft.css.map */
+/*# sourceMappingURL=mirsoft.css.map */
+
+
+    </style>
+</head>
+<body>
+    <!--RWD雖然透過了MEDIA去進行調整但，依然要記得程式碼是由上往下讀取，因此倘若將要更改的RWD寫在上面的話，就會發生:啟動RWD後，依然沒有任何改動，因為後面的屬性依然蓋過了RWD設定的屬性，這點需要特別注意!!  -->
+    <nav>
+        <div class="links">
+            <div class="logo"></div>
+            <div class="link">Micrsoft 365</div>
+            <div class="link">Teams</div>
+            <div class="link windows">Windows</div>
+            <div class="link surface">Surface</div>
+            <div class="link xbox">Xbox</div>
+            <div class="link support">支援</div>
+            <!-- 觀察區域 -->
+            <div class="link more">更多
+                <div class="icon"></div>
+            </div>
+        </div>
+        <div class="functions">
+            <div class="all"> 
+                <span>所有Microsoft</span>
+                <div class="icon"></div>
+            </div>
+            <div class="function"> 
+                <span>搜尋</span>
+                <div class="icon search"></div>
+            </div>
+            <div class="function car"> 
+                <span >購物車</span>
+                <div class="icon shopping"></div>
+            </div>
+            <div class="function"> 
+                <span >登入</span>
+                <div class="icon login"></div>
+            </div>
+        </div>
+    </nav>
+    <main></main>
+    <footer></footer>
+</html>
