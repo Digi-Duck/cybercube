@@ -221,9 +221,8 @@ nav {
         .mobile{display: block;
             // 利用絕對位置漂浮特性做到滿版效果
             position: absolute;
-            overflow: hidden;
             width: 100%;
-
+            overflow: hidden;
 
             ul{
                 list-style: none;

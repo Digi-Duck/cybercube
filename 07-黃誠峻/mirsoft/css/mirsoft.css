@@ -169,8 +169,8 @@ nav .mobile {
   nav .mobile {
     display: block;
     position: absolute;
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
     /* 漢堡按鈕 */
     /* menu*/
   }
