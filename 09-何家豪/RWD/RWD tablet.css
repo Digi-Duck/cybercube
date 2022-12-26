@@ -65,7 +65,7 @@ main {
 
 main .container {
     width: 90%;
-    height: 754px;
+    height: 580px;
     background-color: rgb(148, 156, 156);
     border: 1px solid black;
 }
@@ -77,7 +77,7 @@ main .swiper {
 
 main .container .x {
     width: 100%;
-    height: 372px;
+    height: 290px;
 }
 
 main .container .x .image1-1 {
@@ -97,9 +97,9 @@ main .container .x .image1-3 {
 
 main .container .y {
     width: calc(45% - 5px);
-    height: 372px;
+    height: 280px;
     position: absolute;
-    top: calc(50% + 40px);
+    top: calc(50% + 45px);
 }
 
 main .container .y .image2-1 {
@@ -119,9 +119,9 @@ main .container .y .image2-3 {
 
 main .container .z {
     width: calc(45% - 5px);
-    height: 372px;
+    height: 280px;
     position: absolute;
-    top: calc(50% + 40px);
+    top: calc(50% + 45px);
     left: calc(50% + 5px);
 }
 
