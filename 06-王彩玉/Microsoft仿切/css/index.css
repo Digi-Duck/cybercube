@@ -580,7 +580,7 @@ main>.carousel>.banner>div:nth-child(6){
 main>.carousel>.banner>div>.text-case{
     width: 100%;
     max-width: 1600px;
-    height: 100%;
+    /* height: 100%; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -682,7 +682,7 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
 /* 第一區大輪播圖片RWD完成 */
 
 /* 第一區輪播控制區 */
-main>.carousel>.banner>.control{
+main>.carousel>.control{
     /*因為吃到上方區塊css設定的屬性，所以在這邊先還原預設，已解決：前方改為nth-child選取器*/
     width: 153px;
     height: 64px;
@@ -692,18 +692,18 @@ main>.carousel>.banner>.control{
     justify-content: space-between;
     align-items: center;
 }
-main>.carousel>.banner>.control>span{
+main>.carousel>.control>span{
     display: inline-block;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
-main>.carousel>.banner>.control>.goleft{
+main>.carousel>.control>.goleft{
     width: 20px;
     height: 24px;
     background-image: url("../img/goleft.svg");
 }
-main>.carousel>.banner>.control>.dot1{
+main>.carousel>.control>.dot1{
     width: 10px;
     height: 10px;
     border-radius: 5px;
@@ -711,16 +711,24 @@ main>.carousel>.banner>.control>.dot1{
     background-color: #000;
     margin-left: 17.5px;
 }
-main>.carousel>.banner>.control>.dot2{
+main>.carousel>.control>.dot2{
     width: 10px;
     height: 10px;
     border-radius: 5px;
     background-image: url("../img/ring.svg");
     margin-right: 17.5px;
 }
-main>.carousel>.banner>.control>.goright{
+main>.carousel>.control>.goright{
     width: 20px;
     height: 24px;
     background-image: url("../img/goright.svg");
 }
+@media screen and (max-width:1083px){
+    main>.carousel>.control{
+        position: absolute;
+        bottom: 30.5px;
+        left: calc(50% - 76.5px);
+    }
+}
+
 /* control控制完成 */
