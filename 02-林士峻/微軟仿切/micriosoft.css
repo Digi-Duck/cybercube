@@ -17,7 +17,15 @@ a {
 }
 
 section:nth-child(1) {
-  padding: 0 8%;
+  padding: 0 6.5%;
+}
+
+.search-symbol{
+margin-right: 2vw;
+}
+
+#section1-divR .shopping-car{
+  width: 0.8vw;
 }
 
 @media screen and (max-width: 1080px) {
@@ -32,7 +40,7 @@ section:nth-child(1) > div {
 
 section:nth-child(1) nav {
   display: flex;
-  width: 70%;
+  width: 76%;
 }
 
 section:nth-child(1) nav div {
@@ -54,7 +62,8 @@ section:nth-child(1) nav ul li {
 
 section:nth-child(1) nav ul li a {
   display: inline-block;
-  padding: 16px 8px 20px;
+  padding: 20px 0px ;
+  margin-right: 1.5vw;
 }
 
 #section1-divR ul {
@@ -62,9 +71,15 @@ section:nth-child(1) nav ul li a {
   list-style-type: none;
 }
 
-#section1-divR ul li {
-  padding: 16px 8px 20px;
+#section1-divR ul .omg{
+  margin-right: 1vw;
   font-size: 0.8rem;
+  padding-top: 17px;
+}
+
+#section1-divR ul li .log-in-pic{
+  padding-top: 10px;
+  margin-left: -0.5vw;
 }
 
 #section1-divR ul li button {
@@ -196,6 +211,17 @@ section:nth-child(2) img {
   #section6 div h2 {
     font-size: 1.8rem;
   }
+
+  #section6 div a h3{
+    font-size: 1.5rem;
+    margin-bottom: 1vh;
+  }
+  #section6{
+    margin-bottom: 3vh;
+  }
+  #section6 div h2{
+    padding-left: 0.9vw;
+  }
 }
 
 @media screen and (max-width: 1399px) {
@@ -213,9 +239,14 @@ section:nth-child(2) img {
   .div-relative .section2-text h1 {
     font-size: 1.5rem;
   }
-  #section6 div h2 {
+
+  #section6 .section6-article h2{
+    margin: unset;
     font-size: 1.5rem;
-    margin-bottom: 1vh;
+  }
+  #section6 .section6-set h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5vh;
   }
 }
 
@@ -319,7 +350,7 @@ section:nth-child(2) img {
   }
 
   body #section7__about {
-    margin: 3vh 0vw 8vh 2vw;
+    margin: 3vh 0vw 10vh 1.025vw;
   }
 
   #section8 .section8-footer {
@@ -412,12 +443,22 @@ section:nth-child(2) img {
     flex: 1 1 200px;
   }
 
-  #section6 .section6-set div {
-    margin: 0px;
+  #section6 .section6-set div a h3{
+    font-size: 1.3rem;
+    margin-bottom: 1vh;
   }
 
+
   .section6-set div img {
-    width: 46vw;
+    width: 45vw;
+  }
+
+  #section6 .section6-oops-2{
+    height:1vh;
+  }
+
+  body #section7__about{
+    margin: 3vh 0vw 10vh 1.5vw;
   }
 
   #section8 .section8-footer {
@@ -448,13 +489,27 @@ section:nth-child(2) img {
   #section4 {
     padding: unset;
   }
+}*/
+
+@media screen and (max-width: 859px) and (min-width: 564px) {
+  #section6 .section6-set div {
+    margin:1.5vh 1vw;
+  }
+
 }
 
-@media screen and (max-width: 860px) and (min-width: 938px) {
-  #section4 {
-    padding: unset;
+@media screen and (max-width: 563px) and (min-width: 540px) {
+  #section6 .section6-set div{
+    margin:1.5vh 0.8vw;
   }
-} */
+}
+
+@media screen and (max-width: 940px) and (min-width: 860px) {
+  #section6 .section6-set > div {
+    margin: 2vh 0.5vw;
+  }
+} 
+
 
 @media screen and (max-width: 539px) {
   section:nth-child(2) .img-mobile {
@@ -524,8 +579,22 @@ section:nth-child(2) img {
     margin-bottom: 3.5vh;
   }
 
+  #section6 .section6-article h2 {
+    padding-left: 1.8vw;
+  }
+
+  #section6 .section6-set div a h3{
+    font-size: 1.3rem;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
   #section6 {
-    padding: 0.5vw;
+    padding: 1vw;
+  }
+
+  #section6 .section6-set>div{
+    margin :1vh 2vw 4vh;
   }
 
   .section6-set {
@@ -537,7 +606,15 @@ section:nth-child(2) img {
   }
 
   .section6-set div img {
-    width: 95vw;
+    width: 92vw;
+  }
+
+  body #section7__about{
+    margin:1vh 0vw 8vh 2.5vw;
+  }
+
+  #section7__about ul li {
+    margin :0vh 1.5vw;
   }
 
   #section8 .section8-footer {
@@ -741,15 +818,22 @@ section:nth-child(4) .section4-oops > div {
 }
 @media screen and (max-width: 859px) and (min-width: 540px) {
   section:nth-child(4) .section4-oops > div {
-    margin: 0vh 3px 6.25vh;
+    margin: 0vh 5px 6.25vh;
   }
 }
 
-@media screen and (max-width: 934px) and (min-width: 540px) {
+@media screen and (max-width: 934px) and (min-width: 681px) {
+  section:nth-child(4) .section4-oops > div img {
+    width: 45.8vw;
+  }
+}
+
+@media screen and (max-width: 680px) and (min-width: 540px) {
   section:nth-child(4) .section4-oops > div img {
     width: 45vw;
   }
 }
+
 
 .section4-space {
   height: 4vh;
@@ -879,7 +963,7 @@ section:nth-child(6) .section6-change-col {
 }
 
 section:nth-child(7) {
-  margin: 3vh 0vw 8vh 8vw;
+  margin: 4.5vh 0vw 8vh 8vw;
 }
 
 section:nth-child(7) button {
@@ -887,10 +971,10 @@ section:nth-child(7) button {
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
-  background-color: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+  background-color: lightgray;
   border: none;
   right: 0.8vw;
-  bottom: 1.5vw;
+  bottom: 4vh;
   position: fixed;
   display: none;
 }
@@ -912,7 +996,7 @@ section:nth-child(7) ul {
 
 section:nth-child(7) li {
   display: inline;
-  margin: 1vh;
+  margin: 0vh 0.5vw;
 }
 
 section:nth-child(7) img {
@@ -982,7 +1066,7 @@ section:nth-child(9) #section9-lang {
 /* 圖片設定 */
 #section1_logo {
   width: 108px;
-  margin: 1rem 2vw 1rem 2vw;
+  margin: 1rem 1.8vw 1.25rem 2vw;
 }
 
 /* 細微特效設定 */
