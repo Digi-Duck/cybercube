@@ -1,0 +1,119 @@
+@mixin w1400px{
+    @media (max-width:1400px) {
+        @content
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+nav {
+    max-width: 1600px;
+    width: 100%;
+    height: 56px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    .links {
+        width: 540px;
+        height: 100%;
+        padding: 0px 0px 0px 10px;
+
+        font-size: 13px;
+        background-color: aqua;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            width: 110px;
+            height: 25px;
+
+            background-image: url(../images/logo.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    .functions {
+        width: 400px;
+        height: 100%;
+        background-color: green;
+        padding-right: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 13px;
+
+        .all {
+            width: 145px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+
+            .icon {
+                width: 17px;
+                height: 25px;
+
+                background-image: url('../images/downarrow.png');
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: contain;
+            }
+        }
+
+        .function {
+            height: 48px;
+
+            display: flex; //因為圖片是在function中，所以要讓文字和圖片橫向排列，除functions要下flex之外，function也要下
+            align-items: center;
+
+            span{
+                @include w1400px{
+                    display: none;
+                }
+            }
+
+            .icon {
+                width: 17px;
+                height: 17px;
+                margin-left: 4px;
+
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+
+                &.search {
+                    margin-right: 30px;
+                    background-image: url('../images/search.svg');
+                }
+
+                &.shopping {
+                    background-image: url('../images/shopping.svg');
+                }
+
+                &.login {
+                    width: 33px;
+                    height: 33px;
+                    margin-left: 12px;
+
+                    background-image: url('../images/user.svg');
+                }
+            }
+        }
+    }
+}
