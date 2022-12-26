@@ -567,7 +567,8 @@ body{
     }
 }
 /* 第一個輪播圖片上的文字區域(這邊莫名其妙，只好照著微軟用三層去包) */
-main>.carousel>.banner>div{
+main>.carousel>.banner>div:nth-child(6){
+    /*這邊如果單純用div選擇器的話，後面control會被影響到，所以改成nth-child選取器，不然就是要在後面的div的css裡面再用unset去初始化*/
     width: 100%;
     height: 308.39px;
     padding: 0px 5%;
@@ -620,7 +621,7 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
     display: inline-block; /*一定要記得+*/
 }
 @media screen and (max-width:1399px){
-    main>.carousel>.banner>div{
+    main>.carousel>.banner>div:nth-child(6){
         top: 51.2%; /*控制位置*/
     }
     main>.carousel>.banner>div>.text-case>.banner-text>h1{
@@ -629,12 +630,12 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
     }
 }
 @media screen and (max-width:1217px){
-    main>.carousel>.banner>div{
+    main>.carousel>.banner>div:nth-child(6){
         top: 51.3%; /*控制位置*/
     }
 }
 @media screen and (max-width:1168px){
-    main>.carousel>.banner>div{
+    main>.carousel>.banner>div:nth-child(6){
         top: 48.9%; /*控制位置，硬調*/
     }
     main>.carousel>.banner>div>.text-case>.banner-text>h1{
@@ -642,7 +643,7 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
     }
 }
 @media screen and (max-width:1083px){
-    main>.carousel>.banner>div{
+    main>.carousel>.banner>div:nth-child(6){
         padding: 0px 12px;
         position: relative;
         top: -48.8px;
@@ -662,7 +663,7 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
     }
 }
 @media screen and (max-width:859px){
-    main>.carousel>.banner>div{
+    main>.carousel>.banner>div:nth-child(6){
         height: auto;
         top: 0px;
         position: unset;
@@ -670,15 +671,56 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
     }
     main>.carousel>.banner>div>.text-case{
         padding: 0px 12px;
+        box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);
     }
     main>.carousel>.banner>div>.text-case>.banner-text{
         box-shadow: unset;
         padding: 24px 12px 16px 12px;
     }
-    main>.carousel>.banner{
-        box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);
-    }
+    /* 本來main>.carousel>.banner{box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);}改成放在main>.carousel>.banner>div>.text-case */
 }
 /* 第一區大輪播圖片RWD完成 */
 
 /* 第一區輪播控制區 */
+main>.carousel>.banner>.control{
+    /*因為吃到上方區塊css設定的屬性，所以在這邊先還原預設，已解決：前方改為nth-child選取器*/
+    width: 153px;
+    height: 64px;
+    margin: auto;
+    padding: 3px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main>.carousel>.banner>.control>span{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+main>.carousel>.banner>.control>.goleft{
+    width: 20px;
+    height: 24px;
+    background-image: url("../img/goleft.svg");
+}
+main>.carousel>.banner>.control>.dot1{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-image: url("../img/ring.svg");
+    background-color: #000;
+    margin-left: 17.5px;
+}
+main>.carousel>.banner>.control>.dot2{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-image: url("../img/ring.svg");
+    margin-right: 17.5px;
+}
+main>.carousel>.banner>.control>.goright{
+    width: 20px;
+    height: 24px;
+    background-image: url("../img/goright.svg");
+}
+/* control控制完成 */
