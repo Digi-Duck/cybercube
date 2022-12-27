@@ -14,12 +14,14 @@
         }
         label::before{
             content: "三";
+            /* 這個三是我們希望它要有的內容，使用CONTENT就可以讓資料的前面放入三 */
         }
         label::after{
-            content: "Ｘ";
-            /* 關鍵核心點 */
+            content: "Ｘ"; /*如果要用圖片要用 URL*/
+            /* 關鍵核心點這個用了AFTER就可以放文字了 */
             display: none;
         }
+        /* +表示和她相鄰的這個，其條件是一定要在他的下方，簡單來說就是<iNPUT><LABEL> */
         input:checked + label::before{
             display: none;
         }
@@ -32,8 +34,8 @@
 <body>
     <div class="box">
         <input type="checkbox" name="" id="aaa">
-        <div>ssss</div>
-        <label for="aaa">544544444</label>
+        
+        <label for="aaa"></label>
     </div>
 </body>
 </html>
