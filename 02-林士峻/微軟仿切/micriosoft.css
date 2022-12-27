@@ -40,8 +40,12 @@ input{
   cursor: pointer;
 }
 
-.mobile-menu-section{
+section div  .mobile-menu-section{
   width: 100%;
+  top:0px;
+  left: 0px;
+  position: absolute;
+  padding: unset;
 }
 
 .mobile-menu{
@@ -89,13 +93,21 @@ input{
     position: absolute;
     list-style-type: none;
     background-color: #f2f2f2;
-    top: 35px;
-    left:0px;
+    top: 58px;
+    /* left:-20px; */
     z-index: 55;
-    width: 500px;
+    width: 100%;
+    font-size: 0.95rem;
     }
-    #mobile-list:checked~section ul{
+    #mobile-list:checked~section .mobile-menu{
       display: block;
+      overflow-x: hidden;
+    }
+
+    #mobile-list:checked~section .mobile-menu li{
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      padding: 15px ;
+      height: 60px;
     }
   
   
@@ -203,7 +215,7 @@ section:nth-child(1) nav ul li a {
 #section1-divR ul .omg{
   margin-right: 1vw;
   font-size: 0.8rem;
-  padding-top: 17px;
+  padding-top: 18px;
 }
 
 #section1-divR ul li .log-in-pic{
