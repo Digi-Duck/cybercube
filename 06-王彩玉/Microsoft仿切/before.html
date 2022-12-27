@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+        }
+        input{
+            display: none;
+        }
+        label::before{
+            content: "三";
+        }
+        label::after{
+            content: "Ｘ";
+            display: none;
+        }
+        input:checked + label::before{
+            display: none;
+        }
+        input:checked + label::after{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="checkbox" name="" id="aaa">
+        <label for="aaa"></label>
+    </div>
+</body>
+</html>
