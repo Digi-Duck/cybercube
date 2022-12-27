@@ -4,38 +4,46 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+}
+
 nav {
-    width: 100%;
-    height: 70px;
+    width: 368px;
+    height: 100vh;
     background-color: #77B9D0;
-    padding: 3px 25px;
+    display: flex;
+    justify-content: center;
     border: 1px solid black;
 }
 
 nav .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    width: 160px;
+    height: 384px;
+    position: absolute;
+    top: 50px;
 }
 
 nav .container .logo {
-    width: 64px;
-    height: 64px;
-    background-color: antiquewhite;
+    width: 160px;
+    height: 160px;
+    background-color: beige;
 }
 
 nav .container .links {
-    width: 350px;
-    height: 30px;
-    position: absolute;
-    top: 20px;
-    left: calc(100% - 350px);
+    width: 160px;
+    height: 224px;
+    position: relative;
+    top: 50px;
 }
 
 nav .container .links .link {
-    width: 110px;
+    width: 160px;
     height: 30px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    /*水平置中*/
+    margin: auto;
     text-align: center;
     font-size: 20px;
     line-height: 25px;
@@ -47,6 +55,7 @@ nav .container .links .link {
 
 nav .links:hover .link:hover {
     color: red;
+
     font-size: 30px;
     text-align: center;
     line-height: 20px;
@@ -54,92 +63,86 @@ nav .links:hover .link:hover {
 
 main {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: 100vh;
     background-color: #69B2CB;
-    display: flex;
-    justify-content: center;
-    /*水平置中*/
-    align-items: center;
-    /*垂直置中*/
 }
 
 main .container {
-    width: 90%;
-    height: 754px;
-    background-color: rgb(148, 156, 156);
+    width: 962px;
+    height: 576px;
+    position: absolute;
+    top: calc(50% - 286px);
+    left: calc(50% - 340px);
     border: 1px solid black;
+    display: flex;
+    /*左右排版*/
 }
 
-main .swiper {
+main .container .swiper {
     width: 100%;
     height: 100%;
 }
 
 main .container .x {
-    width: 100%;
-    height: 372px;
+    width: 320px;
+    height: 100%;
 }
 
 main .container .x .image1-1 {
-    background-image: url("img/image01-2-1.jpg");
+    background-image: url("img/image01-3-1.jpg");
     background-size: 100% 100%;
 }
 
 main .container .x .image1-2 {
-    background-image: url("img/image02-2-1.jpg");
+    background-image: url("img/image02-3-1.jpg");
     background-size: 100% 100%;
 }
 
 main .container .x .image1-3 {
-    background-image: url("img/image03-2-1.jpg");
+    background-image: url("img/image03-3-1.jpg");
     background-size: 100% 100%;
 }
 
 main .container .y {
-    width: calc(45% - 5px);
-    height: 372px;
-    position: absolute;
-    top: calc(50% + 40px);
+    width: 320px;
+    height: 100%;
 }
 
 main .container .y .image2-1 {
-    background-image: url("img/image01-2-2.jpg");
+    background-image: url("img/image01-3-2.jpg");
     background-size: 100% 100%;
 }
 
 main .container .y .image2-2 {
-    background-image: url("img/image02-2-2.jpg");
+    background-image: url("img/image02-3-2.jpg");
     background-size: 100% 100%;
 }
 
 main .container .y .image2-3 {
-    background-image: url("img/image03-2-2.jpg");
+    background-image: url("img/image03-3-2.jpg");
     background-size: 100% 100%;
 }
 
 main .container .z {
-    width: calc(45% - 5px);
-    height: 372px;
-    position: absolute;
-    top: calc(50% + 40px);
-    left: calc(50% + 5px);
+    width: 320px;
+    height: 100%;
 }
 
 main .container .z .image3-1 {
-    background-image: url("img/image01-2-3.jpg");
+    background-image: url("img/image01-3-3.jpg");
     background-size: 100% 100%;
 }
 
 main .container .z .image3-2 {
-    background-image: url("img/image02-2-3.jpg");
+    background-image: url("img/image02-3-3.jpg");
     background-size: 100% 100%;
 }
 
 main .container .z .image3-3 {
-    background-image: url("img/image03-2-3.jpg");
+    background-image: url("img/image03-3-3.jpg");
     background-size: 100% 100%;
 }
 
 main .container .swiper-slide:hover {
-    background-size: 110% 110%;
+    background-size: 110%;
 }
