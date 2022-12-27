@@ -109,6 +109,9 @@ nav .functions .function .login {
     height: 32px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' stroke-width='1.9' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25'/%3E%3Cg transform='matrix(1.1 0 0 1.1 8.8 5.61)'%3E%3Ccircle class='mectrl_stroke' cx='20' cy='16' r='7'/%3E%3Cpath class='mectrl_stroke' d='M30 35h10m-5-5v10M30.833 32.09A11 11 0 009 34'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+@media (max-width:859px) {
+
+}
 
 /* banner */
 main .banner {
@@ -345,7 +348,6 @@ main .banner .content {
 
 /* 選擇你的microsoft */
 .illustrate {
-    height: 120px;
     display: flex;
     justify-content: center;
     margin-bottom: 48px;
@@ -398,14 +400,18 @@ main .banner .content {
     display: flex;
 }
 
-@media(max-width:601) {}
+@media (max-width:602px) {
+    .illustrate {
+        display: flex;
+        flex-wrap:wrap;
+    }
+}
 
 @media (min-width:602px) and (max-width:859px) {
     .container {
         padding-top: 0px;
     }
 }
-
 /* 卡片第一列 */
 .cards {
     width: 100%;
@@ -417,22 +423,19 @@ main .banner .content {
 }
 
 .card {
-
     width: calc(25% - 18px);
     height: 441px;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
-.card .card-internal {
+/* .card .card-internal {
     width: 100%;
-}
+} */
 
 .card .img {
     width: 100%;
-    height: 0px;
     padding-bottom: 56%;
 
     background-size: cover;
@@ -489,27 +492,43 @@ main .banner .content {
     text-decoration: none;
 }
 
-.card .link:hover a{
+.card .link:hover a {
     text-decoration: underline;
 }
-.cards i{
+
+.cards i {
     width: 13px;
     height: 13px;
     color: #950c17;
     margin-left: 6.5px;
 }
-.cards .link:hover i{
+
+.cards .link:hover i {
     margin-left: 9px;
 }
-.cards .link i{
-   transition:margin-left 0.3s ease;
+
+.cards .link i {
+    transition: margin-left 0.3s ease;
 }
+
+
+@media (max-width:1083px) {
+main .container .cards{
+        display: flex;
+        flex-wrap:wrap;
+        /* background-color: #950c17; */
+    }
+    .container .card{
+        width: 50%;
+        padding: 0px 12px;
+    }
+}
+/* for-business */
 main .container .banner-small {
     width: 100%;
     max-width: 1600px;
     margin: auto;
-    }
-/* for-business */
+}
 .container .for-business {
     margin: auto;
     width: 90%;
@@ -593,16 +612,18 @@ footer .box {
     padding: 0px 12px;
 }
 
-footer .footer-top .box1 ,footer .footer-top .box4{
+footer .footer-top .box1,
+footer .footer-top .box4 {
     padding: 0px 12px 0px 0px;
 }
 
-footer .footer-top .title{
-font-size: 15px;
-font-weight: 600;
-padding: 36px 0px 4px;
+footer .footer-top .title {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 36px 0px 4px;
 
 }
+
 footer .footer-top li {
     font-size: 12px;
     list-style: none;
@@ -617,20 +638,24 @@ footer .footer-bottom {
     display: flex;
     justify-content: space-between;
 }
-footer .footer-bottom .chinese-taiwan span{
+
+footer .footer-bottom .chinese-taiwan span {
     font-size: 12px;
 }
-footer .footer-bottom .links{
+
+footer .footer-bottom .links {
     display: flex;
     justify-content: space-between;
 }
-footer .footer-bottom .links a{
+
+footer .footer-bottom .links a {
     font-size: 12px;
-padding: 0px 24px 4px 0px ;
-color: #616161;
-text-decoration: none;
+    padding: 0px 24px 4px 0px;
+    color: #616161;
+    text-decoration: none;
 
 }
-footer .footer-bottom .links p{
+
+footer .footer-bottom .links p {
     font-size: 12px;
 }
