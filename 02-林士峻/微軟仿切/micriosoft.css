@@ -21,11 +21,152 @@ section:nth-child(1) {
 }
 
 .search-symbol{
-margin-right: 2vw;
+  margin-right: 2vw;
+  cursor: pointer;
+}
+
+/* 手機板選單 */
+
+label{
+  width: 100%;
+  background-image: url('./圖片庫/list.png');
+  display: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+input{
+  display: none;
+  cursor: pointer;
+}
+
+section div  .mobile-menu-section{
+  width: 100%;
+  top:0px;
+  left: 0px;
+  position: absolute;
+  padding: unset;
+}
+
+.mobile-menu{
+  display: none;
+}
+
+
+
+@media screen and (max-width:859px) {
+  section div nav #section1_logo{
+    position: relative;
+    left:36.5vw;
+  }
+  .search-symbol{
+   position:absolute;
+   left:50px;
+  }
+  #section1-divR ul li .log-in-pic{
+    position:relative;
+    left:9vw;
+  }
+  #section1-divR ul .carcar{
+    position: relative;
+    left:8vw;
+  }
+  label{
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left:15px;
+    top:2.5vh;
+  }
+  #mobile-list:checked+label {
+    width: 15px;
+    background-image: url('./圖片庫/x2.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 82.5vw;
+    top: 2.5vh;
+    cursor: pointer;
+  }
+  .mobile-menu{
+    /* display: block; */
+    position: absolute;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    top: 58px;
+    /* left:-20px; */
+    z-index: 55;
+    width: 100%;
+    font-size: 0.95rem;
+    }
+    #mobile-list:checked~section .mobile-menu{
+      display: block;
+      overflow-x: hidden;
+    }
+
+    #mobile-list:checked~section .mobile-menu li{
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      padding: 15px ;
+      height: 60px;
+    }
+  
+  
+}
+@media screen and (max-width:599px) {
+  section div nav #section1_logo{
+    left:35.5vw;
+  }
+  .search-symbol{
+    position:absolute;
+   left:50px;
+  }
+  #section1-divR ul li .log-in-pic{
+    position:relative;
+    left:6vw;
+  }
+  #section1-divR ul .carcar{
+    position: relative;
+    left:4vw;
+  }
+  label{
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left:15px;
+    top:2.5vh;
+  }
+  #mobile-list:checked+label {
+    content: '';
+    width: 15px;
+    background-image: url('./圖片庫/x2.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 82.5vw;
+    top: 2.5vh;
+  }
+  #mobile-list:checked+label::before{
+    display: none;
+  }
+
+  
+}
+
+
+.search-symbol:before{
+  content:"搜尋";
+}
+.carcar:before{
+  width: 50px;
+  content:"購物車";
+}
+.carcar:after{
+  width: 40px;
+  content:"登入";
 }
 
 #section1-divR .shopping-car{
-  width: 0.8vw;
+  width: 18px;
 }
 
 @media screen and (max-width: 1080px) {
@@ -74,12 +215,13 @@ section:nth-child(1) nav ul li a {
 #section1-divR ul .omg{
   margin-right: 1vw;
   font-size: 0.8rem;
-  padding-top: 17px;
+  padding-top: 18px;
 }
 
 #section1-divR ul li .log-in-pic{
   padding-top: 10px;
   margin-left: -0.5vw;
+  cursor: pointer;
 }
 
 #section1-divR ul li button {
@@ -91,6 +233,101 @@ section:nth-child(1) nav ul li a {
 section:nth-child(2) img {
   width: 100%;
   display: none;
+}
+
+@media screen and (max-width:1750px) and (min-width:1541px) {
+  #section1-divR ul .omg{
+    margin-right: 0.5vw;
+  }
+}
+
+@media screen and (max-width:1540px) and (min-width:1400px) {
+  #section1-divR ul li .log-in-pic{
+    margin-left: unset;
+  }
+  #section1-divR ul .all-microsoft{
+    width: 110px;
+  }
+  #section1-divR ul .wtf{
+    width: 90px;
+  }
+  #section1-divR ul .wtf2{
+    width: 60px;
+  }
+}
+
+@media screen and (max-width:1399px) and (min-width:1084px) {
+  #section1-divR ul li .log-in-pic{
+    margin-left: unset;
+  }
+  #section1-divR ul .all-microsoft{
+    width: 110px;
+  }
+  #section1-divR ul .wtf{
+    width: 30px;
+  }
+  #section1-divR ul .wtf2{
+    width: 30px;
+  }
+  .search-symbol:before{
+    content:" ";
+  }
+  .carcar:before{
+    width: 50px;
+    content:" ";
+  }
+  .carcar:after{
+    width: 40px;
+    content:" ";
+  }
+  
+}
+
+@media screen and (max-width:1083px) and (min-width:860px) {
+  #section1-divR ul li .log-in-pic{
+    margin-left: unset;
+  }
+  #section1-divR ul .all-microsoft{
+    width: 110px;
+  }
+  #section1-divR ul .wtf{
+    width: 30px;
+  }
+  #section1-divR ul .wtf2{
+    width: 30px;
+  }
+  .search-symbol:before{
+    content:" ";
+  }
+  .carcar:before{
+    width: 50px;
+    content:" ";
+  }
+  .carcar:after{
+    width: 40px;
+    content:" ";
+  }
+  
+}
+
+@media screen and (max-width:859px) {
+  section:nth-child(1) nav div {
+    display: none;
+}
+.search-symbol:before{
+  content:" ";
+}
+.carcar:before{
+  width: 50px;
+  content:" ";
+}
+.carcar:after{
+  width: 40px;
+  content:" ";
+}
+#section1-divR ul .all-microsoft{
+  display: none;
+}
 }
 
 #section1__sitemap {
@@ -153,9 +390,6 @@ section:nth-child(2) img {
     flex: unset;
   }
 
-  section #section1-divR ul li {
-    padding: 20px 5px;
-  }
 }
 
 @media screen and (min-width: 1051px) and (max-width: 1250px) {
@@ -170,10 +404,6 @@ section:nth-child(2) img {
   section #section1__sitemap div ul {
     margin: 2vh 3vw;
     flex: 1 1 120px;
-  }
-
-  section #section1-divR ul li {
-    padding: 20px 5px;
   }
 }
 

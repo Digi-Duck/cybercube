@@ -446,8 +446,11 @@ body{
     font-size: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
+.container>nav>.menu>section>ul:last-child{
+    border-bottom: 1px solid black;
+}
 .container>nav>.menu>section>ul:first-child{
-    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-top: 1px solid transparent;
 }
 .container>nav>.menu>section ul li{
     width: 100%;
@@ -692,6 +695,24 @@ main>.carousel>.control{
     justify-content: space-between;
     align-items: center;
 }
+/* 微軟這邊因為他控制項上面那塊是用margin-top:-3rem去往上推，而我是用position:relative top-48px 所以我下面控制項如果用absolute固定而不改變位置的話會跑版，因此下面需要多設定，但是不確定下面三個圖片的位置會不會受影響，可能需要額外做調整 */
+@media screen and (max-width:1083px){
+    main>.carousel>.banner>div:nth-child(6){
+        height: unset; /*取消高度，才不會換版之後下方有莫名一大塊空白，因為高度應該要剩下260px*/
+    }
+    main>.carousel>.control{
+        /* 硬推讓控制項能往上，但是不確定會不會影響下面的東西 */
+        position: absolute;
+        bottom: -17px;
+        left: calc(50% - 76.5px);
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel>.control{
+        /* 讓控制項區塊回歸正常排版 */
+        position: unset;
+    }
+}
 main>.carousel>.control>span{
     display: inline-block;
     background-repeat: no-repeat;
@@ -723,12 +744,247 @@ main>.carousel>.control>.goright{
     height: 24px;
     background-image: url("../img/goright.svg");
 }
+/* control控制完成 */
+
+/* 三個選項 */
+main>.chose-x3{
+    width: 100%;
+    padding: 0px 12px;
+    height: 120px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div>div{
+    margin: 16px 24px;
+    text-align: center;
+    height: 72px;
+}
+main>.chose-x3>div>div>img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+}
+main>.chose-x3>div>div>span{
+    font-size: 16px;
+    font-weight: 600;
+}
+main>.chose-x3>div>div>span>a{
+    color: #000;
+}
 @media screen and (max-width:1083px){
-    main>.carousel>.control{
-        position: absolute;
-        bottom: 30.5px;
-        left: calc(50% - 76.5px);
+    main>.chose-x3{
+        margin-top: 64px;
+    }
+}
+@media screen and (max-width:859px){
+    main>.chose-x3{
+        margin-top: unset;
+    }
+}
+@media screen and (max-width:601px){
+    main>.chose-x3{
+        height: unset;
+    }
+    main>.chose-x3>div{
+        /* 讓第三個圖案區塊可以往第二行 */
+        flex-wrap: wrap;
+    }
+}
+/* 三個圖片按鈕區完成 */
+/* 第一區卡片區 */
+main>.content1{
+    width: 100%;
+    height: 100%;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+main>.content1>div{
+    width: 100%; /*這裡設定90%是因為要讓左右有margin:5%的空間(我改成margin:auto)*/
+    height: 100%;
+    margin: 0px calc(5% - 12px); /*這裡真是莫名其妙誤打誤撞，扣掉第一與最後一章卡片最左右邊的padding*/
+    max-width: 1624px;   /*這裡事實上不是1600而是1624因為微軟的第一個與最後一個卡片的左右各少一條padding*/
+    /* 這裡的大小還是怪怪的 */
+    /* 如果要設各少邊padding就要
+    
+        main>.content1>div>.cards>div:first-child{
+            padding-left: 0px;
+        }
+        main>.content1>div>.cards>div:last-child{
+            padding-right: 0px;
+    } */
+}
+main>.content1>div>.cards{
+    /* 多設置的，因為第二個content2有一個h1，這是用來框住卡片區(不包h1) */
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* main>.content1>div>.cards>div:first-child{
+    padding-left: 0px;
+}
+main>.content1>div>.cards>div:last-child{
+    padding-right: 0px;
+} 如果使用移除左右邊padding的方式，圖片的大小會受到影響*/
+
+main>.content1>div>.cards>div{
+    /* 這邊如果只有設定max-width而沒有設定width的話，會因為內容的多寡而影響區塊大小：例如當文字內容不夠多的時候區塊不夠大，整個區塊的寬度會受到影響 */
+    max-width: 25%;
+    width: 25%;
+    height: auto; /*這裡高度如果設定100%，會以內容高度為高度，設為auto反而是填滿*/
+    padding: 0px 12px;
+    background-color: #fff;
+}
+main>.content1>div>.cards>div>img{
+    width: 100%; /*必須設定圖片大小不然會爆炸喔*/
+    /* 高度自由生長 */
+    height: auto;
+    /* 圖片記得要改成block不然又會多出莫名的空白 */
+    display: block;
+    margin-bottom: 16px;
+}
+/* 以卡片大小來控制圖片大小 */
+@media screen and (max-width:1083px){
+    main>.content1>div{
+        width: 100%;
+        margin: unset;
+    }
+    main>.content1>div>.cards>div{
+        width: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width:539px){
+    main>.content1>div>.cards>div{
+        width: 100%;
+        max-width: 100%;
     }
 }
 
-/* control控制完成 */
+main>.content1>div>.cards>div>span{
+    /* 這邊如果改成div的話就要給他高寬，微軟是span外面有包一層div，就算沒有內容也有div的高度 */
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    display: inline-block;
+    background-color: rgb(149, 12, 23);
+    color: white;
+    /* margin-top: 16px; 這裡不能這樣推，這樣推的話h1會全部往上，改用圖片的margin-bottom推*/
+}
+main>.content1>div>.cards>div:first-child>span:nth-child(2){
+    padding: 6px 12px; /*只指定讓有文字的span增加padding，這樣其他空的span就不會一起被增加*/
+}
+main>.content1>div>.cards>div:nth-child(n+2)>h1{ /*n+2可以選到從第二個開始的h1*/
+    /* 讓沒有「新上市」在上方的h1也不會歪掉 */
+    /* 這個高度是span的padding上下加起來的高度(會被line-height影響) */
+    /* 原本是4，加上下面h1要一起往下推5，所以是9 */
+    margin-top: 9px; 
+}
+main>.content1>div>.cards>div>h1{
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+/* 微軟的h1是1400換版但是我的要提早換，理由尚不清楚 */
+/* 卡片區的換版 */
+@media screen and (max-width:1399px){
+    main>.content1>div>.cards>div>h1{
+        font-size: 24px;
+        margin-top: 4px;
+        margin-bottom: 12px;
+    }
+    main>.content1>div>.cards>div:nth-child(n+2)>h1{
+        /* 原本是4，加上下面h1要一起往下推5，所以是9<<<<<改成推4，這邊也要改成8 */
+        margin-top: 8px; 
+    }
+}
+@media screen and (max-width:1083px){
+    /* 第一與第二塊卡片微軟新增margin-bottom:48px，但是因為我的div比較高所以只新增42(因為div高了6px) */
+    main>.content1>div>.cards>.card1,.card2{
+        margin-bottom: 42px;
+    }
+    main>.content1>div>.cards>div>h1{
+        font-size: 21px;
+        margin-bottom: 9px;
+    }
+}
+@media screen and (max-width:539px){
+    /* 剩一行的時候第三塊也增加間距 */
+    main>.content1>div>.cards>.card3{
+        margin-bottom: 42px;
+    }
+}
+main>.content1>div>.cards>div>div{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+main>.content1>div>.cards>div>div>span{
+    color: rgb(149, 12, 23);
+    font-weight: 600;
+    display: block;
+    margin: 16px 0px;
+}
+main>.content1>div>.cards>div>div>p{
+    width: 100%;
+    font-weight: 400;
+}
+main>.content1>div>.cards>div>div>.goright-icon{
+    width: 13px;
+    height: 13px;
+    background-image: url("../img/goright-red.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 5px;
+}
+/* 第一區卡片完成 */
+
+/* 第二塊輪播 */
+/* 先套用第一塊的設定再來做修改 */
+main>.carousel:nth-child(4){
+    max-width: 1600px;
+    width: 90%;
+    margin: auto;
+    margin-top: 90px;
+}
+main>.carousel:nth-child(4)>.banner>div>.text-case>.banner-text>span{
+    display: none;
+}
+main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+    top: 53%;
+}
+@media screen and (max-width:1083px){
+    main>.carousel:nth-child(4){
+        width: 100%;
+        padding: 0px 12px;
+    }
+    main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+        top: -48.8px;
+    }
+    
+    main>.carousel:nth-child(4)>.banner>div>.text-case{
+        box-shadow: unset;
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text{
+        padding: 48px 0px;
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel:nth-child(4){
+        margin-top: 40px;
+    }
+}
+/* 第二塊輪播完成 */
