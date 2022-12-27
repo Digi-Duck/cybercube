@@ -951,3 +951,40 @@ main>.content1>div>.cards>div>div>.goright-icon{
     margin-left: 5px;
 }
 /* 第一區卡片完成 */
+
+/* 第二塊輪播 */
+/* 先套用第一塊的設定再來做修改 */
+main>.carousel:nth-child(4){
+    max-width: 1600px;
+    width: 90%;
+    margin: auto;
+    margin-top: 90px;
+}
+main>.carousel:nth-child(4)>.banner>div>.text-case>.banner-text>span{
+    display: none;
+}
+main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+    top: 53%;
+}
+@media screen and (max-width:1083px){
+    main>.carousel:nth-child(4){
+        width: 100%;
+        padding: 0px 12px;
+    }
+    main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+        top: -48.8px;
+    }
+    
+    main>.carousel:nth-child(4)>.banner>div>.text-case{
+        box-shadow: unset;
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text{
+        padding: 48px 0px;
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel:nth-child(4){
+        margin-top: 40px;
+    }
+}
+/* 第二塊輪播完成 */
