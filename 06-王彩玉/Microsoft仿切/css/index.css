@@ -446,8 +446,11 @@ body{
     font-size: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
+.container>nav>.menu>section>ul:last-child{
+    border-bottom: 1px solid black;
+}
 .container>nav>.menu>section>ul:first-child{
-    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-top: 1px solid transparent;
 }
 .container>nav>.menu>section ul li{
     width: 100%;
@@ -692,6 +695,24 @@ main>.carousel>.control{
     justify-content: space-between;
     align-items: center;
 }
+/* 微軟這邊因為他控制項上面那塊是用margin-top:-3rem去往上推，而我是用position:relative top-48px 所以我下面控制項如果用absolute固定而不改變位置的話會跑版，因此下面需要多設定，但是不確定下面三個圖片的位置會不會受影響，可能需要額外做調整 */
+@media screen and (max-width:1083px){
+    main>.carousel>.banner>div:nth-child(6){
+        height: unset; /*取消高度，才不會換版之後下方有莫名一大塊空白，因為高度應該要剩下260px*/
+    }
+    main>.carousel>.control{
+        /* 硬推讓控制項能往上，但是不確定會不會影響下面的東西 */
+        position: absolute;
+        bottom: -17px;
+        left: calc(50% - 76.5px);
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel>.control{
+        /* 讓控制項區塊回歸正常排版 */
+        position: unset;
+    }
+}
 main>.carousel>.control>span{
     display: inline-block;
     background-repeat: no-repeat;
@@ -723,12 +744,56 @@ main>.carousel>.control>.goright{
     height: 24px;
     background-image: url("../img/goright.svg");
 }
+/* control控制完成 */
+
+/* 三個選項 */
+main>.chose-x3{
+    width: 100%;
+    padding: 0px 12px;
+    height: 120px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div>div{
+    margin: 16px 24px;
+    text-align: center;
+    height: 72px;
+}
+main>.chose-x3>div>div>img{
+    width: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+}
+main>.chose-x3>div>div>span{
+    font-size: 16px;
+    font-weight: 600;
+}
+main>.chose-x3>div>div>span>a{
+    color: #000;
+}
 @media screen and (max-width:1083px){
-    main>.carousel>.control{
-        position: absolute;
-        bottom: 30.5px;
-        left: calc(50% - 76.5px);
+    main>.chose-x3{
+        margin-top: 64px;
     }
 }
-
-/* control控制完成 */
+@media screen and (max-width:859px){
+    main>.chose-x3{
+        margin-top: unset;
+    }
+}
+@media screen and (max-width:601px){
+    main>.chose-x3{
+        height: unset;
+    }
+    main>.chose-x3>div{
+        /* 讓第三個圖案區塊可以往第二行 */
+        flex-wrap: wrap;
+    }
+}
