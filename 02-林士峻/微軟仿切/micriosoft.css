@@ -25,25 +25,121 @@ section:nth-child(1) {
   cursor: pointer;
 }
 
+/* 手機板選單 */
+
+label{
+  width: 100%;
+  background-image: url('./圖片庫/list.png');
+  display: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+input{
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu-section{
+  width: 100%;
+}
+
+.mobile-menu{
+  display: none;
+}
+
+
+
 @media screen and (max-width:859px) {
   section div nav #section1_logo{
     position: relative;
     left:36.5vw;
   }
   .search-symbol{
-    position: relative;
-   right:65vw;
+   position:absolute;
+   left:50px;
   }
   #section1-divR ul li .log-in-pic{
     position:relative;
-    left:10vw;
+    left:9vw;
   }
   #section1-divR ul .carcar{
     position: relative;
     left:8vw;
   }
-
+  label{
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left:15px;
+    top:2.5vh;
+  }
+  #mobile-list:checked+label {
+    width: 15px;
+    background-image: url('./圖片庫/x2.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 82.5vw;
+    top: 2.5vh;
+    cursor: pointer;
+  }
+  .mobile-menu{
+    /* display: block; */
+    position: absolute;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    top: 35px;
+    left:0px;
+    z-index: 55;
+    width: 500px;
+    }
+    #mobile-list:checked~section ul{
+      display: block;
+    }
+  
+  
 }
+@media screen and (max-width:599px) {
+  section div nav #section1_logo{
+    left:35.5vw;
+  }
+  .search-symbol{
+    position:absolute;
+   left:50px;
+  }
+  #section1-divR ul li .log-in-pic{
+    position:relative;
+    left:6vw;
+  }
+  #section1-divR ul .carcar{
+    position: relative;
+    left:4vw;
+  }
+  label{
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left:15px;
+    top:2.5vh;
+  }
+  #mobile-list:checked+label {
+    content: '';
+    width: 15px;
+    background-image: url('./圖片庫/x2.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 82.5vw;
+    top: 2.5vh;
+  }
+  #mobile-list:checked+label::before{
+    display: none;
+  }
+
+  
+}
+
 
 .search-symbol:before{
   content:"搜尋";
