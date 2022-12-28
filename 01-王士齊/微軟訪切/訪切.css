@@ -168,7 +168,11 @@ main .banner .content {
     flex-direction: column;
     justify-content: space-between;
 }
-
+@media(min-width:1083px) and (max-width:1399px){
+    .content-title{
+        font-size: 29px;
+    }
+}
 @media (max-width:539px) {
     main .banner .content {
         width: 100%;
@@ -223,6 +227,7 @@ main .banner .content {
     .content .content-text {
         margin-bottom: 24px;
     }
+    
 }
 
 @media (min-width:860px) and (max-width:1083px) {
@@ -350,7 +355,7 @@ main .banner .content {
 .illustrate {
     display: flex;
     justify-content: center;
-    margin-bottom: 48px;
+    margin-bottom: 64px;
 }
 
 .illustrate .select1 {
@@ -371,7 +376,7 @@ main .banner .content {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 24px;
+    margin: 16px 24px;
 }
 
 .illustrate .select .pictures {
@@ -397,16 +402,22 @@ main .banner .content {
 .illustrate .select a {
     color: black;
     font-weight: 600;
-    display: flex;
 }
 
-@media (max-width:602px) {
+@media (max-width:601px) {
     .illustrate {
         display: flex;
         flex-wrap:wrap;
     }
+    .illustrate .select3{
+        margin: 16px 40px;
+    }
 }
-
+@media (max-width:860px){
+    .illustrate {
+        margin-bottom: 16px;
+    }
+}
 @media (min-width:602px) and (max-width:859px) {
     .container {
         padding-top: 0px;
@@ -511,17 +522,29 @@ main .banner .content {
     transition: margin-left 0.3s ease;
 }
 
-
 @media (max-width:1083px) {
-main .container .cards{
+    main .container .cards{
         display: flex;
         flex-wrap:wrap;
-        /* background-color: #950c17; */
+        padding: 0px;
     }
     .container .card{
         width: 50%;
+        height: unset;
         padding: 0px 12px;
     }
+}
+@media(max-width:539px){
+    .container .card{
+        width: 100%;
+        height: unset;
+        padding: 0px 12px;
+    }
+}
+@media (max-width:1399px){
+    .card h2 {
+        font-size: 24px;
+        }
 }
 /* for-business */
 main .container .banner-small {
@@ -658,4 +681,22 @@ footer .footer-bottom .links a {
 
 footer .footer-bottom .links p {
     font-size: 12px;
+}
+@media(max-width:766px){
+    footer .footer-bottom{
+        flex-direction: column;
+    }
+}
+@media(max-width:1083px){   
+    footer .footer-top {
+        flex-wrap: wrap;
+    }
+    footer .box {
+        width: 33.333333334%;
+    }
+}
+@media(max-width:538px){
+    footer .box {
+        width: 100%;
+        }
 }
