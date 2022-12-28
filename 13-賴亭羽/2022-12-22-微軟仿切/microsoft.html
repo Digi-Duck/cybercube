@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="computer">
         <div class="links">
             <div class="logo"></div>
             <div class="link line">MIcrosoft 365</div>
@@ -25,17 +25,19 @@
             <div class="link line">支援</div>
         </div>
         <div class="functions">
+            <input type="checkbox" id="switch" hidden>
             <label for="switch">
-                <div class="all border">
+                <div class="all">
                     <span class="line">所有Microsoft</span>
                     <div class="icon"></div>
                 </div>
             </label>
-            <input type="checkbox" id="switch" hidden>
             <div class="menu-all">
                 <div class="container">
                     <ul>
-                        <li><p>軟體</p></li>
+                        <li>
+                            <p>軟體</p>
+                        </li>
                         <li>Windows 應用程式</li>
                         <li>OneDrive</li>
                         <li>Outlook</li>
@@ -44,12 +46,16 @@
                         <li>Microsoft Teams</li>
                     </ul>
                     <ul>
-                        <li><p>個人電腦和設備</p></li>
+                        <li>
+                            <p>個人電腦和設備</p>
+                        </li>
                         <li>選購 Xbox</li>
                         <li>電腦配件</li>
                     </ul>
                     <ul>
-                        <li><p>娛樂</p></li>
+                        <li>
+                            <p>娛樂</p>
+                        </li>
                         <li>Xbox Game Pass Ultimate</li>
                         <li>Xbox Live Gold</li>
                         <li>Xbox 與遊戲</li>
@@ -57,7 +63,9 @@
                         <li>Windows 遊戲</li>
                     </ul>
                     <ul>
-                        <li><p>商務應用</p></li>
+                        <li>
+                            <p>商務應用</p>
+                        </li>
                         <li>Microsoft Cloud</li>
                         <li>Microsoft 安全性</li>
                         <li>Azure</li>
@@ -68,7 +76,9 @@
                         <li>Windows 365</li>
                     </ul>
                     <ul>
-                        <li><p>開發人員與IT</p></li>
+                        <li>
+                            <p>開發人員與IT</p>
+                        </li>
                         <li>開發人員中心</li>
                         <li>文件</li>
                         <li>Microsoft Learn</li>
@@ -78,15 +88,17 @@
                         <li>Visual Studio</li>
                     </ul>
                     <ul>
-                        <li><p>其他</p></li>
+                        <li>
+                            <p>其他</p>
+                        </li>
                         <li>Microsoft Rewards</li>
                         <li>免費下載與安全性</li>
                         <li>教育</li>
                         <li>禮品卡</li>
                         <li>Licensing</li>
                     </ul>
+                    <div class="btn-map">檢視網站地圖<img src="./images/rightarrow.png" alt=""></div>
                 </div>
-                <div class="btn-map">檢視網站地圖<img src="./images/rightarrow.png" alt=""></div>
             </div>
             <div class="function">
                 <span class="line">搜尋</span>
@@ -100,6 +112,92 @@
                 <span class="line">登入</span>
                 <div class="icon login"></div>
             </div>
+        </div>
+    </nav>
+    <nav class="phone">
+        <div class="icons-left">
+            <input type="checkbox" id="switch" hidden>
+            <label for="switch">
+                <div class="icon hamberbread">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+            <div class="menu-all">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <p>軟體</p>
+                        </li>
+                        <li>Windows 應用程式</li>
+                        <li>OneDrive</li>
+                        <li>Outlook</li>
+                        <li>Skype</li>
+                        <li>OneNote</li>
+                        <li>Microsoft Teams</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>個人電腦和設備</p>
+                        </li>
+                        <li>選購 Xbox</li>
+                        <li>電腦配件</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>娛樂</p>
+                        </li>
+                        <li>Xbox Game Pass Ultimate</li>
+                        <li>Xbox Live Gold</li>
+                        <li>Xbox 與遊戲</li>
+                        <li>電腦遊戲</li>
+                        <li>Windows 遊戲</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>商務應用</p>
+                        </li>
+                        <li>Microsoft Cloud</li>
+                        <li>Microsoft 安全性</li>
+                        <li>Azure</li>
+                        <li>Dynamics 365</li>
+                        <li>商務用 Microsoft 365</li>
+                        <li>Microsoft 產業</li>
+                        <li>Microsoft Power Platform</li>
+                        <li>Windows 365</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>開發人員與IT</p>
+                        </li>
+                        <li>開發人員中心</li>
+                        <li>文件</li>
+                        <li>Microsoft Learn</li>
+                        <li>Microsoft 技術社群</li>
+                        <li>Azure Marketplace</li>
+                        <li>AppSource</li>
+                        <li>Visual Studio</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>其他</p>
+                        </li>
+                        <li>Microsoft Rewards</li>
+                        <li>免費下載與安全性</li>
+                        <li>教育</li>
+                        <li>禮品卡</li>
+                        <li>Licensing</li>
+                    </ul>
+                    <div class="btn-map">檢視網站地圖<img src="./images/rightarrow.png" alt=""></div>
+                </div>
+            </div>
+            <div class="icon search"></div>
+        </div>
+        <div class="logo"></div>
+        <div class="icons-right">
+            <div class="icon shopping"></div>
+            <div class="icon login"></div>
         </div>
     </nav>
     <main>

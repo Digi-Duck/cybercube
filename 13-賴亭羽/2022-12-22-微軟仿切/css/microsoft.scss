@@ -66,6 +66,22 @@
 
 ;
 
+@mixin w1024px {
+    @media (max-width:1024px) {
+        @content
+    }
+}
+
+;
+
+@mixin w900px {
+    @media (max-width:900px) {
+        @content
+    }
+}
+
+;
+
 @mixin w768px {
     @media (max-width:768px) {
         @content
@@ -92,7 +108,7 @@ body {
     font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-nav {
+nav.computer {
     width: 100%;
     height: 56px;
     margin: auto;
@@ -103,6 +119,10 @@ nav {
 
     @include w1084px {
         padding: 0 2%;
+    }
+
+    @include w900px {
+        display: none;
     }
 
     .links {
@@ -136,7 +156,7 @@ nav {
 
         .line:active {
             padding: 16px 8px 10px;
-            border:  1px dotted #000;
+            border: 1px dotted #000;
         }
     }
 
@@ -161,36 +181,44 @@ nav {
             z-index: 10;
             position: absolute;
             top: 53px;
-            left: -940px;
+            right: -1%;
 
             .container {
                 width: 1230px;
-                height: 440px;
                 background-color: #f2f2f2;
                 padding-right: 0px;
 
                 font-size: 13px;
 
                 display: flex;
-            }
+                flex-wrap: wrap;
 
-            .btn-map{
-                width: 100%;
-                height: 40px;
-                background-color: #e6e6e6;
-                border-bottom: solid 2px #000;
+                @include w1400px {
+                    max-width: 1000px;
+                }
 
-                text-align: center;
-                line-height: 40px;
+                @include w1024px {
+                    max-width: 800px;
+                }
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                .btn-map {
+                    width: 100%;
+                    height: 40px;
+                    background-color: #e6e6e6;
+                    border-bottom: solid 2px #000;
 
-                img{
-                    width: 20px;
-                    height: 28px;
-                    padding-left: 5px;
+                    text-align: center;
+                    line-height: 40px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 20px;
+                        height: 28px;
+                        padding-left: 5px;
+                    }
                 }
             }
 
@@ -212,9 +240,16 @@ nav {
 
         input:checked~.menu-all {
             display: flex;
-            flex-flow:column;
+            flex-flow: column;
 
             z-index: 10;
+        }
+
+        //無法執行
+        input:checked~.all {
+            background-color: #e6e6e6;
+            padding: 16px 8px 10px;
+            border: 1px dotted #000;
         }
 
         .line:hover {
@@ -249,6 +284,11 @@ nav {
 
             display: flex; //因為圖片是在function中，所以要讓文字和圖片橫向排列，除functions要下flex之外，function也要下
             align-items: center;
+
+            &:active {
+                padding: 16px 8px 10px;
+                border: 1px dotted #000;
+            }
 
             span {
                 @include w1400px {
@@ -291,6 +331,104 @@ nav {
                 }
             }
         }
+    }
+}
+
+nav.phone {
+    width: 100%;
+    height: 56px;
+    margin: auto;
+
+    .logo {
+        width: 110px;
+        height: 25px;
+        margin: auto;
+
+        background-image: url(../images/logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .icons-left {
+        padding-left: 8px;
+
+        display: flex;
+        align-items: center;
+
+        input:checked~.menu-all{
+            width: 100%;
+            background-color: #e6e6e6;
+            
+            display: block;
+
+            z-index: 10;
+        }
+
+        .menu-all{
+            display: none;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            &.hamberbread{
+                padding: 18px 13px 15px 13px;
+
+                display: flex;
+                flex-wrap: wrap;
+
+                span{
+                    width: 30px;
+                    height: 1px;
+                    background-color: #000;
+                }
+            }
+
+            &.search{
+                background-image: url('../images/search.svg');
+                background-size: 35%;
+            }
+        }
+    }
+
+    .icons-right {
+        padding-right: 8px;
+
+        display: flex;
+        align-items: center;
+
+        .icon {
+            width: 48px;
+            height: 48px;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            &.shopping {
+                background-image: url('../images/shopping.svg');
+                background-size: 35%;
+            }
+
+            &.login {
+                background-image: url('../images/user.svg');
+                background-size: 70%;
+            }
+        }
+    }
+
+    @include w1920px {
+        display: none;
+    }
+
+    @include w900px {
+        display: flex;
     }
 }
 
