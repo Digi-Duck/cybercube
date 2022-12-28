@@ -7,11 +7,6 @@ html{
     line-height: 1.15;
     font-family: sans-serif;
 }
-/* 先把a標籤初始化 */
-a{
-    text-decoration: none;
-    color: #000;
-}
 body{
     font-family: "Segoe UI",SegoeUI, '微軟正黑體',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1rem;
@@ -58,12 +53,7 @@ header>nav>.links{
     align-items: center;
     justify-content: space-between;
 }
-header>nav>.links>a{
-    height: 48px; /*為了顯示outline 不能用100% */
-    display: flex;
-    align-items: center;
-}
-header>nav>.links>a>.logo{
+header>nav>.links>.logo{
     width: 110px;
     height: 25px;
     margin: 16px 6px 16px 10px;
@@ -71,9 +61,8 @@ header>nav>.links>a>.logo{
     background-size: contain; /*不裁切*/
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer;
 }
-header>nav>.links>a:nth-child(6){
+header>nav>.links>.link:nth-child(6){
     display: none;
 }
     /* header>nav>.links>.link:nth-child(7)問題：我想選「支援」但是為什麼不是nth-child(6)而是(7)呢？ 似乎是.links下的第七個東西(不管名稱)不過.link:nth-child(1)是選不到logo的*/
@@ -86,10 +75,7 @@ header>nav>.functions{
     justify-content: space-between;
     align-items: center;
 }
-header>nav>.functions>a{
-    cursor: pointer;
-}
-header>nav>.functions>a>.function{
+header>nav>.functions>.function{
     height: 48px;
     display: flex;
     flex-wrap: nowrap;
@@ -104,13 +90,13 @@ header>nav>.functions>.all{
     top: 0px;
     left: 0px;
 }
-header>nav>.functions>a:nth-child(4)>.function{
+header>nav>.functions>.function:nth-child(4){
     margin-right: 8px;
 }
-header>nav>.functions>a:nth-child(3)>.function{
+header>nav>.functions>.function:nth-child(3){
     margin-left: 15px;
 }
-header>nav>.functions>a>.function>.icon{
+header>nav>.functions>.function>.icon{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -118,22 +104,22 @@ header>nav>.functions>a>.function>.icon{
 }
 
 /* header>nav>.functions>.all>label>.icon這邊下移到367行 */
-header>nav>.functions>a>.function>.search{
+header>nav>.functions>.function>.search{
     width: 16px;
     height: 18px;
     background-image: url("../img/search1.svg");
     margin-right: 20px;
 }
-header>nav>.functions>a>.function>.shopping{
+header>nav>.functions>.function>.shopping{
     width: 16px;
     height: 42px;
     background-image: url("../img/cart1.svg");
     margin-left: 6px;
 }
-header>nav>.functions>a:nth-child(4)>.function>span{
+header>nav>.functions>.function:nth-child(4)>span{
     margin-right: 2px;
 }
-header>nav>.functions>a>.function>.login{
+header>nav>.functions>.function>.login{
     width: 32px;
     height: 32px;
     background-image: url("../img/user.svg");
@@ -152,18 +138,7 @@ header>nav>.functions>.all>label{
     position: relative;
     top: 0px;
     left: 0px;
-    z-index: 3; /*搬到第3層讓下方清單的上底線不會顯示出來*/
-    cursor: pointer;
-}
-header>nav>.functions>.all>label>.mask{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border: none;
-    background-color: transparent;
-    z-index: -1;
+    z-index: 2; /*搬到第二層讓下方清單的上底線不會顯示出來*/
 }
 header>nav>.functions>.all>label>.icon{
     width: 15px;
@@ -207,7 +182,7 @@ header>nav>.functions>.all>.all-menu>ul>li{
     list-style-type: none;
     padding-bottom: 10px;
 }
-header>nav>.functions>.all>.all-menu>ul>li span{
+header>nav>.functions>.all>.all-menu>ul>li>span{
     font-weight: 600;
     padding: 18px 0px 18px 24px;
     display: block;
@@ -233,21 +208,19 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2){
 header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
     margin: auto;
     padding: 0px;
-    position: relative;
-    top: 2px;
-    left: 8px;
-}
-header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-self: center;
+    position: relative;
+    top: 2px;
+    left: 8px;
 }
-header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>span{
+header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>span{
     font-weight: 400;
     padding: 9px 0px;
 }
-header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
+header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>.icon-right{
     width: 7px;
     background-image: url("../img/chevro-right.svg");
     background-size: contain;
@@ -267,14 +240,14 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.functions>.all{
         margin-left: 47px;
     }
-    header>nav>.functions>a:nth-child(2)>.function{
+    header>nav>.functions>.function:nth-child(2){
         margin-right: 13px;
     }
-    header>nav>.functions>a:nth-child(3)>.function{
+    header>nav>.functions>.function:nth-child(3){
         margin-right: 13px;
         margin-left: 0px;
     }
-    header>nav>.functions>a:nth-child(4)>.function{
+    header>nav>.functions>.function:nth-child(4){
         margin-right: 0px;
     }
 }
@@ -282,10 +255,10 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.functions{
         justify-content: flex-end;
     }
-    header>nav>.functions>a>.function>span{
+    header>nav>.functions>.function>span{
         display: none;
     }
-    header>nav>.functions>a>.function>.shopping{
+    header>nav>.functions>.function>.shopping{
         margin-left: 0px;
         margin-right: 10px;
     }
@@ -297,10 +270,10 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
         /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
         right: -190px;
     }
-    header>nav>.functions>a:nth-child(2)>.function{
+    header>nav>.functions>.function:nth-child(2){
         margin-right: 0px;
     }
-    header>nav>.functions>a:nth-child(3)>.function{
+    header>nav>.functions>.function:nth-child(3){
         margin-right: 0px;
     }
     header>nav>.functions>.all>.all-menu>ul>li{
@@ -361,26 +334,22 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.links{
         width: 490px;
     }
-    header>nav>.links>a:nth-child(5)>.link{
+    header>nav>.links>.link:nth-child(5){
         margin-right: 4px;
     }
-    header>nav>.links>a:nth-child(6){
+    header>nav>.links>.link:nth-child(6){
         display: flex;
     }
-    header>nav>.links>a:nth-child(6)>.link{
-        display: flex;
-    }
-    /* 如果加了input與label就要往後推兩個數字 */
-    header>nav>.links>a:nth-child(7){
+    header>nav>.links>.link:nth-child(7){
         display: none;
     }
-    header>nav>.links>a:nth-child(8){
+    header>nav>.links>.link:nth-child(8){
         display: none;
     }
-    header>nav>.links>a>.link>span{
+    header>nav>.links>.link>span{
         height: 19.5px;
     }
-    header>nav>.links>a>.link>.more{
+    header>nav>.links>.link>.more{
         width: 14px;
         height: 22px;
         margin-left: 2px;
@@ -417,21 +386,18 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.links{
         width: auto;
     }
-    header>nav>.links>a>.logo{
+    header>nav>.links>.logo{
         width: 108px;
         height: 23px;
         position: absolute;
         left: calc(50% - 65px);
         top: -4px;
     }
-    header>nav>.links>a{
+    header>nav>.links>.link{
         display: none;
     }
-    header>nav>.links>a:first-child{
-        display: block;
-    }
     /* 因為權重，必須特別再將「更多」單獨再消失一次 */
-    header>nav>.links>a:nth-child(6)>.link{
+    header>nav>.links>.link:nth-child(6){
         display: none;
     }
     header>nav>.functions{
@@ -440,14 +406,14 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.functions>.all{
         display: none;
     }
-    header>nav>.functions>a:nth-child(2)>.function{
+    header>nav>.functions>.function:nth-child(2){
         display: flex;
         /* 用position讓放大鏡往左靠 */
         position: absolute;
         top: 3px;
         left: 55px;
     }
-    header>nav>.functions>a:nth-child(3)>.function{
+    header>nav>.functions>.function:nth-child(3){
         margin-right: 10px;
     }
 }
@@ -562,7 +528,6 @@ header>nav>.menu>section>input:checked + label>.down-icon{
         position: relative;
         top: 0px;
         left: 0px;
-        cursor: pointer;
     }
     main>.carousel>.banner>img{
         display: none;
@@ -882,7 +847,6 @@ main>.content>div>.cards>div{
     height: auto; /*這裡高度如果設定100%，會以內容高度為高度，設為auto反而是填滿*/
     padding: 0px 12px;
     background-color: #fff;
-    cursor: pointer;
 }
 main>.content>div>.cards>div>img{
     width: 100%; /*必須設定圖片大小不然會爆炸喔*/
@@ -965,22 +929,22 @@ main>.content>div>.cards>div>h1{
         margin-bottom: 42px;
     }
 }
-main>.content>div>.cards>div>div>a{
+main>.content>div>.cards>div>div{
     margin-top: 8px;
     display: flex;
     align-items: center;
 }
-main>.content>div>.cards>div>div>a>span{
+main>.content>div>.cards>div>div>span{
     color: rgb(149, 12, 23);
     font-weight: 600;
     display: block;
     margin: 16px 0px;
 }
-main>.content>div>.cards>div>div>a>p{
+main>.content>div>.cards>div>div>p{
     width: 100%;
     font-weight: 400;
 }
-main>.content>div>.cards>div>div>a>.goright-icon{
+main>.content>div>.cards>div>div>.goright-icon{
     width: 13px;
     height: 13px;
     background-image: url("../img/goright-red.svg");
@@ -1315,126 +1279,4 @@ footer>div>.last>.right>*{
     }
 }
 
-/* 終於改完結構與超連結 */
-
-/* hover效果區 */
-/* nav左邊 */
-nav >.links a div{
-    position: relative;
-}
-nav >.links a div::after{
-    content:'';
-    width: 98%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-/* nav右邊 */
-nav .functions>a span{
-    position: relative;
-}
-nav .functions>a span::after{
-    content:'';
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: -3px;
-    left: 0px;
-}
-nav .all span{
-    position: relative;
-}
-nav .all label span::after{
-    content:'';
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: -3px;
-    left: 0px;
-}
-nav *::after{
-    display: none;
-}
-nav a:hover div::after{
-    display: block;
-}
-nav .all:hover span::after{
-    display: block;
-}
-nav a:hover span::after{
-    display: block;
-}
-/* 登入也不要有底線 */
-nav .functions>a:last-child span::after{
-    display: none;
-}
-/* logo不要有底線 */
-
-nav .links .logo::after{
-    display: none;
-}
-/* 打開所有選單的時候底線消失 */
-header>nav>.functions>.all>input:checked + label span::after{
-    display: none;
-}
-
-
-/* 選擇區 */
-/* 這裡有空應該不要用bgi 因為選擇區的關係 */
-main>.carousel>.control>.goleft{
-    transition: all 0.5s;
-    position: relative;
-    right: 0px;
-    cursor: pointer;
-}
-main>.carousel>.control>.goleft:hover{
-    right: 8px;
-}
-main>.carousel>.control>.goright{
-    transition: all 0.5s;
-    position: relative;
-    left: 0px;
-    cursor: pointer;
-}
-main>.carousel>.control>.goright:hover{
-    left: 8px;
-}
-main>.chose-x3>div>div>span>a{
-    text-decoration: underline;
-}
-main>.content>div>.cards>div>div>a>.goright-icon{
-    transition: all 0.5s;
-}
-main>.content>div>.cards>div>div>a:hover{
-    text-decoration: underline;
-    color: rgb(149, 12, 23);
-}
-main>.content>div>.cards>div>div>a:hover .goright-icon{
-    margin-left: 11px;
-}
-/* 黏住區 */
-main>.gotop>a>span:hover{
-    box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 13%), 0 0 0.0625rem 0 rgb(0 0 0 / 11%);
-    background-color: #fff;
-}
-/* footer */
-footer a:hover{
-    text-decoration: underline;
-}
-/* focus */
-*:focus{
-    outline: 1px dashed black;
-}
-nav a:focus span::after{
-    display: block;
-}
-/* 需解決所有microsoft focus問題 */
-/* 箭頭左右邊滑鼠飄移問題 */
-/* 開啟選單的位置 */
-/* 忘了做更多按鈕 */
-/* focus還有尚未完成 */
+/* 黏住還沒做 */
