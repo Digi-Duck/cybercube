@@ -9,19 +9,23 @@ body {
 }
 
 nav {
-  max-width: 1600px;
   width: 100%;
   height: 56px;
   margin: auto;
+  padding: 0 8%;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 1084px) {
+  nav {
+    padding: 0 2%;
+  }
 }
 nav .links {
   width: 540px;
   height: 100%;
   padding: 0px 0px 0px 10px;
   font-size: 13px;
-  background-color: aqua;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,21 +38,92 @@ nav .links .logo {
   background-size: contain;
   background-position: center;
 }
+nav .links .line:hover {
+  -webkit-text-decoration: solid black underline;
+          text-decoration: solid black underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+nav .links .line:active {
+  padding: 16px 8px 10px;
+  border: 1px dotted #000;
+}
 nav .functions {
   width: 400px;
   height: 100%;
-  background-color: green;
   padding-right: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   font-size: 13px;
+}
+@media (max-width: 1400px) {
+  nav .functions {
+    justify-content: flex-end;
+  }
+}
+nav .functions .menu-all {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 53px;
+  left: -940px;
+}
+nav .functions .menu-all .container {
+  width: 1230px;
+  height: 440px;
+  background-color: #f2f2f2;
+  padding-right: 0px;
+  font-size: 13px;
+  display: flex;
+}
+nav .functions .menu-all .btn-map {
+  width: 100%;
+  height: 40px;
+  background-color: #e6e6e6;
+  border-bottom: solid 2px #000;
+  text-align: center;
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .functions .menu-all .btn-map img {
+  width: 20px;
+  height: 28px;
+  padding-left: 5px;
+}
+nav .functions .menu-all ul {
+  list-style: none;
+}
+nav .functions .menu-all ul li {
+  width: 200px;
+  padding: 14px 0px 14px 24px;
+}
+nav .functions .menu-all ul li p {
+  padding: 4px 0px 4px 0px;
+  font-weight: bold;
+}
+nav .functions input:checked ~ .menu-all {
+  display: flex;
+  flex-flow: column;
+  z-index: 10;
+}
+nav .functions .line:hover {
+  -webkit-text-decoration: solid black underline;
+          text-decoration: solid black underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  cursor: pointer;
 }
 nav .functions .all {
   width: 145px;
   height: 48px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 nav .functions .all .icon {
   width: 17px;
@@ -69,8 +144,8 @@ nav .functions .function {
   }
 }
 nav .functions .function .icon {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   margin-left: 4px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -80,6 +155,11 @@ nav .functions .function .icon.search {
   margin-right: 30px;
   background-image: url("../images/search.svg");
 }
+@media (max-width: 1400px) {
+  nav .functions .function .icon.search {
+    margin: 0px 20px;
+  }
+}
 nav .functions .function .icon.shopping {
   background-image: url("../images/shopping.svg");
 }
@@ -88,4 +168,59 @@ nav .functions .function .icon.login {
   height: 33px;
   margin-left: 12px;
   background-image: url("../images/user.svg");
+}
+@media (max-width: 1400px) {
+  nav .functions .function .icon.login {
+    margin-left: 15px;
+  }
+}
+
+main .banner {
+  width: 100%;
+  position: relative;
+}
+main .banner img {
+  width: 100%;
+  display: none;
+}
+@media (min-width: 1401px) and (max-width: 1920px) {
+  main .banner .banner-xl {
+    display: block;
+  }
+}
+@media (min-width: 1085px) and (max-width: 1400px) {
+  main .banner .banner-l {
+    display: block;
+  }
+}
+@media (min-width: 769px) and (max-width: 1084px) {
+  main .banner .banner-m {
+    display: block;
+  }
+}
+@media (min-width: 540px) and (max-width: 768px) {
+  main .banner .banner-s {
+    display: block;
+  }
+}
+@media (max-width: 539px) {
+  main .banner .banner-xs {
+    display: block;
+  }
+}
+main .context {
+  width: 350px;
+  height: 300px;
+  background-color: cadetblue;
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translate(0, -50%);
+}
+@media (max-width: 1084px) {
+  main .context {
+    width: 100%;
+    position: unset;
+    transform: unset;
+  }
 }/*# sourceMappingURL=microsoft.css.map */
