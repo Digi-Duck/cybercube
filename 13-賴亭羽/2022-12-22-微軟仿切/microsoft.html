@@ -26,7 +26,7 @@
         </div>
         <div class="functions">
             <input type="checkbox" id="switch" hidden>
-            <label for="switch">
+            <label for="switch" class="switch">
                 <div class="all">
                     <span class="line">所有Microsoft</span>
                     <div class="icon"></div>
@@ -116,8 +116,8 @@
     </nav>
     <nav class="phone">
         <div class="icons-left">
-            <input type="checkbox" id="switch" hidden>
-            <label for="switch">
+            <input type="checkbox" id="switch-phone" hidden>
+            <label for="switch-phone">
                 <div class="icon hamberbread">
                     <span></span>
                     <span></span>
@@ -127,69 +127,97 @@
             <div class="menu-all">
                 <div class="container">
                     <ul>
-                        <li>
-                            <p>軟體</p>
-                        </li>
-                        <li>Windows 應用程式</li>
-                        <li>OneDrive</li>
-                        <li>Outlook</li>
-                        <li>Skype</li>
-                        <li>OneNote</li>
-                        <li>Microsoft Teams</li>
+                        <li>MIcrosoft 365</li>
+                        <li>Teams</li>
+                        <li>Windows</li>
+                        <li>Surface</li>
+                        <li>Xbox</li>
+                        <li>支援</li>
                     </ul>
                     <ul>
-                        <li>
-                            <p>個人電腦和設備</p>
-                        </li>
-                        <li>選購 Xbox</li>
-                        <li>電腦配件</li>
+                        <input type="checkbox" id="switch-list01" hidden>
+                        <label for="switch-list01" class="switch-list">
+                            <li>軟體<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>Windows 應用程式</li>
+                            <li>OneDrive</li>
+                            <li>Outlook</li>
+                            <li>Skype</li>
+                            <li>OneNote</li>
+                            <li>Microsoft Teams</li>
+                        </div>
                     </ul>
                     <ul>
-                        <li>
-                            <p>娛樂</p>
-                        </li>
-                        <li>Xbox Game Pass Ultimate</li>
-                        <li>Xbox Live Gold</li>
-                        <li>Xbox 與遊戲</li>
-                        <li>電腦遊戲</li>
-                        <li>Windows 遊戲</li>
+                        <input type="checkbox" id="switch-list02" hidden>
+                        <label for="switch-list02" class="switch-list">
+                            <li>個人電腦和設備<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>選購 Xbox</li>
+                            <li>電腦配件</li>
+                        </div>
                     </ul>
                     <ul>
-                        <li>
-                            <p>商務應用</p>
-                        </li>
-                        <li>Microsoft Cloud</li>
-                        <li>Microsoft 安全性</li>
-                        <li>Azure</li>
-                        <li>Dynamics 365</li>
-                        <li>商務用 Microsoft 365</li>
-                        <li>Microsoft 產業</li>
-                        <li>Microsoft Power Platform</li>
-                        <li>Windows 365</li>
+                        <input type="checkbox" id="switch-list03" hidden>
+                        <label for="switch-list03" class="switch-list">
+                            <li>娛樂<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>Xbox Game Pass Ultimate</li>
+                            <li>Xbox Live Gold</li>
+                            <li>Xbox 與遊戲</li>
+                            <li>電腦遊戲</li>
+                            <li>Windows 遊戲</li>
+                        </div>
                     </ul>
                     <ul>
-                        <li>
-                            <p>開發人員與IT</p>
-                        </li>
-                        <li>開發人員中心</li>
-                        <li>文件</li>
-                        <li>Microsoft Learn</li>
-                        <li>Microsoft 技術社群</li>
-                        <li>Azure Marketplace</li>
-                        <li>AppSource</li>
-                        <li>Visual Studio</li>
+                        <input type="checkbox" id="switch-list04" hidden>
+                        <label for="switch-list04" class="switch-list">
+                            <li>商務應用<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>Microsoft Cloud</li>
+                            <li>Microsoft 安全性</li>
+                            <li>Azure</li>
+                            <li>Dynamics 365</li>
+                            <li>商務用 Microsoft 365</li>
+                            <li>Microsoft 產業</li>
+                            <li>Microsoft Power Platform</li>
+                            <li>Windows 365</li>
+                        </div>
                     </ul>
                     <ul>
-                        <li>
-                            <p>其他</p>
-                        </li>
-                        <li>Microsoft Rewards</li>
-                        <li>免費下載與安全性</li>
-                        <li>教育</li>
-                        <li>禮品卡</li>
-                        <li>Licensing</li>
+                        <input type="checkbox" id="switch-list05" hidden>
+                        <label for="switch-list05" class="switch-list">
+                            <li>開發人員與IT<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>開發人員中心</li>
+                            <li>文件</li>
+                            <li>Microsoft Learn</li>
+                            <li>Microsoft 技術社群</li>
+                            <li>Azure Marketplace</li>
+                            <li>AppSource</li>
+                            <li>Visual Studio</li>
+                        </div>
                     </ul>
-                    <div class="btn-map">檢視網站地圖<img src="./images/rightarrow.png" alt=""></div>
+                    <ul>
+                        <input type="checkbox" id="switch-list06" hidden>
+                        <label for="switch-list06" class="switch-list">
+                            <li>其他<img src="./images/downarrow.png" alt=""></li>
+                        </label>
+                        <div class="list">
+                            <li>Microsoft Rewards</li>
+                            <li>免費下載與安全性</li>
+                            <li>教育</li>
+                            <li>禮品卡</li>
+                            <li>Licensing</li>
+                        </div>
+                        <ul>
+                            <li>檢視網站地圖</li>
+                        </ul>
+                    </ul>
                 </div>
             </div>
             <div class="icon search"></div>
@@ -208,10 +236,10 @@
             <img src="./images/large.jpg" class="banner-l">
             <img src="./images/x_large.jpg" class="banner-xl">
             <div class="context">
-                <div>新上市</div>
-                <div>Surface Pro 9</div>
-                <div>筆記型電腦效能和平板電腦彈性的顛覆性組合，全都在一台攜帶超方便的裝置，送禮自用兩相宜</div>
-                <div>選購Surface Pro 9</div>
+                <p>新上市</p>
+                <h2>Surface Pro 9</h2>
+                <p>筆記型電腦效能和平板電腦彈性的顛覆性組合，全都在一台攜帶超方便的裝置，送禮自用兩相宜</p>
+                <div class="buy-now">選購Surface Pro 9</div>
             </div>
         </div>
 
