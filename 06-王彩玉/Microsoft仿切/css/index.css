@@ -13,38 +13,42 @@ a{
     color: #000;
 }
 body{
+    line-height: 1.5;
+
     font-family: "Segoe UI",SegoeUI, '微軟正黑體',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1rem;
-    line-height: 1.5;
-    height: 2000px;
     position: relative;/*讓mask可以參考位置與大小*/
 }
 /* .mask點擊空白處功能尚未完成(先刪除了html結構的mask) */
 header{
     width: 100%;
-    padding: 0px 5%;
     height: 54px;
     margin: auto;
+    padding: 0px 5%;
 }
 header>nav{
     /* 不是width:1600px而是用max-width，最大寬度1600px寬度100% */
     width: 100%;
     max-width: 1600px;
     height: 100%;
+    font-size: 13px;
+
     margin: auto;
     margin-top: 1px;
     margin-bottom: 2px;
-    font-size: 13px;
+
     display: flex;
     justify-content: space-between;
 }
 header>nav>label{
-    display: none;
     width: 20px;
+
     background-image: url("../img/list1.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    display: none;
 }
 header>nav>input{
     display: none;
@@ -54,23 +58,29 @@ header>nav>.links{
     /* 本來是width: 565px */
     width: 565px;
     height: 100%;
-    display: flex;
+
     align-items: center;
     justify-content: space-between;
+
+    display: flex;
 }
 header>nav>.links>a{
     height: 48px; /*為了顯示outline 不能用100% */
+
     display: flex;
     align-items: center;
 }
 header>nav>.links>a>.logo{
     width: 110px;
     height: 25px;
+
     margin: 16px 6px 16px 10px;
+
     background-image: url("../img/RE1Mu3b.png");
     background-size: contain; /*不裁切*/
     background-position: center;
     background-repeat: no-repeat;
+
     cursor: pointer;
 }
 header>nav>.links>a:nth-child(6){
@@ -81,6 +91,7 @@ header>nav>.links>a:nth-child(6){
 header>nav>.functions{
     width: 418px;
     height: 100%;
+
     display: flex;
     /* 因為最右方已經抓出padding-right:3px對齊，所以就可以從右邊對齊flex-end */
     justify-content: space-between;
@@ -91,15 +102,18 @@ header>nav>.functions>a{
 }
 header>nav>.functions>a>.function{
     height: 48px;
+
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
 header>nav>.functions>.all{
     height: 48px;
+    
     margin-left: 30px;
     display: flex;
     align-items: center;
+
     position: relative;
     top: 0px;
     left: 0px;
@@ -111,24 +125,27 @@ header>nav>.functions>a:nth-child(3)>.function{
     margin-left: 15px;
 }
 header>nav>.functions>a>.function>.icon{
+    margin-left: 4px;
+
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-left: 4px;
 }
 
 /* header>nav>.functions>.all>label>.icon這邊下移到367行 */
 header>nav>.functions>a>.function>.search{
     width: 16px;
     height: 18px;
-    background-image: url("../img/search1.svg");
     margin-right: 20px;
+
+    background-image: url("../img/search1.svg");
 }
 header>nav>.functions>a>.function>.shopping{
     width: 16px;
     height: 42px;
-    background-image: url("../img/cart1.svg");
     margin-left: 6px;
+
+    background-image: url("../img/cart1.svg");
 }
 header>nav>.functions>a:nth-child(4)>.function>span{
     margin-right: 2px;
@@ -136,8 +153,9 @@ header>nav>.functions>a:nth-child(4)>.function>span{
 header>nav>.functions>a>.function>.login{
     width: 32px;
     height: 32px;
-    background-image: url("../img/user.svg");
     margin-left: 10px;
+
+    background-image: url("../img/user.svg");
 }
 /* 所有 Microsoft清單 */
 header>nav>.functions>.all>input{
@@ -146,24 +164,29 @@ header>nav>.functions>.all>input{
 header>nav>.functions>.all>label{
     height: 54px;
     padding: 16px 24px 16px 15px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: relative;
     top: 0px;
     left: 0px;
     z-index: 3; /*搬到第3層讓下方清單的上底線不會顯示出來*/
+
     cursor: pointer;
 }
 header>nav>.functions>.all>label>.mask{
     width: 100%;
     height: 100%;
+
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: -1;
+
     border: none;
     background-color: transparent;
-    z-index: -1;
 }
 header>nav>.functions>.all>label>.icon{
     width: 15px;
@@ -181,14 +204,18 @@ header>nav>.functions>.all>label>.icon{
     margin-left: 1px;
 }
 header>nav>.functions>.all>.all-menu{
+    padding: 1px 0px;
+
     border: 1px solid rgba(0,0,0,.05);
     border-bottom: 2px solid #000;
-    padding: 1px 0px;
+
     background-color: #f2f2f2;
+
     position: absolute;
     top: 48px;
     right: -178px;
     z-index: 2;
+
     display: none;
 }
 header>nav>.functions>.all>input:checked ~ .all-menu{
@@ -204,16 +231,20 @@ header>nav>.functions>.all>.all-menu>ul{
     flex-wrap: nowrap; /*擠不下的時候自動換行，到1299才設定成會自動換行*/
 }
 header>nav>.functions>.all>.all-menu>ul>li{
-    list-style-type: none;
     padding-bottom: 10px;
+
+    list-style-type: none;
 }
 header>nav>.functions>.all>.all-menu>ul>li span{
-    font-weight: 600;
     padding: 18px 0px 18px 24px;
+
+    font-weight: 600;
+
     display: block;
 }
 header>nav>.functions>.all>.all-menu>ul>li>ul{
     list-style-type: none;
+
     display: flex;
     flex-direction: column;
 }
@@ -233,6 +264,7 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2){
 header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
     margin: auto;
     padding: 0px;
+
     position: relative;
     top: 2px;
     left: 8px;
@@ -249,11 +281,12 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>span{
 }
 header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     width: 7px;
+    margin-left: 8px;
+    
     background-image: url("../img/chevro-right.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 8px;
 }
 /* nav RWD設定 */
 @media screen and (max-width:1778px){
@@ -384,6 +417,7 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
         width: 14px;
         height: 22px;
         margin-left: 2px;
+
         background-image: url("../img/chevron-down.svg");
         background-repeat: no-repeat;
         background-size: contain;
@@ -393,26 +427,30 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
 @media screen and (max-width:859px){
     header{
         padding: 0px;
+
         border-bottom: unset;
     }
     header>nav{
         margin: 0px;
+
         border-bottom: 1px solid #e6e6e6;
     }
     header>nav>label{
-        display: block;
         margin-left: 15px;
         margin-bottom: 4px;
+
+        display: block;
     }
     /* 本來下方點擊事件沒有寫在media裡，這樣會造成我選單打開之後拉寬螢幕選單依然佔滿版，移置media裡後就解決了 */
     header>nav>#list:checked ~ .menu {
         display: block;
     }
     header>nav>#list:checked + label{
-        background-image: url("../img/x2.svg");
         width: 15px;
         margin-left: 17px;
         margin-bottom: 5px;
+
+        background-image: url("../img/x2.svg");
     }
     header>nav>.links{
         width: auto;
@@ -420,9 +458,10 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
     header>nav>.links>a>.logo{
         width: 108px;
         height: 23px;
+
         position: absolute;
-        left: calc(50% - 65px);
         top: -4px;
+        left: calc(50% - 65px);
     }
     header>nav>.links>a{
         display: none;
@@ -458,12 +497,15 @@ header>nav>.menu{
     width: 100%;
     max-width: 100%;
     padding: 1px 0px;
+
     background-color: #f2f2f2;
     /* border: 1px solid black; */
+
     position: absolute;
     top: 54px;
     left: 0px;
     z-index: 1;
+
     display: none;
 }
 /* 問題：漢堡清單列開啟之後不會隨著寬度而關閉 */
@@ -477,7 +519,9 @@ header>nav>.menu>section{
 /* ul及li不指向是因為要讓下面裡面的清單全部都吃到就不用重新設定 */
 header>nav>.menu>section>ul{
     width: calc(100% - 2px);/*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
+
     font-size: 15px;
+
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 header>nav>.menu>section>ul:last-child{
@@ -490,6 +534,7 @@ header>nav>.menu>section ul li{
     width: 100%;
     margin: 1px;
     padding: 14px 15px 15px;
+
     border-top: 1px solid transparent;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
@@ -498,12 +543,14 @@ header>nav>.menu>section ul li:last-child{
     border-bottom: none;
 }
 header>nav>.menu>section>label{
-    font-size: 15px;
     width: calc(100% - 2px); /*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
     margin: 1px;
     padding: 14px 15px 15px;
     border-top: 1px solid transparent;
+
+    font-size: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
+
     display: flex; /*這邊要注意，label預設是inline，如果沒特別設定成block，會穿透到上面，因為要排版icon所以再改成flex*/
     justify-content: space-between;
 }
@@ -511,6 +558,7 @@ header>nav>.menu>section>label>.down-icon{
     width: 15px;
     margin-right: 5px;
     margin-top: 5px;
+
     background-image: url("../img/chevron-down.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -519,7 +567,9 @@ header>nav>.menu>section>label>.down-icon{
 /* 清單 */
 header>nav>.menu>section>ul{
     padding-left: 30px;
+
     list-style-type: none;/*項目符號清除*/
+
     display: none;
 }
 /* 一開始就要顯示的清單預設開啟，並且沒有左方padding */
@@ -546,10 +596,11 @@ header>nav>.menu>section>input:checked + label>.down-icon{
     main>.carousel{
         width: 100%;
         height: 100%;
+        padding-top: 1px;
+
         position: relative;
         top: 0px;
         left: 0px;
-        padding-top: 1px;
     }
     @media screen and (max-width:873px){
         main>.carousel{
@@ -559,9 +610,11 @@ header>nav>.menu>section>input:checked + label>.down-icon{
     main>.carousel>.banner{
         width: 100%;
         height: 100%;
+
         position: relative;
         top: 0px;
         left: 0px;
+
         cursor: pointer;
     }
     main>.carousel>.banner>img{
@@ -609,16 +662,20 @@ main>.carousel>.banner>div:nth-child(6){
     /*這邊如果單純用div選擇器的話，後面control會被影響到，所以改成nth-child選取器，不然就是要在後面的div的css裡面再用unset去初始化*/
     width: 100%;
     height: 308.39px;
+
     padding: 0px 5%;
+
     position: absolute;
     top: 50%;
     left: 0%;
+
     transform: translate(0px, -50%);
 }
 main>.carousel>.banner>div>.text-case{
     width: 100%;
     max-width: 1600px;
     /* height: 100%; */
+
     margin-left: auto;
     margin-right: auto;
 }
@@ -627,35 +684,43 @@ main>.carousel>.banner>div>.text-case>.banner-text{
     padding: 48px;
 }
 main>.carousel>.banner>div>.text-case>.banner-text>span{
+    padding: 6px 12px;
+    margin-bottom: 8px;
+
     font-size: 16px;
     font-weight: 600;
     line-height: 1;
-    padding: 6px 12px;
-    margin-bottom: 8px;
+
     background-color: #fff;
     color: rgb(149, 12, 23);
+
     display: inline-block;
 }
 main>.carousel>.banner>div>.text-case>.banner-text>h1{
-    font-size: 37px;
-    font-weight: 600;
     margin-bottom: 19.5px;
     line-height: 1.2;
+
+    font-size: 37px;
+    font-weight: 600;
 }
 main>.carousel>.banner>div>.text-case>.banner-text>div{
     font-size: 16px;
     margin-bottom: 24px;
 }
 main>.carousel>.banner>div>.text-case>.banner-text>a{
+    padding: 10px 12px;
+
     font-size: 16px;
     line-height: 1;
     font-weight: 600;
     color: #fff;
-    padding: 10px 12px;
+
     border: 0.125rem solid transparent;
     border-radius: 0.125rem;
     background-color: #000;
+
     text-decoration: none;
+
     display: inline-block; /*一定要記得+*/
 }
 @media screen and (max-width:1399px){
@@ -683,9 +748,11 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
 @media screen and (max-width:1083px){
     main>.carousel>.banner>div:nth-child(6){
         padding: 0px 12px;
+
         position: relative;
         top: -48.8px;
         z-index: 1;
+
         transform: unset;
     }
     main>.carousel>.banner>div>.text-case{
@@ -696,24 +763,27 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
         box-shadow: 0 0.0625rem 0.125rem rgb(0 0 0 / 11%), 0 0.1875rem 0.4375rem rgb(0 0 0 / 13%);
     }
     main>.carousel>.banner>div>.text-case>.banner-text>h1{
-        font-size: 24px;
         margin-bottom: 12.2px;
+
+        font-size: 24px;
     }
 }
 @media screen and (max-width:859px){
     main>.carousel>.banner>div:nth-child(6){
         height: auto;
-        top: 0px;
-        position: unset;
         padding: 0px;
+
+        position: unset;
+        top: 0px;
     }
     main>.carousel>.banner>div>.text-case{
         padding: 0px 12px;
+
         box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);
     }
     main>.carousel>.banner>div>.text-case>.banner-text{
-        box-shadow: unset;
         padding: 24px 12px 16px 12px;
+        box-shadow: unset;
     }
     /* 本來main>.carousel>.banner{box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);}改成放在main>.carousel>.banner>div>.text-case */
 }
@@ -724,8 +794,10 @@ main>.carousel>.control{
     /*因為吃到上方區塊css設定的屬性，所以在這邊先還原預設，已解決：前方改為nth-child選取器*/
     width: 153px;
     height: 64px;
-    margin: auto;
     padding: 3px 0px 0px;
+
+    margin: auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -749,10 +821,11 @@ main>.carousel>.control{
     }
 }
 main>.carousel>.control>span{
-    display: inline-block;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    display: inline-block;
 }
 main>.carousel>.control>.goleft{
     width: 20px;
@@ -762,17 +835,19 @@ main>.carousel>.control>.goleft{
 main>.carousel>.control>.dot1{
     width: 10px;
     height: 10px;
+    margin-left: 17.5px;
+
     border-radius: 5px;
     background-image: url("../img/ring.svg");
     background-color: #000;
-    margin-left: 17.5px;
 }
 main>.carousel>.control>.dot2{
     width: 10px;
     height: 10px;
+    margin-right: 17.5px;
+
     border-radius: 5px;
     background-image: url("../img/ring.svg");
-    margin-right: 17.5px;
 }
 main>.carousel>.control>.goright{
     width: 20px;
@@ -784,28 +859,33 @@ main>.carousel>.control>.goright{
 /* 三個選項 */
 main>.chose-x3{
     width: 100%;
-    padding: 0px 12px;
     height: 120px;
+    padding: 0px 12px;
     margin-top: 48px;
+
     display: flex;
     justify-content: center;
 }
 main>.chose-x3>div{
     height: 100%;
+
     display: flex;
     justify-content: center;
 }
 main>.chose-x3>div>div{
-    margin: 16px 24px;
-    text-align: center;
     height: 72px;
+
+    text-align: center;
+    
+    margin: 16px 24px;
 }
 main>.chose-x3>div>div>img{
     width: 40px;
     height: 40px;
-    display: block;
     margin: auto;
     margin-bottom: 8px;
+
+    display: block;
 }
 main>.chose-x3>div>div>span{
     font-size: 16px;
@@ -839,6 +919,7 @@ main>.content{
     width: 100%;
     height: 100%;
     margin-top: 48px;
+
     display: flex;
     justify-content: center;
 }
@@ -854,10 +935,11 @@ main>.content{
 }
 main>.content>div{
     width: 100%; /*這裡設定90%是因為要讓左右有margin:5%的空間(我改成margin:auto)*/
-    height: 100%;
-    margin: 0px calc(5% - 12px); /*這裡真是莫名其妙誤打誤撞，扣掉第一與最後一章卡片最左右邊的padding*/ /*老師說是因為這邊的微軟實際上是爆版了*/
     max-width: 1624px;   /*這裡事實上不是1600而是1624因為微軟的第一個與最後一個卡片的左右各少一條padding*/
     /* 這裡的大小還是怪怪的 */
+    height: 100%;
+
+    margin: 0px calc(5% - 12px); /*這裡真是莫名其妙誤打誤撞，扣掉第一與最後一章卡片最左右邊的padding*/ /*老師說是因為這邊的微軟實際上是爆版了*/
 }
 main>.content>div>.cards{
     /* 多設置的，因為第二個content2有一個h1，這是用來框住卡片區(不包h1) */
@@ -967,14 +1049,16 @@ main>.content>div>.cards>div>h1{
 }
 main>.content>div>.cards>div>div>a{
     margin-top: 8px;
+
     display: flex;
     align-items: center;
 }
 main>.content>div>.cards>div>div>a>span{
     color: rgb(149, 12, 23);
     font-weight: 600;
-    display: block;
     margin: 16px 0px;
+
+    display: block;
 }
 main>.content>div>.cards>div>div>a>p{
     width: 100%;
@@ -983,19 +1067,21 @@ main>.content>div>.cards>div>div>a>p{
 main>.content>div>.cards>div>div>a>.goright-icon{
     width: 13px;
     height: 13px;
+    margin-left: 5px;
+
     background-image: url("../img/goright-red.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-left: 5px;
 }
 /* 第一區卡片完成 */
 
 /* 第二塊輪播 */
 /* 先套用第一塊的設定再來做修改 */
 main>.carousel:nth-child(4){
-    max-width: 1600px;
     width: 90%;
+    max-width: 1600px;
+
     margin: auto;
     margin-top: 90px;
 }
@@ -1034,10 +1120,11 @@ main>.content:nth-child(5){
 }
 main>.content:nth-child(5)>div>h1{
     padding: 0px 12px;
+    margin-bottom: 20px;
+
     font-size: 37px;
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 20px;
 }
 /* h1大小修改 */
 @media screen and (max-width:1399px){
@@ -1071,7 +1158,9 @@ main>.contact>div{
     width: 100%;
     max-width: 1600px; /*最大不超過1600px*/
     margin: auto; /*置中*/
+
     background-color: #fff;
+
     height: 100%;
     display: flex;
     align-items: center; /*垂直置中*/
@@ -1080,45 +1169,54 @@ main>.contact>div>.focus{
     margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
 }
 main>.contact>div>.facebook>a>img{
-    display: block;
     width: 22px;
     height: 20px;
     margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
+
+    display: block;
 }
 main>.contact>div>.youtube>a>img{
-    display: block;
     width: 28px;
     height: 28px;
+
+    display: block;
 }
 /* 聯絡區完成 */
 /* 黏住區(還需要稍加研究) */
 main>.gotop{ /*因為位置會黏住以父層為參考所以sticky要放在這一層*/
     margin-bottom: 48px;
     padding: 12px;
+
     position: sticky;
     bottom: 0px;
+
     display: flex;
     justify-content: flex-end;
 }
 main>.gotop>a{
     border-radius: 2px;
     background-color: #D9D9D9;
+
     display: flex;
     justify-content: center;
 }
 main>.gotop>a>span{
     /* !!!span可以推padding */
     padding: 13px 15px;
+
     font-weight: 600;
     line-height: 1;
+
     display: inline-flex; /*新屬性*/
+
     cursor: pointer;
 }
 main>.gotop>a>span::before{
     content: url("../img/up.svg");
-    display: block;
     width: 13px;
     margin-right: 7px;
+    
+    display: block;
 }
 @media screen and (max-width:539px){
     main>.gotop{
@@ -1133,17 +1231,19 @@ main>.gotop>a>span::before{
 /* footer區 */
 footer{
     width: 100%;
-    background-color: #F2F2F2;
     padding: 0px 5%;
+
+    background-color: #F2F2F2;
 }
 footer>div{
     width: 100%;
-    padding-top: 36px;
     max-width: 1600px;
+    padding-top: 36px;
     margin: auto;
 }
 footer>div>ul{
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     list-style-type: none;
@@ -1162,23 +1262,25 @@ footer>div>ul>li:nth-child(4){
     padding-left: 0px; /*間距刺客，教育與商務中間少了12px間距*/
 }
 footer>div>ul>li>h1{
+    margin-bottom: 4px;
+
     font-size: 15px;
     font-weight: 600;
     line-height: 20px;
     color: rgb(97, 97, 97);
-    margin-bottom: 4px;
 }
 footer>div>ul>li>ul{
     width: 100%;
     list-style-type: none;
 }
 footer>div>ul>li>ul>li{
+    padding: 8px 0px; /*所以改用padding*/
+
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
     color: rgba(0, 0, 0, 0.9);
     /*如果用margin: 8px 0px;的話相鄰元素都有margin的話小的那一邊會被吃掉*/
-    padding: 8px 0px; /*所以改用padding*/
 }
 /* footer清單完成 */
 /* footer最下面那一條 */
@@ -1201,14 +1303,16 @@ footer>div>.last>.left{
 }
 footer>div>.last>.left>a{
     padding-right: 24px;
+
     display: flex;
     align-items: center;
 }
 footer>div>.last>.left>a>.earth{
     width: 20px;
     height: 20px;
-    background-image: url("../img/earth.svg");
     margin-right: 10px;
+
+    background-image: url("../img/earth.svg");
 }
 footer>div>.last>.right{
     margin-bottom: 3px;
@@ -1249,6 +1353,7 @@ footer>div>.last>.right>*{
     }
     footer>div>.last>.right{
         padding-right: 12px;
+
         display: flex;
         justify-content: flex-end;
     }
@@ -1260,6 +1365,7 @@ footer>div>.last>.right>*{
     footer>div>.last>.right{
         margin-top: 12px;
         padding-left: 12px;
+
         justify-content: unset; /*從頭對齊還有flex，如果這邊是改成display:block的話Microsoft 2022會沒辦法換行，*/
         flex-wrap: wrap;
     }
@@ -1327,9 +1433,11 @@ nav >.links a div::after{
     width: 98%;
     height: 2px;
     background-color: #000;
+
     position: absolute;
     bottom: -3px;
     left: 50%;
+
     transform: translateX(-50%);
 }
 /* nav右邊 */
@@ -1340,7 +1448,9 @@ nav .functions>a span::after{
     content:'';
     width: 100%;
     height: 2px;
+
     background-color: #000;
+
     position: absolute;
     bottom: -3px;
     left: 0px;
@@ -1352,7 +1462,9 @@ nav .all label span::after{
     content:'';
     width: 100%;
     height: 2px;
+
     background-color: #000;
+
     position: absolute;
     bottom: -3px;
     left: 0px;
@@ -1388,8 +1500,10 @@ header>nav>.functions>.all>input:checked + label span::after{
 /* 這裡有空應該不要用bgi 因為選擇區的關係 */
 main>.carousel>.control>.goleft{
     transition: all 0.5s;
+
     position: relative;
     right: 0px;
+
     cursor: pointer;
 }
 main>.carousel>.control>.goleft:hover{
@@ -1397,8 +1511,10 @@ main>.carousel>.control>.goleft:hover{
 }
 main>.carousel>.control>.goright{
     transition: all 0.5s;
+
     position: relative;
     left: 0px;
+
     cursor: pointer;
 }
 main>.carousel>.control>.goright:hover{
