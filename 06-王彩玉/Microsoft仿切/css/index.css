@@ -56,7 +56,7 @@ header>nav>input{
 header>nav>.links{
     /* 不一定要有寬，可以由子層的寬去撐 */
     /* 本來是width: 565px */
-    width: 565px;
+    width: 570px;
     height: 100%;
 
     align-items: center;
@@ -66,9 +66,14 @@ header>nav>.links{
 }
 header>nav>.links>a{
     height: 48px; /*為了顯示outline 不能用100% */
+    padding: 0px 6px;
 
     display: flex;
     align-items: center;
+}
+header>nav>.links>a:first-child{
+    margin: 0px;
+    padding: 0px;
 }
 header>nav>.links>a>.logo{
     width: 110px;
@@ -89,7 +94,7 @@ header>nav>.links>a:nth-child(6){
     /* header>nav>.links>.link:nth-child(7)問題：我想選「支援」但是為什麼不是nth-child(6)而是(7)呢？ 似乎是.links下的第七個東西(不管名稱)不過.link:nth-child(1)是選不到logo的*/
     /* padding-right: 5px; */
 header>nav>.functions{
-    width: 418px;
+    width: 388px;
     height: 100%;
 
     display: flex;
@@ -97,8 +102,12 @@ header>nav>.functions{
     justify-content: space-between;
     align-items: center;
 }
+header>nav>.functions>a:nth-child(2){
+    margin-right: 30px;
+}
 header>nav>.functions>a{
     cursor: pointer;
+    padding: 0px 6px;
 }
 header>nav>.functions>a>.function{
     height: 48px;
@@ -109,20 +118,12 @@ header>nav>.functions>a>.function{
 }
 header>nav>.functions>.all{
     height: 48px;
-    
-    margin-left: 30px;
     display: flex;
     align-items: center;
 
     position: relative;
     top: 0px;
     left: 0px;
-}
-header>nav>.functions>a:nth-child(4)>.function{
-    margin-right: 8px;
-}
-header>nav>.functions>a:nth-child(3)>.function{
-    margin-left: 15px;
 }
 header>nav>.functions>a>.function>.icon{
     margin-left: 4px;
@@ -136,8 +137,7 @@ header>nav>.functions>a>.function>.icon{
 header>nav>.functions>a>.function>.search{
     width: 16px;
     height: 18px;
-    margin-right: 20px;
-
+    margin-left: 6px;
     background-image: url("../img/search1.svg");
 }
 header>nav>.functions>a>.function>.shopping{
@@ -1547,6 +1547,9 @@ footer a:hover{
     outline: 1px dashed black;
 }
 nav a:focus span::after{
+    display: block;
+}
+nav a:focus div::after{
     display: block;
 }
 /* 需解決所有microsoft focus問題 */
