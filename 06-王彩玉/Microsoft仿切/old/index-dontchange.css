@@ -1,0 +1,1282 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    line-height: 1.15;
+    font-family: sans-serif;
+}
+body{
+    font-family: "Segoe UI",SegoeUI, '微軟正黑體',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 2000px;
+    position: relative;/*讓mask可以參考位置與大小*/
+}
+/* .mask點擊空白處功能尚未完成(先刪除了html結構的mask) */
+header{
+    width: 100%;
+    padding: 0px 5%;
+    height: 54px;
+    margin: auto;
+}
+header>nav{
+    /* 不是width:1600px而是用max-width，最大寬度1600px寬度100% */
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    margin: auto;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+header>nav>label{
+    display: none;
+    width: 20px;
+    background-image: url("../img/list1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+header>nav>input{
+    display: none;
+}
+header>nav>.links{
+    /* 不一定要有寬，可以由子層的寬去撐 */
+    /* 本來是width: 565px */
+    width: 565px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header>nav>.links>.logo{
+    width: 110px;
+    height: 25px;
+    margin: 16px 6px 16px 10px;
+    background-image: url("../img/RE1Mu3b.png");
+    background-size: contain; /*不裁切*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header>nav>.links>.link:nth-child(6){
+    display: none;
+}
+    /* header>nav>.links>.link:nth-child(7)問題：我想選「支援」但是為什麼不是nth-child(6)而是(7)呢？ 似乎是.links下的第七個東西(不管名稱)不過.link:nth-child(1)是選不到logo的*/
+    /* padding-right: 5px; */
+header>nav>.functions{
+    width: 418px;
+    height: 100%;
+    display: flex;
+    /* 因為最右方已經抓出padding-right:3px對齊，所以就可以從右邊對齊flex-end */
+    justify-content: space-between;
+    align-items: center;
+}
+header>nav>.functions>.function{
+    height: 48px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+header>nav>.functions>.all{
+    height: 48px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+header>nav>.functions>.function:nth-child(4){
+    margin-right: 8px;
+}
+header>nav>.functions>.function:nth-child(3){
+    margin-left: 15px;
+}
+header>nav>.functions>.function>.icon{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 4px;
+}
+
+/* header>nav>.functions>.all>label>.icon這邊下移到367行 */
+header>nav>.functions>.function>.search{
+    width: 16px;
+    height: 18px;
+    background-image: url("../img/search1.svg");
+    margin-right: 20px;
+}
+header>nav>.functions>.function>.shopping{
+    width: 16px;
+    height: 42px;
+    background-image: url("../img/cart1.svg");
+    margin-left: 6px;
+}
+header>nav>.functions>.function:nth-child(4)>span{
+    margin-right: 2px;
+}
+header>nav>.functions>.function>.login{
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/user.svg");
+    margin-left: 10px;
+}
+/* 所有 Microsoft清單 */
+header>nav>.functions>.all>input{
+    display: none;
+}
+header>nav>.functions>.all>label{
+    height: 54px;
+    padding: 16px 24px 16px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 2; /*搬到第二層讓下方清單的上底線不會顯示出來*/
+}
+header>nav>.functions>.all>label>.icon{
+    width: 15px;
+    height: 30px;
+
+    position: absolute;
+    top: 10.6px;
+    right: 7.5px;
+
+    background-image: url("../img/chevron-down.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+/* 這裡的background-position:bottom是因為要讓icon箭頭對齊文字底線，再用height去調整大小 */
+    margin-left: 1px;
+}
+header>nav>.functions>.all>.all-menu{
+    border: 1px solid rgba(0,0,0,.05);
+    border-bottom: 2px solid #000;
+    padding: 1px 0px;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 48px;
+    right: -178px;
+    z-index: 2;
+    display: none;
+}
+header>nav>.functions>.all>input:checked ~ .all-menu{
+    display: block;
+}
+header>nav>.functions>.all>input:checked ~ label{
+    background-color: #f2f2f2;
+    border: 1px solid rgba(0,0,0,.05);
+    border-bottom: transparent;
+}
+header>nav>.functions>.all>.all-menu>ul{
+    display: flex;
+    flex-wrap: nowrap; /*擠不下的時候自動換行，到1299才設定成會自動換行*/
+}
+header>nav>.functions>.all>.all-menu>ul>li{
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+header>nav>.functions>.all>.all-menu>ul>li>span{
+    font-weight: 600;
+    padding: 18px 0px 18px 24px;
+    display: block;
+}
+header>nav>.functions>.all>.all-menu>ul>li>ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+header>nav>.functions>.all>.all-menu>ul>li>ul>li{
+    width: 195px;
+    padding: 12px 0px 12px 24px;
+}
+header>nav>.functions>.all>.all-menu>ul>li:last-child{
+    /* 最後一行去推出58px奇怪的空間 */
+    padding-right: 58px;
+}
+/* 檢視網站地圖另外用一個ul包住 */
+header>nav>.functions>.all>.all-menu>ul:nth-child(2){
+    width: 100%;
+    background-color: #E6E6E6;
+}
+header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
+    margin: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+    position: relative;
+    top: 2px;
+    left: 8px;
+}
+header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>span{
+    font-weight: 400;
+    padding: 9px 0px;
+}
+header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>.icon-right{
+    width: 7px;
+    background-image: url("../img/chevro-right.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 8px;
+}
+/* nav RWD設定 */
+@media screen and (max-width:1778px){
+    header>nav>.links{
+        width: 521px;
+        padding-left: 0px;
+    }
+    header>nav>.functions{
+        margin-right: 8px;
+    }
+    header>nav>.functions>.all{
+        margin-left: 47px;
+    }
+    header>nav>.functions>.function:nth-child(2){
+        margin-right: 13px;
+    }
+    header>nav>.functions>.function:nth-child(3){
+        margin-right: 13px;
+        margin-left: 0px;
+    }
+    header>nav>.functions>.function:nth-child(4){
+        margin-right: 0px;
+    }
+}
+@media screen and (max-width:1399px){
+    header>nav>.functions{
+        justify-content: flex-end;
+    }
+    header>nav>.functions>.function>span{
+        display: none;
+    }
+    header>nav>.functions>.function>.shopping{
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    header>nav>.functions>.all{
+        margin-left: 0px;
+        margin-right: 13px;
+    }
+    header>nav>.functions>.all>.all-menu{
+        /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
+        right: -190px;
+    }
+    header>nav>.functions>.function:nth-child(2){
+        margin-right: 0px;
+    }
+    header>nav>.functions>.function:nth-child(3){
+        margin-right: 0px;
+    }
+    header>nav>.functions>.all>.all-menu>ul>li{
+        width: 200px;
+    }
+    header>nav>.functions>.all>.all-menu>ul>li:last-child{
+        /* 最後一行去推出58px奇怪的空間，改成推30 */
+        /* flex寬度不夠的時候會去擠壓子層，但是我父層並沒有設定寬度，不過卻被padding擠壓到 */
+        width: 230px;
+        padding-right: 30px;
+    }
+    header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li{
+        width: auto;
+        padding-right: 0px;
+    }
+}
+/* 多換一個1229的板，用來換.all-menu */
+@media screen and (max-width:1229px){
+    header>nav>.functions>.all>.all-menu{
+        width: 1023px;
+    }
+    header>nav>.functions>.all>.all-menu{
+        /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
+        top: 49px;
+        right: calc(-95px - 35%); /*這個奇怪的數字似乎能讓換版前不要爆版*/
+    }
+    header>nav>.functions>.all>.all-menu>ul{
+        flex-wrap: wrap; /*擠不下的時候自動換行，用來width1229換版的時候，其他行可以下去第二列*/
+    }
+}
+@media screen and (max-width:1083px){
+    header{
+        padding: 0px 24px;
+    }
+    header>nav>.functions{
+        width: auto;
+    }
+}
+/* max-width:995px微軟沒有在這邊換版，但是因為我的nav左邊會往內縮所以在這裡多換一個版。已解決:拿掉nav右邊functions的寬度改用內容去撐 */
+/* 微軟的menu會在1024換一個版，但是因為我的選單會被吃掉所以要提早換版 */
+@media screen and (max-width:1060px){
+    header>nav>.functions>.all>.all-menu{
+        width: 818px;
+    }
+    header>nav>.functions>.all>.all-menu{
+        top: 49px;
+        right: calc(-70px - 45%); /*這個奇怪的數字似乎能讓換版前不要爆版*/
+    }
+/* 未調整好 先暫時這樣 */
+}
+@media screen and (max-width:873px){
+    header{
+        border-bottom: 2px solid white;
+    }
+    header>nav{
+        margin-top: 2px;
+    }
+    header>nav>.links{
+        width: 490px;
+    }
+    header>nav>.links>.link:nth-child(5){
+        margin-right: 4px;
+    }
+    header>nav>.links>.link:nth-child(6){
+        display: flex;
+    }
+    header>nav>.links>.link:nth-child(7){
+        display: none;
+    }
+    header>nav>.links>.link:nth-child(8){
+        display: none;
+    }
+    header>nav>.links>.link>span{
+        height: 19.5px;
+    }
+    header>nav>.links>.link>.more{
+        width: 14px;
+        height: 22px;
+        margin-left: 2px;
+        background-image: url("../img/chevron-down.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+}
+@media screen and (max-width:859px){
+    header{
+        padding: 0px;
+        border-bottom: unset;
+    }
+    header>nav{
+        margin: 0px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    header>nav>label{
+        display: block;
+        margin-left: 15px;
+        margin-bottom: 4px;
+    }
+    /* 本來下方點擊事件沒有寫在media裡，這樣會造成我選單打開之後拉寬螢幕選單依然佔滿版，移置media裡後就解決了 */
+    header>nav>#list:checked ~ .menu {
+        display: block;
+    }
+    header>nav>#list:checked + label{
+        background-image: url("../img/x2.svg");
+        width: 15px;
+        margin-left: 17px;
+        margin-bottom: 5px;
+    }
+    header>nav>.links{
+        width: auto;
+    }
+    header>nav>.links>.logo{
+        width: 108px;
+        height: 23px;
+        position: absolute;
+        left: calc(50% - 65px);
+        top: -4px;
+    }
+    header>nav>.links>.link{
+        display: none;
+    }
+    /* 因為權重，必須特別再將「更多」單獨再消失一次 */
+    header>nav>.links>.link:nth-child(6){
+        display: none;
+    }
+    header>nav>.functions{
+        margin-right: 16px;
+    }
+    header>nav>.functions>.all{
+        display: none;
+    }
+    header>nav>.functions>.function:nth-child(2){
+        display: flex;
+        /* 用position讓放大鏡往左靠 */
+        position: absolute;
+        top: 3px;
+        left: 55px;
+    }
+    header>nav>.functions>.function:nth-child(3){
+        margin-right: 10px;
+    }
+}
+/* nav RWD完成 */
+
+/* 漢堡條下拉選單 */
+header>nav>.menu{
+    width: 100%;
+    max-width: 100%;
+    padding: 1px 0px;
+    background-color: #f2f2f2;
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 54px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+}
+/* 問題：漢堡清單列開啟之後不會隨著寬度而關閉 */
+/* 解決：將選單開關放進media固定寬度裡，這樣在固定寬度裡才會影響display */
+header>nav>.menu>section>input{
+    display: none;
+}
+header>nav>.menu>section{
+    width: 100%;
+}
+/* ul及li不指向是因為要讓下面裡面的清單全部都吃到就不用重新設定 */
+header>nav>.menu>section>ul{
+    width: calc(100% - 2px);/*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+header>nav>.menu>section>ul:last-child{
+    border-bottom: 1px solid black;
+}
+header>nav>.menu>section>ul:first-child{
+    border-top: 1px solid transparent;
+}
+header>nav>.menu>section ul li{
+    width: 100%;
+    margin: 1px;
+    padding: 14px 15px 15px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+/* 最後一個li的border消失改用大條的取代 */
+header>nav>.menu>section ul li:last-child{
+    border-bottom: none;
+}
+header>nav>.menu>section>label{
+    font-size: 15px;
+    width: calc(100% - 2px); /*不知道為什麼box-size沒辦法扣除這邊的border左右各1所以label與ul都要額外扣2px，不然會出現橫向卷軸*/
+    margin: 1px;
+    padding: 14px 15px 15px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    display: flex; /*這邊要注意，label預設是inline，如果沒特別設定成block，會穿透到上面，因為要排版icon所以再改成flex*/
+    justify-content: space-between;
+}
+header>nav>.menu>section>label>.down-icon{
+    width: 15px;
+    margin-right: 5px;
+    margin-top: 5px;
+    background-image: url("../img/chevron-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+/* 清單 */
+header>nav>.menu>section>ul{
+    padding-left: 30px;
+    list-style-type: none;/*項目符號清除*/
+    display: none;
+}
+/* 一開始就要顯示的清單預設開啟，並且沒有左方padding */
+header>nav>.menu>section>ul:nth-child(1){
+    display: block;
+    padding-left: 0px;
+}
+/* 預設最後一個清單(非能開啟的清單)預設開啟 */
+header>nav>.menu>section>ul:last-child{
+    display: block;
+    padding-left: 0px;
+}
+/* 當點擊input標籤，後面清單會開啟，一定要用+才能選到後方的東西 */
+/* 哈哈哈哈哈！下面這意思是 input後面的label後面的ul */
+header>nav>.menu>section>input:checked + label + ul{
+    display: block;
+}
+header>nav>.menu>section>input:checked + label>.down-icon{
+    background-image: url("../img/chevron-up.svg");
+}
+/* 漢堡條清單完成 */
+
+/* 第一大塊輪播 */
+    main>.carousel{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        padding-top: 1px;
+    }
+    @media screen and (max-width:873px){
+        main>.carousel{
+            padding-top: 0px;
+        }
+    }
+    main>.carousel>.banner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    main>.carousel>.banner>img{
+        display: none;
+        width: 100%;
+    }
+/* 因為圖片inline下方會有白色區塊，所以改成block區塊，可惡，間距又要重新調整 */
+    main>.carousel>.banner>.banner-xl{
+        display: block;
+    }
+@media screen and (max-width:1399px){
+    main>.carousel>.banner>.banner-xl{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-l{
+        display: block;
+    }
+}
+@media screen and (max-width:1083px){
+    main>.carousel>.banner>.banner-l{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-m{
+        display: block;
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel>.banner>.banner-m{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-s{
+        display: block;
+    }
+}
+@media screen and (max-width:539px){
+    main>.carousel>.banner>.banner-s{
+        display: none;
+    }
+    main>.carousel>.banner>.banner-xs{
+        display: block;
+    }
+}
+/* 第一個輪播圖片上的文字區域(這邊莫名其妙，只好照著微軟用三層去包) */
+main>.carousel>.banner>div:nth-child(6){
+    /*這邊如果單純用div選擇器的話，後面control會被影響到，所以改成nth-child選取器，不然就是要在後面的div的css裡面再用unset去初始化*/
+    width: 100%;
+    height: 308.39px;
+    padding: 0px 5%;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0px, -50%);
+}
+main>.carousel>.banner>div>.text-case{
+    width: 100%;
+    max-width: 1600px;
+    /* height: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+}
+main>.carousel>.banner>div>.text-case>.banner-text{
+    width: calc(100% / 12 * 5);
+    padding: 48px;
+}
+main>.carousel>.banner>div>.text-case>.banner-text>span{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    color: rgb(149, 12, 23);
+    display: inline-block;
+}
+main>.carousel>.banner>div>.text-case>.banner-text>h1{
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 19.5px;
+    line-height: 1.2;
+}
+main>.carousel>.banner>div>.text-case>.banner-text>div{
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+main>.carousel>.banner>div>.text-case>.banner-text>a{
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 12px;
+    border: 0.125rem solid transparent;
+    border-radius: 0.125rem;
+    background-color: #000;
+    text-decoration: none;
+    display: inline-block; /*一定要記得+*/
+}
+@media screen and (max-width:1399px){
+    main>.carousel>.banner>div:nth-child(6){
+        top: 51.2%; /*控制位置*/
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text>h1{
+        font-size: 29px;
+        margin-bottom: 16px;
+    }
+}
+@media screen and (max-width:1217px){
+    main>.carousel>.banner>div:nth-child(6){
+        top: 51.3%; /*控制位置*/
+    }
+}
+@media screen and (max-width:1168px){
+    main>.carousel>.banner>div:nth-child(6){
+        top: 48.9%; /*控制位置，硬調*/
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text>h1{
+        margin-bottom: 16px;
+    }
+}
+@media screen and (max-width:1083px){
+    main>.carousel>.banner>div:nth-child(6){
+        padding: 0px 12px;
+        position: relative;
+        top: -48.8px;
+        z-index: 1;
+        transform: unset;
+    }
+    main>.carousel>.banner>div>.text-case{
+        background-color: #fff;
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text{
+        width: 100%;
+        box-shadow: 0 0.0625rem 0.125rem rgb(0 0 0 / 11%), 0 0.1875rem 0.4375rem rgb(0 0 0 / 13%);
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text>h1{
+        font-size: 24px;
+        margin-bottom: 12.2px;
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel>.banner>div:nth-child(6){
+        height: auto;
+        top: 0px;
+        position: unset;
+        padding: 0px;
+    }
+    main>.carousel>.banner>div>.text-case{
+        padding: 0px 12px;
+        box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);
+    }
+    main>.carousel>.banner>div>.text-case>.banner-text{
+        box-shadow: unset;
+        padding: 24px 12px 16px 12px;
+    }
+    /* 本來main>.carousel>.banner{box-shadow: 0 .125rem .25rem 0 rgba(0,0,0,.13),0 0 .0625rem 0 rgba(0,0,0,.11);}改成放在main>.carousel>.banner>div>.text-case */
+}
+/* 第一區大輪播圖片RWD完成 */
+
+/* 第一區輪播控制區 */
+main>.carousel>.control{
+    /*因為吃到上方區塊css設定的屬性，所以在這邊先還原預設，已解決：前方改為nth-child選取器*/
+    width: 153px;
+    height: 64px;
+    margin: auto;
+    padding: 3px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* 微軟這邊因為他控制項上面那塊是用margin-top:-3rem去往上推，而我是用position:relative top-48px 所以我下面控制項如果用absolute固定而不改變位置的話會跑版，因此下面需要多設定，但是不確定下面三個圖片的位置會不會受影響，可能需要額外做調整 */
+@media screen and (max-width:1083px){
+    main>.carousel>.banner>div:nth-child(6){
+        height: unset; /*取消高度，才不會換版之後下方有莫名一大塊空白，因為高度應該要剩下260px*/
+    }
+    main>.carousel>.control{
+        /* 硬推讓控制項能往上，但是不確定會不會影響下面的東西 */
+        position: absolute;
+        bottom: -17px;
+        left: calc(50% - 76.5px);
+    }
+}
+@media screen and (max-width:859px){
+    main>.carousel>.control{
+        /* 讓控制項區塊回歸正常排版 */
+        position: unset;
+    }
+}
+main>.carousel>.control>span{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+main>.carousel>.control>.goleft{
+    width: 20px;
+    height: 24px;
+    background-image: url("../img/goleft.svg");
+}
+main>.carousel>.control>.dot1{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-image: url("../img/ring.svg");
+    background-color: #000;
+    margin-left: 17.5px;
+}
+main>.carousel>.control>.dot2{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-image: url("../img/ring.svg");
+    margin-right: 17.5px;
+}
+main>.carousel>.control>.goright{
+    width: 20px;
+    height: 24px;
+    background-image: url("../img/goright.svg");
+}
+/* control控制完成 */
+
+/* 三個選項 */
+main>.chose-x3{
+    width: 100%;
+    padding: 0px 12px;
+    height: 120px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+main>.chose-x3>div>div{
+    margin: 16px 24px;
+    text-align: center;
+    height: 72px;
+}
+main>.chose-x3>div>div>img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+}
+main>.chose-x3>div>div>span{
+    font-size: 16px;
+    font-weight: 600;
+}
+main>.chose-x3>div>div>span>a{
+    color: #000;
+}
+@media screen and (max-width:1083px){
+    main>.chose-x3{
+        margin-top: 64px;
+    }
+}
+@media screen and (max-width:859px){
+    main>.chose-x3{
+        margin-top: unset;
+    }
+}
+@media screen and (max-width:601px){
+    main>.chose-x3{
+        height: unset;
+    }
+    main>.chose-x3>div{
+        /* 讓第三個圖案區塊可以往第二行 */
+        flex-wrap: wrap;
+    }
+}
+/* 三個圖片按鈕區完成 */
+/* 第一區卡片區 */
+main>.content{
+    width: 100%;
+    height: 100%;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width:859px){
+    main>.content{
+        margin-top: 0px;
+    }
+}
+@media screen and (max-width:601px){
+    main>.content{
+        margin-top: 16px;
+    }
+}
+main>.content>div{
+    width: 100%; /*這裡設定90%是因為要讓左右有margin:5%的空間(我改成margin:auto)*/
+    height: 100%;
+    margin: 0px calc(5% - 12px); /*這裡真是莫名其妙誤打誤撞，扣掉第一與最後一章卡片最左右邊的padding*/ /*老師說是因為這邊的微軟實際上是爆版了*/
+    max-width: 1624px;   /*這裡事實上不是1600而是1624因為微軟的第一個與最後一個卡片的左右各少一條padding*/
+    /* 這裡的大小還是怪怪的 */
+}
+main>.content>div>.cards{
+    /* 多設置的，因為第二個content2有一個h1，這是用來框住卡片區(不包h1) */
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 如果要設各少邊padding就要
+    main>.content>div>.cards>div:first-child{
+    padding-left: 0px;
+}
+main>.content>div>.cards>div:last-child{
+    padding-right: 0px;
+} 如果使用移除左右邊padding的方式，圖片的大小會受到影響*/
+
+main>.content>div>.cards>div{
+    /* 這邊如果只有設定max-width而沒有設定width的話，會因為內容的多寡而影響區塊大小：例如當文字內容不夠多的時候區塊不夠大，整個區塊的寬度會受到影響 */
+    max-width: 25%;
+    width: 25%;
+    height: auto; /*這裡高度如果設定100%，會以內容高度為高度，設為auto反而是填滿*/
+    padding: 0px 12px;
+    background-color: #fff;
+}
+main>.content>div>.cards>div>img{
+    width: 100%; /*必須設定圖片大小不然會爆炸喔*/
+    /* 高度自由生長 */
+    height: auto;
+    /* 圖片記得要改成block不然又會多出莫名的空白 */
+    display: block;
+    margin-bottom: 16px;
+}
+/* 以卡片大小來控制圖片大小 */
+@media screen and (max-width:1083px){
+    main>.content>div{
+        width: 100%;
+        margin: unset;
+    }
+    main>.content>div>.cards>div{
+        width: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width:539px){
+    main>.content>div>.cards>div{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+main>.content>div>.cards>div>span{
+    /* 這邊如果改成div的話就要給他高寬，微軟是span外面有包一層div，就算沒有內容也有div的高度 */
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    display: inline-block;
+    background-color: rgb(149, 12, 23);
+    color: white;
+    /* margin-top: 16px; 這裡不能這樣推，這樣推的話h1會全部往上，改用圖片的margin-bottom推*/
+}
+main>.content>div>.cards>div:first-child>span:nth-child(2){
+    padding: 6px 12px; /*只指定讓有文字的span增加padding，這樣其他空的span就不會一起被增加*/
+}
+main>.content>div>.cards>div:nth-child(n+2)>h1{ /*n+2可以選到從第二個開始的h1*/
+    /* 讓沒有「新上市」在上方的h1也不會歪掉 */
+    /* 這個高度是span的padding上下加起來的高度(會被line-height影響) */
+    /* 原本是4，加上下面h1要一起往下推5，所以是9 */
+    margin-top: 9px; 
+}
+main>.content>div>.cards>div>h1{
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+/* 微軟的h1是1400換版但是我的要提早換，理由尚不清楚 */
+/* 卡片區的換版 */
+@media screen and (max-width:1399px){
+    main>.content>div>.cards>div>h1{
+        font-size: 24px;
+        margin-top: 4px;
+        margin-bottom: 12px;
+    }
+    main>.content>div>.cards>div:nth-child(n+2)>h1{
+        /* 原本是4，加上下面h1要一起往下推5，所以是9<<<<<改成推4，這邊也要改成8 */
+        margin-top: 8px; 
+    }
+}
+@media screen and (max-width:1083px){
+    /* 第一與第二塊卡片微軟新增margin-bottom:48px，但是因為我的div比較高所以只新增42(因為div高了6px) */
+    main>.content>div>.cards>.card1,.card2{
+        margin-bottom: 42px;
+    }
+    main>.content>div>.cards>div>h1{
+        font-size: 21px;
+        margin-bottom: 9px;
+    }
+}
+@media screen and (max-width:539px){
+    /* 剩一行的時候第三塊也增加間距 */
+    main>.content>div>.cards>.card3{
+        margin-bottom: 42px;
+    }
+}
+main>.content>div>.cards>div>div{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+main>.content>div>.cards>div>div>span{
+    color: rgb(149, 12, 23);
+    font-weight: 600;
+    display: block;
+    margin: 16px 0px;
+}
+main>.content>div>.cards>div>div>p{
+    width: 100%;
+    font-weight: 400;
+}
+main>.content>div>.cards>div>div>.goright-icon{
+    width: 13px;
+    height: 13px;
+    background-image: url("../img/goright-red.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 5px;
+}
+/* 第一區卡片完成 */
+
+/* 第二塊輪播 */
+/* 先套用第一塊的設定再來做修改 */
+main>.carousel:nth-child(4){
+    max-width: 1600px;
+    width: 90%;
+    margin: auto;
+    margin-top: 90px;
+}
+main>.carousel:nth-child(4)>.banner>div>.text-case>.banner-text>span{
+    display: none;
+}
+main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+    top: 53%;
+}
+@media screen and (max-width:1083px){
+    main>.carousel:nth-child(4){
+        width: 100%;
+        padding: 0px 12px;
+    }
+    main>.carousel:nth-child(4)>.banner>div:nth-child(6){
+        top: -48.8px;
+    }
+    
+    main>.carousel:nth-child(4)>.banner>div>.text-case{
+        box-shadow: unset;
+    }
+
+}
+@media screen and (max-width:859px){
+    main>.carousel:nth-child(4){
+        margin-top: 40px;
+    }
+    main>.carousel:nth-child(4)>.banner>div>.text-case>.banner-text{
+        padding: 48px 0px;
+    }
+}
+/* 第二塊輪播完成 */
+/* 第二塊卡片區一樣使用第一塊的結構再進行細部修改 */
+main>.content:nth-child(5){
+    margin-top: 96px;
+}
+main>.content:nth-child(5)>div>h1{
+    padding: 0px 12px;
+    font-size: 37px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+/* h1大小修改 */
+@media screen and (max-width:1399px){
+    main>.content:nth-child(5)>div>h1{
+        font-size: 29px;
+    }
+}
+@media screen and (max-width:1083px){
+    main>.content:nth-child(5){
+        margin-top: 48px;
+    }
+    main>.content:nth-child(5)>div>h1{
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+}
+/* 聯絡微軟區 */
+main>.contact{
+    width: 100%;
+    height: 32px;
+    margin-top: 40px; /*與卡片第二區的間距*/
+    /*margin-bottom: 114px; 與footer的間距(增加黏住區域之後就取消)*/
+    padding: 0% 5%; /*限制了子層的左右間距*/
+}
+@media screen and (max-width:1083px){
+    main>.contact{
+        padding: 0% 12px;
+    }
+}
+main>.contact>div{
+    width: 100%;
+    max-width: 1600px; /*最大不超過1600px*/
+    margin: auto; /*置中*/
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center; /*垂直置中*/
+}
+main>.contact>div>.focus{
+    margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
+}
+main>.contact>div>.facebook>a>img{
+    display: block;
+    width: 22px;
+    height: 20px;
+    margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
+}
+main>.contact>div>.youtube>a>img{
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+/* 聯絡區完成 */
+/* 黏住區(還需要稍加研究) */
+main>.gotop{ /*因為位置會黏住以父層為參考所以sticky要放在這一層*/
+    margin-bottom: 48px;
+    padding: 12px;
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+main>.gotop>a{
+    border-radius: 2px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+}
+main>.gotop>a>span{
+    /* !!!span可以推padding */
+    padding: 13px 15px;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-flex; /*新屬性*/
+    cursor: pointer;
+}
+main>.gotop>a>span::before{
+    content: url("../img/up.svg");
+    display: block;
+    width: 13px;
+    margin-right: 7px;
+}
+@media screen and (max-width:539px){
+    main>.gotop{
+        position: unset;
+        padding: 10px 12px;
+    }
+    main>.gotop>a{
+        width: 100%;
+    }
+}
+/* 黏住暫時好像這麼的對齊了 */
+/* footer區 */
+footer{
+    width: 100%;
+    background-color: #F2F2F2;
+    padding: 0px 5%;
+}
+footer>div{
+    width: 100%;
+    padding-top: 36px;
+    max-width: 1600px;
+    margin: auto;
+}
+footer>div>ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+footer>div>ul>li{
+    width: calc(100% / 6); 
+    /*(不行用因為他最右邊居然有12px的邊邊)這邊100%除了除以6還要扣掉5個中間的24px的位置等於需要扣120px會等於(100%-120px)/6的寬度*/
+    /* 所以寬度要先再扣掉12px，等於扣132px */
+    /* 媽阿教育與商務這中間兼具居然少了12px可惡這樣就不能用了 */
+    padding: 0px 12px;
+}
+footer>div>ul>li:first-child{
+    padding-left: 0px;
+}
+footer>div>ul>li:nth-child(4){
+    padding-left: 0px; /*間距刺客，教育與商務中間少了12px間距*/
+}
+footer>div>ul>li>h1{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    color: rgb(97, 97, 97);
+    margin-bottom: 4px;
+}
+footer>div>ul>li>ul{
+    width: 100%;
+    list-style-type: none;
+}
+footer>div>ul>li>ul>li{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    /*如果用margin: 8px 0px;的話相鄰元素都有margin的話小的那一邊會被吃掉*/
+    padding: 8px 0px; /*所以改用padding*/
+}
+/* footer清單完成 */
+/* footer最下面那一條 */
+footer>div>.last{
+    width: 100%;
+    padding: 30px 0px 18px 0px;
+
+/* 最下面左右邊共通設定對齊 */
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(97, 97, 97);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer>div>.last>.left{
+    height: 24px;
+}
+footer>div>.last>.left>a{
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+}
+footer>div>.last>.left>a>.earth{
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/earth.svg");
+    margin-right: 10px;
+}
+footer>div>.last>.right{
+    margin-bottom: 3px;
+}
+footer>div>.last>.right>*{
+    padding: 0px 24px 0px 0px;
+}
+@media screen and (max-width:1083px){
+     /*改成3行一列*/
+    footer{
+        padding: 0px 12px;
+    }
+    footer>div>ul{
+        flex-wrap: wrap;
+    }
+    footer>div>ul>li{
+        width: calc(100% / 3); /*改成3版*/
+    }
+    footer>div>ul>li:first-child{
+        padding-left: 12px; /*間距刺客回來了*/
+        margin-bottom: 36px; /*這是與下排的距離*/
+    }
+    footer>div>ul>li:nth-child(2){
+        margin-bottom: 36px;/*這是與下排的距離*/
+    }
+    footer>div>ul>li:nth-child(3){
+        margin-bottom: 36px;/*這是與下排的距離*/
+    }
+    footer>div>ul>li:nth-child(4){
+        padding-left: 12px; /*間距刺客回來了*/
+    }
+    /* 最下面那條要改成一個左上一個右下 */
+    footer>div>.last{
+        display: block; /*這裡如果用unset會變成inline喔!!!所以要用block*/
+    }
+    footer>div>.last>.left{
+        padding-left: 12px;
+    }
+    footer>div>.last>.right{
+        padding-right: 12px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    footer>div>.last>.right>a{
+        margin-right: 4px;
+    }
+}
+@media screen and (max-width:767px){
+    footer>div>.last>.right{
+        margin-top: 12px;
+        padding-left: 12px;
+        justify-content: unset; /*從頭對齊還有flex，如果這邊是改成display:block的話Microsoft 2022會沒辦法換行，*/
+        flex-wrap: wrap;
+    }
+    footer>div>.last>.right>*{
+        padding: 6px 4px 0px 6px;
+        /* margin-right: unset; 權重不夠*/
+    }
+}
+@media screen and (max-width:539px){
+     /*改成1行一列*/
+     footer>div>.last{
+        /* padding: 0px 12px; */
+     }
+    footer>div>ul>li{
+        width: 100%; /*改成1版*/
+    }
+    footer>div>ul>li{
+        margin-bottom: 36px;/*這是與下排的距離，除了最後一列每排都要*/
+    }
+    footer>div>ul>li:last-child{
+        margin-bottom: 0px;/*這是與下排的距離，最後一列不要*/
+    }
+    footer>div>.last>.right>span{
+        padding-right: 10px;
+    }
+    footer>div>.last>.right>a:first-child{
+        padding-left: 0px;
+    }
+}
+/* 應該要528的時候 Mircosoft 2022就要往第二行 */
+@media screen and (max-width:528px){
+    footer>div>.last>.right>span{
+        padding-left: 0px;
+    }
+}
+@media screen and (max-width:405px){
+    
+    footer>div>.last>.right>a:nth-child(4){
+        margin-left: 12px;
+    }
+    footer>div>.last>.right>a:nth-child(5){
+        padding-left: 0px;
+    }
+}
+/* 最後一條小於300以下還沒調整好 */
+@media screen and (max-width:295px){
+    footer>div>.last>.right>a:nth-child(3){
+        margin-left: 12px;
+    }
+    footer>div>.last>.right>a:nth-child(4){
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+}
+
+/* 黏住還沒做 */

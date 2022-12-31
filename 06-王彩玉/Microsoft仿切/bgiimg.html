@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何時用img何時用bgi</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 100%;
+            height: 500px;
+            background-image: url("./img/Surface1920x600.jpg");
+            background-color: #CCC;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">在這裡雖然可以添加文字，但是圖片以背景圖片來顯示的話，(本來以為：微軟大圖右邊的電腦會隨著螢幕寬度變化而被切掉，但是把bgi四大天王設定完之後就不會)，圖片雖然縮小了但是div高度一樣是原始設定這麼大，不會跟著做變動</div>
+
+    <p>而下方的img只要設定寬為100%就有RWD，高度也會隨之變動</p>
+    <img src="./img/Surface1920x600.jpg" alt="">
+    <!-- 響應式圖片 -->
+    <picture>
+        <source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP5-1920x600" media="(min-width: 1400px)" srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP5-1920x600">
+        <source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP4-1399x600" media="(min-width: 1084px)" srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP4-1399x600">
+        <source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP3-1083x600" media="(min-width: 860px)" srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP3-1083x600">
+        <source data-srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP2-859x540" media="(min-width: 540px)" srcset="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP2-859x540">
+        <img data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP1-539x440" class="card-img w-100 blur-up lazypreload ls-is-cached lazyloaded" alt="多種色彩的 Surface Pro 9 裝置和鍵盤" src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-All-Colors-FY23HOL:VP1-539x440">
+    </picture>
+</body>
+</html>

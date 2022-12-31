@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./RWD phone.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">logo</div>
+            <div class="links">
+                <a href="" class="link">aaaaa</a>
+                <a href="" class="link">aaaaa</a>
+                <a href="" class="link">aaaaa</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="x">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide image1-1"></div>
+                        <div class="swiper-slide image1-2"></div>
+                        <div class="swiper-slide image1-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="y">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide image2-1"></div>
+                        <div class="swiper-slide image2-2"></div>
+                        <div class="swiper-slide image2-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="z">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide image3-1"></div>
+                        <div class="swiper-slide image3-2"></div>
+                        <div class="swiper-slide image3-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'vertical', //垂直移動
+            loop: true, //循環播放
+            effect: 'flip',
+            flipEffect: {
+                slideShadows: false,
+            },
+            autoplay: {
+                delay: 3000,
+            },
+        });
+    </script>
+</body>
+
+</html>
