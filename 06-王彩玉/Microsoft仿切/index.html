@@ -32,12 +32,12 @@
                 <a href=""><div class="link">支援</div></a>
             </div>
             <div class="functions">
-                <div class="all">
+                <div class="all" tabindex="0">
                     <input type="checkbox" id="all-microsoft">
                     <label for="all-microsoft">
                         <span>所有 Microsoft</span>
                         <div class="icon"></div>
-                        <button type="button" class="mask"></button>
+                        <!-- <button type="button" class="mask"></button> -->
                     </label>
                     <div class="all-menu">
                         <ul>
@@ -249,10 +249,12 @@
             </div>
             <!-- 放在banner外面 -->
             <div class="control">
-                <span class="goleft"></span>
-                <span class="dot1"></span>
-                <span class="dot2"></span>
-                <span class="goright"></span>
+                <div tabindex="0"><span class="goleft"></span></div>
+                <div>
+                    <span class="dot1"></span>
+                    <span class="dot2"></span>
+                </div>
+                <div tabindex="0"><span class="goright"></span></div>
             </div>
         </section>
         <section class="chose-x3">
@@ -401,16 +403,18 @@
         </section>
         <section class="contact">
             <div>
-                <div class="focus">關注 Microsoft </div>
-                <div class="facebook">
-                    <a href="#">
-                        <img src="./img/facebook.svg" alt="">
-                    </a>
-                </div>
-                <div class="youtube">
-                    <a href="#">
-                        <img src="./img/youtube.svg" alt="">
-                    </a>
+                <div>
+                    <div class="focus">關注 Microsoft </div>
+                    <div class="facebook">
+                        <a href="#">
+                            <img src="./img/facebook.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="youtube">
+                        <a href="#">
+                            <img src="./img/youtube.svg" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

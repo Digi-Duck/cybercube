@@ -792,14 +792,14 @@ main>.carousel>.banner>div>.text-case>.banner-text>a{
 /* 第一區輪播控制區 */
 main>.carousel>.control{
     /*因為吃到上方區塊css設定的屬性，所以在這邊先還原預設，已解決：前方改為nth-child選取器*/
-    width: 153px;
+    width: 220px;
     height: 64px;
-    padding: 3px 0px 0px;
+    padding: 3px 16px 0px;
 
     margin: auto;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 /* 微軟這邊因為他控制項上面那塊是用margin-top:-3rem去往上推，而我是用position:relative top-48px 所以我下面控制項如果用absolute固定而不改變位置的話會跑版，因此下面需要多設定，但是不確定下面三個圖片的位置會不會受影響，可能需要額外做調整 */
@@ -820,38 +820,49 @@ main>.carousel>.control{
         position: unset;
     }
 }
-main>.carousel>.control>span{
+main>.carousel>.control *{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 
     display: inline-block;
 }
-main>.carousel>.control>.goleft{
-    width: 20px;
-    height: 24px;
+main>.carousel>.control>div{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main>.carousel>.control>div:nth-child(2){
+    width: 38px;
+    justify-content: space-between; /*只有中間兩個點是左右排*/
+    margin: 0px 26px; /*並且用中間的去推左右這樣才不會位移*/
+}
+main>.carousel>.control>div>.goleft{
+    width: 22px;
+    height: 26px;
     background-image: url("../img/goleft.svg");
 }
-main>.carousel>.control>.dot1{
+
+main>.carousel>.control>div>.dot1{
     width: 10px;
     height: 10px;
-    margin-left: 17.5px;
 
     border-radius: 5px;
     background-image: url("../img/ring.svg");
     background-color: #000;
 }
-main>.carousel>.control>.dot2{
+main>.carousel>.control>div>.dot2{
     width: 10px;
     height: 10px;
-    margin-right: 17.5px;
 
     border-radius: 5px;
     background-image: url("../img/ring.svg");
 }
-main>.carousel>.control>.goright{
-    width: 20px;
-    height: 24px;
+main>.carousel>.control>div>.goright{
+    width: 22px;
+    height: 26px;
     background-image: url("../img/goright.svg");
 }
 /* control控制完成 */
@@ -1047,16 +1058,18 @@ main>.content>div>.cards>div>h1{
         margin-bottom: 42px;
     }
 }
+main>.content>div>.cards>div>div{
+    padding: 16px 0px;
+}
 main>.content>div>.cards>div>div>a{
     margin-top: 8px;
-
-    display: flex;
+    /*padding-right: 4px; 因為沒有指定寬度所以給padding會往外長*/
+    display: inline-flex; /*如果只用flex就會佔滿整條，故改成行內flex*/
     align-items: center;
 }
 main>.content>div>.cards>div>div>a>span{
     color: rgb(149, 12, 23);
     font-weight: 600;
-    margin: 16px 0px;
 
     display: block;
 }
@@ -1068,6 +1081,11 @@ main>.content>div>.cards>div>div>a>.goright-icon{
     width: 13px;
     height: 13px;
     margin-left: 5px;
+    margin-right: 4px;
+    
+    position: relative;
+    top: 0px;
+    right: 0px;
 
     background-image: url("../img/goright-red.svg");
     background-position: center;
@@ -1156,26 +1174,40 @@ main>.contact{
 }
 main>.contact>div{
     width: 100%;
-    max-width: 1600px; /*最大不超過1600px*/
-    margin: auto; /*置中*/
-
+    height: 100%;
+    max-width: 1600px;
+    margin: auto;
     background-color: #fff;
 
+}
+main>.contact>div>div{
+    width: 200px;
     height: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center; /*垂直置中*/
 }
-main>.contact>div>.focus{
-    margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
+main>.contact>div>div>div:nth-child(2),main>.contact>div>div>div:nth-child(3){
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-main>.contact>div>.facebook>a>img{
+main>.contact>div>div>div>a{
+    width: 32px;
+    height: 32px;display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main>.contact>div>div>.facebook>a>img{
     width: 22px;
     height: 20px;
-    margin-right: 22px; /*微軟是12但是我的icon沒有包含空白所以要多抓一些*/
 
     display: block;
 }
-main>.contact>div>.youtube>a>img{
+main>.contact>div>div>.youtube>a>img{
     width: 28px;
     height: 28px;
 
@@ -1435,7 +1467,7 @@ nav >.links a div::after{
     background-color: #000;
 
     position: absolute;
-    bottom: -3px;
+    bottom: -1px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -1452,7 +1484,7 @@ nav .functions>a span::after{
     background-color: #000;
 
     position: absolute;
-    bottom: -3px;
+    bottom: -1px;
     left: 0px;
 }
 nav .all span{
@@ -1498,27 +1530,16 @@ header>nav>.functions>.all>input:checked + label span::after{
 
 /* 選擇區 */
 /* 這裡有空應該不要用bgi 因為選擇區的關係 */
-main>.carousel>.control>.goleft{
-    transition: all 0.5s;
-
-    position: relative;
-    right: 0px;
-
+/* 是外面的東西動還是裡面動？我選擇div動，用padding */
+main>.carousel>.control>div:first-child,main>.carousel>.control>div:last-child{
+    transition: padding 0.5s;
     cursor: pointer;
 }
-main>.carousel>.control>.goleft:hover{
-    right: 8px;
+main>.carousel>.control>div:first-child:hover{
+    padding-right: 16px;
 }
-main>.carousel>.control>.goright{
-    transition: all 0.5s;
-
-    position: relative;
-    left: 0px;
-
-    cursor: pointer;
-}
-main>.carousel>.control>.goright:hover{
-    left: 8px;
+main>.carousel>.control>div:last-child:hover{
+    padding-left: 16px;
 }
 main>.chose-x3>div>div>span>a{
     text-decoration: underline;
@@ -1531,7 +1552,7 @@ main>.content>div>.cards>div>div>a:hover{
     color: rgb(149, 12, 23);
 }
 main>.content>div>.cards>div>div>a:hover .goright-icon{
-    margin-left: 11px;
+    right: -4px;
 }
 /* 黏住區 */
 main>.gotop>a>span:hover{
@@ -1552,8 +1573,30 @@ nav a:focus span::after{
 nav a:focus div::after{
     display: block;
 }
+header>nav>.functions>.all:focus span::after{
+    display: block;
+}
+main>.carousel>.banner>div>.text-case>.banner-text>a:focus{
+    outline: 3px dotted white;
+    outline-offset: -6px;
+}
+main>.carousel>.control>div:focus,main>.chose-x3>div>div>span>a:focus{
+    outline: 3px dotted black;
+}
+main>.content>div>.cards>div>div>a:focus{
+    outline: 3px dotted rgb(149, 12, 23);
+}
+main>.contact>div>div>div>a:focus{
+    outline: 3px dotted #0067b8;
+}
+main>.gotop>a:focus{
+    outline: 3px dotted black;
+    outline-offset: -6px;
+}
 /* 需解決所有microsoft focus問題 */
 /* 箭頭左右邊滑鼠飄移問題 */
 /* 開啟選單的位置 */
 /* 忘了做更多按鈕 */
 /* focus還有尚未完成 */
+/* 原來focus也吃的到動畫效果 */
+/* 需解決footer對齊與變版對齊 */
