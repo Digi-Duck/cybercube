@@ -39,24 +39,35 @@ header>nav{
 
     display: flex;
     justify-content: space-between;
+
+    position: relative;
 }
 header>nav>label{
+    margin-bottom: 2px;
+    margin-left: 2px;
+    padding: 13px;
+    
+    display: none;
+    cursor: pointer;
+}
+header>nav>label>div{
     width: 20px;
+    height: 20px;
+    /* 需要找到圖片不會變大但是要有13px的左右邊的方法 */
 
     background-image: url("../img/list1.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
-    display: none;
 }
+
 header>nav>input{
     display: none;
 }
 header>nav>.links{
     /* 不一定要有寬，可以由子層的寬去撐 */
     /* 本來是width: 565px */
-    width: 570px;
+    width: 567px;
     height: 100%;
 
     align-items: center;
@@ -66,14 +77,19 @@ header>nav>.links{
 }
 header>nav>.links>a{
     height: 48px; /*為了顯示outline 不能用100% */
+    margin: 0px;
     padding: 0px 6px;
 
     display: flex;
     align-items: center;
 }
+header>nav>.links>label{
+    height: 48px;
+    padding: 0px 6px;   
+    display: none;
+}
 header>nav>.links>a:first-child{
-    margin: 0px;
-    padding: 0px;
+    padding: 0px 2px;
 }
 header>nav>.links>a>.logo{
     width: 110px;
@@ -88,26 +104,42 @@ header>nav>.links>a>.logo{
 
     cursor: pointer;
 }
-header>nav>.links>a:nth-child(6){
+header>nav>.links>input{
     display: none;
+}
+header>nav>.links>label:nth-child(6){
+    height: 48px;
+    padding: 0px 6px;
+
+    display: none;
+    
+    cursor: pointer;
 }
     /* header>nav>.links>.link:nth-child(7)問題：我想選「支援」但是為什麼不是nth-child(6)而是(7)呢？ 似乎是.links下的第七個東西(不管名稱)不過.link:nth-child(1)是選不到logo的*/
     /* padding-right: 5px; */
 header>nav>.functions{
-    width: 388px;
     height: 100%;
 
     display: flex;
     /* 因為最右方已經抓出padding-right:3px對齊，所以就可以從右邊對齊flex-end */
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
-header>nav>.functions>a:nth-child(2){
-    margin-right: 30px;
+header>nav>.functions>div:first-child{
+    margin-right: 6px;
 }
 header>nav>.functions>a{
     cursor: pointer;
     padding: 0px 6px;
+}
+header>nav>.functions>a:nth-child(2){
+    margin-right: 28px;
+}
+header>nav>.functions>a:nth-child(3),header>nav>.functions>a:last-child{
+    margin-left: 8px;
+}
+header>nav>.functions>a:last-child{
+    padding-right: 0px;
 }
 header>nav>.functions>a>.function{
     height: 48px;
@@ -153,7 +185,7 @@ header>nav>.functions>a:nth-child(4)>.function>span{
 header>nav>.functions>a>.function>.login{
     width: 32px;
     height: 32px;
-    margin-left: 10px;
+    margin: 8px;
 
     background-image: url("../img/user.svg");
 }
@@ -291,50 +323,41 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
 /* nav RWD設定 */
 @media screen and (max-width:1778px){
     header>nav>.links{
-        width: 521px;
+        width: 523px;
         padding-left: 0px;
     }
-    header>nav>.functions{
-        margin-right: 8px;
+    header>nav>.functions>div:first-child{
+        margin-right: unset;
     }
-    header>nav>.functions>.all{
-        margin-left: 47px;
-    }
-    header>nav>.functions>a:nth-child(2)>.function{
-        margin-right: 13px;
-    }
-    header>nav>.functions>a:nth-child(3)>.function{
-        margin-right: 13px;
+    header>nav>.functions>a:nth-child(3){
         margin-left: 0px;
     }
-    header>nav>.functions>a:nth-child(4)>.function{
-        margin-right: 0px;
+    header>nav>.functions>a:nth-child(2){
+        margin-right: 32px;
+    }
+    header>nav>.links>a:first-child{
+        padding: 0px 4px;
     }
 }
 @media screen and (max-width:1399px){
     header>nav>.functions{
         justify-content: flex-end;
     }
+    header>nav>.functions>div:first-child{
+        margin-right: 8px;
+    }
+    header>nav>.functions>a:nth-child(2){
+        margin-right: 0px;
+    }
+    header>nav>.functions>a:last-child{
+        margin-left: 0px;
+    }
     header>nav>.functions>a>.function>span{
         display: none;
-    }
-    header>nav>.functions>a>.function>.shopping{
-        margin-left: 0px;
-        margin-right: 10px;
-    }
-    header>nav>.functions>.all{
-        margin-left: 0px;
-        margin-right: 13px;
     }
     header>nav>.functions>.all>.all-menu{
         /* 哈哈哈他居然不是推這一條而是把那奇怪的空58px改掉..GG */
         right: -190px;
-    }
-    header>nav>.functions>a:nth-child(2)>.function{
-        margin-right: 0px;
-    }
-    header>nav>.functions>a:nth-child(3)>.function{
-        margin-right: 0px;
     }
     header>nav>.functions>.all>.all-menu>ul>li{
         width: 200px;
@@ -392,28 +415,47 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
         margin-top: 2px;
     }
     header>nav>.links{
-        width: 490px;
+        width: 496px;
+    }
+    header>nav>.links{
+        position: relative;
     }
     header>nav>.links>a:nth-child(5)>.link{
         margin-right: 4px;
     }
-    header>nav>.links>a:nth-child(6){
-        display: flex;
-    }
-    header>nav>.links>a:nth-child(6)>.link{
-        display: flex;
-    }
     /* 如果加了input與label就要往後推兩個數字 */
-    header>nav>.links>a:nth-child(7){
-        display: none;
+    header>nav>.links>label:nth-child(7)>.link{
+        display: flex;
     }
-    header>nav>.links>a:nth-child(8){
-        display: none;
+    header>nav>.links>label:nth-child(7){
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    header>nav>.links>a>.link>span{
+    /* 斷點，需解決更多下面之問題 */
+    header>nav>.links>a:nth-child(8),header>nav>.links>a:nth-child(9){
+        width: 164px;
+        height: 55.5px;
+        padding: 18px 0px 18px 24px;
+
+        background-color: #f2f2f2;
+        border: 1px solid #e6e6e6;
+        border-bottom: unset;
+
+        position: absolute; 
+        top: 48px;
+        left: 440px;
+        z-index: 2;
+    }
+    header>nav>.links>a:nth-child(9){
+        border-top: unset;
+        top: 97px;
+        z-index: 2;
+    }
+    header>nav>.links>label>.link>span{
         height: 19.5px;
     }
-    header>nav>.links>a>.link>.more{
+    header>nav>.links>label>.link>.more{
         width: 14px;
         height: 22px;
         margin-left: 2px;
@@ -435,56 +477,65 @@ header>nav>.functions>.all>.all-menu>ul:nth-child(2)>li>a>.icon-right{
 
         border-bottom: 1px solid #e6e6e6;
     }
-    header>nav>label{
-        margin-left: 15px;
-        margin-bottom: 4px;
-
-        display: block;
-    }
     /* 本來下方點擊事件沒有寫在media裡，這樣會造成我選單打開之後拉寬螢幕選單依然佔滿版，移置media裡後就解決了 */
     header>nav>#list:checked ~ .menu {
         display: block;
     }
-    header>nav>#list:checked + label{
-        width: 15px;
-        margin-left: 17px;
-        margin-bottom: 5px;
+    header>nav>label{
+        margin-bottom: 3px;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header>nav>#list:checked + label>div{
+        width: 15px;
+        height: 15px;
+        margin: 2.5px; /*這數字是因為這div框變小了但是要讓label維持一樣大*/
         background-image: url("../img/x2.svg");
     }
     header>nav>.links{
         width: auto;
-    }
-    header>nav>.links>a>.logo{
-        width: 108px;
-        height: 23px;
-
         position: absolute;
-        top: -4px;
-        left: calc(50% - 65px);
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+
     }
     header>nav>.links>a{
         display: none;
     }
     header>nav>.links>a:first-child{
-        display: block;
+        display: flex;
+    }
+    header>nav>.links>a>.logo{
+        width: 108px;
+        height: 23px;
+        margin: 0px;
     }
     /* 因為權重，必須特別再將「更多」單獨再消失一次 */
-    header>nav>.links>a:nth-child(6)>.link{
+    header>nav>.links>label:nth-child(7){
         display: none;
     }
     header>nav>.functions{
-        margin-right: 16px;
+        margin-right: 8px;
     }
     header>nav>.functions>.all{
         display: none;
     }
-    header>nav>.functions>a:nth-child(2)>.function{
-        display: flex;
-        /* 用position讓放大鏡往左靠 */
+    header>nav>.functions>a:nth-child(2){
+        width: 32px;
+        height: 32px;
+        padding: 0px;
+
+        /* 用position讓放大鏡往左靠(結果下錯層) */
         position: absolute;
-        top: 3px;
-        left: 55px;
+        top: 11px;
+        left: 48px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     header>nav>.functions>a:nth-child(3)>.function{
         margin-right: 10px;
@@ -811,13 +862,15 @@ main>.carousel>.control{
         /* 硬推讓控制項能往上，但是不確定會不會影響下面的東西 */
         position: absolute;
         bottom: -17px;
-        left: calc(50% - 76.5px);
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 @media screen and (max-width:859px){
     main>.carousel>.control{
         /* 讓控制項區塊回歸正常排版 */
         position: unset;
+        transform: unset;
     }
 }
 main>.carousel>.control *{
@@ -1457,10 +1510,10 @@ footer>div>.last>.right>*{
 
 /* hover效果區 */
 /* nav左邊 */
-nav >.links a div{
+header>nav >.links a div{
     position: relative;
 }
-nav >.links a div::after{
+header>nav >.links a div::after{
     content:'';
     width: 98%;
     height: 2px;
@@ -1472,11 +1525,26 @@ nav >.links a div::after{
 
     transform: translateX(-50%);
 }
-/* nav右邊 */
-nav .functions>a span{
+header>nav>.links>label>.link>span{
     position: relative;
 }
-nav .functions>a span::after{
+header>nav>.links>label>.link>span::after{
+    content:'';
+    width: 98%;
+    height: 2px;
+    background-color: #000;
+
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+/* nav右邊 */
+header>nav .functions>a span{
+    position: relative;
+}
+header>nav .functions>a span::after{
     content:'';
     width: 100%;
     height: 2px;
@@ -1487,10 +1555,10 @@ nav .functions>a span::after{
     bottom: -1px;
     left: 0px;
 }
-nav .all span{
+header>nav .all span{
     position: relative;
 }
-nav .all label span::after{
+header>nav .all label span::after{
     content:'';
     width: 100%;
     height: 2px;
@@ -1501,25 +1569,28 @@ nav .all label span::after{
     bottom: -3px;
     left: 0px;
 }
-nav *::after{
+header>nav *::after{
     display: none;
 }
-nav a:hover div::after{
+header>nav a:hover div::after{
     display: block;
 }
-nav .all:hover span::after{
+header>nav .all:hover span::after{
     display: block;
 }
-nav a:hover span::after{
+header>nav a:hover span::after{
+    display: block;
+}
+header>nav>.links>label:hover ::after{
     display: block;
 }
 /* 登入也不要有底線 */
-nav .functions>a:last-child span::after{
+header>nav .functions>a:last-child span::after{
     display: none;
 }
 /* logo不要有底線 */
 
-nav .links .logo::after{
+header>nav .links .logo::after{
     display: none;
 }
 /* 打開所有選單的時候底線消失 */
@@ -1567,10 +1638,16 @@ footer a:hover{
 *:focus{
     outline: 1px dashed black;
 }
-nav a:focus span::after{
+header>nav a:focus span::after{
     display: block;
 }
-nav a:focus div::after{
+header>nav a:focus div::after{
+    display: block;
+}
+header>nav>label:focus{
+    outline-offset: -2px;
+}
+header>nav>.links>label:focus ::after{
     display: block;
 }
 header>nav>.functions>.all:focus span::after{
@@ -1593,8 +1670,12 @@ main>.gotop>a:focus{
     outline: 3px dotted black;
     outline-offset: -6px;
 }
+footer *:focus{
+    outline-offset: 2px;
+    text-decoration: underline;
+}
 /* 需解決所有microsoft focus問題 */
-/* 箭頭左右邊滑鼠飄移問題 */
+/* 箭頭左右邊滑鼠飄移問題 完成！ */
 /* 開啟選單的位置 */
 /* 忘了做更多按鈕 */
 /* focus還有尚未完成 */
