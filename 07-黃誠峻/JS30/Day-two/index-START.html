@@ -80,10 +80,17 @@ const seconds = now.getSeconds()
 const mins=now.getMinutes()
 const hours=now.getHours()
 
-const secondsDegrees=((seconds/60)*360)+90 //一秒走六度～
-const minuteDegrees=((mins/60)*360)+90 
 
-const hoursDegrees=((hours/12)*360)+((mins/60)*30)+90 
+
+const secondsDegrees=((seconds/60)*360)+90 //一秒走六度～
+const minuteDegrees=((mins/60)*360)+((seconds*6)/60)+90 //秒針走360度，時針會走6度，全部有60格，那秒針走一格，
+// const hoursDegrees=((hours/12)*360)+((mins/60)*30)+90 
+const hoursDegrees=((hours/12)*360)+((0.5*mins))+90 
+
+//  計算公式
+// 60分=30度    60秒=6度
+// 1分＝1/2度   1秒=6/60度
+// x分=x*0.5度  x秒=x＊6/60度
 
 hourHand.style.transform=`rotate(${hoursDegrees}deg)`
 secondHand.style.transform=`rotate(${secondsDegrees}deg)`
