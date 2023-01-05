@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
+</head>
+<body>
+  <h2>Update CSS Variables with <span class='js-text'>JS</span></h2>
+
+  <div class="controls">
+    <label for="img-spacing">Spacing:</label>
+    <input id="img-spacing" type="range" name="img-spacing" min="10" max="200" value="10" data-sizing="px">
+
+    <label for="img-blur">Blur:</label>
+    <input id="img-blur" type="range" name="img-blur" min="0" max="25" value="10" data-sizing="px">
+
+    <label for="base-color">Base Color</label>
+    <input id="base-color" type="color" name="base-color" value="#ffffff">
+  </div>
+
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+  <style>
+
+    :root{
+      --base-color:#e75858;
+      --img-spacing:10px;
+      --img-blur:10px;
+    }
+    img{
+      padding: var(--img-spacing);
+      background-color: var(--base-color);
+      filter: blur(var(--img-blur));
+    }
+    /* 請不要使用這種ｃｓｓ名稱 hl是想搞誰啊 from clean code page28 */
+    .js-text{
+      color:var(--base-color);
+    }
+
+    body {
+      text-align: center;
+      background: #193549;
+      color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+    }
+
+    .controls {
+      margin-bottom: 50px;
+    }
+
+    input {
+      width: 100px;
+    }
+  </style>
+
+  <script>
+    // 3進行修改數值
+    function handle(){
+      // 如果要取用我們自訂的data數值需要使用的是dataset並不是data-* 後面用或者的原因是，如果遇到undifind就直接回傳空白就好。
+      const suffix=this.dataset.sizing||""
+      // console.log(`--${this.name}`) //--spacing
+      // console.log(this)
+      // console.log(this.dataset.sizing)
+      // 選擇整份文件中的style接著用setProperty選定，我們要找的元素，數值，並且加上單位
+     document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix)
+    }
+    // 1使用者唯一可以碰觸的就是滑桿，滑桿有三個，但他們都是input標籤
+    const allUserControl=document.querySelectorAll(".controls input");
+    // 2取得三個標籤後，我們需要個別將他們分開之後進行事件監聽
+    allUserControl.forEach(input=>input.addEventListener("change",handle))
+    allUserControl.forEach(input=>input.addEventListener("mousemove",handle))
+
+  </script>
+
+</body>
+</html>
