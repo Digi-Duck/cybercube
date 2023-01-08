@@ -62,14 +62,25 @@
         console.table(birthdateRank);
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
-    const allAge=inventors.map(inventors=>{
+    var allAge=inventors.map(inventors=>{
       let age=inventors.passed-inventors.year;
       return age;
     })
     console.table(allAge)//第三題進行過排序所以順序不同
     const totalAge=allAge.reduce((first,second)=>first+second)
     console.table(totalAge)
+    
     // 5. Sort the inventors by years lived
+    console.log("第五題開始")
+    const whoLivesLongest=inventors.sort(function(first,second){
+      if((first.passed-first.year)>(second.passed-second.year)){
+      return 1}
+      else{
+        return -1
+      }
+    })
+console.table(whoLivesLongest)
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
