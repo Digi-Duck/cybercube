@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>這裡</p>
+    <script>
+        const obj = {
+            value: 1,
+            hello: function () {
+                console.log(this.value)
+            }
+        }
+
+        obj.hello() // 1
+        obj.hello.call(obj) // 轉成 call
+        const hey = obj.hello
+        hey() // undefined
+        hey.call() // 轉成 call
+    </script>
+</body>
+
+</html>

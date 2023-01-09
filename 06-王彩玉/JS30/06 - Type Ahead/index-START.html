@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+    const list = document.querySelector('form ul');
+    const input = document.querySelector('input');
+    const city_population = [[], [], []]; //城市+人口
+
+
+    fetch(endpoint)
+      .then(function (response) {
+        // console.log(response.json());  如果這邊先log一次，再用return就會壞掉，只能呼叫一次
+        return response.json();
+      })
+      .catch(function (error) { //尚須確定這個要放哪裡
+        console.log(error);
+      })
+      .then(function (myJson) {
+        // console.log(myJson);
+// 把陣列宣告在then比較不好，這樣就傳不出來，所以把陣列宣告在最外層然後將資料push進陣列就能在then外使用
+
+        Object.values(myJson).forEach(element => { //將物件轉換為陣列加以用foreach
+          city_population[0].push(element.city);
+          city_population[1].push(element.population.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+          city_population[2].push(element.state);
+        });
+
+        // 正則：\B 吻合非文字邊界 non-word boundary告訴正則：開頭位元不需要處理，就算符合的情況下。
+        // .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') 這邊已經是字串就不用toString了
+        // for (let x = 0; x < city_population[1].length; x++) {
+        //   list.innerHTML +=
+        //     `<li>
+        //     <span>${city_population[0][x]},${city_population[2][x]}</span>
+        //     <span>${city_population[1][x]}</span>
+        //     </li>`;
+        // }
+        const list_li = document.querySelectorAll('form ul li');
+        // console.log(list_li);
+        // for (let x = 2; x < list_li.length; x++) {
+        //   list_li[x].style.display = 'none';
+        // }
+      });
+
+      // input.addEventListener('input',clear_every);
+      input.addEventListener('input',comparison);
+
+      // function clear_every(){
+      //   const list_li = document.querySelectorAll('form ul li');
+      //   list_li.forEach(function(li,index){
+      //       li.style.display = 'none';
+      //   });
+      // }
+      function comparison(){
+        const list_li = document.querySelectorAll('form ul li');
+        list_li.forEach(function(li,index){
+          console.log(input.value);
+          if(String(li.innerText).includes(input.value)){
+            // li.style.display = 'flex';
+            console.log(li);
+          }
+        });
+      }
+
+  </script>
+</body>
+
+</html>
+<!-- 每三位數字加上逗點可以這樣做(土法)
+    let aaa = [];
+    city_population[1].forEach(function(str){
+    aaa.push(str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+  }) -->
+
+  <!-- 我發現他li不是先生起來放而是動態生成li -->

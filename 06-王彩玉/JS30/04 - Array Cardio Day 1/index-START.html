@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // Get your shorts on - this is an array workout!
+    // ## Array Cardio Day 1
+
+    // Some data we can work with
+
+    const inventors = [
+      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+    ];
+
+    const people = [
+      'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+      'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+      'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+      'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+      'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+    ];
+    
+    console.table(inventors);
+    // console.table(inventors.sort());
+
+
+    // Array.prototype.filter() filter 篩選
+    // 1. Filter the list of inventors for those who were born in the 1500's
+    // 篩選出1500年代的發明家
+    // let born_1500s = [];
+    // for(let y = 0;y<inventors.length;y++){
+    //   if((inventors[y].year>=1500) && (inventors[y].year <= 1599)){
+    //     born_1500s.push(inventors[y]);
+    //   }
+    // }
+    // console.table(born_1500s);
+
+    // 使用filter()
+    // ???這麼簡單？不用inventors[y]??
+    let born1500 = inventors.filter(function(inventors){
+      return inventors.year >= 1500 && inventors.year <= 1599;
+    });
+    console.table(born1500);
+    // function一定要放參數，不然會讀取不到
+
+    let born_1500s_filter = inventors.filter(inventors => inventors.year>=1500 && inventors.year<=1599);
+
+    
+    // (year => ((year>=1500) && (year<=1599)));
+
+    console.table(born_1500s_filter);
+
+    // 作者寫的最好懂得寫法
+    let ans_born = inventors.filter(function(inventor){
+      if(inventor.year >= 1500 && inventor.year <=1599){
+        return true; //true才回傳 //keep it!
+      }else{
+        return false; // false不回傳，其實這邊可以不用寫因為不成立就不回傳
+      }
+    })
+    console.table(ans_born);
+
+
+    // Array.prototype.map()
+    // 2. Give us an array of the inventors first and last names
+    // 給個陣列是發明家的名字
+
+    let name = [];
+    for(let y = 0;y<inventors.length;y++){
+      name.push(`${inventors[y].first} ${inventors[y].last}`);
+    }
+    console.log(name);
+
+    // // 使用 .map()
+    let name1500 = inventors.map(function(inventors){
+      return `${inventors.first} ${inventors.last}`;
+    })
+    console.log(name1500);
+
+    let name_map = inventors.map(inventors => inventors.first +" "+ inventors.last);
+    console.log(name_map);
+
+    // Array.prototype.sort()
+    // 3. Sort the inventors by birthdate, oldest to youngest
+    // 以出生日期排序發明家
+
+    // 作者詳解
+    let good_sort = inventors.sort(function(first_person,second_person){
+      if(first_person.year > second_person.year){
+        return 1;
+      }else if(first_person.year == second_person.year){
+        return 0;
+      }else{
+        return -1;
+      }
+    })
+    console.table(good_sort);
+
+    // 如果有 回傳1 如果沒有 回傳-1
+    let good_sort2 = inventors.sort((a,b)=> a.year > b.year ? 1 : -1);
+
+    console.table(good_sort2);
+
+
+    let bornaaa = inventors.slice();
+    console.log(bornaaa);
+    bornaaa.sort(function(a,b){
+      return a.year - b.year;
+    })
+    console.table(bornaaa);
+
+    /*console.table(inventors,['year','passed','first','last']); 意外發現這樣可以照著想排序的欄位順序去排(非資料順序)，不過與題目要求的不同*/
+    // 這樣似乎就是泡沫排序法(但是我不會 :D)
+    let aaa = inventors; //因為sort()會影響原陣列順序所以另存一個相同陣列
+    let times = 0; //計算運算次數
+    console.log(inventors);
+    aaa.sort(function (a,b){
+      times++;
+      return a.year - b.year; //由數字小到大排
+      // return b.year - a.year;會由數字大到小排
+      // 原理：泡沫排序(?)由小到大排序if(a>b)return 1  elseif(a<b)return-1 elseif(a=b)return 0;
+      // 如果a-b回傳負數代表前面數字小於後面數字，a放b前面
+      // 如果a-b回傳0，前面等於後面，排序不變
+      // 如果a-b回傳正數則前面數字大於後面數字，a放b後面
+    });
+    console.table(aaa);
+    console.log(times);
+
+    let birth_sort = inventors.sort(function(a,b){
+      return a.year - b.year;
+    })
+    console.table(birth_sort);
+
+    // Array.prototype.reduce()
+    // reduce只能做累加
+    // 4. How many years did all the inventors live all together?
+
+    let life =0;
+    for(let y = 0; y<inventors.length;y++){
+      life += inventors[y].passed - inventors[y].year;
+    }
+    console.log(life);
+
+    // 使用reduce()
+    // 一定要給初始值
+    let live = inventors.reduce(function(total,inventors){
+      return total + (inventors.passed - inventors.year);
+    },0);
+    console.log(live);
+
+
+    const initiaValue = 0;
+    
+    let life_reduce = inventors.reduce(function(total,inventors){
+      // console.log(accumulator, currentValue, currentIndex);
+      return total + (inventors.passed - inventors.year);
+    },0); /*0是初始值(第一個+的值)一定要給*/
+    console.log(life_reduce);
+
+    let life_reduce2 = inventors.reduce((total,inventors)=>
+    {return total + (inventors.passed - inventors.year)},0);
+    console.log(life_reduce2);
+
+    // 5. Sort the inventors by years lived
+    // 使用sort由大到小
+    // 作者詳解
+    const oldest = inventors.sort(function(first_person,second_person){
+      const lastGuy = first_person.passed - first_person.year;
+      const nextGuy = second_person.passed - second_person.year;
+      return lastGuy > nextGuy ? -1 : 1;
+    });
+    
+    console.table(oldest);
+
+
+
+    let live_sort = inventors.sort(function(a,b){
+      return (b.passed - b.year) - (a.passed - a.year);
+    });
+    console.table(live_sort);
+
+
+    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    
+    // 直接在網頁的console做
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    //const category = document.querySelector('.mw-category'); //找到清單的class
+    //const links = Array.from(category.querySelectorAll('a')); //清單class的的項目a，如果只寫catagory.querySelectorAll('a')，會回報錯誤說這不是陣列，所以要用Array.form讓他變成「真」陣列
+    //const de = links
+        // .map(link=>link.textContent)
+        // .filter(streetName => streetName.includes('de'));// 陣列de用來裝links的內容並且尋找只有de的項目
+    // 執行de
+
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+    // 按姓氏字母順序對人員進行排序
+    // 作者詳解
+    const alpha = people.sort(function(lastOne, nextOne){
+      const [aLast, aFirst] = lastOne.split(', '); // 用一個二維陣列存放
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1 ;
+    })
+    console.log(alpha);
+
+    // 這好像也可以解但是我感覺壞掉了(因為預設直接sort也是正解RRRRR)
+    let name_sort = people.sort(function(a,b){
+      return a.split(', ')[0] - b.split(', ')[0];
+    });
+    console.log(name_sort);
+
+
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+    const transportation = data.reduce(function(obj, item){ /*obj*/
+      // console.log(item);
+      // 製作物件obj，obj裡面的item(item是car.truck.bike等)
+      //obj[item]則是出現的次數
+      if(!obj[item]){// //假如物件中還沒有該屬性 創造該屬性且值為0
+        obj[item] = 0;
+      }
+      //每取得對應屬性一次，對應的屬性值+1
+      obj[item]++;
+      console.log(obj); 
+      console.log(item);
+      return obj;
+    }, { //本來應該要放初始值(物件bike: 0, car: 0,等，只放一個大{}代表回傳的是一個物件
+    });
+    console.log(transportation);
+
+  </script>
+</body>
+</html>

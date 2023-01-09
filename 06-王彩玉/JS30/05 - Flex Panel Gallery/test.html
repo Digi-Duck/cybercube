@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 900px;
+            height: 200px;
+            border: 2px solid red;
+            display: flex;
+        }
+
+        .box div {
+            width: 400px;
+            height: 150px;
+        }
+
+        .boxa {
+            background-color: #fa0;
+        }
+
+        .boxb {
+            background-color: #f0a;
+        }
+
+        .boxc {
+            background-color: #0fa;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxa"></div>
+        <div class="boxb"></div>
+        <div class="boxc"></div>
+    </div>
+    <script>
+        let arr = ['Jan', 'March', 'April', 'June'];
+        let brr = arr.splice(0, 1, 'Feb');
+        console.log(arr);
+        console.log(brr);
+        let b = '我是誰？是否常常這樣問自己？我是誰？而你又是誰呢？'
+        let crr = b.slice('？');
+        console.log(b);
+        console.log(crr);
+        var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+        var removed = myFish.splice(2);
+
+
+        console.log(myFish);
+        console.log(removed);
+
+
+        var str = 'fooish.com';
+
+        // 輸出 'foo'
+        console.log(str.substring(0, 3));
+        console.log(str.substring(3, 0));
+
+        // 輸出 'sh.'
+        console.log(str.substring(4, 7));
+        console.log(str.substring(7, 4));
+
+        // 輸出 fooish
+        console.log(str.substring(0, 6));
+
+        // 輸出 'fooish.com'
+        console.log(str.substring(0, 10));
+        console.log(str.substring(0, 20));
+        console.log(str.substring(100, 0));
+    </script>
+</body>
+
+</html>

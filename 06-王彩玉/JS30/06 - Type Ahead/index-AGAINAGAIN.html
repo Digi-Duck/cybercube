@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+const cities = [];
+
+let prom = fetch(endpoint)
+.then(function (blob){ 
+  console.log(blob); //回傳response
+  return blob.json();
+})
+.then(function(data){
+  // console.log(data);
+  // cities = data; 如果cities是let就可以這樣，const不能
+  //cities.push(data); 直接push整個data陣列會變成一個二維陣列
+  cities.push(...data);
+  // console.log(cities);
+});
+console.log(prom);//回傳promise
+// then結束
+function findMatches(wordToMatch, cities){
+  return cities.filter(function(place){
+    // here we need to figure out (搞清楚) it the city or state matches what was searched 
+    const regex = new RegExp(wordToMatch,'gi'); //RegExp 「物件」被用來比對符合自訂規則的文字。//參數i是忽略大小寫，參數g是比對多次
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
+
+// 使用正則將數字加上,，並取代
+function numberWithCommas(x){
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+}
+// 找查的關鍵
+function displayMatches(){
+  // console.log(this.value);
+  // 這裡的this是input，因為是監聽input的時候呼叫他的
+  const matchArray = findMatches(this.value, cities); // 將比對成功的資料丟到這裡
+  console.log(matchArray);
+  const html = matchArray.map(function(place){ //再對這個陣列做處理
+    //  這裡有個問題，如果上方箭頭函式是用一般的function來寫，他的this就是指向windows，但是箭頭函式的this可以直接指到input.search，所以我改成用function 並且this.value改成searchInput.value
+    // console.log(this);
+    // console.log(searchInput.value);
+    const regex = new RegExp(searchInput.value, 'gi');
+    // console.log(searchInput.value);
+    const cityName = place.city.replace(regex,`<span class='hl'>${searchInput.value}</span>`);//replace會找到符合的字串並用第二個參數取代，這邊就是找到符合輸入的字並多用一個span去取代
+    const stateName = place.state.replace(regex,`<span class='hl'>${searchInput.value}</span>`);
+    // console.log(cityName, stateName); 
+    //return的 `如果放在下一行就會顯示不出來呢
+    return `
+    <li>
+      <span class ="name">${cityName}, ${stateName}</span>
+      <span class ="population">${numberWithCommas(place.population)}</span>
+    </li>
+    `;
+  }).join(''); //使用join將清單組合成一整個字串//這邊如果沒有加上join('')的話map會回傳array(typeof出來是物件)，清單就會有「,」隔開()
+  console.log(html);
+  suggestions.innerHTML = html;
+}
+
+
+const searchInput = document.querySelector('.search'); //搜尋框
+const suggestions = document.querySelector('.suggestions'); //清單
+searchInput.addEventListener('change',displayMatches); //也可以用keyup
+searchInput.addEventListener('input',displayMatches); //也可以用keyup
+
+
+</script>
+</body>
+</html>

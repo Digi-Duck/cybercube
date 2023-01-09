@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+
+<body>
+  <canvas id="draw" width="1900" height="920">
+    <img src="./1633523164068.jpg" width="150" height="150" alt="替代圖片">
+  </canvas>
+  <script>
+    const draw = document.querySelector('#draw');
+    const ctx = draw.getContext('2d');
+    console.log(ctx);
+    
+    //  fillRect 實心矩形，strokeRect，空心矩形，clearRect清除指定區域內容使其變為全透明(橡皮擦？)
+    ctx.strokeStyle = 'red'; //路徑顏色
+    ctx.fillStyle = 'blue'; //填滿顏色
+    ctx.lineWidth = 3;//x路徑粗細
+    ctx.globalAlpha = 0.5;// 透明度
+    ctx.lineCap = "square"; //線條形狀 butt方,round圓,square多一點方
+    ctx.lineJoin = "round";//連接區形狀 round弧形,bevel斜面,miter斜形
+    ctx.fillRect(500, 100, 150, 150);
+    ctx.strokeRect(500, 300, 150, 150);
+    ctx.clearRect(500, 150, 20, 20);
+    //--------------------------
+    // 繪製路徑(一定要是beginPath開頭stroke結尾)
+    // moveTo (把畫筆離開畫布移動到指定位置)
+    ctx.beginPath();
+    ctx.strokeStyle = 'darksalmon';
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = 'darkgreen';
+    ctx.moveTo(200, 100);
+    ctx.lineTo(100, 200);
+    ctx.stroke();
+    // 圓形
+    ctx.beginPath();
+    ctx.strokeStyle = 'purple';
+    // 圓弧的 x 坐標為 200，y 坐標為 375，半徑為 100。要形成一個完整的圓，圓弧以 0 弧度 (0 ° ) 的角度開始，以 0 弧度的角度結束2π弧度（360 °）。
+    ctx.arc(200, 375, 100, 0, 2 * Math.PI);
+    ctx.stroke();
+    // 閉合路徑，三角形
+    ctx.beginPath();
+    ctx.strokeStyle = 'yellowgreen';
+    ctx.fillStyle = 'yellow'; //填滿顏色
+    ctx.lineWidth = 6;
+    ctx.moveTo(550, 550);
+    ctx.lineTo(750, 750);
+    ctx.lineTo(500, 700);
+    // 產生兩條線後closePath關閉路徑就會自動連接兩個頂點來完成閉合路徑(三角形)
+    ctx.closePath();
+    ctx.stroke();//路徑
+    ctx.fill(); //閉合路徑填滿
+    
+    // 漸層調色盤
+          let x =0;
+    for(let k = 0;k<15;k++){
+      for(let i= 0;i<15;i++){
+        for(let j=0;j<15;j++){
+          console.log(x++);
+          // ctx.fillStyle = 'rgb(' + Math.floor(255-17*i) +','+Math.floor(255-17*j) + ',0)';
+          ctx.fillStyle = `rgb(${Math.floor(255-17*i)},${Math.floor(255-17*j)},${Math.floor(255-17*k)})`;
+          ctx.fillRect(j*25,i*25,25,25);
+        }
+      }
+    }
+
+
+  </script>
+
+
+
+
+  <style>
+    html,
+    body {
+      margin: 0px;
+      box-sizing: border-box;
+    }
+
+    canvas {
+      border: 3px solid gold;
+      /* 如果繪圖結果看起來有些扭曲，可以改試著用<canvas>自身的 width 和 height 屬性而不要用 CSS 來設定寬高。 */
+    }
+  </style>
+
+</body>
+
+</html>

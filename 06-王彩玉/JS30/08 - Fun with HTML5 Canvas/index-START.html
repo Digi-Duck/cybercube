@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="1910" height="923"></canvas>
+<!-- 改變畫布的大小作者有個更好的做法就是用window的innerwidth與innerheight -->
+<div class="mouse"></div>
+<script>
+  const mouse = document.querySelector('.mouse');
+  // 畫布初始化
+  const canvas = document.querySelector('#draw');
+  canvas.width = window.innerWidth;
+  canvas.height = (window.innerHeight) - 4;//但是高就是會太高一點啊
+  
+  if(canvas.getContext){
+    console.log('yes');
+    var ctx = canvas.getContext('2d');
+    // 這裡ctx放在if裡面就不能用const了不知道為什麼
+  }
+
+  let isDrawing = false;
+  let x = 0;
+  let y = 0;
+
+  let color = 0; //依照顏色來看是0~360之後不回頭直接歸零就好
+  let pen_width = 100;//寬度初始為100，範圍為0~100
+  let pen_open = 1; //因為寬度是由大到小再由小到大所以設一個開關判斷有沒有到達大小臨界值
+  let n = 0;//控制變化，n不等於x座標(意思是有變動的時候改變顏色及寬度)
+
+// 設定座標0，當滑鼠點擊的時候，紀錄x,y座標為點擊時候的座標，滑鼠移動的時候執行函式畫直線，直線起始為x,y，終點為滑鼠位置e.offset，並更新xy為滑鼠終點位置，滑鼠放開後，初始化x與y與開關
+
+  // 按下滑鼠
+  canvas.addEventListener('mousedown',function(e){
+    console.log(e);
+    isDrawing = true;
+    x = e.offsetX;
+    y = e.offsetY;
+    // 因為後面初始化，所以才要一直重複讀取x.y座標？本來在想為什麼點擊滑鼠要座標，後面移動也要座標
+  });
+  // 移動滑鼠
+  canvas.addEventListener('mousemove',function(e){
+    if(isDrawing){
+      drawLine(ctx, x, y, e.offsetX, e.offsetY);
+      // 同步更新x.y起始位置
+      x = e.offsetX;
+      y = e.offsetY;
+    }
+  });
+  // 放開滑鼠
+  window.addEventListener('mouseup',function(e){
+    if(isDrawing){
+      drawLine(ctx, x, y, e.offsetX, e.offsetY);
+      x = 0;
+      y = 0;
+      isDrawing = false;
+      // 初始化
+    }
+  });
+
+  // 錯誤！如果將畫筆變化事件放在mousemove的話，只有移動滑鼠沒有點擊也會造成畫筆變小，但是直接改成放在mousedown又會沒辦法變換大小，因此需要mousemove並用isDrawing開關來控制
+  canvas.addEventListener('mousemove',function(e){
+    if(isDrawing){
+      if(n != x){
+        n = x;
+        console.log(n);
+        // 我需要畫筆從100~1，再遞增回來，所以一開始是100，持續遞減到1的時候開始遞增
+        // 設一個開關控制畫筆從大到小之後要從小再到大AvA，感覺也可以用if &&雙重條件做但是我不會 :D
+
+        /*作者用了一個很厲害的開關
+        if(pen_width>=100 ||pen_width<=1){pen_open = !pen_open}
+        這樣只要超出範圍就會自動相反(開關*/
+        if(pen_open == 1){
+          if(pen_width >= 1){
+            pen_width--;
+          }else{
+            pen_open = 0;
+          }
+        }else{
+          if(pen_width <= 100){
+            pen_width++;
+          }else{
+            pen_open = 1;
+          }
+        }
+        // 顏色
+        if(color <=360){
+          color++;
+        }else{
+          color = 0;
+        }
+      }
+    }
+  });
+
+  function drawLine(ctx,x1,y1,x2,y2){
+    ctx.beginPath();
+    // hsl色票第一個參數控制顏色(色調)(0~360)，第二個參數彩度(飽和度)，第三個參數明度(亮度)
+    ctx.strokeStyle = `hsl(${color}, 100%, 50%)`;
+    ctx.lineCap = 'round';//線頭為圓形
+    ctx.lineWidth = pen_width;
+    ctx.moveTo(x1, y1); //起始位置(把畫筆離開畫布移動到指定位置)
+    ctx.lineTo(x2, y2); //結束位置
+    // ctx.globalCompositeOperation = 'xor';這屬性就像遮罩，超級酷
+    ctx.stroke();
+    ctx.closePath();
+  }
+
+// 游標 A_A
+// 問題：監聽window時游標在方塊上會閃爍並回到原始狀態(左上角)，指到方塊時監聽到的是原本方塊初始位置的座標因此定位就亂掉了。解決：將監聽window改成監聽畫布(但是也會延遲延遲)，改成定位+一點點距離比較剛好
+canvas.addEventListener('mousemove',function(e){
+  mouse.style.top = (e.offsetY+10) +'px';
+  mouse.style.left = (e.offsetX+10) +'px';
+  mouse.style.backgroundColor = `hsl(${color}, 100%, 50%)`;
+  mouse.style.height = `${pen_width}px`;
+  mouse.style.width = `${pen_width}px`;
+})
+</script>
+
+<style>
+  html, body {
+    margin: 0;
+    box-sizing: border-box;
+    cursor: grab;
+  }
+  .mouse{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 3px solid black;
+    position: fixed;
+  }
+</style>
+
+</body>
+</html>

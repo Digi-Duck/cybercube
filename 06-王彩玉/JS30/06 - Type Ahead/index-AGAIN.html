@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const list = document.querySelector('form ul');
+    const input = document.querySelector('input');
+    const city_population = [[], []]; //城市+人口
+
+    fetch(endpoint)
+      .then(function (response) {
+        // console.log(response.json());  如果這邊先log一次，再用return就會壞掉，只能呼叫一次
+        return response.json();
+      })
+      .catch(function (error) { //尚須確定這個要放哪裡
+        console.log(error);
+      })
+      .then(function (myJson) {
+        // console.log(myJson);
+        Object.values(myJson).forEach(element => { //將物件轉換為陣列加以用foreach
+          city_population[0].push(`${element.city}, ${element.state}`);//在這邊把州與城市直接結合
+          city_population[1].push(element.population.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+          // city_population[2].push(element.state);
+        });
+      });
+
+      console.log(city_population);
+      input.addEventListener('input',comparison);
+
+      function comparison(){
+        list.innerHTML = ""; //初始化把標籤都清掉
+        city_population[0].forEach(function(city,index){
+          // 網友提供一個很好的方法，要不區分大小寫的話，就先把兩邊全部都轉成大寫或小寫在來比較就好啦~ 轉成大寫toUpperCase()，轉成小寫toLowerCase()
+          if((String(city).toLowerCase()).match(input.value.toLowerCase())){
+            let text = (String(city).toLowerCase()).match(input.value.toLowerCase()).index;
+            console.log(text);
+
+            // console.log(city);
+            // console.log(index);
+            // console.log(city_population[1][index]);
+            list.innerHTML += 
+            `
+              <li>
+              <span>${city}</span>
+              <span class="population">${city_population[1][index]}</span>
+              </li>
+            `;
+
+
+          }
+        });
+      }
+
+  </script>
+</body>
+
+</html>
+
+<!-- 剩下不會變色但是做不出來了因為我不是用正則 -->
+<!-- 問題：因為每當輸入一個字就要重新跑一千次迴圈所以資料非常緩慢 -->

@@ -1,0 +1,32 @@
+
+  foreach計畫暫緩
+  city.forEach(function(element){
+    list.innerHTML += 
+      `<li>
+            <span>${element}</span>
+      </li>`;
+  });
+  population.forEach(function(element){
+    console.log(element);
+    list.innerHTML += 
+    `<li>
+            <span>${element}</span>
+    </li>`
+    console.log(1);
+  });
+  city_population.forEach(function(element,index,what){
+    console.log(element);
+    console.log(index);
+    console.log(what);
+    console.log(city_population[index][element]);
+    list.innerHTML += 
+      `<li>
+            <span>${element}</span>
+            <span>${element}</span>
+      </li>`;
+  })
+  list.innerHTML += 
+      `<li>
+            <span>${city[1]}</span>
+            <span>${population[1]}</span>
+      </li>`;

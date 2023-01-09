@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+</head>
+<body>
+  <style>
+
+    html {
+      font-family: sans-serif;
+      background: #ffc600;
+    }
+
+    .inbox {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #F1F1F1;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+    input:checked + p {
+      background: #F9F9F9;
+      text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }
+  </style>
+   <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything in between should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try to do it without any libraries</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+    </div>
+  </div>
+
+<script>
+  const checkbox = document.querySelectorAll('.item input[type="checkbox"]');
+  let stoppp = [];
+  // checkbox.checked = true;
+  checkbox.forEach(function(input,index){
+    input.addEventListener('change',function(){
+      console.log(index);//被勾選到的checkbox的索引值
+      stoppp.push(index); 
+      console.log(stoppp);
+      console.log(stoppp[stoppp.length-1]);//永遠會選到最後一個(-2則是永遠會選到倒數第二個，用這來判斷我現在要從哪邊勾到哪邊)
+      // console.log(this.checked);
+      console.log(checkbox[index]);//勾選的那個checkbox
+
+      // 如果勾選的同時有按著shift
+      if(this.checked && ischeck){
+        let x = stoppp.length-2;//陣列倒數第二個
+        let y = stoppp.length-1;//陣列最後一個
+
+        // 這裡只用一個for會有一個問題就是如果今天從最小的勾選之後往上勾，會沒辦法用for做判斷因此再多加一個if
+        // 如果最後一個選到的(陣列最後一個值)>或<倒數第二個值(選到的前一個位置)那麼用for迴圈將他們都打勾
+        if(stoppp[y]>stoppp[x]){
+          for(let i = stoppp[x]; i<stoppp[y];i++){
+            console.log(checkbox[i]);
+            checkbox[i].checked = true;
+          }
+        }else{
+          // 反方向從下面往上勾
+          for(let i = stoppp[x]; i>stoppp[y];i--){
+            console.log(checkbox[i]);
+            checkbox[i].checked = true;
+          }
+        }
+        console.log('Starting to check them in between!');
+      }
+    });
+  });
+// 以一個開關控制是否有按著shift，注意這邊的鍵盤事件一定要用keydown不能用keypress(這東西已經廢棄了啦)，用keypress不會偵測特殊鍵。
+  let ischeck = false;
+  window.addEventListener('keydown',function(e){
+    ischeck = e.shiftKey;
+    return console.log(e.shiftKey);
+  })
+  window.addEventListener('keyup',function(e){
+    ischeck = e.shiftKey;
+    return console.log(e.shiftKey);
+  })
+
+</script>
+</body>
+</html>

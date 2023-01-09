@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="#" />
+  <title>Console Tricks!</title>
+</head>
+
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('🍔');
+
+    // Interpolated
+    // %s是字串替代
+    console.log('hello I am a %s string', '💩');
+    console.log('hello I am a %s %s string', '💩', '🐈');
+    console.log('hello I am a %s %s string', '💩', '🐈');
+    // Styled
+    // %c用來設定css
+    console.log('%c I am some great text', 'font-size:20px;color:red;font-style:italic;text-shadow:2px 2px 0px gray;');
+
+    // warning!
+    console.warn('Oh Shift');
+    // Error :|
+    console.error('Shitttttttt');
+    // Info
+    // 驚嘆號圖標，火狐有，chrome沒有
+    console.info("Crocodiles eat three to four people per year.That's a fun fact.");
+    // Testing
+    // 布林表達式，如果false回傳錯誤，如果true不會發生任何事
+    console.assert(1 === 2,'That is wrong');
+    const p = document.querySelector('p');
+    // containsc會回傳布林值，用來確定子層
+    console.assert(p.classList.contains('ouch'),'That is wrong!');
+    // clearing
+    // If you really want to mess with a developer you could just put that at the bottom of your javascript
+    console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    // dir()用來查看元素裡面的東西
+    console.dir(p);
+    console.clear();
+
+    // Grouping together
+    dogs.forEach(function(dog){
+      // group()將資訊內容群組話，結尾groupEnd的內容要與開頭一樣，預設群組內資訊是打開的但是如果用的是groupCollapsed預設會是關閉的
+      console.group(`${dog.name}`);
+      // console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age *7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+    // 計算
+    console.count('was');
+    console.count('was');
+    console.count('was');
+    console.count('steve');
+    console.count('steve');
+    console.count('steve');
+    console.count(p);
+
+    // timing
+    // 會顯示出取得資料花的時間
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+        .then(data => data.json())
+        .then(data => {
+          console.timeEnd('fetching data'); //結尾與time裡的內容一樣
+          console.log(data);
+        });
+
+        console.table(dogs);
+  </script>
+</body>
+
+</html>
