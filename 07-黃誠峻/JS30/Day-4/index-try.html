@@ -37,50 +37,54 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-    // 箭頭函示，其實可以想成只寫下要帶入進去的數值。接著用箭頭去代替韓式的其他寫法
-    // const fifteen=inventors.filter(function(inventors){
-    //   if(inventors.year>=1500&&inventors.year<=1599){
-    //     return true;
-    //   }    });
-
-    const fifteenBirth=inventors.filter(inventors=> inventors.year>=1500&&inventors.year<=1599);
-    console.table(fifteenBirth)
+    // no1 單純版本
+    // const BornIn1500=inventors.filter(chose=>{
+    //   if((chose.year>1500)&&chose.year<1600){
+    //     return chose;
+    //   }
+    // })
+    //no2 簡化版
+    const BornIn1500=inventors.filter(item=>{
+     return item.year>=1500&&item.year<1600
+    })
+    console.table(BornIn1500)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-    const fullName=inventors.map(inventors=>{
-        return `${inventors.first}  ${inventors.last}`;
+    //no1
+    // const inventorsFullName=inventors.map(function(item){
+    //  return item.first+"  "+item.last
+    // })
+    // console.table(inventorsFullName)
+   
+    //no2
+    const fullName=inventors.map(item=>{
+      return `${item.first} ${item.last}`
     })
-    console.log(fullName)
+    console.table(fullName)
+    
 
     // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
-        const birthdateRank=inventors.sort(function(firstPerson,secondPerson){
-          if(firstPerson.year>secondPerson.year){return 1} //1表示比較大
-          else{ return -1} //-1表示比較小
-        })
-        console.table(birthdateRank);
+    // 3. Sort the inventors by birthdate, oldest to youngest 如果還活著誰比較老
+    const longest=inventors.sort(function(inventorsA,inventorsB){
+        return ((inventorsA.year)-(inventorsB.year));
+    })
+    console.table(longest)
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
-    var allAge=inventors.map(inventors=>{
-      let age=inventors.passed-inventors.year;
-      return age;
-    })
-    console.table(allAge)//第三題進行過排序所以順序不同
-    const totalAge=allAge.reduce((first,second)=>first+second)
-    console.table(totalAge)
-    
-    // 5. Sort the inventors by years lived
-    console.log("第五題開始")
-    const whoLivesLongest=inventors.sort(function(first,second){
-      if((first.passed-first.year)>(second.passed-second.year)){
-      return 1}
-      else{
-        return -1
-      }
-    })
-console.table(whoLivesLongest)
+    const totalAge=inventors.reduce((total,nowValue)=>{
+      return total=total+(nowValue.passed-nowValue.year)
+    },0 
+    //必須給定total的初始數值 0就是了 total的位置是初始值nowValue則是每一次新進來的數值。
+    )
+    console.log(totalAge)
 
+    // 5. Sort the inventors by years lived
+    const livest=inventors.sort((inventorA,inventorB)=>{
+      return(inventorB.passed-inventorB.year)-(inventorA.passed-inventorA.year)
+    })
+    console.table(livest)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -88,14 +92,29 @@ console.table(whoLivesLongest)
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+      const lastNameRank=people.map((peopleA)=>{
+       return peopleA.split(', ')
+      })
 
+      const rank=lastNameRank.sort((data1, data2)=>{
+        // 不能用減法因為這是文字不是數字喔。
+        return  (data1[1]>data2[1])?1:-1 
+      })
+      console.table(rank)
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const Alldata=data.reduce((obj,item)=>{
+      if(!(obj[item])){
+        obj[item]=0;}
+        obj[item]++
+        console.log("第八題")
+        console.log(obj[item])
+        return obj
+    },{})
+    console.table(Alldata)
+
   </script>
 </body>
 </html>
-<!-- 參考map https://www.freecodecamp.org/chinese/news/javascript-map-how-to-use-the-js-map-function-array-method/ -->
-<!-- 參考sort https://www.runoob.com/jsref/jsref-sort.html -->
-<!-- 參考箭頭函數 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function -->
