@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .all{
+         font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        ol{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+        }
+        li{
+            font-size:24px;
+        }
+        .box1{
+            width:100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <h1>事件監聽-鍵盤篇</h1>
+       <div style="display: flex;justify-content: center;">
+        <ol>
+            <li>keydown：鍵盤按鍵被按下時觸發。</li>
+            <li>keyup：鍵盤按鍵被放開時觸發。</li>
+            <li>keypress：鍵盤按鍵被點擊時觸發。</li>
+       </ol>
+       </div>
+   
+<div style="display: flex;
+justify-content: center;flex-direction: column; padding: 0px 50px;">
+    <a target="_blank" href="https://www.toptal.com/developers/keycode/for/s">技術工具askII轉換工具</a>
+    <br>
+    <br>
+           <div class="title">
+            No1 keydown 按下就改變顏色 我們在此用按鍵來做例子。<br><br>
+            你肯定發現了吧，他的效果是只要按下就會觸發，也就是說如果你按著不動他就會持續的改變顏色喔！。
+            <div class="box1"data-key="W">
+                按下Ｗ
+            </div>
+           </div>
+           <div class="title">
+            No2 keyup 按下之後並不會馬上改變顏色，要等到放開鍵盤的時候才會改變<br><br>
+            你肯定發現了吧，他的效果是按下鍵盤後鬆開才會觸發，也就是說如果你持續按著不鬆開那麼將不會有任何變化喔！。
+            <div class="box1"data-key="Q">
+                按下Ｑ
+            </div>
+           </div>
+           <div class="title">
+            No3 keypress 按下就改變顏色，我們在此用E按鍵來做例子，旭要特別注意的是keypress會區分大小寫，所以你需要先更改設定為大寫喔。<br><br>
+            你肯定發現了吧，他的效果是只要按下就會觸發，也就是說如果你按著不動他就會持續的改變顏色喔！。
+            <div class="box1"data-key="E">
+                按下大寫的Ｅ
+            </div>
+           </div>
+        </div>
+</div>
+  <script>
+   const keydownW=document.querySelector('.box1[data-key="W"]')
+   const keyupQ=document.querySelector('.box1[data-key="Q"]')
+   const keypressE=document.querySelector('.box1[data-key="E"]')
+   function changeColorKeydownW(e){
+    if(!(e.keyCode==87)){
+        return 0
+    }
+    keydownW.style=`background-color: rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)});`
+   }
+   function changeColorKeyupQ(e){
+    if(!(e.keyCode==81)){
+        return 0
+    }
+    keyupQ.style=`background-color: rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)});`
+   }
+   function changeColorKeypressE(e){
+    if(!(e.keyCode==69)){
+        return 0
+    }
+    keypressE.style=`background-color: rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)});`
+   }
+   
+// 三種不同的觸發方法
+   window.addEventListener("keydown",changeColorKeydownW)
+
+   window.addEventListener("keyup",changeColorKeyupQ)
+
+   window.addEventListener("keypress",changeColorKeypressE)
+  </script>
+</body>
+</html>
