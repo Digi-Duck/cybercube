@@ -128,6 +128,8 @@
           }
         }
         console.log('Starting to check them in between!');
+        // 處理完之後將陣列用不到的資料刪除
+        stoppp.splice(0,y); //將處理完的陣列刪除到剩下最後一個(最後一次要留著才能比對下一次，作為下一次的參考點)
       }
     });
   });

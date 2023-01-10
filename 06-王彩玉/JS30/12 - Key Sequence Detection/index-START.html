@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+  const ans = 'wesbos';
+  let key_array = [];
+  let bingo = '';
+  // 這裡不是用keydown是用keyup，這樣才不會有按著按鍵連續觸發的問題
+  window.addEventListener('keyup',function(e){
+    console.log(e.key);
+    key_array.push(e.key);
+    console.log(key_array);
+    if(key_array.length>=7){
+      key_array.splice(0,1);
+    }
+    bingo = key_array.join('');
+    console.log(bingo);
+    if(bingo === ans){ //作者使用bingo.includes(ans)來驗證
+      console.warn('DING DIND');
+    // 居然可以從這邊去呼叫另一個js文件的函式
+    // 角化吧！！！
+      cornify_add();
+    }
+  })
+</script>
+</body>
+</html>
