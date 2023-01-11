@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myForm" action="">
+    <label for="email">請輸入您的email<input type="text" id="email"></label><span id="check"></span><br><br>
+    <label for="tel">請輸入您的電話號碼<input type="text" id="tel"></label><span id="check-tel"></span>
+    <label for="tel">請輸入一個16進位的數字<input type="text" id="number"></label><span id="check-number"></span>
+    <label for="ID">請輸入身分證<input type="text" id="ID"></label>
+</form>
+<script>
+  // 電子郵件的部分
+  function check(){
+    const re =/^([a-zA-Z0-9_\-\.]{1,})@([a-zA-Z]{1,})([\.com]{1,}(\.\w{2})?)$/;
+        // \w表示任意數字和字母都會匹配，後面的問號就表示了可以有也可以沒有。順帶一提\W則是表示匹配字母與數字以外的所有東西
+    if (re.test(email.value)) {
+  console.log('valid email');
+} else {
+  console.log('invalid email');
+}
+  }
+ const email= document.getElementById("email")
+
+ email.addEventListener("change",check)
+//  電子郵件完成
+
+// 電話號碼的部分
+function checkTel(){
+  console.log(this.value)
+  const checkTel=/^([0-9]{3,})-([0-9]{3,})-([0-9]{4,})$/
+  if(checkTel.test(this.value)){
+    console.log("正確格式")
+  }
+  else{
+    console.log("電話號碼格式應該是：xxx-xxx-xxxx")
+  }
+}
+  const tel=document.querySelector("#tel")
+  tel.addEventListener('input',checkTel)
+// 電話號碼的部分完成
+// 16進位制度匹配
+function checkNumber(){
+  let check=/^([a-fA-F0-9]{6})$/
+  if(check.test(this.value)){
+    console
+    console.log("這是16進位")
+  }
+  else{
+    console.log("這不是16進位")
+  }
+}
+const number=document.querySelector("#number")
+const check16=document.querySelector("#check-number")
+number.addEventListener("input",checkNumber)
+// 16進位制度匹配完成
+
+// 身分證字號驗證
+const city={a:'10',b:'11',c:'12',d:'13',e:'14',f:'15',g:'16',h:'17',i:'34',j:'18',k:'19',l:'20',m:'21',n:'22',o:'35',p:'23',q:'24',r:'25',s:'26',t:'27',u:'28',v:'29',x:'30',y:'31'}
+
+function checkID(){
+  var value=this.value
+  let check=/([a-zA-Z]{1}([0-9]{9}))$/
+  if(check.test(value)){
+    console.log("正確")
+   var value=this.value
+  }
+  else{console.log("不正確")
+return }
+console.log("第二階段")
+valueArr=[...value]
+var englishletter=city[valueArr[0]]//將英文取得
+
+englishletter=[...englishletter]
+var checkCheckNumber=doit(englishletter)
+console.log(checkCheckNumber)
+console.log(valueArr[9])
+if(checkCheckNumber==valueArr[9]){
+  console.log("身分證正確")
+}
+else{console.log("身分證錯誤")}
+}
+
+function doit(englishletter){
+  var total=0
+  var k=8
+  for(i=1;i<=8;i++){
+   total=total+valueArr[i]*k
+
+   k=k-1
+  }
+  englishletter=englishletter.map(value=>{
+    return parseInt(value)
+  })
+  
+  total=total+englishletter[0]+(englishletter[1]*9)
+  console.log(total)
+  total=total%10
+  return 10-total
+}
+
+
+var ID=document.querySelector("#ID")
+ID.addEventListener("input",checkID)
+const form = document.getElementById("myForm");
+
+// 監聽表單元素的 change 事件
+form.addEventListener("change", function(event) {
+  const target = event.target;
+  if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+    target.value = target.value.toLowerCase();
+  }
+});
+// 身分證字號完成
+</script>
+</body>
+</html>
