@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #all-screen #all-game {
   width: 50%;
@@ -22,6 +23,7 @@
   background-color: rgb(207, 235, 222);
 }
 #all-screen #all-game .start-btn {
+  position: absolute;
   padding: 8px 16px;
   background-color: rgb(123, 116, 202);
   border-radius: 8%;
