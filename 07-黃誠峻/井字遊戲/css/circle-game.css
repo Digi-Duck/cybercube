@@ -1,0 +1,42 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#all-screen {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#all-screen #all-game {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgb(207, 235, 222);
+}
+#all-screen #all-game .start-btn {
+  padding: 8px 16px;
+  background-color: rgb(123, 116, 202);
+  border-radius: 8%;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+#all-screen #all-game .board {
+  width: 33.3%;
+  height: 33%;
+  background-color: white;
+  color: black;
+  border: black 1px solid;
+  font-size: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=circle-game.css.map */
