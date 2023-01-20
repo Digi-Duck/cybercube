@@ -1,7 +1,7 @@
 function startGame() {
     if (this.textContent == "重新開始" || this.textContent == "平手") {
         title.textContent = "圈圈叉叉"
-        gameInProgress=true
+        gameInProgress = true
         player = "o"
         for (let i = 0; i <= 2; i++) {
             for (let j = 0; j <= 2; j++) {
@@ -10,7 +10,7 @@ function startGame() {
         }
     }
     this.textContent = "重新開始"
-    this.style="display:none"
+    this.style = "display:none"
     let gamePC = document.createElement("div")
     gamePC.className = "play-player"
     allGame.appendChild(gamePC)
@@ -26,18 +26,18 @@ function startGame() {
     const playPlayer = document.querySelector(".play-computer")
 
     document.dispatchEvent(new Event("gameModel"))
-    playComputer.addEventListener("click",()=>gameModel(0))
-    playPlayer.addEventListener("click",()=>gameModel(1))
+    playComputer.addEventListener("click", () => gameModel(0))
+    playPlayer.addEventListener("click", () => gameModel(1))
 
 
 }
-function gameModel (model){
-    choseModel=model
+function gameModel(model) {
+    choseModel = model
     document.dispatchEvent(new Event("createBoard"))
 }
 function createBoard() {
-    let playComputer=document.querySelector(".play-computer")
-    let playPlayer=document.querySelector(".play-player")
+    let playComputer = document.querySelector(".play-computer")
+    let playPlayer = document.querySelector(".play-player")
     allGame.removeChild(playComputer)
     allGame.removeChild(playPlayer)
 
@@ -50,22 +50,20 @@ function createBoard() {
 
             allGame.appendChild(newDiv[i][j])
         }
-
-
     }
-    document.dispatchEvent(new Event("firstChose"))}
+    document.dispatchEvent(new Event("firstChose"))
+}
 
 function firstChose() {
-    console.log(choseModel)
     title.textContent = "由您開始！"
     const chose = document.querySelectorAll(".newDiv")
     for (i = 0; i <= 8; i++) {
-        if(choseModel==0){
-        chose[i].addEventListener("click", choseSpace)}
-        else if(choseModel==1){
+        if (choseModel == 0) {
+            chose[i].addEventListener("click", choseSpace)
+        }
+        else if (choseModel == 1) {
             chose[i].addEventListener("click", choseSpaceGameForAI)
-       
-    }
+        }
     }
 }
 function choseSpace() {
@@ -75,47 +73,49 @@ function choseSpace() {
     }
     if (player == "o") {
         this.textContent = "O"
-
         title.textContent = "輪到Ｘ囉"
         checkWin("O")
+
         return player = "x"
     }
     if (player == "x") {
         this.textContent = "X"
-
         title.textContent = "輪到Ｏ囉"
         checkWin("X")
         return player = "o"
     }
 }
 
-function choseSpaceGameForAI(){
-    title.textContent="輪到你囉"
-    choseModel=1
-    if(!gameInProgress){
-        title.textContent="還沒換你！"
+
+
+function choseSpaceGameForAI() {
+    title.textContent = "輪到你囉"
+    choseModel = 1
+    if (!gameInProgress) {
+        title.textContent = "還沒換你！"
         return
     }
     if (!this.textContent == "") {
         title.textContent = "那一格已經被選過囉！"
-        return}
-    else{
-        gameInProgress=false
+        return
+    }
+    else {
+        gameInProgress = false
         this.textContent = "O"
-        setTimeout(checkWin,1300,"O");
+        setTimeout(checkWin, 1300, "O");
     }
 }
 
-function AIChoseSpace(){
-    let checks =document.querySelectorAll(".newDiv")
-    let checkArray=Array.from(checks).filter(check=>{
-                let text=check.textContent
-            return  text==""
+function AIChoseSpace() {
+    let checks = document.querySelectorAll(".newDiv")
+    let checkArray = Array.from(checks).filter(check => {
+        let text = check.textContent
+        return text == ""
     })
-    let AISpace=Math.floor(Math.random()*(checkArray.length))
-    checkArray[AISpace].textContent="X"
-    choseModel=0
-    gameInProgress=true
+    let AISpace = Math.floor(Math.random() * (checkArray.length))
+    checkArray[AISpace].textContent = "X"
+    choseModel = 0
+    gameInProgress = true
     checkWin("X")
 }
 
@@ -163,12 +163,14 @@ function checkWin(x) {
         }
     }
     // console.log(playTime)
-    if(choseModel==1){
-         AIChoseSpace()
+    if (choseModel == 1) {
+        AIChoseSpace()
     }
     return playTime, player
 }
+
 function checkHorizontal(arr) {
+    console.log(arr)
     for (let i = 0; i < 9; i += 3) {
         if (arr[i] === arr[i + 1] && arr[i + 1] === arr[i + 2] && arr[i] !== '') {
             return true;
@@ -209,7 +211,7 @@ const startBtn = document.querySelector(".start-btn")
 var player = "o"
 var newDiv = []
 var playTime = 0
-var choseModel=0
+var choseModel = 0
 var gameInProgress = true;
 
 
