@@ -4,18 +4,25 @@
   box-sizing: border-box;
 }
 
-#all-screen {
+#all-adjust {
+  display: flex;
+  padding: 24px 12px;
+  justify-content: center;
+}
+#all-adjust #all-screen {
   width: 800px;
   height: 800px;
-  margin: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#all-screen #all-game {
-  width: 50%;
-  height: 50%;
+#all-adjust #all-screen #all-game {
+  width: 50vw;
+  height: 50vw;
+  max-width: 650px;
+  max-height: 650px;
+  position: relative;
+  box-sizing: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +30,7 @@
   flex-wrap: wrap;
   background-color: rgb(207, 235, 222);
 }
-#all-screen #all-game .start-btn {
+#all-adjust #all-screen #all-game .start-btn {
   padding: 8px 16px;
   position: absolute;
   background-color: rgb(123, 116, 202);
@@ -32,7 +39,7 @@
   color: white;
   cursor: pointer;
 }
-#all-screen #all-game .play-computer {
+#all-adjust #all-screen #all-game .play-computer {
   padding: 8px 16px;
   margin-top: 50px;
   background-color: rgb(123, 116, 202);
@@ -41,7 +48,7 @@
   color: white;
   cursor: pointer;
 }
-#all-screen #all-game .play-player {
+#all-adjust #all-screen #all-game .play-player {
   padding: 8px 16px;
   background-color: rgb(123, 116, 202);
   border-radius: 8%;
@@ -49,7 +56,7 @@
   color: white;
   cursor: pointer;
 }
-#all-screen #all-game .board {
+#all-adjust #all-screen #all-game .board {
   width: 33.3%;
   height: 33%;
   background-color: white;
@@ -59,4 +66,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 500px) {
+  #all-adjust #all-screen #all-game .board {
+    font-size: 70px;
+  }
 }/*# sourceMappingURL=circle-game.css.map */

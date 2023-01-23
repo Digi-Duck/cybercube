@@ -32,11 +32,15 @@
 
         }
 
-        #push{font-size: 24px;}
+        #push {
+            font-size: 24px;
+        }
 
         #all {
             position: relative;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            top: 200px;
 
             width: 500px;
             height: 500px;
@@ -47,6 +51,9 @@
             border: solid;
             border-radius: 10%;
             font-size: 20px;
+        }
+        @media (max-width:1) {
+            
         }
 
         .number {
@@ -76,8 +83,7 @@
 <script>
 
 
-    function fade() 
-    {
+    function fade() {
 
         //防呆機制
         var height = document.querySelector("#height").value;
@@ -100,8 +106,7 @@
 
 
         //進入計算畫面
-        else 
-        {
+        else {
             //closed：是輸出的畫面;
             var closed = document.getElementById('closed');
             //原始透明度是0
@@ -121,7 +126,7 @@
             var height = document.querySelector("#height").value;
             var weight = document.querySelector("#weight").value;
             var trueHeight = height / 100;
-          //顯示出closed的方匡
+            //顯示出closed的方匡
             document.querySelector(".output-area").style.visibility = "visible";
 
 
@@ -171,7 +176,7 @@
 
 
     function closed() {
-       
+
         var closed = document.getElementById('closed');
         var opacity = 1;
         //setIntevrval這個函式可以讓程式在一段時間內持續進行，以此題來說，就是每50毫秒做一次
@@ -199,10 +204,10 @@
                 <div>體重<input id="weight" type="text"></div>
                 <br>
                 <div class="number">
-                    <button type="button" id="push" onclick="fade()">計算</button> 
+                    <button type="button" id="push" onclick="fade()">計算</button>
                     <button style="margin-left:50px;font-size: 24px;" type="reset">重置</button>
-                    </div>
                 </div>
+            </div>
         </form>
 
         <div id="closed" class="output-area">
@@ -233,8 +238,7 @@
 
 
 
-<!-- 本次練習已經修正，body: margin:0 第一大框架all設定為margin:auto就可以做到滿版的效果了，此外未來需要更改的習慣有，if else的位置 css的空格此外如果再html內，就會需要:盡量不要使用大小寫來做區分，這是因為在html與css中他們是不能區分大小寫的喔! -->
-    </div>
+        <!-- 本次練習已經修正，body: margin:0 第一大框架all設定為margin:auto就可以做到滿版的效果了，此外未來需要更改的習慣有，if else的位置 css的空格此外如果再html內，就會需要:盡量不要使用大小寫來做區分，這是因為在html與css中他們是不能區分大小寫的喔! -->
     </div>
 </body>
 
