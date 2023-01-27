@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<style>
+  html,
+  body {
+    margin: 0;
+  }
+</style>
+
+<body>
+  <canvas id="draw" width="800" height="800"></canvas>
+
+  <script>
+    
+    let canvas = document.querySelector("#draw")
+    //設定畫布是2d的畫布
+    let howToDraw = canvas.getContext("2d")
+    //設定畫布寬度與高度
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    // 設定初始顏色
+    howToDraw.strokeStyle = '#BADA55'
+    howToDraw.lineJoin = 'round'
+    howToDraw.lineCap = 'round'
+    howToDraw.lineWidth=100  
+    // <table><thead><tr><th>屬性名稱</th><th>意義</th></tr></thead><tbody><tr><td>strokeStyle</td><td>設定畫筆顏色</td></tr><tr><td>lineJoin</td><td>設定繪製路徑邊角的形狀</td></tr><tr><td>lineCap</td><td>設定畫筆結束點的形狀</td></tr><tr><td>lineWidth</td><td>設定畫筆粗細</td></tr></tbody></table>
+    
+
+    //合成的顏色
+    howToDraw.globalCompositeOperation='screen'
+    let isDrawing = false //按下才會有反應
+    let lastX = 0
+    let lastY = 0
+    let hue=0//彩度
+    let direction=true
+
+    function draw(e) {
+      if (!isDrawing) { return }
+      console.log(e)
+      howToDraw.strokeStyle=`hsl(${hue},100%,50%)`
+      howToDraw.beginPath()
+      //更改開始的地方
+      howToDraw.moveTo(lastX, lastY)
+      howToDraw.lineTo(e.offsetX, e.offsetY)
+      howToDraw.stroke()
+      lastX = e.offsetX
+      lastY = e.offsetY
+      hue++//更改顏色製作彩色的感覺
+      if(hue>=360){//超過就重置hsl最高360
+        hue=0
+      }
+      if(howToDraw.lineWidth>=100||howToDraw.lineWidth<=1){
+        direction=!direction
+      }
+      if(direction){
+      howToDraw.lineWidth++;}
+      else{howToDraw.lineWidth--;}
+    }
+
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDrawing = true
+      lastX = e.offsetX
+      lastY = e.offsetY
+    })
+
+
+    canvas.addEventListener('mousemove', draw)
+    canvas.addEventListener('mouseup', () => isDrawing = false)
+    canvas.addEventListener('mouseout', () => isDrawing = false)
+  </script>
+</body>
+
+</html>
