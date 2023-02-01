@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* .child .one :hover {
+            background: #da56d0;
+        } */
+
+        /* .self .one:hover {
+            background: yellow;
+        } */
+
+        .self .one:hover .two {
+            background: #da56d0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="child">
+        <div class="border">
+            <div class="one">
+                block1
+                <div class="two">
+                    <b>block2</b>
+                </div>
+                <div class="three">
+                    <b>block3</b>
+                </div>
+            </div>
+            <p><b>狀況二</b><br> hover selector has effective on block2 to block4.</p>
+        </div>
+    </div>
+    <div class="self">
+        <div class="border">
+            <div class="one">
+                block1
+                <div class="two">
+                    <b>block2</b>
+                </div>
+                <div class="three">
+                    <b>block3</b>
+                </div>
+            </div>
+            <p><b>說明二</b><br> hover selector has effective on block1 and block2.</p>
+        </div>
+    </div>
+</body>
+
+</html>

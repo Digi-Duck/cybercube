@@ -1,0 +1,685 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    background-color: rgb(231, 231, 231);
+}
+
+nav {
+    height: 100vh;
+    width: 350px;
+    background-color: lightgray;
+
+    border-right: 2.5px solid white;
+
+    padding-top: 70px;
+}
+label{
+    display:none;
+}
+#burger{
+    display: none;
+}
+#logo {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(41, 41, 41);
+
+    margin: auto;
+    border: 6px solid rgb(41, 41, 41);
+    overflow: hidden;
+    position: relative;
+}
+
+#img-logo {
+    height: 100%;
+    position: relative;
+    right: 20px;
+}
+
+
+.btn-box {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    width: 250px;
+    height: 40px;
+    background-color: gray;
+    border: 2.5px solid white;
+    margin-top: 50px;
+
+    text-align: center;
+}
+
+.button a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: unset;
+    line-height: 40px;
+
+    cursor: pointer;
+}
+
+.button a:visited {
+    color: rgb(216, 180, 250)
+}
+
+.button1 a:hover {
+    color: rgb(255, 117, 140);
+}
+
+.button2 a:hover {
+    color: rgb(33, 117, 61);
+}
+
+.button3 a:hover {
+    color: blue;
+}
+
+.button a:active {
+    color: yellow;
+}
+
+.content {
+    width: calc(100% - 350px);
+    height: 100vh;
+    position: absolute;
+    left: 350px;
+    top: 0px;
+    padding-top: calc(50vh - 225px);
+}
+
+.box {
+    width: 900px;
+    height: 450px;
+    margin: auto;
+    position: relative;
+}
+
+.img1-set {
+    width: 300px;
+    height: 450px;
+
+    border: 2px solid white;
+
+    overflow: hidden;
+
+    float: left;
+}
+
+.img2-set {
+    width: 300px;
+    height: 450px;
+
+    border: 2px solid white;
+
+    overflow: hidden;
+
+    float: left;
+}
+
+.img3-set {
+    width: 300px;
+    height: 450px;
+
+    border: 2px solid white;
+
+    overflow: hidden;
+
+    float: left;
+}
+
+
+.img:hover {
+    transform: scale(1.4);
+}
+
+#img1 {
+    height: 100%;
+
+    position: relative;
+    right: 25px;
+}
+
+#img2 {
+    height: 100%;
+    position: relative;
+    right: 150px;
+}
+
+#img3 {
+    height: 100%;
+    position: relative;
+}
+@media (max-width:1280px){
+    * {
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    body {
+        background-color: rgb(231, 231, 231);
+    }
+
+    nav {
+        height: 100vh;
+        width: 350px;
+        background-color: lightgray;
+
+        border-right: 2.5px solid white;
+
+        padding-top: 70px;
+    }
+    label{
+        display:none;
+    }
+    #burger{
+        display: none;
+    }
+    #logo {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(41, 41, 41);
+
+        margin: auto;
+        border: 6px solid rgb(41, 41, 41);
+        overflow: hidden;
+        position: relative;
+    }
+
+    #img-logo {
+        height: 100%;
+        position: relative;
+        right: 20px;
+    }
+
+    .btn-box{
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .button {
+        width: 250px;
+        height: 40px;
+        background-color: gray;
+        border: 2.5px solid white;
+        margin-top: 50px;
+
+        text-align: center;
+    }
+    
+    .button a {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: unset;
+        line-height: 40px;
+
+        cursor: pointer;
+    }
+    .button a:visited {
+        color: rgb(216, 180, 250)
+    }
+
+    .button1 a:hover {
+        color: rgb(255, 117, 140);
+    }
+
+    .button2 a:hover {
+        color: rgb(33, 117, 61);
+    }
+
+    .button3 a:hover {
+        color: blue;
+    }
+
+    .button a:active {
+        color: yellow;
+    }
+
+    .content {
+        width: calc(100% - 350px);
+        height: 100vh;
+        position: absolute;
+        left: 350px;
+        top: 0px;
+        padding-top: calc(50vh - 225px);
+    }
+
+    .box {
+        width: 600px;
+        height: 450px;
+        margin: auto;
+        position: relative;
+    }
+
+    .img1-set {
+        width: 600px;
+        height: 200px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: top;
+    }
+
+    .img2-set {
+        width: 300px;
+        height: 200px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: left;
+    }
+
+    .img3-set {
+        width: 300px;
+        height: 200px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: left;
+    }
+
+    /* .img {
+        width: 100%;
+    } */
+
+    .img:hover {
+        transform: scale(1.4);
+    }
+
+    #img1 {
+        width: 100%;
+	height:auto;
+        position: relative;
+	right:0px;
+        bottom: 170px;
+    }
+
+    #img2 {
+        width: 100%;
+	height:auto;
+        position: relative;
+	right:auto;
+    }
+
+    #img3 {
+        width: 100%;
+	height:auto;
+        position: relative;
+        bottom: 50px;
+    }
+}
+@media (max-width:768px){
+    nav {
+        height: 150px;
+        width: 100%;
+        background-color: lightgray;
+
+        border-bottom: 2.5px solid white;
+	border-right:0px;
+        padding-top: 15px;
+        position: relative;
+    }
+    label{
+        display:none;
+    }
+    #burger{
+        display: none;
+    }
+    #logo {
+        width: 120px;
+        height: 120px;
+        background-color: rgb(41, 41, 41);
+
+        margin-left: 25px;
+        border: 6px solid rgb(41, 41, 41);
+        overflow: hidden;
+        position: relative;
+    }
+
+    #img-logo {
+        height: 100%;
+        position: relative;
+        right: 20px;
+    }
+    .btn-box{
+        position: absolute;
+        top: 20px;
+        right: 10px;
+	bottom:auto;
+    }
+
+    .button {
+        width: 135px;
+        height: 40px;
+        background-color: gray;
+        border: 2.5px solid white;
+        margin-right: 5px;
+
+        text-align: center;
+        display: inline-block;
+    }
+
+    .button a {
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: unset;
+        line-height: 40px;
+
+        cursor: pointer;
+    }
+
+    .button a:visited {
+        color: rgb(216, 180, 250)
+    }
+
+    .button1 a:hover {
+        color: rgb(255, 117, 140);
+    }
+
+    .button2 a:hover {
+        color: rgb(33, 117, 61);
+    }
+
+    .button3 a:hover {
+        color: blue;
+    }
+
+    .button a:active {
+        color: yellow;
+    }
+
+    .content {
+        width: 100%;
+        height:calc( 100vh - 150px);
+        position: relative;
+        left: 0px;
+        top: 0px;
+        padding-top: 10px;;
+    }
+
+    .box {
+        width: 80%;
+        height: 700px;
+        margin: auto;
+        position: relative;
+    }
+
+    .img1-set {
+        width: 100%;
+        height: 350px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: top;
+    }
+
+    .img2-set {
+        width: 50%;
+        height: 350px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: left;
+    }
+
+    .img3-set {
+        width: 50%;
+        height: 350px;
+
+        border: 2px solid white;
+
+        overflow: hidden;
+
+        float: left;
+    }
+
+
+    .img:hover {
+        transform: scale(1.4);
+    }
+
+    #img1 {
+        width: 100%;
+        position: relative;
+        right: 0px;
+        bottom: 100px;
+    }
+
+    #img2 {
+        height: 100%;
+	width:auto;
+        position: relative;
+        right:120px;
+	left:auto;
+    }
+
+    #img3 {
+        height: 100%;
+	width:auto;
+        position: relative;
+	bottom:auto;
+    }
+}
+@media (max-width:375px){
+    * {
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    body {
+        background-color: rgb(231, 231, 231);
+    }
+
+    nav {
+        height: 80px;
+        width: 100%;
+        background-color: lightgray;
+
+        border-bottom: 2.5px solid white;
+
+        padding-top: 15px;
+        position: relative;
+    }
+
+    label {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 25px;
+        font-size: larger;
+    }
+
+    #burger {
+        display: none;
+    }
+
+    
+
+    
+
+    #logo {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(41, 41, 41);
+
+        margin-right: auto;
+        margin-left: auto;
+        border: 6px solid rgb(41, 41, 41);
+        overflow: hidden;
+        position: relative;
+    }
+
+    #img-logo {
+        height: 100%;
+        position: relative;
+        right: 20px;
+    }
+
+    .btn-box {
+        position: absolute;
+        top: 50px;
+        right:calc( 100% - 150px);
+        
+        z-index: 1;
+        list-style: none;
+        display: none;
+    }
+
+    .button {
+        width: 150px;
+        height: 50px;
+        background-color: gray;
+        border: 2.5px solid white;
+        margin-right: 0px;
+	margin-top:0px;
+
+        text-align: center;
+
+    }
+
+    .button a {
+        color: white;
+        font-size: 2px;
+        font-weight: unset;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: unset;
+        line-height: 50px;
+
+        cursor: pointer;
+    }
+
+    .button a:visited {
+        color: rgb(216, 180, 250)
+    }
+
+    .button1 a:hover {
+        color: rgb(255, 117, 140);
+    }
+
+    .button2 a:hover {
+        color: rgb(33, 117, 61);
+    }
+
+    .button3 a:hover {
+        color: blue;
+    }
+
+    .button a:active {
+        color: yellow;
+    }
+    #burger:checked+.btn-box {
+        display: block;
+    }
+
+    .content {
+        width: 100%;
+        height: calc(100vh - 80px);
+        position: relative;
+        left: 0px;
+        top: 0px;
+        padding-top: 0px;
+        
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        position: relative;
+    }
+
+    .img1-set {
+        width: 100%;
+        height:calc( 100%/3);
+
+        border: 2px solid white;
+        border-right: 0px;
+        border-left: 0px;
+
+        overflow: hidden;
+
+        float: top;
+    }
+
+    .img2-set {
+        width: 100%;
+        height:calc( 100%/3);
+
+
+        border: 2px solid white;
+        border-right: 0px;
+        border-left: 0px;
+        overflow: hidden;
+
+        float: top;
+    }
+
+    .img3-set {
+        width: 100%;
+        height:calc( 100%/3);
+
+
+        border: 2px solid white;
+        border-right: 0px;
+        border-left: 0px;
+
+        overflow: hidden;
+
+        float: top;
+    }
+
+    /* .img {
+        width: 100%;
+    } */
+
+    .img:hover {
+        transform: scale(1.4);
+    }
+
+    #img1 {
+        width: 100%;
+	height:auto;
+        position: relative;
+        bottom: 100px;
+	right:auto;
+    }
+
+    #img2 {
+        width: 100%;
+	height:auto;
+        position: relative;
+        right:auto;
+    }
+
+    #img3 {
+        width: 100%;
+	height:auto;
+        position: relative;
+        bottom: 50px;
+    }
+}

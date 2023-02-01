@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0px;
+            padding-top: 75px;
+        }
+
+        #image1 {
+            width: 100%;
+            height:calc( 100vh - 75px);
+            background-image: url("https://www.roastycoffee.com/wp-content/uploads/shutterstock_1027443565-800x534.jpg");
+            background-size: cover;
+            background-position: top ;
+            background-attachment: fixed;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        #image2 {
+            width: 100%;
+            height: calc( 100vh - 75px);
+            background-image: url("https://www.giesen.com/wp-content/uploads/2020/04/Overzicht.png");
+            background-size: cover;
+            background-attachment: fixed;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        #image3 {
+            width: 100%;
+            height: calc( 100vh - 75px);
+            background-image: url("https://blog.myfitnesspal.com/wp-content/uploads/2021/03/Why-Coffee-Fruit-Is-Trending-752x472.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        #image4 {
+            width: 100%;
+            height: calc( 100vh - 75px);
+            background-image: url("https://pullandpourcoffee.com/wp-content/uploads/2020/10/decode-flavor-notes-bags.jpg.webp");
+            background-size: cover;
+            background-attachment: fixed;
+            position: absolute;
+            opacity: 0.8;
+        }
+
+        #block1 {
+            background-color: rgb(146, 44, 0);
+            color: white;
+        }
+
+        #block2 {
+            background-color: rgb(128, 128, 128);
+            color: black;
+        }
+
+        #block3 {
+            background-color: rgb(255, 133, 19);
+            color: white;
+        }
+
+        .button {
+            width: 200px;
+            height: 60px;
+
+            background-color: rgb(15, 15, 15);
+            color: white;
+
+            font-size: 48px;
+            text-align: center;
+            /*若僅一行字，可將行高設定為與區塊元素一樣高，可文字垂直置中 */
+            line-height: 60px;
+
+            position: absolute;
+            top: calc(50% - 30px);
+            left: calc(50% - 100px);
+        }
+
+        .title {
+            font-size: 50px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .text {
+            padding: 50px;
+        }
+
+        .block {
+            width: 100%;
+            height:calc( 100vh - 75px);
+            position: relative;
+            background-color:rgb(30, 159, 210);
+        }
+
+        nav {
+            width: 100%;
+            height: 75px;
+            background-color: blueviolet;
+
+            padding: 25px 50px;
+            box-sizing: border-box;
+
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 1;
+        }
+
+        a {
+            font-size: 25px;
+            color: aliceblue;
+            text-decoration: none;
+
+            display: inline-block;
+            width: 100px;
+            margin-right: 40px;
+        }
+        a:hover{
+            color: burlywood;
+        }
+        .anchor{
+            position: absolute;
+            top: -75px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#img1">圖1</a>
+        <a href="#img2">圖2</a>
+        <a href="#img3">圖3</a>
+        <a href="#img4">圖4</a>
+    </nav>
+
+    <div class="block">
+        <div class="anchor" id="img1"></div>
+        <div id="image1" class="img">
+        </div>
+        <div class="button">button 1</div>
+    </div>
+    <div id="block1">
+        <div class="title">title 1</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum in itaque error, rem magni
+            iure sit natus ea quae asperiores earum esse incidunt! Est, quisquam modi. Illum numquam quisquam voluptas?
+        </div>
+    </div>
+    <div class="block">
+        <div class="anchor" id="img2"></div>
+        <div id="image2"></div>
+        <div class="button">button 2</div>
+    </div>
+    <div id="block2">
+        <div class="title">title 2</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum in itaque error, rem magni
+            iure sit natus ea quae asperiores earum esse incidunt! Est, quisquam modi. Illum numquam quisquam voluptas?
+        </div>
+    </div>
+    <div class="block">
+        <div class="anchor" id="img3"></div>
+        <div id="image3"></div>
+        <div class="button">button 3</div>
+    </div>
+    <div id="block3">
+        <div class="title">title 3</div>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum in itaque error, rem magni
+            iure sit natus ea quae asperiores earum esse incidunt! Est, quisquam modi. Illum numquam quisquam voluptas?
+        </div>
+    </div>
+    <div class="block">
+        <div class="anchor" id="img4"></div>
+        <div id="image4"></div>
+        <div class="button">button 4</div>
+    </div>
+</body>
+
+</html>
